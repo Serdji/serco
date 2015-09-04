@@ -1,0 +1,22 @@
+<?php
+//Универсальные
+$lang['universal_index_href'] = '<a href="/">На главную</a>';
+$lang['universal_sitemap_href'] = '<a href="/sitemap/">Карта сайта</a>';
+$lang['universal_sitemap_href2'] = '<a href="/sitemap/">Карту сайта</a>';
+$lang['universal_sitemap_href3'] = '<a href="/sitemap/">Карту сайта</a>';
+
+
+//по-умолчанию
+$lang['default_title'] = 'Добро пожаловать :: Prototype<sup>&alpha;</sup>';
+$lang['default_keywords'] = 'Ключевые слова';
+$lang['default_description'] = 'Описание SEO';
+$lang['default_h1'] = 'Добро пожаловать';
+
+
+//404
+$lang['404_title'] = 'Извините, страница не найдена';
+$lang['404_keywords'] = '';
+$lang['404_description'] = '';
+$lang['404_h1'] = 'Извините, страница не найдена';
+$lang['404_text'] = 'Возможно страница была удалена или ни когда не существовала. Просим Вас переидти на [lang:universal_index_href] или воспользоваться [lang:universal_sitemap_href3].';
+?>
