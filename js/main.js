@@ -773,7 +773,7 @@ intervalBlockHeight ();
 
 							  	 
 
-
+console.log('test');
 							  	  
 							  	  $( '.collectionLength' ).text( collectionLength );
 							  	  $( '.brandLength' ).text( brandLength );
