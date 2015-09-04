@@ -234,9 +234,7 @@ $( 'a[href="/"]' ).on('click', function() {
 	$( '.myBtnStores' ).on('click', function(e) {
 		e.preventDefault();
 	$( this )
-		.toggleClass( 'myBtnActive' )
-		.siblings( 'button' )
-		.removeClass( 'myBtnActive' );
+		.toggleClass( 'myBtnActive' );
 	});
 
 	
