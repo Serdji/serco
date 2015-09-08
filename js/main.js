@@ -768,10 +768,6 @@ intervalBlockHeight ();
 							  	  finish_page      = Math.ceil((collection.length/9)),
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length;
-
-console.log('test');
-console.log('test');
-
 							  	 
 
 							  	  
