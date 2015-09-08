@@ -769,6 +769,7 @@ intervalBlockHeight ();
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length;
 console.log('test');
+console.log('test');
 							  	 
 
 							  	  
