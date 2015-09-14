@@ -201,6 +201,11 @@ $( 'a[href="/"]' ).on('click', function() {
 	window.location = '/';
 });
 
+
+
+
+
+
 /*-----------------------Удаление правого фильтра--------------------*/
 
 	
@@ -208,7 +213,7 @@ $( 'a[href="/"]' ).on('click', function() {
  	if ( $( '.heightCards2' ).hasClass('levels2') ) {
  		$( '.filtrsLevel2' ).remove();
  		$( '.centerBlock' )
- 			.css('width', '1193px')
+ 			.css('width', '1190px')
  			.find('.slider')
  			.addClass('ShutdownFilter')
  			.siblings()
@@ -405,7 +410,7 @@ blockHeight();
 
 	function intervalBlockHeight () {
 		
-		var intevalBlockHeight= setInterval( function (){
+		var intevalBlockHeight = setInterval( function (){
 			blockHeight();
 		}, 100 );
 
@@ -484,47 +489,56 @@ intervalBlockHeight ();
 
 /*---------------------Выравнивание картинок-----------------------*/
 
-	function imgWidthHeight (){
-		$.each( $( '.level1Img' ), function(index, val) {
-			var imgWidth           = $(val).width(),
-				imgHeight          = $(val).height(),
-				pictureLvel1Width  = $( '.PictureLvel1' ).width(),
-				pictureLvel1Height = $( '.PictureLvel1' ).height(),
-				_this              = $( this );
-				
-			if ( $( '.level1Img' ).attr('style') ) {
-				$( '.level1Img' ).removeAttr('style');
 
-			}else{
-
-				if ( imgWidth >= imgHeight ) {
-					_this.css('height', '200');
-
-					var WidthAdjustment = Math.ceil(_this.width() / 2 - pictureLvel1Width / 2);
-					_this.css('right', WidthAdjustment);
-
-
-				}else{
-					_this.css('width', '200');
-
-					var HeightAdjustment = Math.ceil(_this.height() / 2 - pictureLvel1Height / 2);
-					_this.css('bottom', HeightAdjustment);
-
-				};
-
-			};		
-		});	
-	};
-
-	imgWidthHeight ();
+	// imgWidthHeight ();
 
 		
-	setTimeout( imgWidthHeight, 500 );
+	// setTimeout( imgWidthHeight, 500 );
+
+	function funImgWidthHeight () {
+
+		function imgWidthHeight (){
+			$.each( $( '.level1Img' ), function(index, val) {
+				var imgWidth           = $(val).width(),
+					imgHeight          = $(val).height(),
+					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
+					pictureLvel1Height = $( '.PictureLvel1' ).height(),
+					_this              = $( this );
+					
+				if ( $( '.level1Img' ).attr('style') ) {
+					$( '.level1Img' ).removeAttr('style');
+
+				}else{
+
+					if ( imgWidth >= imgHeight ) {
+						_this.css('height', '200');
+
+						var WidthAdjustment = Math.ceil(_this.width() / 2 - pictureLvel1Width / 2);
+						_this.css('right', WidthAdjustment);
 
 
-	
+					}else{
+						_this.css('width', '200');
 
+						var HeightAdjustment = Math.ceil(_this.height() / 2 - pictureLvel1Height / 2);
+						_this.css('bottom', HeightAdjustment);
 
+					};
+
+				};		
+			});	
+		}; 
+
+		var funImgWidthHeight = setInterval( function () {
+			imgWidthHeight ();
+		}, 100 );
+
+			setTimeout( function (){
+				clearInterval( funImgWidthHeight );
+			}, 1500 );
+	};
+
+	funImgWidthHeight ();
 
 
 
@@ -1014,26 +1028,31 @@ intervalBlockHeight ();
             	this.input.addClass( 'inputColor' );
             };
 
+            funImgWidthHeight ();
 
 
 
 
-           var ulId1   = $( 'ul.ui-autocomplete' ).eq(0),
-           	   ulId2   = $( 'ul.ui-autocomplete' ).eq(1),
-           	   ulId3   = $( 'ul.ui-autocomplete' ).eq(2),
-           	   ulId4   = $( 'ul.ui-autocomplete' ).eq(3),
-           	   ulId5   = $( 'ul.ui-autocomplete' ).eq(4),
-           	   ulId6   = $( 'ul.ui-autocomplete' ).eq(5),
-           	   ulId7   = $( 'ul.ui-autocomplete' ).eq(6),
-           	   ulId8   = $( 'ul.ui-autocomplete' ).eq(7),
-           	   ulId1Li = ulId1.children('li').eq(0),
-           	   ulId2Li = ulId2.children('li').eq(0),
-           	   ulId3Li = ulId3.children('li').eq(0),
-           	   ulId4Li = ulId4.children('li').eq(0),
-           	   ulId5Li = ulId5.children('li').eq(0),
-           	   ulId6Li = ulId6.children('li').eq(0),
-           	   ulId7Li = ulId7.children('li').eq(0),
-           	   ulId8Li = ulId8.children('li').eq(0);
+           var ulId1    = $( 'ul.ui-autocomplete' ).eq(0),
+           	   ulId2    = $( 'ul.ui-autocomplete' ).eq(1),
+           	   ulId3    = $( 'ul.ui-autocomplete' ).eq(2),
+           	   ulId4    = $( 'ul.ui-autocomplete' ).eq(3),
+           	   ulId5    = $( 'ul.ui-autocomplete' ).eq(4),
+           	   ulId6    = $( 'ul.ui-autocomplete' ).eq(5),
+           	   ulId7    = $( 'ul.ui-autocomplete' ).eq(6),
+           	   ulId8    = $( 'ul.ui-autocomplete' ).eq(7),
+           	   ulId9    = $( 'ul.ui-autocomplete' ).eq(8),
+           	   ulId10   = $( 'ul.ui-autocomplete' ).eq(9),
+           	   ulId1Li  = ulId1.children('li').eq(0),
+           	   ulId2Li  = ulId2.children('li').eq(0),
+           	   ulId3Li  = ulId3.children('li').eq(0),
+           	   ulId4Li  = ulId4.children('li').eq(0),
+           	   ulId5Li  = ulId5.children('li').eq(0),
+           	   ulId6Li  = ulId6.children('li').eq(0),
+           	   ulId7Li  = ulId7.children('li').eq(0),
+           	   ulId8Li  = ulId8.children('li').eq(0),
+           	   ulId9Li  = ulId9.children('li').eq(0),
+           	   ulId10Li = ulId10.children('li').eq(0);
            	   
 
 
@@ -1070,7 +1089,7 @@ intervalBlockHeight ();
 
 
             if ($( option ).hasClass('surface')) {
-            	optionIf ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR', 'surfaceR', ulId5Li );
+            	optionIf ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR', 'surfaceR', ulId7Li );
             	
             }else if($( option ).hasClass('0 surfaceR')){
             	optionElse ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR' );
@@ -1078,7 +1097,7 @@ intervalBlockHeight ();
 
 
             if ($( option ).hasClass('country')) {
-				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId6Li );
+				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId8Li );
             	
             }else if($( option ).hasClass('0 countryR')){
             	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
@@ -1086,7 +1105,7 @@ intervalBlockHeight ();
 
 
             if ($( option ).hasClass('brand')) {
-				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId7Li );
+				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId9Li );
             	
             }else if($( option ).hasClass('0 brandR')){
             	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
@@ -1094,7 +1113,7 @@ intervalBlockHeight ();
 
 
             if ($( option ).hasClass('collection')) {
-				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId8Li );
+				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId10Li );
             	
             }else if($( option ).hasClass('0 collectionR')){
             	optionElse ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR' );
@@ -1229,7 +1248,7 @@ intervalBlockHeight ();
 	
 
 
-		$(".opedDialog").on('click', function(){ 
+		/*$(".opedDialog").on('click', function(){ 
 			var item_name = $(this)
 								.children('div.infoDialog')
 								.children('figcaption.item_name')
@@ -1263,9 +1282,42 @@ intervalBlockHeight ();
 		    });
 		    $("#dialog").html(infoDialog);   
 
+		});*/
+
+		$( '.Picture' ).on('click', function() {
+			var _this      = $( this ),
+				figcaption = _this.parent().siblings( '.figcaption' );
+
+			console.log($( figcaption ));	
+
+			_this
+				.clone()
+				.children( 'img' )
+				.addClass( 'imgModal' )
+				.prependTo( '.modal-body' )
+				.siblings( '.imgModal' )
+				.remove();
+
+
+
+			$( figcaption )
+				.clone()
+				.addClass( 'imgFigcaption' )
+				.appendTo( '.modal-body' )
+				.siblings( '.imgFigcaption' )
+				.remove();
+
+			$( figcaption )
+				.children()
+				.eq(0)
+				.children('span')
+				.clone()
+				.addClass( 'imgHeader' )
+				.appendTo( '.modal-header' )
+				.siblings( '.imgHeader' )
+				.remove();
+
 		});
-
-
 
 						/*----------------------------------------------------------*/
 
@@ -1294,7 +1346,8 @@ function inputPfgeStart (){
     	return $( '<li class="pageNumberInit">'
     				+'<div class="arrowLeft">'
     					+'<a class="pageA" out_id="'+(namber_pg-1)+'" type="page" href="'+page_href+'page'+(namber_pg)+'/">&lsaquo;</a>'
-    				+'</div><input out_id="'+(namber_pg)+'" type="page" class="inputNumber from-to" type="text" value='+(namber_pg)+'>'
+    				+'</div>'
+    				+'<input out_id="'+(namber_pg)+'" type="page" class="inputNumber from-to" type="text" value='+(namber_pg)+'>'
     				+'<div class="arrowRight">'
     					+'<a class="pageA" out_id="'+(namber_pg+1)+'" type="page" href="'+href+'page'+(namber_pg+1)+'/">&rsaquo;</a>'
     				+'</div>'
@@ -1469,6 +1522,7 @@ function inputPfgeStart (){
 			$( 'div.arrowRight' ).remove();
 		}
 
+		funImgWidthHeight ();
 		init();
 
 		$( 'ul.pageNumber li' ).eq( 0 ).addClass('pageNumberBorderLeft');
@@ -1519,10 +1573,21 @@ blockHeight();
 
         	
         }
+
+
+
 		init();
 		blockHeight();
 
 };
+	$( '.pageNumber' ).on('click', 'li', function() {
+		$( this )
+		  .children('a')
+		  .trigger('click');
+		  funImgWidthHeight ();
+	});
+
+
 pageList ();
 
 

@@ -906,9 +906,10 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">
       <figure class="opedDialog">
           <div class="infoDialog">
-            <div class="Picture"><img src="/iimg/item{item_id1s}.png"></div>
-            <hr>
+            <div class="Picture"><img src="/iimg/item{item_id1s}.png" data-toggle="modal" data-target="#img"></div>
+          </div>
             <div class="clear"></div>
+            <hr>
               <div class="figcaption">
                 <figcaption class="item_name"><b>Название</b>: <span>{item_name}</span>.</figcaption>
                 <figcaption class="item_size"><b>Размеры</b>: {item_size} см.</figcaption>
@@ -917,8 +918,8 @@
                 <figcaption class="item_country"><b>Страна</b>: {item_country}.</figcaption>
                 <figcaption class="item_brand"><b>Бренд</b>: {item_brand}.</figcaption>
                 <figcaption class="item_type"><b>Тип</b>: {item_type}.</figcaption>
+                <hr>
             </div>
-          </div>
           <br>
         <div class="priceBlock">
           <form role="form" class="price">
@@ -929,6 +930,25 @@
             <button type="button" class="btn btn-success btn-block">Добавить в корзину</button>
           </form>
         </div>
+          <!-- Modal -->
+          <div class="modal fade bs-example-modal-lg" id="img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  
+                </div>
+                <div class="modal-body">
+                  
+
+
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                </div>
+              </div>
+            </div>
+          </div>
       </figure>
     </div>
   

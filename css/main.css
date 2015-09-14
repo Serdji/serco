@@ -119,7 +119,8 @@ li{
 }
 
 .Picture img{
-	max-width: 200px;
+	max-height: 200px;
+	max-width: 100px;
 	cursor: pointer;
 	-webkit-filter: drop-shadow(5px 5px 7px rgba(0,0,0,0.5));
     filter: url(shadow.svg#drop-shadow);
@@ -434,17 +435,18 @@ a:-webkit-any-link{
 	text-align: center;
 	background:#F5F5F5;
 	border: 1px solid #D9D9D9;
-	width: 1571px;
+	width: 1588px;
 	overflow: hidden;
   	padding-bottom: 5px;
 }
 
 .pageNumber li{
+	cursor: pointer;
 	font-size: 15px;
 	text-decoration: none;
 	display: inline;
 	margin: -1px;
-	padding: 51px;
+	padding: 15px 51px 15px 51px;
     border-right: 1px solid #D9D9D9;
 }
 
@@ -510,7 +512,7 @@ a:-webkit-any-link{
 }
 
 .infoDialog{
-	min-height: 400px;
+	min-height: 200px;
 }
 
 .ui-dialog-titlebar-close{
@@ -529,10 +531,10 @@ a:-webkit-any-link{
 }
 .custom-combobox-toggle {
     position: absolute;
-    left: 279px;
+    left: 267px;
     top: 0;
     bottom: 0;
-    margin-left: 3px;
+    margin-left: 15px;
     padding: 0;
 }
 .custom-combobox-input {
@@ -575,7 +577,7 @@ a:-webkit-any-link{
 }
 
 .FilterTiles{
-	height: 433px;
+	height: 428px;
 }
 
 .pictureTiles{
@@ -841,11 +843,11 @@ a:-webkit-any-link{
 }
 
 .levels1{
-	height: 407px !important;
+	height: 453px !important;
 }
 
 .PictureLvel1{
-	border-radius: 10px;
+	border-radius: 5px;
 	text-align:center;
 	margin:0 auto;
 	padding:0;
@@ -871,7 +873,7 @@ a:-webkit-any-link{
 }
 
 .filterLeft, .pageNamberVertical{
-  	min-height: 982px;
+  	min-height: 1118px;
   	overflow: hidden;
 }
 
@@ -894,7 +896,7 @@ a:-webkit-any-link{
 }
 
 .accordionStart{
-	height:  118px;
+	height:  135px;
 	background: #F5F5F5;
 }
 
@@ -937,6 +939,7 @@ a:-webkit-any-link{
 }
 
 .pageNamberVertical, .pageNamberVertical ul{
+	width: 50px;
 	text-align: center;
 	padding: 0;
 	margin: 0; 
@@ -945,8 +948,8 @@ a:-webkit-any-link{
 .pageNamberVertical li{
 	border-top: 1px solid #D9D9D9;
 	margin: -1px;
-	padding-top: 45px;
-  	padding-bottom: 44px;
+	padding-top: 52px;
+  	padding-bottom: 52px;
 }
 
 .Point{
@@ -985,10 +988,10 @@ a:-webkit-any-link{
 	cursor: pointer;
 	font-size: 16px;
 }
-
+/* 
 .centerBlock{
 	margin-left: -16px;
-}
+} */
 
 .search, .conDir{
 	width: 807px;
@@ -1027,13 +1030,13 @@ a:-webkit-any-link{
 
 .filtr_bay_region{
 	padding-left: 10px;
-	width: 370px !important;
+	width: 387px !important;
 	left: 0px;
 	margin-bottom: 4px !important;
 }
 
 .filtr_bay_region input{
-	width: 315px;
+	width: 326px;
 }
 
 .filtr_bay_region .custom-combobox-toggle{
@@ -1053,7 +1056,7 @@ a:-webkit-any-link{
 
 .TheSelectionOfStores{
     margin-left: -3px !important;
-    width: 370px !important;
+    width: 387px !important;
     padding: 5px;
     margin-bottom: 0px !important;
     margin-top: -4px;
@@ -1087,7 +1090,9 @@ a:-webkit-any-link{
 }
 
 .TradingGroup .custom-combobox, 
-.TradingGroup .custom-combobox-toggle{
+.TradingGroup .custom-combobox-toggle,
+.trading .custom-combobox, 
+.trading .custom-combobox-toggle{
 	padding-bottom: 3px;
 }
 
@@ -1104,9 +1109,25 @@ a:-webkit-any-link{
     bottom: 0;
     margin: 0 0 4px 0px;
     padding: 5px 18px 0px 20px;
-    width: 380px;
+    width: 397px;
 }
 
 .ShutdownFilter{
-	width: 1177px;
+	width: 1174px;
+}
+
+.modal-body{
+	text-align: center;
+}
+
+.modal-body .figcaption {
+	text-align: left;
+}
+
+.imgModal{
+	margin-bottom: 70px;
+}
+
+.imgFigcaption figcaption{
+	font-size: 20px !important;
 }
