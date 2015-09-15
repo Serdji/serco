@@ -208,10 +208,10 @@ $( 'a[href="/"]' ).on('click', function() {
 /*---------------Запрет на выделение и копирование текста------------*/
 
 
-	// document.ondragstart = noselect;     // запрет на перетаскивание     
-	document.onselectstart = noselect;     // запрет на выделение элементов страницы     
-	document.oncontextmenu = noselect;     // запрет на выведение контекстного меню 
-	    
+	// document.ondragstart = noselect;   // запрет на перетаскивание     
+	document.onselectstart = noselect;    // запрет на выделение элементов страницы     
+	// document.oncontextmenu = noselect;    // запрет на выведение контекстного меню 
+
 	function noselect() {
 		return false;
 	};  
@@ -516,17 +516,19 @@ intervalBlockHeight ();
 	function funImgWidthHeight () {
 
 		function imgWidthHeight (){
-			$.each( $( '.level1Img' ), function(index, val) {
-				var imgWidth           = $(val).width(),
-					imgHeight          = $(val).height(),
-					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
-					pictureLvel1Height = $( '.PictureLvel1' ).height(),
-					_this              = $( this );
-					
-				if ( $( '.level1Img' ).attr('style') ) {
+
+			if ( $( '.level1Img' ).attr('style') ) {
 					$( '.level1Img' ).removeAttr('style');
 
-				}else{
+				};
+			$.each( $( '.level1Img' ), function(index, val) {
+				var _this			   = $(val),	
+					imgWidth           = _this.width(),
+					imgHeight          = _this.height(),
+					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
+					pictureLvel1Height = $( '.PictureLvel1' ).height();
+					
+				
 
 					if ( imgWidth >= imgHeight ) {
 						_this.css('height', '200');
@@ -543,7 +545,7 @@ intervalBlockHeight ();
 
 					};
 
-				};		
+						
 			});	
 		}; 
 
@@ -553,7 +555,7 @@ intervalBlockHeight ();
 
 			setTimeout( function (){
 				clearInterval( funImgWidthHeight );
-			}, 1500 );
+			}, 2000);
 	};
 
 	funImgWidthHeight ();

@@ -975,6 +975,8 @@
           <div class="PictureLvel1"><img src="/iimg/collection{coll_id1s}.1.png" class="level1Img"></div>
       </figure>
     </a>
+
+
   </div>
 <!-- END collections -->
 </div>
