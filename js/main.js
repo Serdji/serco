@@ -597,6 +597,7 @@ intervalBlockHeight ();
 	}
 
 	imgColl ();
+	
 
 		function intervalImgColl () {
 		
