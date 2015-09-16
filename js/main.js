@@ -597,7 +597,7 @@ intervalBlockHeight ();
 	}
 
 	imgColl ();
-	
+
 
 		function intervalImgColl () {
 		
@@ -1648,6 +1648,7 @@ blockHeight();
 
 		init();
 		blockHeight();
+		intervalImgColl ();
 
 };
 	$( '.pageNumber' ).on('click', 'li', function() {
