@@ -201,8 +201,20 @@ $( 'a[href="/"]' ).on('click', function() {
 	window.location = '/';
 });
 
+	
+/*-----------------------Подсветка номера страниц---------------------*/
 
+	function pageNumberBackground () {
 
+		var	urlPage = window.location.pathname;
+
+		$( 'ul.pageNumber li > a[href="' + urlPage + '"]' )
+			.parent()
+			.addClass('pageNumberBackground');
+		
+	};
+
+/*--------------------------------------------------------------------*/
 
 
 /*---------------Запрет на выделение и копирование текста------------*/
@@ -583,9 +595,9 @@ intervalBlockHeight ();
 
 			 _this.removeAttr('style');
 
-			 var imgHeight = _this.height(),
+			 var imgHeight   = _this.height(),
 			 	 blockHeight = $( '.Picture' ).height(),
-			 	 alignment = Math.ceil ( blockHeight / 2 - imgHeight / 2 );
+			 	 alignment   = Math.ceil ( blockHeight / 2 - imgHeight / 2 );
 
 
 		
@@ -607,7 +619,7 @@ intervalBlockHeight ();
 
 		setTimeout( function (){
 			clearInterval( intervalImgColl );
-		}, 500 );
+		}, 1500 );
 	};
 
 	intervalImgColl ();
@@ -983,7 +995,7 @@ intervalBlockHeight ();
 
 							        }
 
-
+							        pageNumberBackground ();
 
 							        $( '.pageA' ).on('click', function (){
 							        	var ths_pg = $( this ).attr('out_id');
@@ -1641,14 +1653,23 @@ blockHeight();
         	$( 'ul.pageNumber' ).append('<li><a out_id="' + i + '" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
         	$( 'ul.pageNumber li' ).eq( 0 ).addClass('pageNumberBorderLeft');
 
+       
+
+
+
+
         	
         }
 
 
 
+
+			
+
 		init();
 		blockHeight();
 		intervalImgColl ();
+		pageNumberBackground ();
 
 };
 	$( '.pageNumber' ).on('click', 'li', function() {
@@ -1656,6 +1677,7 @@ blockHeight();
 		  .children('a')
 		  .trigger('click');
 		  funImgWidthHeight ();
+
 	});
 
 
