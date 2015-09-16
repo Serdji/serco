@@ -505,7 +505,7 @@ intervalBlockHeight ();
 
 
 
-/*---------------------Выравнивание картинок-----------------------*/
+/*----------------Выравнивание картинок коллекции------------------*/
 
 
 	// imgWidthHeight ();
@@ -527,6 +527,7 @@ intervalBlockHeight ();
 					imgHeight          = _this.height(),
 					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
 					pictureLvel1Height = $( '.PictureLvel1' ).height();
+
 					
 				
 
@@ -562,6 +563,53 @@ intervalBlockHeight ();
 
 
 
+
+
+/*-----------------------------------------------------------------*/
+
+
+/*-------------Выравнивание картинок внутри коллекции--------------*/
+
+
+
+	function imgColl () {
+		
+
+		var img = $( '.Picture img' );
+
+		$.each( img, function(index, val ) {
+			 
+			 var _this = $( val );
+
+			 _this.removeAttr('style');
+
+			 var imgHeight = _this.height(),
+			 	 blockHeight = $( '.Picture' ).height(),
+			 	 alignment = Math.ceil ( blockHeight / 2 - imgHeight / 2 );
+
+
+		
+			_this.css('margin-top', alignment); 	 
+
+
+		});
+
+	}
+
+	imgColl ();
+
+		function intervalImgColl () {
+		
+		var intervalImgColl = setInterval( function (){
+			imgColl ();
+		}, 100 );
+
+		setTimeout( function (){
+			clearInterval( intervalImgColl );
+		}, 500 );
+	};
+
+	intervalImgColl ();
 
 
 /*-----------------------------------------------------------------*/
@@ -848,6 +896,7 @@ intervalBlockHeight ();
 								 		
 								 		
 								 			intervalBlockHeight();
+								 			intervalImgColl ();
 								 		
 
 

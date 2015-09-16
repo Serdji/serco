@@ -112,6 +112,9 @@ li{
 }
 
 .Picture{
+	margin: 0 auto;
+	height: 200px;
+	width: 100px;
 	text-align:center;
 	padding:0;
 
