@@ -1138,3 +1138,8 @@ a:-webkit-any-link{
 .pageNumberBackground{
 	background: #94EF94;
 }
+
+.brandCountry{
+	font-size: 16px;
+    color: #464646;
+}
