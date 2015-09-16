@@ -1139,7 +1139,7 @@ a:-webkit-any-link{
 	background: #94EF94;
 }
 
-.brandCountry{
-	font-size: 16px;
+.coll_сountry, .coll_brand{
+	font-size: 14px;
     color: #464646;
 }

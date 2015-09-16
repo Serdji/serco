@@ -976,8 +976,8 @@
       </a>
       <br>
       <hr>
-      <figcaption class="brandCountry"><b>Бренд</b>: {coll_brand}.</figcaption>
-      <figcaption class="brandCountry"><b>Страна</b>: {coll_country}.</figcaption>
+      <figcaption class="coll_brand"><b>Бренд</b>: <span>{coll_brand}</span>.</figcaption>
+      <figcaption class="coll_country"><b>Страна</b>: <span>{coll_country}</span>.</figcaption>
     </figure>
 
 

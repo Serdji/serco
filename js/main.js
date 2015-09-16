@@ -873,24 +873,32 @@ intervalBlockHeight ();
 							  	  $( 'div.collection_card' ).addClass('rewrite')
 							  	  						  .removeClass('colorsNone');
 							  	  $.each( items, function ( index, val ) {
-							  	 
-							  	  	 var coll_id1s = val.coll_id1s,
-							  	  	 	 coll_name = val.coll_name,
-							  	  	 	 obj       = $('div.collection_card.rewrite:first');
+							  	 	
+							  	  
 
-							  	  	 	 /*console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							  	  	 	 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							  			 console.log('coll_id1s: ' + coll_id1s);
-							  			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							 			 console.log('coll_name: ' + coll_name);
-							 			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							 			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');*/
+							  	  	 var coll_id1s    = val.coll_id1s,
+							  	  	 	 coll_name    = val.coll_name,
+							  	  	 	 coll_brand   = val.coll_brand,
+							  	  	 	 coll_country = val.coll_country,
+							  	  	 	 obj          = $('div.collection_card.rewrite:first');
+
+									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							  			 // console.log('coll_id1s: ' + coll_id1s);
+							  			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_name: ' + coll_name);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_brand: ' + coll_brand);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_country: ' + coll_country);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 
 
 							 			
 
 								  		$(obj)
-								  			.children('a.level1A')
+								  			.find('a.level1A')
 								  			.attr( 'href', '/catalog/' + coll_id1s + '/' );
 
 								 		$(obj)
@@ -901,8 +909,16 @@ intervalBlockHeight ();
 				
 
 								 		$(obj)
-								 			.find( 'figcaption.coll_name' )
-								 			.text( coll_name );      
+								 			.find( 'figcaption.coll_name b' )
+								 			.text( coll_name );
+
+							 			$(obj)
+								 			.find( 'figcaption.coll_country span' )
+								 			.text( coll_country );
+
+							 			$(obj)
+								 			.find( 'figcaption.coll_brand span' )
+								 			.text( coll_brand );      
 
 								 		obj.removeClass('rewrite');
 
