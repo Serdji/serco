@@ -1152,6 +1152,11 @@ intervalBlockHeight ();
             	this.input.addClass( 'inputColor' );
             };
 
+           
+
+
+
+
             funImgWidthHeight ();
 
 
