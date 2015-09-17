@@ -455,7 +455,15 @@ ul > li:focus{
 }
 
 .button-footer{
+	text-shadow: 1px 1px 1px #171717 !important;
+	font-weight: bold !important;
+	background: #94ef94 !important;
 	width: 100% !important;
+	border:1px solid #53C88A !important;
+}
+
+.button-footer:hover{
+	background: #39b273 !important;
 }
 
 .text-footer{

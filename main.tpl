@@ -98,7 +98,7 @@
                           <label class="control-label result">Отобрать магазин по:</label>
                     
                             <button class="btn btn-primary btn-sm myBtnStores" data-toggle="modal">
-                              Образцам товаров выставленных на ветрине
+                              Образцам товаров выставленных на витрине
                             </button>
                     
                     
