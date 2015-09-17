@@ -64,7 +64,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border filtr_bay_region filters" id="filtr_bay_region">
                         <div class="hint" title="Выберите регион покупателя">?</div>
                           <div class="ui-widget">
-                          <label class="control-label result">Магазины в регионе: </label>
+                          <label class="control-label result">Магазин в регионе: </label>
                             <select class="combobox" type="type" >
                               <option class="0 default" out_id="0" type="bay_country">Все страны</option>
                               <option class="type remov" id="type_0000001" inner_id="1" out_id="0000001">Россия</option>
@@ -95,14 +95,14 @@
                         <div class="hint" title="?">?</div>
                         <form role="form">
                           <div class="has-success">
-                          <label class="control-label result" for="inputSuccess3">Отобрать магазины по:</label>
+                          <label class="control-label result">Отобрать магазин по:</label>
                     
-                            <button class="btn btn-primary btn-sm myBtnStores" data-toggle="modal">
-                              Образцам товаров выставленных на ветрине
+                            <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                              Образцам товаров выставленных на витрине
                             </button>
                     
                     
-                            <button class="btn btn-primary btn-sm myBtnStores" data-toggle="modal">
+                            <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
                               Товарам по акции
                             </button>
                             
@@ -118,6 +118,7 @@
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft">
 
 
+                 <div class="hint" title="?">?</div>
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
@@ -132,19 +133,7 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtn" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtn" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
                       
-                      </div>
-
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
@@ -291,18 +280,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -372,18 +351,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -453,18 +422,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -532,18 +491,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -611,18 +560,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -690,18 +629,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -771,18 +700,8 @@
                                 Полный каталог товаров
                          </button>
                       </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров выставленных на ветрине
-                         </button>
-                      </div>
-                      <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                                Каталог товаров по Акции
-                         </button>
-                         
+                                     
                       
-                      </div>
 
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
@@ -961,20 +880,26 @@
 <div class="row">
 <!-- BEGIN collections -->
 <!-- IF%3 -->
-  </div><div class="row rowHeight">
+  </div>
+  <div class="row rowHeight">
 <!-- END%3 -->
 <strong id="leval" class="leval1"></strong>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border heightCards2 collection_card levels1" id="{coll_id1s}">
-    <a class = "level1A" href="/catalog/{coll_id1s}/">
-      <figure>
+    <figure>
+      <a class = "level1A" href="/catalog/{coll_id1s}/">
           <div>
-            <figcaption class="coll_name"><b>{coll_name}</b></figcaption>
+            <figcaption class="coll_name">{coll_name}</figcaption>
           </div>
         <hr>
         <br>
           <div class="PictureLvel1"><img src="/iimg/collection{coll_id1s}.1.png" class="level1Img"></div>
-      </figure>
-    </a>
+      </a>
+      <br>
+      <hr>
+      <figcaption class="coll_brand"><b>Бренд</b>: <span>{coll_brand}</span>.</figcaption>
+      <figcaption class="coll_country"><b>Страна</b>: <span>{coll_country}</span>.</figcaption>
+    </figure>
+
 
 
   </div>

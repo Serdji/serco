@@ -112,6 +112,9 @@ li{
 }
 
 .Picture{
+	margin: 0 auto;
+	height: 200px;
+	width: 100px;
 	text-align:center;
 	padding:0;
 
@@ -150,11 +153,6 @@ li{
 	overflow: hidden;
 }
 
-.coll_id, .coll_name{
-	cursor: pointer;
-	font-size: 16px;
-    color: #3c763d;
-}
 
 a:-webkit-any-link{
 	text-decoration: none;
@@ -577,7 +575,7 @@ a:-webkit-any-link{
 }
 
 .FilterTiles{
-	height: 427px;
+	height: 434px;
 }
 
 .pictureTiles{
@@ -873,8 +871,12 @@ a:-webkit-any-link{
 }
 
 .filterLeft, .pageNamberVertical{
-  	min-height: 1118px;
-  	overflow: hidden;
+  	min-height: 1120px;
+  	
+}
+
+.pageNamberVertical{
+	overflow: hidden;
 }
 
 .filterLeft, .filterLeft div{
@@ -882,6 +884,7 @@ a:-webkit-any-link{
 }
 
 .filterLeft{
+	padding-top: 40px;
 	margin-right: 5px;
 }
 
@@ -896,7 +899,7 @@ a:-webkit-any-link{
 }
 
 .accordionStart{
-	height:  135px;
+	height:  130px;
 	background: #F5F5F5;
 }
 
@@ -1130,4 +1133,17 @@ a:-webkit-any-link{
 
 .imgFigcaption figcaption{
 	font-size: 20px !important;
+}
+
+.pageNumberBackground{
+	background: #94EF94;
+}
+
+.coll_сountry, .coll_brand, .coll_id, .coll_name{
+	font-size: 14px;
+    color: #464646;
+}
+
+.coll_id, .coll_name{
+	cursor: pointer;
 }

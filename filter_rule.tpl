@@ -10,7 +10,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TradingGroup filters" id="filtr_color">
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
-              <label class="control-label result">Товарная группы, Подгруппы: </label>
+              <label class="control-label result">Товарная группа, Подгруппа: </label>
                 <select class="combobox" type="type">
                   <option class="0 typeR" out_id="0" type="type">Все товарные группы</option>
 <!-- BEGIN filter_types -->
@@ -30,7 +30,7 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border trading filters" id="filtr_color">
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
-              <label class="control-label result">Товары: </label>
+              <label class="control-label result">Товар: </label>
                 <select class="combobox" type="type">
                   <option class="0 typeR" out_id="0" type="type">Виды товаров</option>
 <!-- BEGIN filter_types -->
@@ -52,7 +52,7 @@
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters colorFilter" id="filtr_color">
             <div class="hint" title="Выбери любой цвет кликнув на него или отмени кликнув на него еще раз, или нажми отмена">?</div>
-            <label class="control-label result" for="inputSuccess2">Цвета:</label>
+            <label class="control-label result" for="inputSuccess2">Цвет:</label>
 <!-- BEGIN filter_colors -->
             <div id="color_{color_id1s}" type='color' title="{color}" inner_id="{color_id}" out_id="{color_id1s}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors" style=''>
               <img src="/temp/colors.png" alt="">

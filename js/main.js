@@ -203,6 +203,44 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+/*-------------Пpи наведение имя коллекции делается жирным------------*/
+
+	function collNameBold () {
+		
+		$( '.level1A' ).on('mouseover', function() {
+			$( this )
+				.find( '.coll_name' )
+				.css('font-weight', 'bold');
+		});
+
+		$( '.level1A' ).on('mouseout', function() {
+			$( this )
+				.find( '.coll_name' )
+				.removeAttr( 'style' );
+		});
+
+	};
+
+	collNameBold ();
+
+/*--------------------------------------------------------------------*/
+
+
+
+	
+/*-----------------------Подсветка номера страниц---------------------*/
+
+	function pageNumberBackground () {
+
+		var	urlPage = window.location.pathname;
+
+		$( 'ul.pageNumber li > a[href="' + urlPage + '"]' )
+			.parent()
+			.addClass('pageNumberBackground');
+		
+	};
+
+/*--------------------------------------------------------------------*/
 
 
 /*---------------Запрет на выделение и копирование текста------------*/
@@ -505,7 +543,7 @@ intervalBlockHeight ();
 
 
 
-/*---------------------Выравнивание картинок-----------------------*/
+/*----------------Выравнивание картинок коллекции------------------*/
 
 
 	// imgWidthHeight ();
@@ -528,7 +566,7 @@ intervalBlockHeight ();
 					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
 					pictureLvel1Height = $( '.PictureLvel1' ).height();
 
-					console.log(val);
+
 					
 				
 
@@ -564,6 +602,54 @@ intervalBlockHeight ();
 
 
 
+
+
+/*-----------------------------------------------------------------*/
+
+
+/*-------------Выравнивание картинок внутри коллекции--------------*/
+
+
+
+	function imgColl () {
+		
+
+		var img = $( '.Picture img' );
+
+		$.each( img, function(index, val ) {
+			 
+			 var _this = $( val );
+
+			 _this.removeAttr('style');
+
+			 var imgHeight   = _this.height(),
+			 	 blockHeight = $( '.Picture' ).height(),
+			 	 alignment   = Math.ceil ( blockHeight / 2 - imgHeight / 2 );
+
+
+		
+			_this.css('margin-top', alignment); 	 
+
+
+		});
+
+	}
+
+	imgColl ();
+
+
+		function intervalImgColl () {
+		
+		var intervalImgColl = setInterval( function (){
+			imgColl ();
+		}, 100 );
+
+		setTimeout( function (){
+			clearInterval( intervalImgColl );
+		}, 1500 );
+	};
+
+	intervalImgColl ();
 
 
 /*-----------------------------------------------------------------*/
@@ -814,24 +900,32 @@ intervalBlockHeight ();
 							  	  $( 'div.collection_card' ).addClass('rewrite')
 							  	  						  .removeClass('colorsNone');
 							  	  $.each( items, function ( index, val ) {
-							  	 
-							  	  	 var coll_id1s = val.coll_id1s,
-							  	  	 	 coll_name = val.coll_name,
-							  	  	 	 obj       = $('div.collection_card.rewrite:first');
+							  	 	
+							  	  
 
-							  	  	 	 /*console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							  	  	 	 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							  			 console.log('coll_id1s: ' + coll_id1s);
-							  			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							 			 console.log('coll_name: ' + coll_name);
-							 			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							 			 console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');*/
+							  	  	 var coll_id1s    = val.coll_id1s,
+							  	  	 	 coll_name    = val.coll_name,
+							  	  	 	 coll_brand   = val.coll_brand,
+							  	  	 	 coll_country = val.coll_country,
+							  	  	 	 obj          = $('div.collection_card.rewrite:first');
+
+									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							  			 // console.log('coll_id1s: ' + coll_id1s);
+							  			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_name: ' + coll_name);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_brand: ' + coll_brand);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('coll_country: ' + coll_country);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 
 
 							 			
 
 								  		$(obj)
-								  			.children('a.level1A')
+								  			.find('a.level1A')
 								  			.attr( 'href', '/catalog/' + coll_id1s + '/' );
 
 								 		$(obj)
@@ -839,17 +933,26 @@ intervalBlockHeight ();
 								 			.attr( 'src', '/iimg/collection' + coll_id1s + '.1.png' );
 
 										
-				
+										
 
 								 		$(obj)
 								 			.find( 'figcaption.coll_name' )
-								 			.text( coll_name );      
+								 			.text( coll_name );
+
+							 			$(obj)
+								 			.find( 'figcaption.coll_country span' )
+								 			.text( coll_country );
+
+							 			$(obj)
+								 			.find( 'figcaption.coll_brand span' )
+								 			.text( coll_brand );      
 
 								 		obj.removeClass('rewrite');
 
 								 		
 								 		
 								 			intervalBlockHeight();
+								 			intervalImgColl ();
 								 		
 
 
@@ -935,7 +1038,7 @@ intervalBlockHeight ();
 
 							        }
 
-
+							        pageNumberBackground ();
 
 							        $( '.pageA' ).on('click', function (){
 							        	var ths_pg = $( this ).attr('out_id');
@@ -1049,6 +1152,11 @@ intervalBlockHeight ();
             if ( $( option ).hasClass( 'default' ) ) {
             	this.input.addClass( 'inputColor' );
             };
+
+           
+
+
+
 
             funImgWidthHeight ();
 
@@ -1593,13 +1701,23 @@ blockHeight();
         	$( 'ul.pageNumber' ).append('<li><a out_id="' + i + '" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
         	$( 'ul.pageNumber li' ).eq( 0 ).addClass('pageNumberBorderLeft');
 
+       
+
+
+
+
         	
         }
 
 
 
+
+			
+
 		init();
 		blockHeight();
+		intervalImgColl ();
+		pageNumberBackground ();
 
 };
 	$( '.pageNumber' ).on('click', 'li', function() {
@@ -1607,6 +1725,7 @@ blockHeight();
 		  .children('a')
 		  .trigger('click');
 		  funImgWidthHeight ();
+
 	});
 
 
