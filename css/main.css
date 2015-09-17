@@ -872,7 +872,11 @@ a:-webkit-any-link{
 
 .filterLeft, .pageNamberVertical{
   	min-height: 1120px;
-  	overflow: hidden;
+  	
+}
+
+.pageNamberVertical{
+	overflow: hidden;
 }
 
 .filterLeft, .filterLeft div{
@@ -880,6 +884,7 @@ a:-webkit-any-link{
 }
 
 .filterLeft{
+	padding-top: 40px;
 	margin-right: 5px;
 }
 
@@ -894,7 +899,7 @@ a:-webkit-any-link{
 }
 
 .accordionStart{
-	height:  135px;
+	height:  130px;
 	background: #F5F5F5;
 }
 

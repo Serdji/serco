@@ -118,6 +118,7 @@
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft">
 
 
+                 <div class="hint" title="?">?</div>
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
