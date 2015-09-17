@@ -201,6 +201,32 @@ $( 'a[href="/"]' ).on('click', function() {
 	window.location = '/';
 });
 
+
+
+/*-------------Пpи наведение имя коллекции делается жирным------------*/
+
+	function collNameBold () {
+		
+		$( '.level1A' ).on('mouseover', function() {
+			$( this )
+				.find( '.coll_name' )
+				.css('font-weight', 'bold');
+		});
+
+		$( '.level1A' ).on('mouseout', function() {
+			$( this )
+				.find( '.coll_name' )
+				.removeAttr( 'style' );
+		});
+
+	};
+
+	collNameBold ();
+
+/*--------------------------------------------------------------------*/
+
+
+
 	
 /*-----------------------Подсветка номера страниц---------------------*/
 
@@ -906,10 +932,10 @@ intervalBlockHeight ();
 								 			.attr( 'src', '/iimg/collection' + coll_id1s + '.1.png' );
 
 										
-				
+										
 
 								 		$(obj)
-								 			.find( 'figcaption.coll_name b' )
+								 			.find( 'figcaption.coll_name' )
 								 			.text( coll_name );
 
 							 			$(obj)

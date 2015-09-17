@@ -153,11 +153,6 @@ li{
 	overflow: hidden;
 }
 
-.coll_id, .coll_name{
-	cursor: pointer;
-	font-size: 16px;
-    color: #3c763d;
-}
 
 a:-webkit-any-link{
 	text-decoration: none;
@@ -1139,7 +1134,11 @@ a:-webkit-any-link{
 	background: #94EF94;
 }
 
-.coll_сountry, .coll_brand{
+.coll_сountry, .coll_brand, .coll_id, .coll_name{
 	font-size: 14px;
     color: #464646;
+}
+
+.coll_id, .coll_name{
+	cursor: pointer;
 }
