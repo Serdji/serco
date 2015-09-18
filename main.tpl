@@ -846,7 +846,7 @@
               <label class="control-label" for="inputSuccess2">{item_price} ₽ за м<sup>2</sup></label>
               <input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="шт. 0.08 м2">
             </div>
-            <button type="button" class="btn btn-success btn-block">Добавить в корзину</button>
+            <button type="button" class="btn btn-primary btn-sm myBtnInfo">Добавить в корзину</button>
           </form>
         </div>
           <!-- Modal -->
@@ -863,7 +863,7 @@
 
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                  <button type="button" class="btn btn-primary btn-sm myBtnActive" data-dismiss="modal">Закрыть</button>
                 </div>
               </div>
             </div>
@@ -900,11 +900,6 @@
       <figcaption class="coll_country"><b>Страна</b>: <span>{coll_country}</span>.</figcaption>
     </figure>
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 28835e68fe7b800cc359e3e0e3a8a67d3f0daa52
   </div>
 <!-- END collections -->
 </div>
