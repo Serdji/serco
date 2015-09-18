@@ -566,6 +566,7 @@ intervalBlockHeight ();
 					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
 					pictureLvel1Height = $( '.PictureLvel1' ).height();
 
+
 					
 				
 

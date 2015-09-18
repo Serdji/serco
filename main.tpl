@@ -493,6 +493,7 @@
                       </div>
                                      
                       
+
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
@@ -900,6 +901,10 @@
     </figure>
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 28835e68fe7b800cc359e3e0e3a8a67d3f0daa52
   </div>
 <!-- END collections -->
 </div>
