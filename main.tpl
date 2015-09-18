@@ -95,15 +95,19 @@
                         <div class="hint" title="?">?</div>
                         <form role="form">
                           <div class="has-success">
-                          <label class="control-label result">Отобрать магазин по:</label>
+                          <label class="control-label result">Отобрать магазины по:</label>
                     
-                            <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Образцам товаров выставленных на витрине
+                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                              Образцы товаров выставленных на витрине
                             </button>
                     
                     
-                            <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Товарам по акции
+                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                              Товар по акции
+                            </button>
+
+                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                              Распродажа
                             </button>
                             
                     
@@ -276,7 +280,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -284,7 +288,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -293,7 +297,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -302,7 +306,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -312,7 +316,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -325,7 +329,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -347,7 +351,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -355,7 +359,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -364,7 +368,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -373,7 +377,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -383,7 +387,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -396,7 +400,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -418,7 +422,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -426,7 +430,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -435,7 +439,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -444,7 +448,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -454,7 +458,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -467,7 +471,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -487,7 +491,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -495,7 +499,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -504,7 +508,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -513,7 +517,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -523,7 +527,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -536,7 +540,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -556,7 +560,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -564,7 +568,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -573,7 +577,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -582,7 +586,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -592,7 +596,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -605,7 +609,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -625,7 +629,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -633,7 +637,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -642,7 +646,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -651,7 +655,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -661,7 +665,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -674,7 +678,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
@@ -696,7 +700,7 @@
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
@@ -704,7 +708,7 @@
                       
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
@@ -713,7 +717,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
@@ -722,7 +726,7 @@
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
@@ -732,7 +736,7 @@
 
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
@@ -745,7 +749,7 @@
                     
 
                       <div class="filterLeftPad">
-                         <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          

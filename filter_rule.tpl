@@ -156,7 +156,7 @@
         <div class="hint" title="Выбери диапазон цены">?</div>
           <form role="form">
             <div class="form-group  has-success">
-            <label class="control-label result" for="inputSuccess2">Фильт по цене:</label>
+            <label class="control-label result" for="inputSuccess2">Фильтр по цене:</label>
             </div>
           <br>
           <br>
