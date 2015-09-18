@@ -493,7 +493,6 @@
                       </div>
                                      
                       
-
                       <div class="filterLeftPad">
                          <button class="btn btn-primary btn-sm myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
                                 О компании
