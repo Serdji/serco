@@ -135,9 +135,74 @@ $(function() {
 			email       : function() { return	$( 'input#exampleInputEmail2' ).val() },
 			name        : function() { return	$( 'input#exampleInputName1' ).val() },
 			password    : function() { return	$( 'input#exampleInputPassword2' ).val() },
-			load        : function () {
-							var _reg = this;
-								console.log(_reg.email());
+			load        : function() {
+							var _reg         = this,
+								emailForm    = $( 'input#exampleInputEmail2' ).parent( '.form-group' ),
+								nameForm     = $( 'input#exampleInputName1' ).parent( '.form-group' ),
+								passwordForm = $( 'input#exampleInputPassword2' ).parent( '.form-group' );
+
+							if ( ( _reg.email()    == '' ) || 
+								 ( _reg.name()     == '' ) || 
+								 ( _reg.password() == '' ) ) {
+
+									if ( _reg.email()    == '' ) {
+										emailForm.addClass('has-error');
+									} else {
+										emailForm
+											.removeClass('has-error')
+											.addClass('has-success');
+									}
+
+									if ( _reg.name()     == '' ) {
+										nameForm.addClass('has-error');
+									} else {
+										nameForm
+											.removeClass('has-error')
+											.addClass('has-success');
+									} 
+
+									if ( _reg.password() == '' ) {
+										passwordForm.addClass('has-error');
+									} else {
+										passwordForm
+											.removeClass('has-error')
+											.addClass('has-success');
+									}
+
+								} else {
+									emailForm
+										.removeClass('has-error')
+										.addClass('has-success');
+
+									nameForm
+										.removeClass('has-error')
+										.addClass('has-success');
+
+									passwordForm
+										.removeClass('has-error')
+										.addClass('has-success');
+
+										/*$.ajax({
+											url: '/path/to/file',
+											type: 'default GET (Other values: POST)',
+											dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+											data: {param1: 'value1'},
+										})
+										.done(function() {
+											console.log("success");
+										})
+										.fail(function() {
+											console.log("error");
+										})
+										.always(function() {
+											console.log("complete");
+										});*/
+										
+
+									console.log(_reg.email());
+									console.log(_reg.name());
+									console.log(_reg.password());
+								}	
 			},
 			buttonStart : $( 'button.register' ).on('click', function(e) {
 				e.preventDefault();
