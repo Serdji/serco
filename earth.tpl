@@ -83,7 +83,7 @@
 											<form role="form">
 												<div class="form-group">
 													<label for="exampleInputEmail1">Email</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
 												</div>
 												<div class="form-group">
 													<label for="exampleInputPassword1">Пароль</label>
@@ -99,11 +99,11 @@
 											    <form role="form">
 													<div class="form-group">
 														<label for="exampleInputEmail2">Email</label>
-														<input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email">
+														<input type="email" class="form-control" id="exampleInputEmail2" placeholder="email">
 													</div>
 													<div class="form-group">
 														<label for="exampleInputName1">Имя</label>
-														<input type="email" class="form-control" id="exampleInputName1" placeholder="Enter name">
+														<input type="email" class="form-control" id="exampleInputName1" placeholder="name">
 													</div>
 													<div class="form-group">
 														<label for="exampleInputPassword2">Пароль</label>

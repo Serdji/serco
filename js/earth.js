@@ -128,24 +128,26 @@ $(function() {
 
 
 		var REG = {
-			speed     : 1000,
-			slide     : $( '.reg' ).on('click', function() {
+			speed       : 1000,
+			slide       : $( '.reg' ).on('click', function() {
 							$( 'div.register' ).slideToggle( REG.speed, 'easeInOutCubic' );
 			}),
-			email     : $( 'input#exampleInputEmail2' ),
-			name      : $( 'input#exampleInputName1' ),
-			password  : $( 'input#exampleInputPassword2' ),
-			buttonLoad: $( 'button.register' ).on('click', function(e) {
-							e.preventDefault();
-							var email 	 = REG.email.val(),
-							 	name 	 = REG.name.val(),
-							 	password = REG.password.val();
-							 	console.log(email);
-				 
+			email       : function() { return	$( 'input#exampleInputEmail2' ).val() },
+			name        : function() { return	$( 'input#exampleInputName1' ).val() },
+			password    : function() { return	$( 'input#exampleInputPassword2' ).val() },
+			load        : function () {
+							var _reg = this;
+								console.log(_reg.email());
+			},
+			buttonStart : $( 'button.register' ).on('click', function(e) {
+				e.preventDefault();
+				REG.load();
 				
 			})
-			 
+
 		};
+
+		
 
 		/*-----------------------------------------------------------------*/
 
