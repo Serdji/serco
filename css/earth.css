@@ -600,3 +600,11 @@ ul > li:focus{
 	cursor: pointer;
 
 }*/
+
+.register{
+	display: none;
+}
+
+.reg{
+	cursor: pointer;
+}

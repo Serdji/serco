@@ -103,7 +103,7 @@
                     
                     
                             <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Товар по акции
+                              Товары по акции
                             </button>
 
                             <button class="myBtnInactive" disabled="disabled" data-toggle="modal">

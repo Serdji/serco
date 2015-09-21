@@ -123,4 +123,33 @@ $(function() {
 
 
 
+
+		/*-------------------------форма регистрации-----------------------*/
+
+
+		var REG = {
+			speed: 500,
+			slide: $( '.reg' ).on('click', function() {
+				$( 'div.register' ).slideToggle( REG.speed, 'easeInOutCubic' );
+			}),
+			buttonReg: $( 'button.register' ).on('click', function(e) {
+				e.preventDefault();
+				
+			})
+		};
+
+
+
+
+
+
+		/*-----------------------------------------------------------------*/
+
+
+
+
+
+
+
+
 });

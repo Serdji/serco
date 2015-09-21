@@ -93,7 +93,25 @@
 										        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
 											</form>
 											<br>
-										    <a href="#">Регистрация</a>
+										    <span class="reg">Регистрация</span>
+										    <div class="register">
+										    	<hr>
+											    <form role="form">
+													<div class="form-group">
+														<label for="exampleInputEmail1">Email</label>
+														<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+													</div>
+													<div class="form-group">
+														<label for="exampleInputName1">Имя</label>
+														<input type="email" class="form-control" id="exampleInputName1" placeholder="Enter name">
+													</div>
+													<div class="form-group">
+														<label for="exampleInputPassword1">Пароль</label>
+														<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+													</div>
+											        <button type="submit" class="btn btn-primary register">Зарегистрироваться</button>
+												</form>
+										    </div>
 				
 								        </div>
 								    </div>
