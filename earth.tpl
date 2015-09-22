@@ -106,7 +106,7 @@
 													</div>
 													<div class="form-group">
 														<label for="exampleInputName1">Имя</label>
-														<input type="email" class="form-control" id="exampleInputName1" placeholder="name">
+														<input type="name" class="form-control" id="exampleInputName1" placeholder="name">
 													</div>
 													<div class="form-group">
 														<label for="exampleInputPassword2">Пароль</label>

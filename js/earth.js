@@ -128,59 +128,58 @@ $(function() {
 
 
 		var REG = {
-			speed       : 1000,
-			formReg     : $( '.reg' ).on('click', function() {
-							$( 'div.register' ).slideDown( REG.speed, 'easeInOutCubic' );
-							$( 'div.authorization' ).slideUp( REG.speed, 'easeInOutCubic' );
+			speed        : 1000,
+			formCollback : 'easeInOutCubic',
+			formReg      : $( '.reg' ).on('click', function() {
+							$( 'div.register' ).slideDown( REG.speed, REG.formCollback );
+							$( 'div.authorization' ).slideUp( REG.speed, REG.formCollback );
 			}),
-			formAut     : $( '.aut' ).on('click', function() {
-							$( 'div.register' ).slideUp( REG.speed, 'easeInOutCubic' );
-							$( 'div.authorization' ).slideDown( REG.speed, 'easeInOutCubic' );
+			formAut      : $( '.aut' ).on('click', function() {
+							$( 'div.register' ).slideUp( REG.speed, REG.formCollback );
+							$( 'div.authorization' ).slideDown( REG.speed, REG.formCollback );
 			}),
-			email       : function() { return	$( 'input#exampleInputEmail2' ).val() },
-			name        : function() { return	$( 'input#exampleInputName1' ).val() },
-			password    : function() { return	$( 'input#exampleInputPassword2' ).val() },
-			load        : function() {
-							var _reg         = this,
-								emailForm    = _reg.email()    == '' ? 
-												$( 'input#exampleInputEmail2' )
+			email        : $( 'input#exampleInputEmail2' ),
+			name         : $( 'input#exampleInputName1' ),
+			password     : $( 'input#exampleInputPassword2' ),
+			var          : function() {
+							var	emailForm    = this.email.val()    == '' ? 
+												this.email
 													.parent( '.form-group' )
 													.addClass('has-error') : 
-													$( 'input#exampleInputEmail2' )
+													this.email
 														.parent( '.form-group' )
 														.removeClass('has-error')
 														.addClass('has-success'),
-								nameForm     = _reg.name()     == '' ? 
-												$( 'input#exampleInputName1' )
+								nameForm     = this.name.val()    == '' ? 
+												this.name
 													.parent( '.form-group' )
 													.addClass('has-error') :
-													$( 'input#exampleInputName1' )
+													this.name
 														.parent( '.form-group' )
 														.removeClass('has-error')
 														.addClass('has-success'),
-								passwordForm = _reg.password() == '' ? 
-												$( 'input#exampleInputPassword2' )
+								passwordForm = this.password.val() == '' ? 
+												this.password
 													.parent( '.form-group' )
 													.addClass('has-error') :
-													$( 'input#exampleInputPassword2' )
+													this.password
 														.parent( '.form-group' )
 														.removeClass('has-error')
 														.addClass('has-success');
+			},
+			load         : function() {
 
-							if ( ( _reg.email()    == '' ) || 
-								 ( _reg.name()     == '' ) || 
-								 ( _reg.password() == '' ) ) {
+							if ( ( this.email.val()    == '' ) || 
+								 ( this.name.val()     == '' ) || 
+								 ( this.password.val() == '' ) ) {
 
-									emailForm;
-									nameForm;
-									passwordForm;
+									
+									this.var();
 									
 
 								} else {
-									
-									emailForm;
-									nameForm;
-									passwordForm;
+
+									this.var();
 
 										/*$.ajax({
 											url: '/path/to/file',
@@ -199,12 +198,12 @@ $(function() {
 										});*/
 										
 
-									console.log(_reg.email());
-									console.log(_reg.name());
-									console.log(_reg.password());
+									console.log(this.email.val());
+									console.log(this.name.val());
+									console.log(this.password.val());
 								}	
 			},
-			buttonStart : $( 'button.register' ).on('click', function(e) {
+			buttonStart  : $( 'button.register' ).on('click', function(e) {
 				e.preventDefault();
 				REG.load();
 				
