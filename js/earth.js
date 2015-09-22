@@ -129,58 +129,58 @@ $(function() {
 
 		var REG = {
 			speed       : 1000,
-			slide       : $( '.reg' ).on('click', function() {
-							$( 'div.register' ).slideToggle( REG.speed, 'easeInOutCubic' );
+			formReg     : $( '.reg' ).on('click', function() {
+							$( 'div.register' ).slideDown( REG.speed, 'easeInOutCubic' );
+							$( 'div.authorization' ).slideUp( REG.speed, 'easeInOutCubic' );
+			}),
+			formAut     : $( '.aut' ).on('click', function() {
+							$( 'div.register' ).slideUp( REG.speed, 'easeInOutCubic' );
+							$( 'div.authorization' ).slideDown( REG.speed, 'easeInOutCubic' );
 			}),
 			email       : function() { return	$( 'input#exampleInputEmail2' ).val() },
 			name        : function() { return	$( 'input#exampleInputName1' ).val() },
 			password    : function() { return	$( 'input#exampleInputPassword2' ).val() },
 			load        : function() {
 							var _reg         = this,
-								emailForm    = $( 'input#exampleInputEmail2' ).parent( '.form-group' ),
-								nameForm     = $( 'input#exampleInputName1' ).parent( '.form-group' ),
-								passwordForm = $( 'input#exampleInputPassword2' ).parent( '.form-group' );
+								emailForm    = _reg.email()    == '' ? 
+												$( 'input#exampleInputEmail2' )
+													.parent( '.form-group' )
+													.addClass('has-error') : 
+													$( 'input#exampleInputEmail2' )
+														.parent( '.form-group' )
+														.removeClass('has-error')
+														.addClass('has-success'),
+								nameForm     = _reg.name()     == '' ? 
+												$( 'input#exampleInputName1' )
+													.parent( '.form-group' )
+													.addClass('has-error') :
+													$( 'input#exampleInputName1' )
+														.parent( '.form-group' )
+														.removeClass('has-error')
+														.addClass('has-success'),
+								passwordForm = _reg.password() == '' ? 
+												$( 'input#exampleInputPassword2' )
+													.parent( '.form-group' )
+													.addClass('has-error') :
+													$( 'input#exampleInputPassword2' )
+														.parent( '.form-group' )
+														.removeClass('has-error')
+														.addClass('has-success');
 
 							if ( ( _reg.email()    == '' ) || 
 								 ( _reg.name()     == '' ) || 
 								 ( _reg.password() == '' ) ) {
 
-									if ( _reg.email()    == '' ) {
-										emailForm.addClass('has-error');
-									} else {
-										emailForm
-											.removeClass('has-error')
-											.addClass('has-success');
-									}
-
-									if ( _reg.name()     == '' ) {
-										nameForm.addClass('has-error');
-									} else {
-										nameForm
-											.removeClass('has-error')
-											.addClass('has-success');
-									} 
-
-									if ( _reg.password() == '' ) {
-										passwordForm.addClass('has-error');
-									} else {
-										passwordForm
-											.removeClass('has-error')
-											.addClass('has-success');
-									}
+									emailForm;
+									nameForm;
+									passwordForm;
+									
 
 								} else {
-									emailForm
-										.removeClass('has-error')
-										.addClass('has-success');
-
-									nameForm
-										.removeClass('has-error')
-										.addClass('has-success');
-
-									passwordForm
-										.removeClass('has-error')
-										.addClass('has-success');
+									
+									emailForm;
+									nameForm;
+									passwordForm;
 
 										/*$.ajax({
 											url: '/path/to/file',

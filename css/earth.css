@@ -605,6 +605,12 @@ ul > li:focus{
 	display: none;
 }
 
-.reg{
+.reg, .aut{
 	cursor: pointer;
+	font-weight: bold;
+	color: #337AB7;
+}
+
+.aut{
+	margin-left: 375px;
 }

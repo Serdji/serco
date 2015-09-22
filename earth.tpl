@@ -80,20 +80,23 @@
 								      	</div>
 								        <div class="modal-body">
 				
-											<form role="form">
-												<div class="form-group">
-													<label for="exampleInputEmail1">Email</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
-												</div>
-												<div class="form-group">
-													<label for="exampleInputPassword1">Пароль</label>
-													<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-												</div>
-										        <button type="submit" class="btn btn-primary">Войти</button>
-										        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-											</form>
-											<br>
+											<div class="authorization">
+												<form role="form">
+													<div class="form-group">
+														<label for="exampleInputEmail1">Email</label>
+														<input type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
+													</div>
+													<div class="form-group">
+														<label for="exampleInputPassword1">Пароль</label>
+														<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+													</div>
+												        <button type="submit" class="btn btn-primary">Войти</button>
+												        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+												</form>
+												<hr>
+											</div>
 										    <span class="reg">Регистрация</span>
+										    <span class="aut">Авторизация</span>
 										    <div class="register">
 										    	<hr>
 											    <form role="form">
