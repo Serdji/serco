@@ -762,7 +762,12 @@ intervalBlockHeight ();
 
 				divColor.append( '<strong>' + colorText + '</strong>' );
 				divColor
-					.append('<div id="filtr_color"><div id=' + color_id + ' type="resultsFilterColor" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors"><img src="/temp/colors.png" alt=""></div></div><button type="button" class="btn btn-success btnClose CancelFramework" style="position: absolute; left: 78%; top: 34%;">Отмена</button>')
+					.append('<div id="filtr_color">'
+								+'<div id=' + color_id + ' type="resultsFilterColor" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">'
+									+'<img src="/temp/colors.png" alt="">'
+								+'</div>'
+							+'</div>'
+							+'<button type="button" class="btn btn-success btnClose CancelFramework" style="position: absolute; left: 78%; top: 34%;">Отмена</button>')
 					.fadeIn( 2000 );
 				
 

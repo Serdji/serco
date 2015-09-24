@@ -54,7 +54,7 @@
             <div class="hint" title="Выбери любой цвет кликнув на него или отмени кликнув на него еще раз, или нажми отмена">?</div>
             <label class="control-label result" for="inputSuccess2">Цвет:</label>
 <!-- BEGIN filter_colors -->
-            <div id="color_{color_id1s}" type='color' title="{color}" inner_id="{color_id}" out_id="{color_id1s}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors" style=''>
+            <div id="color_{color_id1s}" type='color' title="{color}" inner_id="{color_id}" out_id="{color_id1s}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">
               <img src="/temp/colors.png" alt="">
             </div>
 <!-- END filter_colors -->
