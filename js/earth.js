@@ -143,125 +143,89 @@ $(function() {
 			email        : $( 'input#email' ),
 			password     : $( 'input#password' ),
 			conPassword  : $( 'input#confirm_password' ),
-			var          : function() {
-							var	firstnameForm    = this.firstname.val() == '' 
-									? this.firstname
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.firstname
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success'),
-								lastnameForm    = this.lastname.val()   == '' 
-									? this.lastname
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.lastname
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success'),
-								emailForm       = this.email.val()      == '' 
-									? this.email
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.email
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success'),
-								passwordForm    = this.password.val()   == '' 
-									? this.password
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.password
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success'),
-								conPasswordForm = this.conPassword.val() == '' 
-									? this.conPassword
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.conPassword
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success');
-			},
 			load         : $( '#regForm' ).validate({
-								rules : {
-									firstname        : "required",
-									lastname         : "required",
-									email            : "required",
-									password         : "required",
-									confirm_password : "required",
-									firstname        : {
-											required      : true,
+									rules           : {
+										firstname        : {
+														required      : true,
+														minlength     : 3
+										},
+										lastname         : {
+														required      : true,
+														minlength     : 3
+										},
+										email            : {
+														required      : true,
+														email         : true,
+														minlength     : 3
+										},
+										password         : {
+														required      : true,
+														minlength     : 5
+										},
+										confirm_password : {
+														required      : true,
+														minlength     : 5,
+														equalTo       : '#password'
+										}
 									},
-									lastname         : {
-											required      : true,
+									messages       : {
+										firstname        : {
+													   required       : 'Обязательно заполните',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+										},
+										lastname         : {
+													   required       : 'Обязательно заполните',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+										},
+										email            : {
+													   required       : 'Обязательно заполните',
+													   email          : 'Enail должен содержать символ @',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+										},
+										password         : {
+													   required       : 'Обязательно заполните',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+										},
+										confirm_password : {
+													   required       : 'Обязательно заполните',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' ),
+													   equalTo        : 'Пароль не совпадает'
+										}
 									},
-									email            : {
-											required      : true,
+									success       : function(label) {
+										label.parent( '.form-group' ).addClass('has-success');
 									},
-									password         : {
-											required      : true,
-											minlength     : 5
-									},
-									confirm_password : {
-											required      : true,
-											minlength     : 5,
-											equalTo       : '#password'
+									submitHandler : function() {
+											console.log( 'Имя : ' + REG.firstname.val() );
+											console.log( 'Фамилия : ' + REG.lastname.val() );
+											console.log( 'email : ' + REG.email.val() );
+											console.log( 'Пароль : ' + REG.password.val() );
+											console.log( 'Повтор пароля : ' + REG.conPassword.val() );
+
+											/*$.ajax({
+												url: '/path/to/file',
+												type: 'default GET (Other values: POST)',
+												dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+												data: {param1: 'value1'},
+											})
+											.done(function() {
+												console.log("success");
+											})
+											.fail(function() {
+												console.log("error");
+											})
+											.always(function() {
+												console.log("complete");
+											});*/
+											
+
+
+											$( 'button.register' ).on('click', function(e) {
+												e.preventDefault();
+											})
 									}
-								},
-			}),
-
-
-							/*function() {
-
-							if ( ( this.firstname.val()    == '' ) || 
-							     ( this.lastname.val()     == '' ) || 
-							 	 ( this.email.val()        == '' ) || 
-								 ( this.password.val()     == '' ) ||
-								 ( this.conPassword.val()  == '' ) ) {
-
-									
-									this.var();
-									
-
-								} else {
-
-									this.var();
-
-										$.ajax({
-											url: '/path/to/file',
-											type: 'default GET (Other values: POST)',
-											dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-											data: {param1: 'value1'},
-										})
-										.done(function() {
-											console.log("success");
-										})
-										.fail(function() {
-											console.log("error");
-										})
-										.always(function() {
-											console.log("complete");
-										});
-										
-
-									console.log(this.firstname.val());
-									console.log(this.lastname.val());
-									console.log(this.email.val());
-									console.log(this.password.val());
-									console.log(this.conPassword.val());
-								}	
-			},*/
-			buttonStart  : $( 'button.register' ).on('click', function(e) {
-				e.preventDefault();
-				// REG.load();
-				
 			})
-
 		};
-
 		
 
 		/*-----------------------------------------------------------------*/

@@ -102,23 +102,23 @@
 											    <form role="form" id="regForm">
 													<div class="form-group">
 														<label for="firstname">Имя</label>
-														<input type="text" name="firstname" class="form-control" id="firstname" placeholder="Ваше имя">
+														<input type="text" name="firstname" class="form-control" id="firstname" placeholder="Ваше имя" required>
 													</div>
 													<div class="form-group">
 														<label for="lastname">Фамилия</label>
-														<input type="text" name="lastname" class="form-control" id="lastname" placeholder="Ваша фамилия">
+														<input type="text" name="lastname" class="form-control" id="lastname" placeholder="Ваша фамилия" required>
 													</div>
 													<div class="form-group">
 														<label for="email">Email</label>
-														<input type="email" name="email" class="form-control" id="email" placeholder="Ваш email">
+														<input type="email" name="email" class="form-control" id="email" placeholder="Ваш email" required>
 													</div>
 													<div class="form-group">
 														<label for="password">Пароль</label>
-														<input type="password" name="password" class="form-control" id="password" placeholder="Ваш пароль">
+														<input type="password" name="password" class="form-control" id="password" placeholder="Ваш пароль" required>
 													</div>
 													<div class="form-group">
 														<label for="confirm_password">Повторите пароль</label>
-														<input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Повторите ваш пароль">
+														<input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Повторите ваш пароль" required>
 													</div>
 											        <button type="submit" class="btn btn-primary register">Зарегистрироваться</button>
 												</form>

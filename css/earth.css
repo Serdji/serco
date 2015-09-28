@@ -614,3 +614,7 @@ ul > li:focus{
 .aut{
 	margin-left: 375px;
 }
+
+.error{
+	color: red;
+}
