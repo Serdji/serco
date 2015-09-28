@@ -142,30 +142,30 @@ $(function() {
 			name         : $( 'input#exampleInputName1' ),
 			password     : $( 'input#exampleInputPassword2' ),
 			var          : function() {
-							var	emailForm    = this.email.val()    == '' ? 
-												this.email
-													.parent( '.form-group' )
-													.addClass('has-error') : 
-													this.email
-														.parent( '.form-group' )
-														.removeClass('has-error')
-														.addClass('has-success'),
-								nameForm     = this.name.val()    == '' ? 
-												this.name
-													.parent( '.form-group' )
-													.addClass('has-error') :
-													this.name
-														.parent( '.form-group' )
-														.removeClass('has-error')
-														.addClass('has-success'),
-								passwordForm = this.password.val() == '' ? 
-												this.password
-													.parent( '.form-group' )
-													.addClass('has-error') :
-													this.password
-														.parent( '.form-group' )
-														.removeClass('has-error')
-														.addClass('has-success');
+							var	emailForm    = this.email.val()   == '' 
+									? this.email
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.email
+										.parent( '.form-group' )
+										.removeClass('has-error')
+										.addClass('has-success'),
+								nameForm     = this.name.val()    == '' 
+									? this.name
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.name
+										.parent( '.form-group' )
+										.removeClass('has-error')
+										.addClass('has-success'),
+								passwordForm = this.password.val() == '' 
+									? this.password
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.password
+										.parent( '.form-group' )
+										.removeClass('has-error')
+										.addClass('has-success');
 			},
 			load         : function() {
 
