@@ -138,11 +138,29 @@ $(function() {
 							$( 'div.register' ).slideUp( REG.speed, REG.formCollback );
 							$( 'div.authorization' ).slideDown( REG.speed, REG.formCollback );
 			}),
-			email        : $( 'input#exampleInputEmail2' ),
-			name         : $( 'input#exampleInputName1' ),
-			password     : $( 'input#exampleInputPassword2' ),
+			firstname    : $( 'input#firstname' ),
+			lastname     : $( 'input#lastname' ),
+			email        : $( 'input#email' ),
+			password     : $( 'input#password' ),
+			conPassword  : $( 'input#confirm_password' ),
 			var          : function() {
-							var	emailForm    = this.email.val()   == '' 
+							var	firstnameForm    = this.firstname.val() == '' 
+									? this.firstname
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.firstname
+										.parent( '.form-group' )
+										.removeClass('has-error')
+										.addClass('has-success'),
+								lastnameForm    = this.lastname.val()   == '' 
+									? this.lastname
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.lastname
+										.parent( '.form-group' )
+										.removeClass('has-error')
+										.addClass('has-success'),
+								emailForm       = this.email.val()      == '' 
 									? this.email
 										.parent( '.form-group' )
 										.addClass('has-error') 
@@ -150,28 +168,30 @@ $(function() {
 										.parent( '.form-group' )
 										.removeClass('has-error')
 										.addClass('has-success'),
-								nameForm     = this.name.val()    == '' 
-									? this.name
-										.parent( '.form-group' )
-										.addClass('has-error') 
-									: this.name
-										.parent( '.form-group' )
-										.removeClass('has-error')
-										.addClass('has-success'),
-								passwordForm = this.password.val() == '' 
+								passwordForm    = this.password.val()   == '' 
 									? this.password
 										.parent( '.form-group' )
 										.addClass('has-error') 
 									: this.password
 										.parent( '.form-group' )
 										.removeClass('has-error')
+										.addClass('has-success'),
+								conPasswordForm = this.conPassword.val() == '' 
+									? this.conPassword
+										.parent( '.form-group' )
+										.addClass('has-error') 
+									: this.conPassword
+										.parent( '.form-group' )
+										.removeClass('has-error')
 										.addClass('has-success');
 			},
 			load         : function() {
 
-							if ( ( this.email.val()    == '' ) || 
-								 ( this.name.val()     == '' ) || 
-								 ( this.password.val() == '' ) ) {
+							if ( ( this.firstname.val()    == '' ) || 
+							     ( this.lastname.val()     == '' ) || 
+							 	 ( this.email.val()        == '' ) || 
+								 ( this.password.val()     == '' ) ||
+								 ( this.conPassword.val()  == '' ) ) {
 
 									
 									this.var();
@@ -198,9 +218,11 @@ $(function() {
 										});*/
 										
 
+									console.log(this.firstname.val());
+									console.log(this.lastname.val());
 									console.log(this.email.val());
-									console.log(this.name.val());
 									console.log(this.password.val());
+									console.log(this.conPassword.val());
 								}	
 			},
 			buttonStart  : $( 'button.register' ).on('click', function(e) {

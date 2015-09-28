@@ -101,16 +101,24 @@
 										    	<hr>
 											    <form role="form">
 													<div class="form-group">
-														<label for="exampleInputEmail2">Email</label>
-														<input type="email" class="form-control" id="exampleInputEmail2" placeholder="email">
+														<label for="firstname">Имя</label>
+														<input type="text" class="form-control" id="firstname" placeholder="Ваше имя">
 													</div>
 													<div class="form-group">
-														<label for="exampleInputName1">Имя</label>
-														<input type="name" class="form-control" id="exampleInputName1" placeholder="name">
+														<label for="lastname">Фамилия</label>
+														<input type="text" class="form-control" id="lastname" placeholder="Ваша фамилия">
 													</div>
 													<div class="form-group">
-														<label for="exampleInputPassword2">Пароль</label>
-														<input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password">
+														<label for="email">Email</label>
+														<input type="email" class="form-control" id="email" placeholder="Ваш email">
+													</div>
+													<div class="form-group">
+														<label for="password">Пароль</label>
+														<input type="password" class="form-control" id="password" placeholder="Ваш пароль">
+													</div>
+													<div class="form-group">
+														<label for="confirm_password">Повторите пароль</label>
+														<input type="confirm_password" class="form-control" id="confirm_password" placeholder="Повторите ваш пароль">
 													</div>
 											        <button type="submit" class="btn btn-primary register">Зарегистрироваться</button>
 												</form>
