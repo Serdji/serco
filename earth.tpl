@@ -99,26 +99,26 @@
 										    <span class="aut">Авторизация</span>
 										    <div class="register">
 										    	<hr>
-											    <form role="form">
+											    <form role="form" id="regForm">
 													<div class="form-group">
 														<label for="firstname">Имя</label>
-														<input type="text" class="form-control" id="firstname" placeholder="Ваше имя">
+														<input type="text" name="firstname" class="form-control" id="firstname" placeholder="Ваше имя">
 													</div>
 													<div class="form-group">
 														<label for="lastname">Фамилия</label>
-														<input type="text" class="form-control" id="lastname" placeholder="Ваша фамилия">
+														<input type="text" name="lastname" class="form-control" id="lastname" placeholder="Ваша фамилия">
 													</div>
 													<div class="form-group">
 														<label for="email">Email</label>
-														<input type="email" class="form-control" id="email" placeholder="Ваш email">
+														<input type="email" name="email" class="form-control" id="email" placeholder="Ваш email">
 													</div>
 													<div class="form-group">
 														<label for="password">Пароль</label>
-														<input type="password" class="form-control" id="password" placeholder="Ваш пароль">
+														<input type="password" name="password" class="form-control" id="password" placeholder="Ваш пароль">
 													</div>
 													<div class="form-group">
 														<label for="confirm_password">Повторите пароль</label>
-														<input type="confirm_password" class="form-control" id="confirm_password" placeholder="Повторите ваш пароль">
+														<input type="password" name="confirm_password" class="form-control" id="confirm_password" placeholder="Повторите ваш пароль">
 													</div>
 											        <button type="submit" class="btn btn-primary register">Зарегистрироваться</button>
 												</form>
@@ -191,7 +191,8 @@
 		
 			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&sensor=true"></script>
 			<script type="text/javascript" src="/tpl/default/js/jquery-1.11.3.min.js"></script> 
-			<script type="text/javascript" src="/tpl/default/js/jquery-2.1.4.min.js"></script> 
+			<script type="text/javascript" src="/tpl/default/js/jquery-2.1.4.min.js"></script>
+			<script type="text/javascript" src="/tpl/default/js/jquery.validate.min.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/jquery-ui.min.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/bootstrap.min.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/earth.js"></script>

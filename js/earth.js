@@ -185,7 +185,36 @@ $(function() {
 										.removeClass('has-error')
 										.addClass('has-success');
 			},
-			load         : function() {
+			load         : $( '#regForm' ).validate({
+								rules : {
+									firstname        : "required",
+									lastname         : "required",
+									email            : "required",
+									password         : "required",
+									confirm_password : "required",
+									firstname        : {
+											required      : true,
+									},
+									lastname         : {
+											required      : true,
+									},
+									email            : {
+											required      : true,
+									},
+									password         : {
+											required      : true,
+											minlength     : 5
+									},
+									confirm_password : {
+											required      : true,
+											minlength     : 5,
+											equalTo       : '#password'
+									}
+								},
+			}),
+
+
+							/*function() {
 
 							if ( ( this.firstname.val()    == '' ) || 
 							     ( this.lastname.val()     == '' ) || 
@@ -201,7 +230,7 @@ $(function() {
 
 									this.var();
 
-										/*$.ajax({
+										$.ajax({
 											url: '/path/to/file',
 											type: 'default GET (Other values: POST)',
 											dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
@@ -215,7 +244,7 @@ $(function() {
 										})
 										.always(function() {
 											console.log("complete");
-										});*/
+										});
 										
 
 									console.log(this.firstname.val());
@@ -224,10 +253,10 @@ $(function() {
 									console.log(this.password.val());
 									console.log(this.conPassword.val());
 								}	
-			},
+			},*/
 			buttonStart  : $( 'button.register' ).on('click', function(e) {
 				e.preventDefault();
-				REG.load();
+				// REG.load();
 				
 			})
 
