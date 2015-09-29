@@ -140,9 +140,10 @@ $(function() {
 			}),
 			firstname    : $( 'input#firstname' ),
 			lastname     : $( 'input#lastname' ),
+			login        : $( 'input#login' ),
 			email        : $( 'input#email' ),
 			password     : $( 'input#password' ),
-			conPassword  : $( 'input#confirm_password' ),
+			conPassword  : $( 'input#confirm_password' ), 
 			load         : $( '#regForm' ).validate({
 									rules           : {
 										firstname        : {
@@ -150,6 +151,10 @@ $(function() {
 														minlength     : 3
 										},
 										lastname         : {
+														required      : true,
+														minlength     : 3
+										},
+										login            : {
 														required      : true,
 														minlength     : 3
 										},
@@ -177,6 +182,10 @@ $(function() {
 													   required       : 'Обязательно заполните',
 													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
 										},
+										login            : {
+													   required       : 'Обязательно заполните',
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+										},
 										email            : {
 													   required       : 'Обязательно заполните',
 													   email          : 'Enail должен содержать символ @',
@@ -184,18 +193,24 @@ $(function() {
 										},
 										password         : {
 													   required       : 'Обязательно заполните',
-													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' )
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-и символов' )
 										},
 										confirm_password : {
 													   required       : 'Обязательно заполните',
-													   minlength      : jQuery.validator.format( 'Введите не мение {0}-х символов' ),
+													   minlength      : jQuery.validator.format( 'Введите не мение {0}-и символов' ),
 													   equalTo        : 'Пароль не совпадает'
 										}
 									},
 									success       : function(label) {
-										label.parent( '.form-group' ).addClass('has-success');
+									    	label.addClass( 'valid' ).text( 'Готово!' );
+											label
+									    		.parent( '.form-group' )
+									    		.removeClass( 'has-error' )
+									    		.addClass( 'has-success' );
 									},
 									submitHandler : function() {
+
+
 											console.log( 'Имя : ' + REG.firstname.val() );
 											console.log( 'Фамилия : ' + REG.lastname.val() );
 											console.log( 'email : ' + REG.email.val() );

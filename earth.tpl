@@ -109,6 +109,10 @@
 														<input type="text" name="lastname" class="form-control" id="lastname" placeholder="Ваша фамилия" required>
 													</div>
 													<div class="form-group">
+														<label for="lastname">Login</label>
+														<input type="text" name="login" class="form-control" id="login" placeholder="Ваш login" required>
+													</div>
+													<div class="form-group">
 														<label for="email">Email</label>
 														<input type="email" name="email" class="form-control" id="email" placeholder="Ваш email" required>
 													</div>

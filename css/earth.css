@@ -618,3 +618,6 @@ ul > li:focus{
 .error{
 	color: red;
 }
+.valid{
+	color: green;
+}
