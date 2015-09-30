@@ -504,7 +504,7 @@ intervalBlockHeight ();
 						success: function(data){
 							var img = "<img src='/iimg/collection"+urls[4]+"."+String(i)+".png' class='arrImg opacityArrImg1'>";
 							$( '.minImg' ).append( img );
-							imgs(i)
+							imgs(++i)
 						},
 						error: function(data){
 							$( '.minImg' )

@@ -815,8 +815,8 @@
 <!-- IF collection --> 
   <div class="slider">
     <div class="bigImg">
-      <img src="/iimg/collection{item_collection_id1s}.1.png" class="closeImg">
-      <img src="/iimg/collection{item_collection_id1s}.1.png" class="openImg">
+      <img src="http://images.serko.local/{coll_img}" class="closeImg">
+      <img src="http://images.serko.local/{coll_img}" class="openImg">
     </div>
     <div class="minImg"></div>
   </div>
@@ -896,7 +896,7 @@
           </div>
         <hr>
         <br>
-          <div class="PictureLvel1"><img src="/iimg/collection{coll_id1s}.1.png" class="level1Img"></div>
+          <div class="PictureLvel1"><img src="http://images.serko.local/{coll_img}" class="level1Img"></div>
       </a>
       <br>
       <hr>
