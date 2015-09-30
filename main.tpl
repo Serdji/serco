@@ -890,7 +890,7 @@
 <strong id="leval" class="leval1"></strong>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border heightCards2 collection_card levels1" id="{coll_id1s}">
     <figure>
-      <a class = "level1A" href="/catalog/{coll_id1s}/">
+      <a class = "level1A" href="/catalog/{coll_id1s}">
           <div>
             <figcaption class="coll_name">{coll_name}</figcaption>
           </div>
