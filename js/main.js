@@ -638,14 +638,12 @@ intervalBlockHeight ();
 			 	 textHeight   = Number(_this.parents('.opedDialog').find('.height').text()),
 			 	 textWidth    = Number(_this.parents('.opedDialog').find('.width').text()),
 			 	 increase     = textWidth > 50 || textHeight > 50 ? 2 : 6,
-			 	 resultHeight = textHeight * increase,
-			 	 resultWidth  = textWidth * increase,
+			 	 resultHeight = Math.ceil( textHeight * increase ),
+			 	 resultWidth  = Math.ceil( textWidth * increase ),
 			 	 blockHeight  = $( '.Picture' ).height();
 
 			 	
 			 	 // alignment   = Math.ceil ( blockHeight / 2 - textHeight / 2 );
-
-			 	
 
 			 if ( imgWidth > imgHeight) {
 			 	var alignment   = Math.ceil ( blockHeight / 2 - resultWidth / 2 );
