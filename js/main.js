@@ -631,13 +631,39 @@ intervalBlockHeight ();
 
 			 _this.removeAttr('style');
 
-			 var imgHeight   = _this.height(),
-			 	 blockHeight = $( '.Picture' ).height(),
-			 	 alignment   = Math.ceil ( blockHeight / 2 - imgHeight / 2 );
+			
 
+			 var imgHeight    = _this.height(),
+			 	 imgWidth     = _this.width(),
+			 	 textHeight   = Number(_this.parents('.opedDialog').find('.height').text()),
+			 	 textWidth    = Number(_this.parents('.opedDialog').find('.width').text()),
+			 	 increase     = textWidth > 50 || textHeight > 50 ? 2 : 6,
+			 	 resultHeight = textHeight * increase,
+			 	 resultWidth  = textWidth * increase,
+			 	 blockHeight  = $( '.Picture' ).height();
 
+			 	
+			 	 // alignment   = Math.ceil ( blockHeight / 2 - textHeight / 2 );
+
+			 	
+
+			 if ( imgWidth > imgHeight) {
+			 	var alignment   = Math.ceil ( blockHeight / 2 - resultWidth / 2 );
+			 	_this.css({
+			 		width      : resultHeight,
+			 		height     : resultWidth,
+			 		marginTop  : alignment
+			 	});
+			 } else {
+			 	var alignment   = Math.ceil ( blockHeight / 2 - resultHeight  / 2 );
+			 	_this.css({
+			 		width      : resultWidth,
+			 		height     : resultHeight,
+			 		marginTop  : alignment
+			 	});
+			 }
 		
-			_this.css('margin-top', alignment); 	 
+			// _this.css('margin-top', alignment); 	 
 
 
 		});
@@ -1438,6 +1464,7 @@ intervalBlockHeight ();
 				.clone()
 				.children( 'img' )
 				.addClass( 'imgModal' )
+				.removeAttr('style')
 				.prependTo( '.modal-body' )
 				.siblings( '.imgModal' )
 				.remove();

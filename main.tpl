@@ -829,13 +829,14 @@
     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">
       <figure class="opedDialog">
           <div class="infoDialog">
-            <div class="Picture"><img src="/iimg/item{item_id1s}.png" data-toggle="modal" data-target="#img"></div>
+            <div class="Picture"><img src="http://images.serko.local/{item_img}" data-toggle="modal" data-target="#img"></div>
           </div>
             <div class="clear"></div>
             <hr>
               <div class="figcaption">
                 <figcaption class="item_name"><b>Название</b>: <span>{item_name}</span>.</figcaption>
-                <figcaption class="item_size"><b>Размеры</b>: {item_size} см.</figcaption>
+                <figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> {item_lng} </span><span>x</span> <span>Ширана:</span> <span class="width">{item_wid} </span>x <span>Толщина:</span><span> {item_thick} .см</span> </figcaption>
+                <figcaption class="item_amount"><b>Количество</b>: {item_unit}</figcaption>
                 <figcaption class="item_color"><b>Цвета</b>: {item_color}.</figcaption>
                 <figcaption class="item_cover"><b>Покрытие</b>: {item_cover}.</figcaption>
                 <figcaption class="item_country"><b>Страна</b>: {item_country}.</figcaption>
@@ -890,7 +891,7 @@
 <strong id="leval" class="leval1"></strong>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border heightCards2 collection_card levels1" id="{coll_id1s}">
     <figure>
-      <a class = "level1A" href="/catalog/{coll_id1s}">
+      <a class = "level1A" href="/catalog/{coll_id1s}/">
           <div>
             <figcaption class="coll_name">{coll_name}</figcaption>
           </div>
