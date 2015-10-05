@@ -641,8 +641,8 @@ intervalBlockHeight ();
 			 	 textHeight      = Number(_this.parents('.opedDialog').find('.height').text()),
 			 	 textWidth       = Number(_this.parents('.opedDialog').find('.width').text()),
 			 	 increase        = textWidth > maxSize || textHeight > maxSize ? min : max,
-			 	 crutchImgHeight = textHeight == 0 ? imgHeight : 0,
-			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0,
+			 	 crutchImgHeight = textHeight == 0 ? imgHeight : 0, // костыль пока выдаються нули в размерах
+			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0, // ...
 			 	 resultHeight    = Math.ceil( textHeight * increase + crutchImgHeight ),
 			 	 resultWidth     = Math.ceil( textWidth * increase + crutchImgWidth ),
 			 	 blockHeight     = $( '.Picture' ).height();
@@ -947,11 +947,12 @@ intervalBlockHeight ();
 							  	  $.each( items, function ( index, val ) {
 							  	 	
 							  	  
-
+							  	  	
 							  	  	 var coll_id1s    = val.coll_id1s,
 							  	  	 	 coll_name    = val.coll_name,
 							  	  	 	 coll_brand   = val.coll_brand,
 							  	  	 	 coll_country = val.coll_country,
+							  	  	 	 coll_img     = val.coll_img,
 							  	  	 	 obj          = $('div.collection_card.rewrite:first');
 
 									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
@@ -964,6 +965,8 @@ intervalBlockHeight ();
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							 			 // console.log('coll_country: ' + coll_country);
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							 			 console.log('coll_img: ' + coll_img);
+							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 
 
@@ -975,7 +978,7 @@ intervalBlockHeight ();
 
 								 		$(obj)
 								 			.find( 'img.level1Img' )
-								 			.attr( 'src', '/iimg/collection' + coll_id1s + '.1.png' );
+								 			.attr( 'src', 'http://images.serko.local/' + coll_img );
 
 										
 										
