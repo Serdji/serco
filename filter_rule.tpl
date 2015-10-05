@@ -5,26 +5,28 @@
 
     
     <div class="blockFilterRight">
-        <div class="animation2">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TradingGroup filters" id="filtr_color">
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
               <label class="control-label result">Товарная группа, Подгруппа: </label>
-                <select class="combobox" type="type">
-                  <option class="0 typeR" out_id="0" type="type">Все товарные группы</option>
-<!-- BEGIN filter_types -->
-                  <option class="type remov" id="type_{type_id1s}" inner_id="{type_id}" out_id="{type_id1s}">{type}</option>
-<!-- END filter_types -->
+                <select class="combobox" type="category">
+                  <option class="0 categoryR" out_id="0" type="category">Все товарные группы</option>
+<!-- BEGIN filter_categories -->
+                  <option class="category remov" id="category_{category_id1s}" inner_id="{category_id}" out_id="{category_id1s}">{category}</option>
+<!-- END filter_categories -->
                 </select>
-                <select class="combobox" type="type" disabled="disabled">
-                  <option class="0 typeR" out_id="0" type="type">Подгрупп нет</option>
+                <select class="combobox" type="subcategory">
+                <option class="0 subcategoryR" out_id="0" type="subcategory">Подгрупп нет</option>
+<!-- BEGIN filter_subcategories -->               
+                  <option class="subcategory remov" id="subcategory_{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}">{subcategory}</option>
+<!-- END filter_subcategories -->                 
                 </select>
-                 
                 
               </div>
             </div>
           </div>
+      
 
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border trading filters" id="filtr_color">
@@ -60,10 +62,10 @@
 <!-- END filter_colors -->
             </div>
           </div>
-        </div>
+       
             
         
-        <div class="row">
+      <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters" id="filtr_color">
         <div class="hint" title="Выбери поверхность, можно ввести в ручную">?</div>
           <div class="ui-widget">
@@ -76,7 +78,7 @@
             </select>
           </div>
         </div>
-            </div>    
+      </div>    
         
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters FilterTiles">
