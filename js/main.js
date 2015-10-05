@@ -633,17 +633,24 @@ intervalBlockHeight ();
 
 			
 
-			 var imgHeight    = _this.height(),
-			 	 imgWidth     = _this.width(),
-			 	 textHeight   = Number(_this.parents('.opedDialog').find('.height').text()),
-			 	 textWidth    = Number(_this.parents('.opedDialog').find('.width').text()),
-			 	 increase     = textWidth > 50 || textHeight > 50 ? 2 : 6,
-			 	 resultHeight = Math.ceil( textHeight * increase ),
-			 	 resultWidth  = Math.ceil( textWidth * increase ),
-			 	 blockHeight  = $( '.Picture' ).height();
+			 var imgHeight       = _this.height(),
+			 	 imgWidth        = _this.width(),
+			 	 min             = 2,
+			 	 max             = 6,
+			 	 maxSize         = 50,
+			 	 textHeight      = Number(_this.parents('.opedDialog').find('.height').text()),
+			 	 textWidth       = Number(_this.parents('.opedDialog').find('.width').text()),
+			 	 increase        = textWidth > maxSize || textHeight > maxSize ? min : max,
+			 	 crutchImgHeight = textHeight == 0 ? imgHeight : 0,
+			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0,
+			 	 resultHeight    = Math.ceil( textHeight * increase + crutchImgHeight ),
+			 	 resultWidth     = Math.ceil( textWidth * increase + crutchImgWidth ),
+			 	 blockHeight     = $( '.Picture' ).height();
+
+
 
 			 	
-			 	 // alignment   = Math.ceil ( blockHeight / 2 - textHeight / 2 );
+			 	 
 
 			 if ( imgWidth > imgHeight) {
 			 	var alignment   = Math.ceil ( blockHeight / 2 - resultWidth / 2 );
