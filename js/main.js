@@ -932,10 +932,10 @@ intervalBlockHeight ();
 							  	  items            = data.items,
 							  	  surface          = data.surface,
 							  	  type             = data.type,
-							  	  finish_page      = Math.ceil((collection.length/9)),
+							  	  finish_page      = Math.ceil((data.all_items/9)),
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length;
-							  	 
+							  	 console.log(data);
 
 							  	  
 							  	  $( '.collectionLength' ).text( collectionLength );
@@ -965,7 +965,7 @@ intervalBlockHeight ();
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							 			 // console.log('coll_country: ' + coll_country);
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
-							 			 console.log('coll_img: ' + coll_img);
+							 			 // console.log('coll_img: ' + coll_img);
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 

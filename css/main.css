@@ -1094,6 +1094,8 @@ a:-webkit-any-link{
 }
 
 .imgModal{
+	max-height: 500px;
+	max-width: 500px;
 	margin-bottom: 70px;
 }
 
