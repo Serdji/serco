@@ -18,8 +18,14 @@
   <div class="row">
 
     <div class="resultsFilter">
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border category resultsFilterNone">
+        <p><b>Товарная группа:</b></p>
+      </div>
+      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border subcategory resultsFilterNone">
+        <p><b>Товарная подгруппа:</b></p>
+      </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border type resultsFilterNone">
-        <p><b>Товарная группы:</b></p>
+        <p><b>Товар:</b></p>
       </div>
       <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border color resultsFilterNone">
         <p><b>Цвета:</b></p>

@@ -935,7 +935,7 @@ intervalBlockHeight ();
 							  	  surface          = data.surface,
 							  	  type             = data.type,
 							  	  all_items        = data.all_items,
-							  	  finish_page      = Math.floor( all_items / 9 ),
+							  	  finish_page      = Math.floor( all_items / 7.6 ),
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length;
 							  	 
@@ -1244,11 +1244,12 @@ intervalBlockHeight ();
 
 
             var speedOut  = 500,
-            	speedIn   =  2000,
+            	speedIn   = 2000,
             	scrollPos = 600;
 
         function optionIf ( divClass, divClassStrong, classR, classBtnR, ulIdLi ){
             	var text = $( option ).text();
+            	$( option ).removeAttr( 'disabled' );
 				divClass.append('<strong>' + text + '</strong>').fadeIn( speedIn );
 				divClass.append('<button type="button" class="btn btn-success btnClose 0 '+classBtnR+'" style="position: absolute; left: 78%;">Отмена</button>').fadeIn( speedIn );
             	$( classR ).on('click', function() {
@@ -1266,9 +1267,22 @@ intervalBlockHeight ();
             	divClass.children( classR ).remove();
         };
 
+        	if ($( option ).hasClass('category')) {
+				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
+
+            }else if($( option ).hasClass('0 typeR')){
+            	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
+            }; 
+
+            if ($( option ).hasClass('subcategory')) {
+				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', ulId4Li );
+
+            }else if($( option ).hasClass('0 subcategoryR')){
+            	optionElse ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR' );
+            }; 
 
             if ($( option ).hasClass('type')) {
-				optionIf ( $( 'div.type' ), $( 'div.type strong' ), '.typeR', 'typeR', ulId3Li );
+				optionIf ( $( 'div.type' ), $( 'div.type strong' ), '.typeR', 'typeR', ulId5Li );
 
             }else if($( option ).hasClass('0 typeR')){
             	optionElse ( $( 'div.type' ), $( 'div.type strong' ), '.typeR' );
