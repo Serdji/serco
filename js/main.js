@@ -269,6 +269,20 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+/*---------------Временно уберает рамку где нет картинки-------------*/
+
+
+	
+		$( 'img[src="http://images.serko.local/noimage.png"]' ).css('border', 'none');
+		$( 'img[src="http://images.serko.local/"]' )
+			.attr('src', 'http://images.serko.local/noimage.png')
+			.css('border', 'none');
+
+	
+/*-------------------------------------------------------------------*/
+
+
+
 
 
 /*-----------------------Удаление правого фильтра--------------------*/
@@ -1066,6 +1080,9 @@ intervalBlockHeight ();
 								eachOut_id ( collection, '.collection' );
 								eachOut_id ( brand, '.brand' );
 
+
+
+
 								$.each( color, function ( index, value ) {
 								  	$( 'div.colors[out_id="' + value + '"]' ).removeClass('colorsNone');	
 								});
@@ -1270,7 +1287,7 @@ intervalBlockHeight ();
         	if ($( option ).hasClass('category')) {
 				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
 
-            }else if($( option ).hasClass('0 typeR')){
+            }else if($( option ).hasClass('0 categoryR')){
             	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
             }; 
 
@@ -1489,7 +1506,7 @@ intervalBlockHeight ();
 			var _this      = $( this ),
 				figcaption = _this.parent().siblings( '.figcaption' );
 
-			console.log($( figcaption ));	
+				
 
 			_this
 				.clone()
