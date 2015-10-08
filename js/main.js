@@ -949,7 +949,7 @@ intervalBlockHeight ();
 							  	  surface          = data.surface,
 							  	  type             = data.type,
 							  	  all_items        = data.all_items,
-							  	  finish_page      = Math.floor( all_items / 7.6 ),
+							  	  finish_page      = Math.ceil( all_items / 9 ),
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length;
 							  	 
@@ -1070,6 +1070,9 @@ intervalBlockHeight ();
 								});
 
 							};
+
+							
+
 
 
 							  	eachOut_id ( type, '.type' );
@@ -1237,28 +1240,40 @@ intervalBlockHeight ();
 
 
 
-           var ulId1    = $( 'ul.ui-autocomplete' ).eq(0),
-           	   ulId2    = $( 'ul.ui-autocomplete' ).eq(1),
-           	   ulId3    = $( 'ul.ui-autocomplete' ).eq(2),
-           	   ulId4    = $( 'ul.ui-autocomplete' ).eq(3),
-           	   ulId5    = $( 'ul.ui-autocomplete' ).eq(4),
-           	   ulId6    = $( 'ul.ui-autocomplete' ).eq(5),
-           	   ulId7    = $( 'ul.ui-autocomplete' ).eq(6),
-           	   ulId8    = $( 'ul.ui-autocomplete' ).eq(7),
-           	   ulId9    = $( 'ul.ui-autocomplete' ).eq(8),
-           	   ulId10   = $( 'ul.ui-autocomplete' ).eq(9),
-           	   ulId1Li  = ulId1.children('li').eq(0),
-           	   ulId2Li  = ulId2.children('li').eq(0),
-           	   ulId3Li  = ulId3.children('li').eq(0),
-           	   ulId4Li  = ulId4.children('li').eq(0),
-           	   ulId5Li  = ulId5.children('li').eq(0),
-           	   ulId6Li  = ulId6.children('li').eq(0),
-           	   ulId7Li  = ulId7.children('li').eq(0),
-           	   ulId8Li  = ulId8.children('li').eq(0),
-           	   ulId9Li  = ulId9.children('li').eq(0),
-           	   ulId10Li = ulId10.children('li').eq(0);
-           	   
+           var ulId1      = $( 'ul.ui-autocomplete' ).eq( 0 ),
+           	   ulId2      = $( 'ul.ui-autocomplete' ).eq( 1 ),
+           	   ulId3      = $( 'ul.ui-autocomplete' ).eq( 2 ),
+           	   ulId4      = $( 'ul.ui-autocomplete' ).eq( 3 ),
+           	   ulId5      = $( 'ul.ui-autocomplete' ).eq( 4 ),
+           	   ulId6      = $( 'ul.ui-autocomplete' ).eq( 5 ),
+           	   ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
+           	   ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
+           	   ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
+           	   ulId10     = $( 'ul.ui-autocomplete' ).eq( 9 ),
+           	   ulId1Li    = ulId1.children( 'li' ).eq( 0 ),
+           	   ulId2Li    = ulId2.children( 'li' ).eq( 0 ),
+           	   ulId3Li    = ulId3.children( 'li' ).eq( 0 ),
+           	   ulId4Li    = ulId4.children( 'li' ).eq( 0 ),
+           	   ulId5Li    = ulId5.children( 'li' ).eq( 0 ),
+           	   ulId6Li    = ulId6.children( 'li' ).eq( 0 ),
+           	   ulId7Li    = ulId7.children( 'li' ).eq( 0 ),
+           	   ulId8Li    = ulId8.children( 'li' ).eq( 0 ),
+           	   ulId9Li    = ulId9.children( 'li' ).eq( 0 ),
+           	   ulId10Li   = ulId10.children( 'li' ).eq( 0 ),
+           	   btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
+           	   btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
+           	   btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
+           	   btnInput4  = $( 'div.ui-state-default' ).eq( 3 ),
+           	   btnInput5  = $( 'div.ui-state-default' ).eq( 4 ),
+           	   btnInput6  = $( 'div.ui-state-default' ).eq( 5 ),
+           	   btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
+           	   btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
+           	   btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
+           	   btnInput10 = $( 'div.ui-state-default' ).eq( 9 );
 
+           	 
+           	   
+           	
 
             var speedOut  = 500,
             	speedIn   = 2000,
@@ -1285,11 +1300,19 @@ intervalBlockHeight ();
         };
 
         	if ($( option ).hasClass('category')) {
+				ulId4.removeClass( 'ulDisplay' );
+				btnInput4.addClass( 'subActive' );
+				ulId4Li.trigger( 'dblclick' );
 				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
 
             }else if($( option ).hasClass('0 categoryR')){
             	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
-            }; 
+            	setTimeout( function() {
+            		ulId4Li.trigger( 'click' );
+            		ulId4.addClass( 'ulDisplay' );
+            		btnInput4.removeClass( 'subActive' );
+            	}, 1 );
+			}; 
 
             if ($( option ).hasClass('subcategory')) {
 				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', ulId4Li );

@@ -724,7 +724,7 @@ a:-webkit-any-link{
 	height: 150px;
 }
 
-.active{
+.active {
 	background: #94ef94;
 
 }
@@ -737,6 +737,14 @@ a:-webkit-any-link{
 .focus, .active:active{
 	background: #94ef94;
 
+}
+
+.subActive{
+	background: #94ef94 !important;
+}
+
+.subActive:hover{
+	background: #39B273 !important;
 }
 
 .ui-state-focus{
@@ -1114,4 +1122,8 @@ a:-webkit-any-link{
 
 .coll_id, .coll_name{
 	cursor: pointer;
+}
+
+.ulDisplay{
+	display: none !important;
 }
