@@ -1280,7 +1280,9 @@ intervalBlockHeight ();
            	   inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
            	   inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
            	   inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
-           	   
+
+
+           	  
            	
 
             var speedOut  = 500,
@@ -1311,6 +1313,8 @@ intervalBlockHeight ();
 				ulId4.removeClass( 'ulDisplay' );
 				btnInput4.addClass( 'subActive' );
 				inputFil4.addClass( 'subActive' );
+				inputFil4.val( 'Подгруппы есть' );
+				$( '.subcategoryR' ).removeAttr( 'disabled' );
 				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
 
             }else if($( option ).hasClass('0 categoryR')){
@@ -1324,6 +1328,7 @@ intervalBlockHeight ();
 			}; 
 
             if ($( option ).hasClass('subcategory')) {
+            	inputFil4.removeClass( 'subActive' );
 				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', ulId4Li );
 
             }else if($( option ).hasClass('0 subcategoryR')){
