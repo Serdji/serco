@@ -1269,9 +1269,17 @@ intervalBlockHeight ();
            	   btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
            	   btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
            	   btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
-           	   btnInput10 = $( 'div.ui-state-default' ).eq( 9 );
-
-           	 
+           	   btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
+           	   inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
+           	   inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
+           	   inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
+           	   inputFil4  = $( 'input.custom-combobox-input' ).eq( 3 ),
+           	   inputFil5  = $( 'input.custom-combobox-input' ).eq( 4 ),
+           	   inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
+           	   inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
+           	   inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
+           	   inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
+           	   inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
            	   
            	
 
@@ -1299,19 +1307,20 @@ intervalBlockHeight ();
             	divClass.children( classR ).remove();
         };
 
-        	if ($( option ).hasClass('category')) {
+        	if ($( option ).hasClass( 'category' )) {
 				ulId4.removeClass( 'ulDisplay' );
 				btnInput4.addClass( 'subActive' );
-				ulId4Li.trigger( 'dblclick' );
+				inputFil4.addClass( 'subActive' );
 				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
 
             }else if($( option ).hasClass('0 categoryR')){
-            	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
             	setTimeout( function() {
             		ulId4Li.trigger( 'click' );
             		ulId4.addClass( 'ulDisplay' );
             		btnInput4.removeClass( 'subActive' );
+            		inputFil4.removeClass( 'subActive' );
             	}, 1 );
+            	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
 			}; 
 
             if ($( option ).hasClass('subcategory')) {

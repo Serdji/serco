@@ -17,7 +17,7 @@
 <!-- END filter_categories -->
                 </select>
                 <select class="combobox" type="subcategory">
-                <option class="0 subcategoryR" out_id="0" type="subcategory">Подгрупп нет</option>
+                <option class="0 subcategoryR" out_id="0" type="subcategory">Подгруппы</option>
 <!-- BEGIN filter_subcategories -->               
                   <option class="subcategory remov" id="subcategory_{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
