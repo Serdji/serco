@@ -122,28 +122,28 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters" id="filtr_color">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border brandKoleektsiya filters" id="filtr_color">
         <div class="hint" title="Выбери бренд, можно ввести в ручную">?</div>
           <div class="ui-widget">
           <label class="control-label result">Бренд: </label>
             <select class="combobox" type="brand">
-              <option class="0 brandR" type="brand">Выбрано всё</option>
+              <option class="0 brandR" type="brand" disabled="disabled">Выбрано всё</option>
 <!-- BEGIN filter_brands -->          
-              <option class="brand remov" id="brand_{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}">{brand}</option>
+              <option class="brand remov" id="brand_{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}"  disabled="disabled">{brand}</option>
 <!-- END filter_brands -->
             </select>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters" id="filtr_color">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border brandKoleektsiya filters" id="filtr_color">
         <div class="hint" title="Выбери коллекцию, можно ввести в ручную">?</div>
           <div class="ui-widget">
           <label class="control-label result">Название коллекции: </label>
             <select class="combobox" type="collection">
-              <option class="0 collectionR" type="collection">Выбрано всё</option>
+              <option class="0 collectionR" type="collection" disabled="disabled">Выбрано всё</option>
 <!-- BEGIN filter_collections -->
-              <option class="collection remov" id="collection_{collection_id1s}" inner_id="{collection_id}" out_id="{collection_id1s}">{collection}</option>
+              <option class="collection remov" id="collection_{collection_id1s}" inner_id="{collection_id}" out_id="{collection_id1s}" disabled="disabled">{collection}</option>
 <!-- END filter_collections -->
             </select>
           </div>
