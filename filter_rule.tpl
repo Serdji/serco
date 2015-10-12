@@ -127,7 +127,7 @@
           <div class="ui-widget">
           <label class="control-label result">Бренд: </label>
             <select class="combobox" type="brand">
-              <option class="0 brandR" type="brand" disabled="disabled">Выбрано всё</option>
+              <option class="0 brandR" type="brand" disabled="disabled">Брендов нет</option>
 <!-- BEGIN filter_brands -->          
               <option class="brand remov" id="brand_{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}"  disabled="disabled">{brand}</option>
 <!-- END filter_brands -->
@@ -141,7 +141,7 @@
           <div class="ui-widget">
           <label class="control-label result">Название коллекции: </label>
             <select class="combobox" type="collection">
-              <option class="0 collectionR" type="collection" disabled="disabled">Выбрано всё</option>
+              <option class="0 collectionR" type="collection" disabled="disabled">Коллекций нет</option>
 <!-- BEGIN filter_collections -->
               <option class="collection remov" id="collection_{collection_id1s}" inner_id="{collection_id}" out_id="{collection_id1s}" disabled="disabled">{collection}</option>
 <!-- END filter_collections -->

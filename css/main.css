@@ -777,7 +777,7 @@ a:-webkit-any-link{
 }
 
 .inputColor{
-	background: #39B273;
+	background: #39B273 !important;
 	color: black;
 }
 

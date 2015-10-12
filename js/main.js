@@ -1309,21 +1309,30 @@ intervalBlockHeight ();
             	divClass.children( classR ).remove();
         };
 
+        function openFil ( ulId, btnInput, inputFil, text, classRemAttrDis ) {
+        	ulId.removeClass( 'ulDisplay' );
+			btnInput.addClass( 'subActive' );
+			inputFil.addClass( 'subActive' );
+			inputFil.val( text );
+			$( classRemAttrDis ).removeAttr( 'disabled' );
+        };
+
+        function shutFil ( ulIdLi, ulId, btnInput, inputFil, delay ) {
+        	setTimeout( function() {
+            		ulIdLi.trigger( 'click' );
+            		ulId.addClass( 'ulDisplay' );
+            		btnInput.removeClass( 'subActive' );
+            		inputFil.removeClass( 'subActive' );
+            	}, delay );
+        }
+
         	if ($( option ).hasClass( 'category' )) {
-				ulId4.removeClass( 'ulDisplay' );
-				btnInput4.addClass( 'subActive' );
-				inputFil4.addClass( 'subActive' );
-				inputFil4.val( 'Подгруппы есть' );
-				$( '.subcategoryR' ).removeAttr( 'disabled' );
+        		openFil ( ulId4, btnInput4, inputFil4, 'Подгруппы есть', '.subcategoryR' );
 				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
 
             }else if($( option ).hasClass('0 categoryR')){
-            	setTimeout( function() {
-            		ulId4Li.trigger( 'click' );
-            		ulId4.addClass( 'ulDisplay' );
-            		btnInput4.removeClass( 'subActive' );
-            		inputFil4.removeClass( 'subActive' );
-            	}, 1 );
+            	var delay = 10;
+            	shutFil ( ulId4Li, ulId4, btnInput4, inputFil4, delay );
             	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
 			}; 
 
@@ -1352,22 +1361,32 @@ intervalBlockHeight ();
 
 
             if ($( option ).hasClass('country')) {
+            	openFil ( ulId9, btnInput9, inputFil9, 'Выбрано все', '.brandR' );
 				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId8Li );
             	
             }else if($( option ).hasClass('0 countryR')){
+            	var delayOne = 10,
+            		delayTwo = 20;
+            	shutFil ( ulId9Li, ulId9, btnInput9, inputFil9, delayOne );
+            	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delayTwo );
             	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
             }; 
 
 
             if ($( option ).hasClass('brand')) {
+            	inputFil9.removeClass( 'subActive' );
+            	openFil ( ulId10, btnInput10, inputFil10, 'Выбрано все', '.collectionR' );
 				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId9Li );
             	
             }else if($( option ).hasClass('0 brandR')){
+            	var delay = 10;
+            	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delay );
             	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
             }; 
 
 
             if ($( option ).hasClass('collection')) {
+            	inputFil10.removeClass( 'subActive' );
 				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId10Li );
             	
             }else if($( option ).hasClass('0 collectionR')){
