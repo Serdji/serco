@@ -73,18 +73,9 @@
                           <label class="control-label result">Магазин в регионе: </label>
                             <select class="combobox" type="type" >
                               <option class="0 default" out_id="0" type="bay_country">Все страны</option>
-                              <option class="type remov" id="type_0000001" inner_id="1" out_id="0000001">Россия</option>
-                              <option class="type remov" id="type_0000002" inner_id="2" out_id="0000002">Беларусия</option>
-                              <option class="type remov" id="type_0000003" inner_id="3" out_id="0000003">Казахстан</option>
                             </select>
                             <select class="combobox" type="type">
-                              <option class="0 default" out_id="0" type="bay_region">Регионы отсутствуют</option>
-                              <option class="type remov" id="type_0000001" inner_id="1" out_id="0000001">Москва и Московская область</option>
-                              <option class="type remov" id="type_0000003" inner_id="3" out_id="0000003">Рязанская область</option>
-                              <option class="type remov" id="type_0000004" inner_id="4" out_id="0000004">Смоленская область</option>
-                              <option class="type remov" id="type_0000005" inner_id="5" out_id="0000005">Тверская область</option>
-                              <option class="type remov" id="type_0000006" inner_id="6" out_id="0000006">Тульская область</option>
-                              <option class="type remov" id="type_0000009" inner_id="9" out_id="0000009">Ярославская область</option>
+                              <option class="0 default" out_id="0" type="bay_region" disabled="disabled">Регионы отсутствуют</option>
                             </select>
                           </div>
                         </div>

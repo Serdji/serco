@@ -680,9 +680,7 @@ intervalBlockHeight ();
 			 		height     : resultHeight,
 			 		marginTop  : alignment
 			 	});
-			 }
-		
-			// _this.css('margin-top', alignment); 	 
+			 }	 
 
 
 		});

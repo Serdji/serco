@@ -29,7 +29,7 @@
       
 
         <div class="row">
-            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border trading filters" id="filtr_color">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TradingGroup trading filters" id="filtr_color">
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
               <label class="control-label result">Товар: </label>
@@ -39,8 +39,8 @@
                   <option class="type remov" id="type_{type_id1s}" inner_id="{type_id}" out_id="{type_id1s}">{type}</option>
 <!-- END filter_types -->
                 </select>
-                <select class="combobox" type="type" disabled="disabled">
-                  <option class="0 typeR" out_id="0" type="type">Характер товара</option>
+                <select class="combobox" type="type">
+                  <option class="0 typeR" out_id="0" type="type" disabled="disabled">Свойства товара</option>
                 </select>
                  
                 
