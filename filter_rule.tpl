@@ -40,7 +40,7 @@
 <!-- END filter_types -->
                 </select>
                 <select class="combobox" type="type">
-                  <option class="0 typeR" out_id="0" type="type" disabled="disabled">Свойства товара</option>
+                  <option class="0 typeR" out_id="0" type="type" disabled="disabled">Дополнительные св-ва товаров</option>
                 </select>
                  
                 
