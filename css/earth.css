@@ -577,7 +577,7 @@ ul > li:focus{
 	color: transparent;
 }
 
-.modal-body p:last-child{
+.pRight{
 	text-align: right;
 }
 
