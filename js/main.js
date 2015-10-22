@@ -880,35 +880,38 @@ intervalBlockHeight ();
 
 
 			
-			
+			function sliderJson ( className, typeMin, typeMax) {
 				
-            function sliderJsonMin ( className, typeMin ){
-            	
-    			$( className ).each(function(index, el) {
-    			if(jsonstr!='{')
-						{
-							jsonstr+=',';
-						}
-				var type     = typeMin,
-            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(0).val();
-            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
-    				console.log(jsonstr);
-    			});
-            };
+	            function sliderJsonMin ( className, typeMin ){
+	            	
+	    			$( className ).each(function(index, el) {
+	    			if(jsonstr!='{')
+							{
+								jsonstr+=',';
+							}
+					var type     = typeMin,
+	            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(0).val();
+	            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+	    			});
+	            };
 
-            function sliderJsonMax ( className, typeMax ){
-            	
-    			$( className ).each(function(index, el) {
-    			if(jsonstr!='{')
-						{
-							jsonstr+=',';
-						}
-				var type     = typeMax,
-            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(1).val();
-            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
-    				console.log(jsonstr);
-    			});
-            };
+	            function sliderJsonMax ( className, typeMax ){
+	            	
+	    			$( className ).each(function(index, el) {
+	    			if(jsonstr!='{')
+							{
+								jsonstr+=',';
+							}
+					var type     = typeMax,
+	            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(1).val();
+	            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+	    			});
+	            };
+	            sliderJsonMin ( className, typeMin );
+	            sliderJsonMax ( className, typeMax );
+
+			};
+				
 
 			
 
@@ -933,8 +936,7 @@ intervalBlockHeight ();
 
 				eachJson ( '.pageClass' );
 				eachJson ( '.colorBorder' );
-				sliderJsonMin ( '#slider-range', 'min_prices' );
-				sliderJsonMax ( '#slider-range', 'max_prices' );
+				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
 
 				$('select.combobox option:selected:not(.0)').each(function(index, el) {
 					if(jsonstr!='{')
