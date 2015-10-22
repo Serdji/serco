@@ -930,14 +930,8 @@ intervalBlockHeight ();
 				});
 			};
 
-			
-			var jsonstr       = '{';
-			var jsonstr_debug = '';
-
-				eachJson ( '.pageClass' );
-				eachJson ( '.colorBorder' );
-				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
-
+			function optinJson () {
+				
 				$('select.combobox option:selected:not(.0)').each(function(index, el) {
 					if(jsonstr!='{')
 						{
@@ -948,6 +942,17 @@ intervalBlockHeight ();
 					    jsonstr       +='"'+type+'"'+':'+'"'+out_id+'"';
 					    jsonstr_debug += '&debug_'+type+'='+out_id;
 				});
+			};
+
+			
+			var jsonstr       = '{';
+			var jsonstr_debug = '';
+
+				eachJson ( '.pageClass' );
+				eachJson ( '.colorBorder' );
+				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
+				optinJson ();
+
 			jsonstr += '}';
 			jsonstr  = JSON.parse(jsonstr);
 
