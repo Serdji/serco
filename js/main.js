@@ -724,25 +724,13 @@ intervalBlockHeight ();
 									   }, step: 1 } );
 
 
-					$( '.ui-rangeSlider-handle .ui-rangeSlider-rightHandle' ).on( 'mauseout', function (){ 	
-						$( className ).bind("valuesChanging", function(e, data){
-							 console.log( text + "min: " + data.values.min + " max: " + data.values.max );
-						});
-					});
 
-						 $( className ).bind("userValuesChanged", function(e, data){
-							   console.log( text + "min: " + data.values.min + " max: " + data.values.max );
-						});
+					$( className ).bind("userValuesChanged", function(e, data){
+						   filterObj();
+					});
 				  
 				};	
 
-				/*--------slider по ценам--------*/
-				
-
-				slider( "#slider-range", 0, 10000, "Цена: " );
-
-
-				  /*-----------------------------------*/	
 
 
 
@@ -776,6 +764,13 @@ intervalBlockHeight ();
 
 					/*-------------------------------------------------------------------------*/
 
+				/*--------slider по ценам--------*/
+				
+
+				slider( "#slider-range", 0, 10000, "Цена: " );
+
+
+				  /*-----------------------------------*/	
 
 						/*-----------------Рамка для выбранного цвета------------------*/
 
@@ -884,9 +879,37 @@ intervalBlockHeight ();
 			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass('colorsNone');
 
 
+			
+			
+				
+            function sliderJsonMin ( className, typeMin ){
+            	
+    			$( className ).each(function(index, el) {
+    			if(jsonstr!='{')
+						{
+							jsonstr+=',';
+						}
+				var type     = typeMin,
+            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(0).val();
+            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+    				console.log(jsonstr);
+    			});
+            };
 
+            function sliderJsonMax ( className, typeMax ){
+            	
+    			$( className ).each(function(index, el) {
+    			if(jsonstr!='{')
+						{
+							jsonstr+=',';
+						}
+				var type     = typeMax,
+            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(1).val();
+            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+    				console.log(jsonstr);
+    			});
+            };
 
-          
 			
 
 			function eachJson ( nameClass ){
@@ -898,9 +921,10 @@ intervalBlockHeight ();
             	var type     = $(el).attr('type'),
             		out_id   = $(el).attr('out_id');
             		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+            		console.log(jsonstr);
 					
 
-			});
+				});
 			};
 
 			
@@ -909,6 +933,8 @@ intervalBlockHeight ();
 
 				eachJson ( '.pageClass' );
 				eachJson ( '.colorBorder' );
+				sliderJsonMin ( '#slider-range', 'min_prices' );
+				sliderJsonMax ( '#slider-range', 'max_prices' );
 
 				$('select.combobox option:selected:not(.0)').each(function(index, el) {
 					if(jsonstr!='{')
@@ -923,7 +949,7 @@ intervalBlockHeight ();
 			jsonstr += '}';
 			jsonstr  = JSON.parse(jsonstr);
 
-			// console.log(jsonstr);
+			console.log(jsonstr);
 			// console.log(jsonstr_debug);
 			
 			
