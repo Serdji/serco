@@ -868,7 +868,7 @@ intervalBlockHeight ();
 					.addClass('breadCrumbsA')
 
 
-					/*-----------------Функция сортировки фильтров-----------------*/
+	/*-----------------Функция сортировки фильтров-----------------*/
 
            function filterObj(){
 
@@ -879,7 +879,9 @@ intervalBlockHeight ();
 			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass('colorsNone');
 
 
-			
+
+					/*-----------------Функция сортировки слайдоров-----------------*/
+
 			function sliderJson ( className, typeMin, typeMax) {
 				
 	            function sliderJsonMin ( className, typeMin ){
@@ -912,8 +914,11 @@ intervalBlockHeight ();
 
 			};
 				
+					/*--------------------------------------------------------------*/
+
 
 			
+					/*---------общая функция сортировки для цвета и страниц---------*/
 
 			function eachJson ( nameClass ){
 				$( nameClass ).each(function(index, el) {
@@ -930,6 +935,12 @@ intervalBlockHeight ();
 				});
 			};
 
+					/*--------------------------------------------------------------*/
+					
+
+
+					/*-------------------Функция сортировки инпутов-----------------*/	
+
 			function optinJson () {
 				
 				$('select.combobox option:selected:not(.0)').each(function(index, el) {
@@ -943,6 +954,8 @@ intervalBlockHeight ();
 					    jsonstr_debug += '&debug_'+type+'='+out_id;
 				});
 			};
+
+					/*--------------------------------------------------------------*/
 
 			
 			var jsonstr       = '{';
@@ -1176,7 +1189,7 @@ intervalBlockHeight ();
            	
 			};
 
-					/*-------------------------------------------------------------*/
+	/*-------------------------------------------------------------*/
 
 
 
