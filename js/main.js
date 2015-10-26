@@ -25,11 +25,15 @@ $(function(){
 
 	var map_min = 0;
 	initialize_google();
-		$(document).scroll(function(){
-		if(($(document).scrollTop() < 600 || $(document).scrollTop() == 600) && map_min == 0)
-			{
-			$('div#map').removeClass('cl2').addClass('cl1');
-			map_min = 1;
+		$( document ).scroll( function() {
+
+		if( ( $( document ).scrollTop() < 600 || 
+			  $( document ).scrollTop() == 600 ) && 
+			  map_min == 0 ) {
+
+				$('div#map').removeClass('cl2').addClass('cl1');
+				map_min = 1;
+
 			}
 		});
 
@@ -38,29 +42,52 @@ $(function(){
 /*-------------------------------------*/
 
 function initialize_google() {
-	navigator.geolocation.getCurrentPosition(function(position)
-	{
-	var latitude = position.coords.latitude;
-	var longitude = position.coords.longitude;
-	var haightAshbury = new google.maps.LatLng(latitude,longitude);
-	var mapOptions = {zoom:13,center: haightAshbury,mapTypeId:google.maps.MapTypeId.TERRAIN,scrollwheel:false}
-	map = new google.maps.Map(document.getElementById("map"), mapOptions);
-	// var lat = [];
-	// lat = $('input#lat').val().split('|');
-	// 	for(i=0;typeof lat[i] !== 'undefined';i++){lat[i]=Number(lat[i])/1000;}
-	// var lng = [];
-	// lng = $('input#lng').val().split('|');
-	// 	for(i=0;typeof lng[i] !== 'undefined';i++){lng[i]=Number(lng[i])/1000;}
-	// micon = $('input#micon').val().split('|');	
-	// markers = [];
-	
-	
-	/*----Scroll----*/
-	$('html, body').scrollTop(600);
-	return google;
+	navigator.geolocation.getCurrentPosition( function( position ) {
+
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		var haightAshbury = new google.maps.LatLng( latitude, longitude );
+		var mapOptions = { 
+				zoom        : 13,
+			 	center      : haightAshbury,
+			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
+			 	scrollwheel : false
+			};
+		var map = new google.maps.Map( document.getElementById( "map" ), mapOptions );
+		var lat = [];
+		var lat = $( 'input#lat' )
+						.val()
+						.split( '|' );
+
+			for( i = 0; typeof lat[i] !== 'undefined'; i++ ) {
+				lat[i] = Number( lat[i] ) / 1000;
+			}
+
+		var lng = [];
+		var lng = $( 'input#lng' )
+						.val()
+						.split( '|' );
+
+			for( i = 0; typeof lng[i] !== 'undefined'; i++ ) {
+				lng[i] = Number( lng[i] ) / 1000;
+			}
+
+		var micon = $( 'input#micon' )
+						.val()
+						.split( '|' );	
+		var markers = [];
+		
+		
+		/*----Scroll----*/
+
+		$( 'html, body' ).scrollTop( 600 );
+		return google;
+
+		/*--------------*/
+
 	});
-	/*--------------*/
 	
+
 	$( '.secret' ).on('click', function(event) {
 		$( "*" ).draggable();
 
