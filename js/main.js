@@ -41,20 +41,33 @@ $(function(){
 
 /*-------------------------------------*/
 
-function initialize_google() {
-	navigator.geolocation.getCurrentPosition( function( position ) {
 
-		var latitude = position.coords.latitude;
-		var longitude = position.coords.longitude;
-		var haightAshbury = new google.maps.LatLng( latitude, longitude );
-		var mapOptions = { 
+
+/*------------------------Геолакация google map-----------------------*/
+
+
+function initialize_google() {
+
+
+	navigator.geolocation.getCurrentPosition( function( position ) {
+		var lat           = position.coords.latitude,
+		    lng           = position.coords.longitude,
+		    haightAshbury = new google.maps.LatLng( lat, lng ),
+		    mapOptions    = { 
 				zoom        : 13,
 			 	center      : haightAshbury,
 			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
 			 	scrollwheel : false
-			};
-		var map = new google.maps.Map( document.getElementById( "map" ), mapOptions );
-		var lat = [];
+			},
+		    map           = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
+		    myMarker 	  = new google.maps.Marker({
+			    position : haightAshbury,
+			    map      : map,
+			    title    : 'Вы здесь !',
+			});
+
+
+		/*var lat = [];
 		var lat = $( 'input#lat' )
 						.val()
 						.split( '|' );
@@ -75,7 +88,7 @@ function initialize_google() {
 		var micon = $( 'input#micon' )
 						.val()
 						.split( '|' );	
-		var markers = [];
+		var markers = [];*/
 		
 		
 		/*----Scroll----*/
@@ -86,6 +99,10 @@ function initialize_google() {
 		/*--------------*/
 
 	});
+
+
+
+
 	
 
 	$( '.secret' ).on('click', function(event) {
@@ -94,7 +111,7 @@ function initialize_google() {
 	});
 
 
-    $( "#tabs" ).tabs({
+ /*   $( "#tabs" ).tabs({
       beforeLoad: function( event, ui ) {
         ui.jqXHR.fail(function() {
           ui.panel.html(
@@ -102,7 +119,7 @@ function initialize_google() {
             "If this wouldn't be a demo." );
         });
       }
-    });
+    });*/
  
 
 
@@ -110,6 +127,7 @@ function initialize_google() {
 
 };
 
+/*--------------------------------------------------------------------*/
 
 
 
