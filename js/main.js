@@ -52,16 +52,16 @@ function initialize_google() {
 	navigator.geolocation.getCurrentPosition( function( position ) {
 		var lat           = position.coords.latitude,
 		    lng           = position.coords.longitude,
-		    haightAshbury = new google.maps.LatLng( lat, lng ),
+		    myPos 		  = new google.maps.LatLng( lat, lng ),
 		    mapOptions    = { 
-				zoom        : 13,
-			 	center      : haightAshbury,
+				zoom        : 14,
+			 	center      : myPos,
 			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
 			 	scrollwheel : false
 			},
 		    map           = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
 		    myMarker 	  = new google.maps.Marker({
-			    position : haightAshbury,
+			    position : myPos,
 			    map      : map,
 			    title    : 'Вы здесь !',
 			});
