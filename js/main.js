@@ -50,45 +50,77 @@ function initialize_google() {
 
 
 	navigator.geolocation.getCurrentPosition( function( position ) {
-		var lat           = position.coords.latitude,
+
+		var	lat           = position.coords.latitude,
 		    lng           = position.coords.longitude,
 		    myPos 		  = new google.maps.LatLng( lat, lng ),
 		    mapOptions    = { 
 				zoom        : 14,
 			 	center      : myPos,
 			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
-			 	scrollwheel : false
+			 	scrollwheel : false,
 			},
 		    map           = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
 		    myMarker 	  = new google.maps.Marker({
-			    position : myPos,
-			    map      : map,
-			    title    : 'Вы здесь !',
+			    position  : myPos,
+			    map       : map,
+			    animation : google.maps.Animation.BOUNCE,
+			    title     : 'Вы здесь :D',
 			});
+			console.log( lat + ' ' + lng );
 
+		var beaches = [
+			  [ '1', lat + 0.003, lng + 0.003 ],
+			  [ '2', lat + 0.001, lng + 0.01] ,
+			  [ '3', lat + 0.005, lng + 0.003 ],
+			  [ '4', lat + 0.002, lng + 0.02 ],
+			  [ '5', lat + 0.007, lng + 0.006 ],
+			  [ '6', lat - 0.01, lng - 0.007 ],
+			  [ '7', lat - 0.005, lng + 0.005 ],
+			  [ '8', lat + 0.0015, lng - 0.0016 ],
+			  [ '9', lat - 0.002, lng + 0.036 ],
+			  [ '10', lat + 0.009, lng - 0.02 ]
+		];
 
-		/*var lat = [];
-		var lat = $( 'input#lat' )
-						.val()
-						.split( '|' );
+		for ( var i = 0; i < beaches.length; i++ ) {
 
-			for( i = 0; typeof lat[i] !== 'undefined'; i++ ) {
-				lat[i] = Number( lat[i] ) / 1000;
-			}
+		    var beach  = beaches[i];
+		    var marker = new google.maps.Marker({
+		      position : {
+		      	lat: beach[1], 
+		      	lng: beach[2]
+		      },
+		      map       : map,
+		      title     : beach[0],
+		      animation : google.maps.Animation.DROP,
+		      draggable : true
+		    });
+	  };
 
-		var lng = [];
-		var lng = $( 'input#lng' )
-						.val()
-						.split( '|' );
+	
 
-			for( i = 0; typeof lng[i] !== 'undefined'; i++ ) {
-				lng[i] = Number( lng[i] ) / 1000;
-			}
+	  this.getZoom = function ( bounds ) {
 
-		var micon = $( 'input#micon' )
-						.val()
-						.split( '|' );	
-		var markers = [];*/
+	     var width  = $( '#map' ).width(),
+	     	 height = $( '#map' ).height(),
+	     	 dlat   = Math.abs( bounds.getNorthEast().lat() - bounds.getSouthWest().lat() ),
+	     	 dlon   = Math.abs( bounds.getNorthEast().lng() - bounds.getSouthWest().lng() ),
+	     	 max    = 0;
+
+	     if ( dlat > dlon ) {
+			max = dlat;
+		} else {
+			max = dlon;
+		}
+
+		var clat = Math.PI * Math.abs( bounds.getSouthWest().lat() + bounds.getNorthEast().lat() ) / 360.,
+			C    = 0.0000107288,
+			z0   = Math.ceil( Math.log( dlat / ( C * height ) ) / Math.LN2 ),
+			z1   = Math.ceil( Math.log( dlon / ( C * width * Math.cos( clat ) ) ) / Math.LN2 );
+		//18 – это максимальный zoom для google.maps
+		return 18 - ( ( z1 > z0 ) ? z1 : z0 );
+	};
+
 		
 		
 		/*----Scroll----*/
@@ -100,30 +132,6 @@ function initialize_google() {
 
 	});
 
-
-
-
-	
-
-	$( '.secret' ).on('click', function(event) {
-		$( "*" ).draggable();
-
-	});
-
-
- /*   $( "#tabs" ).tabs({
-      beforeLoad: function( event, ui ) {
-        ui.jqXHR.fail(function() {
-          ui.panel.html(
-            "Couldn't load this tab. We'll try to fix this as soon as possible. " +
-            "If this wouldn't be a demo." );
-        });
-      }
-    });*/
- 
-
-
-	
 
 };
 
@@ -201,7 +209,10 @@ d_arr = '&url=/';
 	}
 return d_arr;
 }
+$( '.secret' ).on('click', function(event) {
+		$( "*" ).draggable();
 
+	});
 function reLoaction(new_loc,loadad,goBack,bPages)
 {
 	if(typeof loadad == "undefined"){loadad = 0;}
