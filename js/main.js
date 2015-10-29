@@ -24,7 +24,6 @@ $(function(){
 /*------------map---------------*/
 
 	var map_min = 0;
-	initialize_google();
 		$( document ).scroll( function() {
 
 		if( ( $( document ).scrollTop() < 600 || 
@@ -67,9 +66,8 @@ function initialize_google() {
 			    animation : google.maps.Animation.BOUNCE,
 			    title     : 'Вы здесь :D',
 			});
-			console.log( lat + ' ' + lng );
 
-		var beaches = [
+		var markers = [
 			  [ '1', lat + 0.003, lng + 0.003 ],
 			  [ '2', lat + 0.001, lng + 0.01] ,
 			  [ '3', lat + 0.005, lng + 0.003 ],
@@ -82,9 +80,9 @@ function initialize_google() {
 			  [ '10', lat + 0.009, lng - 0.02 ]
 		];
 
-		for ( var i = 0; i < beaches.length; i++ ) {
+		/*for ( var i = 0; i < markers.length; i++ ) {
 
-		    var beach  = beaches[i];
+		    var beach  = markers[i];
 		    var marker = new google.maps.Marker({
 		      position : {
 		      	lat: beach[1], 
@@ -95,31 +93,32 @@ function initialize_google() {
 		      animation : google.maps.Animation.DROP,
 		      draggable : true
 		    });
-	  };
+	  };*/
+
+	  // Область показа маркеров
+		var markersBounds = new google.maps.LatLngBounds();
+		 
+		for (var i = 0; i < markers.length; i++) {
+
+		    var markerPosition = new google.maps.LatLng(markers[i][1], markers[i][2]);
+		 
+		    // Добавляем координаты маркера в область
+		    markersBounds.extend(markerPosition);
+		    // Создаём маркер
+		    var marker = new google.maps.Marker({
+		        position  : markerPosition,
+		        map       : map,   
+		        title     : markers[i][0],
+		        animation : google.maps.Animation.DROP
+		    }); 
+		}
+		 
+		// Центрируем и масштабируем карту
+		map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds)); 
 
 	
 
-	  this.getZoom = function ( bounds ) {
-
-	     var width  = $( '#map' ).width(),
-	     	 height = $( '#map' ).height(),
-	     	 dlat   = Math.abs( bounds.getNorthEast().lat() - bounds.getSouthWest().lat() ),
-	     	 dlon   = Math.abs( bounds.getNorthEast().lng() - bounds.getSouthWest().lng() ),
-	     	 max    = 0;
-
-	     if ( dlat > dlon ) {
-			max = dlat;
-		} else {
-			max = dlon;
-		}
-
-		var clat = Math.PI * Math.abs( bounds.getSouthWest().lat() + bounds.getNorthEast().lat() ) / 360.,
-			C    = 0.0000107288,
-			z0   = Math.ceil( Math.log( dlat / ( C * height ) ) / Math.LN2 ),
-			z1   = Math.ceil( Math.log( dlon / ( C * width * Math.cos( clat ) ) ) / Math.LN2 );
-		//18 – это максимальный zoom для google.maps
-		return 18 - ( ( z1 > z0 ) ? z1 : z0 );
-	};
+	  
 
 		
 		
