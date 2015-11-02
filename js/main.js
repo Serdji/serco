@@ -293,7 +293,7 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
-/*--------Функция сортировки пунктов внутри инпута по алфовиту--------*/
+/*--------Функция сортировки пунктов внутри инпута по алфавиту--------*/
 
 	function sortLi ( inputIndex ) {
 		$( document ).on( 'click', 'div.ui-state-default', function() {
