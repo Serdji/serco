@@ -50,17 +50,17 @@ function initialize_google() {
 
 	navigator.geolocation.getCurrentPosition( function( position ) {
 
-		var	lat           = position.coords.latitude,
-		    lng           = position.coords.longitude,
-		    myPos 		  = new google.maps.LatLng( lat, lng ),
-		    mapOptions    = { 
+		var	lat        = position.coords.latitude,
+		    lng        = position.coords.longitude,
+		    myPos 	   = new google.maps.LatLng( lat, lng ),
+		    mapOptions = { 
 				zoom        : 14,
 			 	center      : myPos,
 			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
 			 	scrollwheel : false,
 			},
-		    map           = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
-		    myMarker 	  = new google.maps.Marker({
+		    map        = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
+		    myMarker   = new google.maps.Marker({
 			    position  : myPos,
 			    map       : map,
 			    animation : google.maps.Animation.BOUNCE,
@@ -77,30 +77,58 @@ function initialize_google() {
 			  [ '7', lat - 0.005, lng + 0.005 ],
 			  [ '8', lat + 0.0015, lng - 0.0016 ],
 			  [ '9', lat - 0.002, lng + 0.036 ],
-			  [ '10', lat + 0.009, lng - 0.02 ]
+			  [ '10', lat + 0.009, lng - 0.02 ],
+			  [ '1', lat + 5, lng + 4 ],
+			  [ '2', lat + 2, lng + 7] ,
+			  [ '3', lat + 2, lng + 8 ],
+			  [ '4', lat + 4, lng + 9 ],
+			  [ '5', lat + 1, lng + 7 ],
+			  [ '6', lat - 8, lng - 4 ],
+			  [ '7', lat - 5, lng + 8 ],
+			  [ '8', lat + 5, lng - 0 ],
+			  [ '9', lat - 2, lng + 3 ],
+			  [ '10', lat + 5, lng - 9 ],
+			  [ '1', lat + 6, lng + 4 ],
+			  [ '2', lat + 3, lng + 7] ,
+			  [ '3', lat + 3, lng + 8 ],
+			  [ '4', lat + 5, lng + 9 ],
+			  [ '5', lat + 2, lng + 7 ],
+			  [ '6', lat - 9, lng - 4 ],
+			  [ '7', lat - 6, lng + 8 ],
+			  [ '8', lat + 6, lng - 0 ],
+			  [ '9', lat - 3, lng + 3 ],
+			  [ '10', lat + 6, lng - 9 ], 
+			  [ '1', lat + 6, lng + 5 ],
+			  [ '2', lat + 3, lng + 8] ,
+			  [ '3', lat + 3, lng + 9 ],
+			  [ '4', lat + 5, lng + 10 ],
+			  [ '5', lat + 2, lng + 8 ],
+			  [ '6', lat - 9, lng - 5 ],
+			  [ '7', lat - 6, lng + 9 ],
+			  [ '8', lat + 6, lng - 1 ],
+			  [ '9', lat - 3, lng + 4 ],
+			  [ '10', lat + 6, lng - 10 ],
+			  [ '1', lat + 7, lng + 6 ],
+			  [ '2', lat + 4, lng + 9] ,
+			  [ '3', lat + 4, lng + 10 ],
+			  [ '4', lat + 5, lng + 11 ],
+			  [ '5', lat + 3, lng + 9 ],
+			  [ '6', lat - 10, lng - 6 ],
+			  [ '7', lat - 7, lng + 10 ],
+			  [ '8', lat + 7, lng - 2 ],
+			  [ '9', lat - 4, lng + 5 ],
+			  [ '10', lat + 7, lng - 11 ],
 		];
 
-		/*for ( var i = 0; i < markers.length; i++ ) {
+		var markerClast = [];
 
-		    var beach  = markers[i];
-		    var marker = new google.maps.Marker({
-		      position : {
-		      	lat: beach[1], 
-		      	lng: beach[2]
-		      },
-		      map       : map,
-		      title     : beach[0],
-		      animation : google.maps.Animation.DROP,
-		      draggable : true
-		    });
-	  };*/
 
 	  // Область показа маркеров
 		var markersBounds = new google.maps.LatLngBounds();
 		 
-		for (var i = 0; i < markers.length; i++) {
+		for ( var i = 0; i < markers.length; i++ ) {
 
-		    var markerPosition = new google.maps.LatLng(markers[i][1], markers[i][2]);
+		    var markerPosition = new google.maps.LatLng( markers[i][1], markers[i][2] );
 		 
 		    // Добавляем координаты маркера в область
 		    markersBounds.extend(markerPosition);
@@ -110,11 +138,19 @@ function initialize_google() {
 		        map       : map,   
 		        title     : markers[i][0],
 		        animation : google.maps.Animation.DROP
-		    }); 
-		}
-		 
+		    });
+		    markerClast.push( marker );
+		    
+		};
+
+		var markerCluster = new MarkerClusterer( map, markerClast, {
+			maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
+			gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
+			styles   : null // дополнительные стили - стиля нет
+		});
+
 		// Центрируем и масштабируем карту
-		map.setCenter(markersBounds.getCenter(), map.fitBounds(markersBounds)); 
+		map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) ); 
 
 	
 

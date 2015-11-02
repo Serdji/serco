@@ -3,6 +3,7 @@
     <script src="{folder}js/jquery.js"></script>
     <script src="{folder}js/jquery.validate.min.js"></script>
     <script src="{folder}js/jquery-ui.min.js"></script>
+    <script src="{folder}js/markerclusterer.js"></script>
     <script src="{folder}js/main.js"></script>
     <script src="{folder}js/jQEditRangeSlider-min.js"></script>
     <script src="{folder}js.js"></script>
