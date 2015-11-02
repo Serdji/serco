@@ -1435,6 +1435,20 @@ intervalBlockHeight ();
             	speedIn   = 2000,
             	scrollPos = 600;
 
+        function sortLi ( ulId ) {
+        	var mylist = ulId;
+			var listitems = mylist.children('li').get();
+			listitems.sort(function(a, b) {
+			   var compA = $(a).text().toUpperCase();
+			   var compB = $(b).text().toUpperCase();
+			   return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
+			});
+
+			$.each(listitems, function(idx, itm) { 
+				mylist.append(itm); 
+			});
+        };
+
         function optionIf ( divClass, divClassStrong, classR, classBtnR, ulIdLi ){
             	var text = $( option ).text();
             	$( option ).removeAttr( 'disabled' );
@@ -1509,6 +1523,7 @@ intervalBlockHeight ();
             if ($( option ).hasClass('country')) {
             	openFil ( ulId9, btnInput9, inputFil9, 'Выбрано все', '.brandR' );
 				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId8Li );
+				sortLi ( ulId8 );
             	
             }else if($( option ).hasClass('0 countryR')){
             	var delayOne = 10,
@@ -1516,6 +1531,7 @@ intervalBlockHeight ();
             	shutFil ( ulId9Li, ulId9, btnInput9, inputFil9, delayOne );
             	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delayTwo );
             	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
+            	sortLi ( ulId8 );
             }; 
 
 
@@ -1523,22 +1539,28 @@ intervalBlockHeight ();
             	inputFil9.removeClass( 'subActive' );
             	openFil ( ulId10, btnInput10, inputFil10, 'Выбрано все', '.collectionR' );
 				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId9Li );
+				sortLi ( ulId9 );
             	
             }else if($( option ).hasClass('0 brandR')){
             	var delay = 10;
             	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delay );
             	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
+            	sortLi ( ulId9 );
             }; 
 
 
             if ($( option ).hasClass('collection')) {
             	inputFil10.removeClass( 'subActive' );
 				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId10Li );
+				sortLi ( ulId10 );
             	
             }else if($( option ).hasClass('0 collectionR')){
             	optionElse ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR' );
+            	sortLi ( ulId10 );
             }; 
-
+            
+            
+            
             
 
     /*--------------------------------------------------------------------------------------*/
