@@ -293,6 +293,38 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
+/*--------Функция сортировки пунктов внутри инпута по алфовиту--------*/
+
+	function sortLi ( inputIndex ) {
+		$( document ).on( 'click', 'div.ui-state-default', function() {
+				var mylist    = $( 'ul.ui-autocomplete' ).eq( inputIndex ),
+				    listitems = mylist.children( 'li:gt(0)' ).get();
+				listitems.sort( function( a, b ) {
+				   var compA = $( a ).text().toUpperCase(),
+				       compB = $( b ).text().toUpperCase();
+				   return ( compA < compB ) ? -1 : ( compA > compB ) ? 1 : 0;
+				});
+
+				$.each( listitems, function( idx, itm ) { 
+					mylist.append( itm ); 
+				});
+		});
+	};
+
+	var inputNamber8  = 7,
+	    inputNamber9  = 8,
+	    inputNamber10 = 9;
+
+	sortLi ( inputNamber8 );
+	sortLi ( inputNamber9 );
+	sortLi ( inputNamber10 );
+
+/*--------------------------------------------------------------------*/ 
+
+
+
+
+
 /*------------Эмитация нажатия Enter в input номера страниц-----------*/
 
 	function inputPageEnter () {
@@ -1318,6 +1350,8 @@ intervalBlockHeight ();
 
 						/*---------------Выпадающий input---------------------*/
 
+
+
 (function( $ ) {
 
 
@@ -1435,19 +1469,7 @@ intervalBlockHeight ();
             	speedIn   = 2000,
             	scrollPos = 600;
 
-        function sortLi ( ulId ) {
-        	var mylist = ulId;
-			var listitems = mylist.children('li').get();
-			listitems.sort(function(a, b) {
-			   var compA = $(a).text().toUpperCase();
-			   var compB = $(b).text().toUpperCase();
-			   return (compA < compB) ? -1 : (compA > compB) ? 1 : 0;
-			});
-
-			$.each(listitems, function(idx, itm) { 
-				mylist.append(itm); 
-			});
-        };
+       
 
         function optionIf ( divClass, divClassStrong, classR, classBtnR, ulIdLi ){
             	var text = $( option ).text();
@@ -1523,7 +1545,6 @@ intervalBlockHeight ();
             if ($( option ).hasClass('country')) {
             	openFil ( ulId9, btnInput9, inputFil9, 'Выбрано все', '.brandR' );
 				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId8Li );
-				sortLi ( ulId8 );
             	
             }else if($( option ).hasClass('0 countryR')){
             	var delayOne = 10,
@@ -1539,7 +1560,6 @@ intervalBlockHeight ();
             	inputFil9.removeClass( 'subActive' );
             	openFil ( ulId10, btnInput10, inputFil10, 'Выбрано все', '.collectionR' );
 				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId9Li );
-				sortLi ( ulId9 );
             	
             }else if($( option ).hasClass('0 brandR')){
             	var delay = 10;
@@ -1556,7 +1576,6 @@ intervalBlockHeight ();
             	
             }else if($( option ).hasClass('0 collectionR')){
             	optionElse ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR' );
-            	sortLi ( ulId10 );
             }; 
             
             
