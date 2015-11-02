@@ -293,12 +293,21 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
+/*------------Эмитация нажатия Enter в input номера страниц-----------*/
+
+	function inputPageEnter () {
+		
+		setTimeout( function () {
+			var e = $.Event( "keypress", { keyCode: 13 } );
+			$( 'input.inputNumber' )
+				.focus()
+				.trigger( e );
+		}, 100);
+	};
+	inputPageEnter ();
 
 
-
-
-
-
+/*--------------------------------------------------------------------*/
 
 
 
