@@ -1202,7 +1202,7 @@ intervalBlockHeight ();
 
 								 		$(obj)
 								 			.find( 'img.level1Img' )
-								 			.attr( 'src', 'http://images.serko.local/' + coll_img );
+								 			.attr( 'src', '/wimg/' + coll_img );
 
 										
 										
