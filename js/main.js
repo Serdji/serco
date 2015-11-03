@@ -872,7 +872,7 @@ intervalBlockHeight ();
 
 	/*-----------------Функция сортировки фильтров-----------------*/
 
-           function filterObj(){
+   	function filterObj(){
 
 							  	  
 			
@@ -885,14 +885,14 @@ intervalBlockHeight ();
 
 
 
-/*------------------------Геолакация google map-----------------------*/
+/*------------------------Геолокация google map-----------------------*/
 
 
 
 
 						
 
-	navigator.geolocation.getCurrentPosition( function( position ) {
+	navigator.geolocation.getCurrentPosition( function( position ) { // Начало функции геолокации
 
 		var	lat        = position.coords.latitude,
 		    lng        = position.coords.longitude,
@@ -1008,33 +1008,69 @@ intervalBlockHeight ();
 
 
 
+
+					/*---------------Функция место определения координат------------*/
+				
+
+				function nav () {
+					
+					function latitude () {
+							if( jsonstr != '{' )
+									{
+										jsonstr += ',';
+									}
+							var type   = 'lat',
+			            		out_id = lat;
+
+			            	return	jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';	
+					};
+
+					function longitude () {
+							if( jsonstr != '{' )
+									{
+										jsonstr += ',';
+									}
+							var type   = 'lng',
+			            		out_id = lng;
+
+			            	return	jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';	
+					};
+					latitude ();
+					longitude ();
+				};
+					/*--------------------------------------------------------------*/
+
+
+
+
+
 					/*-----------------Функция сортировки слайдоров-----------------*/
 
 			function sliderJson ( className, typeMin, typeMax) {
 				
 	            function sliderJsonMin ( className, typeMin ){
 	            	
-	    			$( className ).each(function(index, el) {
-	    			if(jsonstr!='{')
+	    			$( className ).each( function( index, el ) {
+	    			if( jsonstr != '{' )
 							{
-								jsonstr+=',';
+								jsonstr += ',';
 							}
 					var type     = typeMin,
 	            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(0).val();
-	            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
 	    			});
 	            };
 
 	            function sliderJsonMax ( className, typeMax ){
 	            	
-	    			$( className ).each(function(index, el) {
-	    			if(jsonstr!='{')
+	    			$( className ).each( function( index, el ) {
+	    			if( jsonstr != '{' )
 							{
-								jsonstr+=',';
+								jsonstr += ',';
 							}
 					var type     = typeMax,
 	            		out_id   = $( el ).find('.ui-editRangeSlider-inputValue').eq(1).val();
-	            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
+	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
 	    			});
 	            };
 	            sliderJsonMin ( className, typeMin );
@@ -1049,15 +1085,14 @@ intervalBlockHeight ();
 					/*---------общая функция сортировки для цвета и страниц---------*/
 
 			function eachJson ( nameClass ){
-				$( nameClass ).each(function(index, el) {
-				if(jsonstr!='{')
+				$( nameClass ).each( function( index, el ) {
+				if( jsonstr != '{' )
 						{
-							jsonstr+=',';
+							jsonstr += ',';
 						}
-            	var type     = $(el).attr('type'),
-            		out_id   = $(el).attr('out_id');
-            		jsonstr +='"'+type+'"'+':'+'"'+out_id+'"';
-            		console.log(jsonstr);
+            	var type     = $( el ).attr( 'type' ),
+            		out_id   = $( el ).attr( 'out_id' );
+            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
 					
 
 				});
@@ -1070,15 +1105,15 @@ intervalBlockHeight ();
 					/*-------------------Функция сортировки инпутов-----------------*/	
 
 			function optinJson () {
-				
-				$('select.combobox option:selected:not(.0)').each(function(index, el) {
-					if(jsonstr!='{')
+				 
+				$( 'select.combobox option:selected:not(.0)' ).each( function( index, el ) {
+					if( jsonstr != '{' )
 						{
-							jsonstr+=',';
+							jsonstr += ',';
 						}
-					var type           = $(el).parent('select').attr('type'),
-						out_id         = $(el).attr('out_id');
-					    jsonstr       +='"'+type+'"'+':'+'"'+out_id+'"';
+					var type           = $( el ).parent( 'select' ).attr( 'type' ),
+						out_id         = $( el ).attr( 'out_id' );
+					    jsonstr       += '"'+type+'"'+':'+'"'+out_id+'"';
 					    jsonstr_debug += '&debug_'+type+'='+out_id;
 				});
 			};
@@ -1088,15 +1123,16 @@ intervalBlockHeight ();
 			
 			var jsonstr       = '{';
 			var jsonstr_debug = '';
+				nav ();
 				eachJson ( '.pageClass' );
 				eachJson ( '.colorBorder' );
 				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
 				optinJson ();
 
 			jsonstr += '}';
-			jsonstr  = JSON.parse(jsonstr);
+			jsonstr  = JSON.parse( jsonstr );
 
-			console.log(jsonstr);
+			console.log( jsonstr );
 			// console.log(jsonstr_debug);
 			
 			
@@ -1308,7 +1344,7 @@ intervalBlockHeight ();
 					
 				});
 		
-	});
+	});  // Конец функции геолокации
 						   
 	
 
@@ -1325,7 +1361,7 @@ intervalBlockHeight ();
 
           	
            	
-			};
+	};
 
 	/*-------------------------------------------------------------*/
 
