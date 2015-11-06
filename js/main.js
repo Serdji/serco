@@ -479,18 +479,18 @@ var count_load_img_max = 0;
 			
 
 	var	$blockHeight    = $( '.blockHeight' ),
-		$blockHeight1   = $blockHeight.children().eq(1),
-		$blockHeight2   = $blockHeight.children().eq(2),
-		$blockHeight3   = $blockHeight.children().eq(3),
-	    topBlock     	= $blockHeight1.outerHeight(),
-		centralBlock 	= $blockHeight2.outerHeight(),
-		bottomBlock  	= $blockHeight3.outerHeight(),
+		blockHeight1    = $blockHeight.children().eq(1),
+		blockHeight2    = $blockHeight.children().eq(2),
+		blockHeight3    = $blockHeight.children().eq(3),
+	    topBlock     	= blockHeight1.outerHeight(),
+		centralBlock 	= blockHeight2.outerHeight(),
+		bottomBlock  	= blockHeight3.outerHeight(),
 		$figure       	= $( 'figure' ),
 		arrHeightFigure = new Array();
 		
-		$blockHeight1.children().css('height', topBlock);
-		$blockHeight2.children().css('height', centralBlock);
-		$blockHeight3.children().css('height', bottomBlock);
+		blockHeight1.children().css('height', topBlock);
+		blockHeight2.children().css('height', centralBlock);
+		blockHeight3.children().css('height', bottomBlock);
 		
 
 			}
