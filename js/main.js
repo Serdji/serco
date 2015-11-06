@@ -916,7 +916,7 @@ intervalblockHeight ();
 		    mapOptions = { 
 				zoom        : 14,
 			 	center      : myPos,
-			 	mapTypeId   : google.maps.MapTypeId.TERRAIN,
+			 	// mapTypeId   : google.maps.MapTypeId.TERRAIN,
 			 	scrollwheel : false,
 			},
 		    map        = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
