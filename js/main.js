@@ -198,8 +198,9 @@ $( 'a[href="/"]' ).on('click', function() {
 		}, 100);
 
 	};
+	alphabetical ();	
 
-	alphabetical ();
+	
 
 
 /*--------------------------------------------------------------------*/ 
@@ -674,7 +675,7 @@ intervalblockHeight ();
 			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0, // ...
 			 	 resultHeight    = Math.ceil( textHeight * increase + crutchImgHeight ),
 			 	 resultWidth     = Math.ceil( textWidth * increase + crutchImgWidth ),
-			 	 $blockHeight     = $( '.Picture' ).height();
+			 	 blockHeight     = $( '.Picture' ).height();
 
 
 
@@ -682,14 +683,14 @@ intervalblockHeight ();
 			 	 
 
 			 if ( imgWidth > imgHeight) {
-			 	var alignment   = Math.ceil ( $blockHeight / 2 - resultWidth / 2 );
+			 	var alignment   = Math.ceil ( blockHeight / 2 - resultWidth / 2 );
 			 	_this.css({
 			 		width      : resultHeight,
 			 		height     : resultWidth,
 			 		marginTop  : alignment
 			 	});
 			 } else {
-			 	var alignment   = Math.ceil ( $blockHeight / 2 - resultHeight  / 2 );
+			 	var alignment   = Math.ceil ( blockHeight / 2 - resultHeight  / 2 );
 			 	_this.css({
 			 		width      : resultWidth,
 			 		height     : resultHeight,
@@ -1475,46 +1476,46 @@ intervalblockHeight ();
 
 
 
-           var ulId1      = $( 'ul.ui-autocomplete' ).eq( 0 ),
-           	   ulId2      = $( 'ul.ui-autocomplete' ).eq( 1 ),
-           	   ulId3      = $( 'ul.ui-autocomplete' ).eq( 2 ),
-           	   ulId4      = $( 'ul.ui-autocomplete' ).eq( 3 ),
-           	   ulId5      = $( 'ul.ui-autocomplete' ).eq( 4 ),
-           	   ulId6      = $( 'ul.ui-autocomplete' ).eq( 5 ),
-           	   ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
-           	   ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
-           	   ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
-           	   ulId10     = $( 'ul.ui-autocomplete' ).eq( 9 ),
-           	   ulId1Li    = ulId1.children( 'li' ).eq( 0 ),
-           	   ulId2Li    = ulId2.children( 'li' ).eq( 0 ),
-           	   ulId3Li    = ulId3.children( 'li' ).eq( 0 ),
-           	   ulId4Li    = ulId4.children( 'li' ).eq( 0 ),
-           	   ulId5Li    = ulId5.children( 'li' ).eq( 0 ),
-           	   ulId6Li    = ulId6.children( 'li' ).eq( 0 ),
-           	   ulId7Li    = ulId7.children( 'li' ).eq( 0 ),
-           	   ulId8Li    = ulId8.children( 'li' ).eq( 0 ),
-           	   ulId9Li    = ulId9.children( 'li' ).eq( 0 ),
-           	   ulId10Li   = ulId10.children( 'li' ).eq( 0 ),
-           	   btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
-           	   btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
-           	   btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
-           	   btnInput4  = $( 'div.ui-state-default' ).eq( 3 ),
-           	   btnInput5  = $( 'div.ui-state-default' ).eq( 4 ),
-           	   btnInput6  = $( 'div.ui-state-default' ).eq( 5 ),
-           	   btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
-           	   btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
-           	   btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
-           	   btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
-           	   inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
-           	   inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
-           	   inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
-           	   inputFil4  = $( 'input.custom-combobox-input' ).eq( 3 ),
-           	   inputFil5  = $( 'input.custom-combobox-input' ).eq( 4 ),
-           	   inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
-           	   inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
-           	   inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
-           	   inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
-           	   inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
+           var $ulId1      = $( 'ul.ui-autocomplete' ).eq( 0 ),
+           	   $ulId2      = $( 'ul.ui-autocomplete' ).eq( 1 ),
+           	   $ulId3      = $( 'ul.ui-autocomplete' ).eq( 2 ),
+           	   $ulId4      = $( 'ul.ui-autocomplete' ).eq( 3 ),
+           	   $ulId5      = $( 'ul.ui-autocomplete' ).eq( 4 ),
+           	   $ulId6      = $( 'ul.ui-autocomplete' ).eq( 5 ),
+           	   $ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
+           	   $ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
+           	   $ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
+           	   $ulId10     = $( 'ul.ui-autocomplete' ).eq( 9 ),
+           	   $ulId1Li    = $ulId1.children( 'li' ).eq( 0 ),
+           	   $ulId2Li    = $ulId2.children( 'li' ).eq( 0 ),
+           	   $ulId3Li    = $ulId3.children( 'li' ).eq( 0 ),
+           	   $ulId4Li    = $ulId4.children( 'li' ).eq( 0 ),
+           	   $ulId5Li    = $ulId5.children( 'li' ).eq( 0 ),
+           	   $ulId6Li    = $ulId6.children( 'li' ).eq( 0 ),
+           	   $ulId7Li    = $ulId7.children( 'li' ).eq( 0 ),
+           	   $ulId8Li    = $ulId8.children( 'li' ).eq( 0 ),
+           	   $ulId9Li    = $ulId9.children( 'li' ).eq( 0 ),
+           	   $ulId10Li   = $ulId10.children( 'li' ).eq( 0 ),
+           	   $btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
+           	   $btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
+           	   $btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
+           	   $btnInput4  = $( 'div.ui-state-default' ).eq( 3 ),
+           	   $btnInput5  = $( 'div.ui-state-default' ).eq( 4 ),
+           	   $btnInput6  = $( 'div.ui-state-default' ).eq( 5 ),
+           	   $btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
+           	   $btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
+           	   $btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
+           	   $btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
+           	   $inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
+           	   $inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
+           	   $inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
+           	   $inputFil4  = $( 'input.custom-combobox-input' ).eq( 3 ),
+           	   $inputFil5  = $( 'input.custom-combobox-input' ).eq( 4 ),
+           	   $inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
+           	   $inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
+           	   $inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
+           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
+           	   $inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
 
 
            	  
@@ -1564,25 +1565,25 @@ intervalblockHeight ();
         }
 
         	if ($( option ).hasClass( 'category' )) {
-        		openFil ( ulId4, btnInput4, inputFil4, 'Подгруппы есть', '.subcategoryR' );
-				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', ulId3Li );
+        		openFil ( $ulId4, $btnInput4, $inputFil4, 'Подгруппы есть', '.subcategoryR' );
+				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', $ulId3Li );
 
             }else if($( option ).hasClass('0 categoryR')){
             	var delay = 10;
-            	shutFil ( ulId4Li, ulId4, btnInput4, inputFil4, delay );
+            	shutFil ( $ulId4Li, $ulId4, $btnInput4, $inputFil4, delay );
             	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
 			}; 
 
             if ($( option ).hasClass('subcategory')) {
-            	inputFil4.removeClass( 'subActive' );
-				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', ulId4Li );
+            	$inputFil4.removeClass( 'subActive' );
+				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', $ulId4Li );
 
             }else if($( option ).hasClass('0 subcategoryR')){
             	optionElse ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR' );
             }; 
 
             if ($( option ).hasClass('type')) {
-				optionIf ( $( 'div.type' ), $( 'div.type strong' ), '.typeR', 'typeR', ulId5Li );
+				optionIf ( $( 'div.type' ), $( 'div.type strong' ), '.typeR', 'typeR', $ulId5Li );
 
             }else if($( option ).hasClass('0 typeR')){
             	optionElse ( $( 'div.type' ), $( 'div.type strong' ), '.typeR' );
@@ -1590,7 +1591,7 @@ intervalblockHeight ();
 
 
             if ($( option ).hasClass('surface')) {
-            	optionIf ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR', 'surfaceR', ulId7Li );
+            	optionIf ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR', 'surfaceR', $ulId7Li );
             	
             }else if($( option ).hasClass('0 surfaceR')){
             	optionElse ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR' );
@@ -1598,36 +1599,33 @@ intervalblockHeight ();
 
 
             if ($( option ).hasClass('country')) {
-            	openFil ( ulId9, btnInput9, inputFil9, 'Выбрано все', '.brandR' );
-				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', ulId8Li );
+            	openFil ( $ulId9, $btnInput9, $inputFil9, 'Выбрано все', '.brandR' );
+				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', $ulId8Li );
             	
             }else if($( option ).hasClass('0 countryR')){
             	var delayOne = 10,
             		delayTwo = 20;
-            	shutFil ( ulId9Li, ulId9, btnInput9, inputFil9, delayOne );
-            	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delayTwo );
+            	shutFil ( $ulId9Li, $ulId9, $btnInput9, $inputFil9, delayOne );
+            	shutFil ( $ulId10Li, $ulId10, $btnInput10, $inputFil10, delayTwo );
             	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
-            	sortLi ( ulId8 );
             }; 
 
 
             if ($( option ).hasClass('brand')) {
-            	inputFil9.removeClass( 'subActive' );
-            	openFil ( ulId10, btnInput10, inputFil10, 'Выбрано все', '.collectionR' );
-				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', ulId9Li );
+            	$inputFil9.removeClass( 'subActive' );
+            	openFil ( $ulId10, $btnInput10, $inputFil10, 'Выбрано все', '.collectionR' );
+				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', $ulId9Li );
             	
             }else if($( option ).hasClass('0 brandR')){
             	var delay = 10;
-            	shutFil ( ulId10Li, ulId10, btnInput10, inputFil10, delay );
+            	shutFil ( $ulId10Li, $ulId10, $btnInput10, $inputFil10, delay );
             	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
-            	sortLi ( ulId9 );
             }; 
 
 
             if ($( option ).hasClass('collection')) {
-            	inputFil10.removeClass( 'subActive' );
+            	$inputFil10.removeClass( 'subActive' );
 				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId10Li );
-				sortLi ( ulId10 );
             	
             }else if($( option ).hasClass('0 collectionR')){
             	optionElse ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR' );
@@ -1649,7 +1647,7 @@ intervalblockHeight ();
 
         history.replaceState(1, "Title1"  , "/catalog/page1/");
  		filterObj();
-		$blockHeight();	
+		blockHeight();	
 
 
             this._trigger( "select", event, {
