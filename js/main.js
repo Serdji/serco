@@ -163,29 +163,43 @@ $( 'a[href="/"]' ).on('click', function() {
 
 /*--------Функция сортировки пунктов внутри инпута по алфавиту--------*/
 
-	function sortLi ( inputIndex ) {
-		$( document ).on( 'click', 'div.ui-state-default', function() {
-				var mylist    = $( 'ul.ui-autocomplete' ).eq( inputIndex ),
-				    listitems = mylist.children( 'li:gt(0)' ).get();
-				listitems.sort( function( a, b ) {
-				   var compA = $( a ).text().toUpperCase(),
-				       compB = $( b ).text().toUpperCase();
-				   return ( compA < compB ) ? -1 : ( compA > compB ) ? 1 : 0;
-				});
 
-				$.each( listitems, function( idx, itm ) { 
-					mylist.append( itm ); 
-				});
-		});
+	function Sort () {
+		
+		function sortLi ( inputIndex ) {
+			$( document ).on( 'click', 'div.ui-state-default', function() {
+					var mylist    = $( 'ul.ui-autocomplete' ).eq( inputIndex ),
+					    listitems = mylist.children( 'li:gt(0)' ).get();
+					listitems.sort( function( a, b ) {
+					   var compA = $( a ).text().toUpperCase(),
+					       compB = $( b ).text().toUpperCase();
+					   return ( compA < compB ) ? -1 : ( compA > compB ) ? 1 : 0;
+					});
+
+					$.each( listitems, function( idx, itm ) { 
+						mylist.append( itm ); 
+					});
+			});
+		};
+		setTimeout( function () {
+
+			var $mylist      = $( 'input.custom-combobox-input' ),
+			    arry         = [],
+			    inputNamber  = 7; // с какого инпута начинать пункты по алфовиту. Отсчет с 0 до N
+
+			$.each( $mylist, function( index, val ) {
+				arry.push( val );
+			});
+
+			for ( var i = inputNamber; i <= arry.length; i++ ) {
+				sortLi ( i );
+			};
+
+		}, 100);
+
 	};
+	Sort ();
 
-	var inputNamber8  = 7,
-	    inputNamber9  = 8,
-	    inputNamber10 = 9;
-
-	sortLi ( inputNamber8 );
-	sortLi ( inputNamber9 );
-	sortLi ( inputNamber10 );
 
 /*--------------------------------------------------------------------*/ 
 
