@@ -1,14 +1,14 @@
 $(function(){
 
-	var	blockHeight  = $( '.blockHeight' ),
-	    topBlock     = blockHeight.children().eq(1).outerHeight(),
-		centralBlock = blockHeight.children().eq(2).outerHeight(),
-		bottomBlock  = blockHeight.children().eq(3).outerHeight(),
-		figure       = $( 'figure' );
+	var	$blockHeight = $( '.blockHeight' ),
+	    topBlock     = $blockHeight.children().eq(1).outerHeight(),
+		centralBlock = $blockHeight.children().eq(2).outerHeight(),
+		bottomBlock  = $blockHeight.children().eq(3).outerHeight(),
+		$figure      = $( 'figure' );
 		
-		blockHeight.children().eq(1).children().css('height', topBlock);
-		blockHeight.children().eq(2).children().css('height', centralBlock);
-		blockHeight.children().eq(3).children().css('height', bottomBlock);
+		$blockHeight.children().eq(1).children().css('height', topBlock);
+		$blockHeight.children().eq(2).children().css('height', centralBlock);
+		$blockHeight.children().eq(3).children().css('height', bottomBlock);
 	
 			
 
@@ -164,12 +164,12 @@ $( 'a[href="/"]' ).on('click', function() {
 /*--------Функция сортировки пунктов внутри инпута по алфавиту--------*/
 
 
-	function Sort () {
+	function alphabetical () {
 		
 		function sortLi ( inputIndex ) {
 			$( document ).on( 'click', 'div.ui-state-default', function() {
-					var mylist    = $( 'ul.ui-autocomplete' ).eq( inputIndex ),
-					    listitems = mylist.children( 'li:gt(0)' ).get();
+					var $mylist    = $( 'ul.ui-autocomplete' ).eq( inputIndex ),
+					    listitems  = $mylist.children( 'li:gt(0)' ).get();
 					listitems.sort( function( a, b ) {
 					   var compA = $( a ).text().toUpperCase(),
 					       compB = $( b ).text().toUpperCase();
@@ -177,7 +177,7 @@ $( 'a[href="/"]' ).on('click', function() {
 					});
 
 					$.each( listitems, function( idx, itm ) { 
-						mylist.append( itm ); 
+						$mylist.append( itm ); 
 					});
 			});
 		};
@@ -185,7 +185,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 			var $mylist      = $( 'input.custom-combobox-input' ),
 			    arry         = [],
-			    inputNamber  = 7; // с какого инпута начинать пункты по алфовиту. Отсчет с 0 до N
+			    inputNamber  = 7; // с какого инпута начинать пункты по алфавиту. Отсчет с 0 до N
 
 			$.each( $mylist, function( index, val ) {
 				arry.push( val );
@@ -198,7 +198,8 @@ $( 'a[href="/"]' ).on('click', function() {
 		}, 100);
 
 	};
-	Sort ();
+
+	alphabetical ();
 
 
 /*--------------------------------------------------------------------*/ 
@@ -445,8 +446,8 @@ $( 'a[href="/"]' ).on('click', function() {
 /*---------------------Карта под размер экрана---------------------*/
 
 
-var mapHeight = $( window ).height();
-$( '#map' ).css('height', mapHeight - 33);
+var $mapHeight = $( window ).height();
+$( '#map' ).css('height', $mapHeight - 33);
 
 /*-----------------------------------------------------------------*/
 			
@@ -477,19 +478,19 @@ var count_load_img_max = 0;
 			{
 			
 
-	var	blockHeight     = $( '.blockHeight' ),
-		blockHeight1    = blockHeight.children().eq(1),
-		blockHeight2    = blockHeight.children().eq(2),
-		blockHeight3    = blockHeight.children().eq(3),
-	    topBlock     	= blockHeight1.outerHeight(),
-		centralBlock 	= blockHeight2.outerHeight(),
-		bottomBlock  	= blockHeight3.outerHeight(),
-		figure       	= $( 'figure' ),
+	var	$blockHeight    = $( '.blockHeight' ),
+		$blockHeight1   = $blockHeight.children().eq(1),
+		$blockHeight2   = $blockHeight.children().eq(2),
+		$blockHeight3   = $blockHeight.children().eq(3),
+	    topBlock     	= $blockHeight1.outerHeight(),
+		centralBlock 	= $blockHeight2.outerHeight(),
+		bottomBlock  	= $blockHeight3.outerHeight(),
+		$figure       	= $( 'figure' ),
 		arrHeightFigure = new Array();
 		
-		blockHeight1.children().css('height', topBlock);
-		blockHeight2.children().css('height', centralBlock);
-		blockHeight3.children().css('height', bottomBlock);
+		$blockHeight1.children().css('height', topBlock);
+		$blockHeight2.children().css('height', centralBlock);
+		$blockHeight3.children().css('height', bottomBlock);
 		
 
 			}
@@ -501,17 +502,17 @@ var count_load_img_max = 0;
 
 blockHeight();
 
-	function intervalBlockHeight () {
+	function intervalblockHeight () {
 		
-		var intevalBlockHeight = setInterval( function (){
+		var intevalblockHeight = setInterval( function (){
 			blockHeight();
 		}, 100 );
 
 		setTimeout( function (){
-			clearInterval( intevalBlockHeight );
+			clearInterval( intevalblockHeight );
 		}, 1500 );
 	};
-intervalBlockHeight ();
+intervalblockHeight ();
 
 
 
@@ -521,7 +522,7 @@ intervalBlockHeight ();
 
 /*--------------------------Выгруска картиноак---------------------*/
 
-	function imgs(i){
+	function imgs( i ){
 
 		if(typeof i === 'undefined')
 		  {
@@ -529,12 +530,12 @@ intervalBlockHeight ();
 		  }
 
 		var jqxhr = $.ajax('/iimg/collection'+urls[4]+'.'+String(i)+'.png', {
-						success: function(data){
+						success: function( data ){
 							var img = "<img src='/iimg/collection"+urls[4]+"."+String(i)+".png' class='arrImg opacityArrImg1'>";
 							$( '.minImg' ).append( img );
-							imgs(++i)
+							imgs( ++i )
 						},
-						error: function(data){
+						error: function( data ){
 							$( '.minImg' )
 								.children( 'img:first' )
 								.removeClass( 'opacityArrImg1' )
@@ -651,13 +652,13 @@ intervalBlockHeight ();
 	function imgColl () {
 		
 
-		var img = $( '.Picture img' );
+		var $img = $( '.Picture img' );
 
-		$.each( img, function(index, val ) {
+		$.each( $img, function(index, val ) {
 			 
 			 var _this = $( val );
 
-			 _this.removeAttr('style');
+			 _this.removeAttr( 'style' );
 
 			
 
@@ -673,7 +674,7 @@ intervalBlockHeight ();
 			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0, // ...
 			 	 resultHeight    = Math.ceil( textHeight * increase + crutchImgHeight ),
 			 	 resultWidth     = Math.ceil( textWidth * increase + crutchImgWidth ),
-			 	 blockHeight     = $( '.Picture' ).height();
+			 	 $blockHeight     = $( '.Picture' ).height();
 
 
 
@@ -681,14 +682,14 @@ intervalBlockHeight ();
 			 	 
 
 			 if ( imgWidth > imgHeight) {
-			 	var alignment   = Math.ceil ( blockHeight / 2 - resultWidth / 2 );
+			 	var alignment   = Math.ceil ( $blockHeight / 2 - resultWidth / 2 );
 			 	_this.css({
 			 		width      : resultHeight,
 			 		height     : resultWidth,
 			 		marginTop  : alignment
 			 	});
 			 } else {
-			 	var alignment   = Math.ceil ( blockHeight / 2 - resultHeight  / 2 );
+			 	var alignment   = Math.ceil ( $blockHeight / 2 - resultHeight  / 2 );
 			 	_this.css({
 			 		width      : resultWidth,
 			 		height     : resultHeight,
@@ -741,7 +742,7 @@ intervalBlockHeight ();
 
 
 
-					$( className ).bind("userValuesChanged", function(e, data){
+					$( className ).bind( "userValuesChanged", function( e, data ){
 						   filterObj();
 					});
 				  
@@ -791,7 +792,7 @@ intervalBlockHeight ();
 						/*-----------------Рамка для выбранного цвета------------------*/
 
 
-		$(".colors").on("click", function(){
+		$( '.colors' ).on( 'click', function (){
 			
 			
 			$( '.colorFilter' ).append( '<span class="CancelFramework">[Отмена]</span>' );
@@ -811,11 +812,11 @@ intervalBlockHeight ();
 
 				var color_id  = $( this ).attr( 'id' ),
 					colorText = $( this ).attr( 'data-original-title' ),
-					divColor  = $( 'div.color' );
+					$divColor = $( 'div.color' );
 
 
-				divColor.append( '<strong>' + colorText + '</strong>' );
-				divColor
+				$divColor.append( '<strong>' + colorText + '</strong>' );
+				$divColor
 					.append('<div id="filtr_color">'
 								+'<div id=' + color_id + ' type="resultsFilterColor" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">'
 									+'<img src="/temp/colors.png" alt="">'
@@ -834,15 +835,15 @@ intervalBlockHeight ();
 
 
 		$(document).on("click", ".CancelFramework", function(){
-			var divColor  = $( 'div.color' );
+			var $divColor  = $( 'div.color' );
 			$( '.colors' ).removeClass('colorBorder');
-			divColor
+			$divColor
 				.children('div') 
 				.remove();
-			divColor
+			$divColor
 				.children('strong' )
 				.remove();
-			divColor.fadeOut(500);
+			$divColor.fadeOut(500);
 			$( '.CancelFramework' ).remove();
 			filterObj();
 		});
@@ -1237,7 +1238,7 @@ intervalBlockHeight ();
 
 								 		
 								 		
-								 			intervalBlockHeight();
+								 			intervalblockHeight();
 								 			intervalImgColl ();
 								 		
 
@@ -1648,7 +1649,7 @@ intervalBlockHeight ();
 
         history.replaceState(1, "Title1"  , "/catalog/page1/");
  		filterObj();
-		blockHeight();	
+		$blockHeight();	
 
 
             this._trigger( "select", event, {
@@ -2146,14 +2147,14 @@ pageList ();
 	    });
 	};
 
-		var inputs = $(".from-to,.input-lg, #x1, #x2, #y1, #y2, #z1, #z2");
+		var $inputs = $( '.from-to,.input-lg, #x1, #x2, #y1, #y2, #z1, #z2' );
 
-		inputs.ForceNumericOnly();
-		inputs.bind("change keyup input click", function() {
+		$inputs.ForceNumericOnly();
+		$inputs.bind( 'change keyup input click', function() {
 
-	    if (this.value.match(/[^0-9]/g)) {
-	        this.value = this.value.replace(/[^0-9]/g, '');
-	    }
+		    if ( this.value.match( /[^0-9]/g ) ) {
+		        this.value = this.value.replace( /[^0-9]/g, '' );
+		    }
 		});
 
 		/*-----------------------------------*/
@@ -2163,20 +2164,20 @@ pageList ();
 									/*---------------------------------------*/
 
 function startLoad(){
-	$('body').append('<div id="preLoader"><img src="/tpl/default/img/335.GIF" /></div>');
+	$( 'body' ).append( '<div id="preLoader"><img src="/tpl/default/img/335.GIF" /></div>' );
 };
 
 function stopLoad(){
-	$('div#preLoader').remove();
+	$( 'div#preLoader' ).remove();
 };
 
-function load(mod,vars,div)
+function load( mod, vars, div )
 {
 
-	if(typeof div === 'undefined'){div = 'mainload';}
+	if( typeof div === 'undefined' ){ div = 'mainload'; }
 	startLoad();
 	var jqxhr = $.get( "/hendler.php?mod="+mod+"&page="+vars, function(data) {
-	  $('#'+div).html(data);
+	  $( '#' + div ).html( data );
 	stopLoad(); 
 		allFuncs();
 	  ajaxNavigation = true;
