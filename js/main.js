@@ -980,36 +980,10 @@ intervalblockHeight ();
 			  [ '10', lat + 7, lng - 11 ],
 		];
 
-		var markerClast = [];
-
-
-	  // Область показа маркеров
-		var markersBounds = new google.maps.LatLngBounds();
-		 
-		for ( var i = 0; i < markers.length; i++ ) {
-
-		    var markerPosition = new google.maps.LatLng( markers[i][1], markers[i][2] );
-		 
-		    // Добавляем координаты маркера в область
-		    markersBounds.extend(markerPosition);
-		    // Создаём маркер
-		    var marker = new google.maps.Marker({
-		        position  : markerPosition,
-		        map       : map,   
-		        title     : markers[i][0],
-		        animation : google.maps.Animation.DROP
-		    });
-		    markerClast.push( marker );
-		    
-		};
-		var markerCluster = new MarkerClusterer( map, markerClast, {
-			maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
-			gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
-			styles   : null // дополнительные стили - стиля нет
-		});
+		
 
 		// Центрируем и масштабируем карту
-		map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
+		// map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
 
 		/*----Scroll----*/
 
@@ -1175,9 +1149,59 @@ intervalblockHeight ();
 							  	  finish_page      = Math.ceil( all_items / 9 ),
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length,
-							  	  shops            = data.shops;
+							  	  shops            = data.shops,
+							  	  prt              = data.prt;
+								  arryMarkers      = [];
 
 							  	  $.each( shops, function( index, val ) {
+							  	  	
+								  	  	var markerLat = val.lat,
+								  	  		markerLng = val.lon,
+								  	  		dist      = val.dist,
+								  	  		adress    = val.adress,
+								  	  		name      = val.name,
+								  	  		pid       = val.pid;
+
+								  	  		arryMarkers.push( [ name, markerLat, markerLng ] );
+
+								 });
+
+								console.log( arryMarkers );
+
+								// // Область показа маркеров
+								// var markersBounds = new google.maps.LatLngBounds();
+								 
+								
+
+								//     var markerPosition = new google.maps.LatLng( arryLat, arryLng );
+								 
+								//     // Добавляем координаты маркера в область
+								//     markersBounds.extend(markerPosition);
+								//     // Создаём маркер
+								//     var marker = new google.maps.Marker({
+								//         position  : markerPosition,
+								//         map       : map,   
+								//         title     : arryName,
+								//         animation : google.maps.Animation.DROP
+								//     });
+								    
+								// var markerClast = [];
+
+								//     markerClast.push( marker );
+								//     console.log(markerClast);
+
+  
+								// var markerCluster = new MarkerClusterer( map, markerClast, {
+								// 	maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
+								// 	gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
+								// 	styles   : null // дополнительные стили - стиля нет
+								// });
+
+
+
+
+
+							  	  $.each( prt, function( index, val ) {
 							  	  	
 							  	  	var lat    = val.lat,
 							  	  		lng    = val.lon,
@@ -1186,9 +1210,7 @@ intervalblockHeight ();
 							  	  		name   = val.name,
 							  	  		pid    = val.pid;
 
-							  	  		console.log(lat, lng, dist, adress, name, pid);
-
-							  	  	console.log(lat);
+							  	  		
 							  	  });
 							  	 
 
