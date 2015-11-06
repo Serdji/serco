@@ -923,67 +923,9 @@ intervalblockHeight ();
 		    myMarker   = new google.maps.Marker({
 			    position  : myPos,
 			    map       : map,
-			    animation : google.maps.Animation.BOUNCE,
+			    // animation : google.maps.Animation.BOUNCE,
 			    title     : 'Вы здесь :D',
 			});
-
-			var markers = [
-			  [ '1', lat + 0.003, lng + 0.003 ],
-			  [ '2', lat + 0.001, lng + 0.01] ,
-			  [ '3', lat + 0.005, lng + 0.003 ],
-			  [ '4', lat + 0.002, lng + 0.02 ],
-			  [ '5', lat + 0.007, lng + 0.006 ],
-			  [ '6', lat - 0.01, lng - 0.007 ],
-			  [ '7', lat - 0.005, lng + 0.005 ],
-			  [ '8', lat + 0.0015, lng - 0.0016 ],
-			  [ '9', lat - 0.002, lng + 0.036 ],
-			  [ '10', lat + 0.009, lng - 0.02 ],
-			  [ '1', lat + 5, lng + 4 ],
-			  [ '2', lat + 2, lng + 7] ,
-			  [ '3', lat + 2, lng + 8 ],
-			  [ '4', lat + 4, lng + 9 ],
-			  [ '5', lat + 1, lng + 7 ],
-			  [ '6', lat - 8, lng - 4 ],
-			  [ '7', lat - 5, lng + 8 ],
-			  [ '8', lat + 5, lng - 0 ],
-			  [ '9', lat - 2, lng + 3 ],
-			  [ '10', lat + 5, lng - 9 ],
-			  [ '1', lat + 6, lng + 4 ],
-			  [ '2', lat + 3, lng + 7] ,
-			  [ '3', lat + 3, lng + 8 ],
-			  [ '4', lat + 5, lng + 9 ],
-			  [ '5', lat + 2, lng + 7 ],
-			  [ '6', lat - 9, lng - 4 ],
-			  [ '7', lat - 6, lng + 8 ],
-			  [ '8', lat + 6, lng - 0 ],
-			  [ '9', lat - 3, lng + 3 ],
-			  [ '10', lat + 6, lng - 9 ], 
-			  [ '1', lat + 6, lng + 5 ],
-			  [ '2', lat + 3, lng + 8] ,
-			  [ '3', lat + 3, lng + 9 ],
-			  [ '4', lat + 5, lng + 10 ],
-			  [ '5', lat + 2, lng + 8 ],
-			  [ '6', lat - 9, lng - 5 ],
-			  [ '7', lat - 6, lng + 9 ],
-			  [ '8', lat + 6, lng - 1 ],
-			  [ '9', lat - 3, lng + 4 ],
-			  [ '10', lat + 6, lng - 10 ],
-			  [ '1', lat + 7, lng + 6 ],
-			  [ '2', lat + 4, lng + 9] ,
-			  [ '3', lat + 4, lng + 10 ],
-			  [ '4', lat + 5, lng + 11 ],
-			  [ '5', lat + 3, lng + 9 ],
-			  [ '6', lat - 10, lng - 6 ],
-			  [ '7', lat - 7, lng + 10 ],
-			  [ '8', lat + 7, lng - 2 ],
-			  [ '9', lat - 4, lng + 5 ],
-			  [ '10', lat + 7, lng - 11 ],
-		];
-
-		
-
-		// Центрируем и масштабируем карту
-		// map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
 
 		/*----Scroll----*/
 
@@ -1173,40 +1115,39 @@ intervalblockHeight ();
 								  	  		arryMarkers.push( [ name, markerLat, markerLng, adress ] );
 
 								 });
-
-								console.log( arryMarkers );
-
-
-
-							  // Область показа маркеров
+								
+									
+							    // Область показа маркеров
 								var markersBounds = new google.maps.LatLngBounds();
 								 
-								for ( var i = 0; i < arryMarkers.length; i++ ) {
+								$.each( arryMarkers, function( index, val ) {
 
-								    var markerPosition = new google.maps.LatLng( arryMarkers[i][1], arryMarkers[i][2] );
+								    	// Область показа маркеров
+									 
+									    var markerPosition = new google.maps.LatLng( val[1], val[2] );
 
+									    // Добавляем координаты маркера в область
+									    markersBounds.extend(markerPosition);
+									    // Создаём маркер
+									    var marker = new google.maps.Marker({
+									        position  : markerPosition,
+									        map       : map,   
+									        title     : val[0],
+									        animation : google.maps.Animation.DROP
+									    });
 
+									    var contentString = '<div id="content">'  + val[3] + '</div>';
+									    var infowindow    = new google.maps.InfoWindow({
+									    	content : contentString
+									    });
+									    console.log(contentString);
+										google.maps.event.addListener( marker, 'click', function() {
+										   infowindow.open( map, marker );
+										});
 
-								    // Добавляем координаты маркера в область
-								    markersBounds.extend(markerPosition);
-								    // Создаём маркер
-								    var marker = new google.maps.Marker({
-								        position  : markerPosition,
-								        map       : map,   
-								        title     : arryMarkers[i][0],
-								        animation : google.maps.Animation.DROP
-								    });
-								    
-								    var contentString = '<div id="content">' + arryMarkers[i][3] + '</div>';
-								    var infowindow = new google.maps.InfoWindow({
-								    	content : contentString
-								    });
-									google.maps.event.addListener( marker, 'click', function() {
-									   infowindow.open( map, marker ); 
-									});
+								markerClast.push( marker );
 
-								    markerClast.push( marker );
-								};
+								});
 
 
 								var markerCluster = new MarkerClusterer( map, markerClast, {
