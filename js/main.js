@@ -1174,7 +1174,22 @@ intervalblockHeight ();
 							  	  all_items        = data.all_items,
 							  	  finish_page      = Math.ceil( all_items / 9 ),
 							  	  collectionLength = collection.length,
-							  	  brandLength      = brand.length;
+							  	  brandLength      = brand.length,
+							  	  shops            = data.shops;
+
+							  	  $.each( shops, function( index, val ) {
+							  	  	
+							  	  	var lat    = val.lat,
+							  	  		lng    = val.lon,
+							  	  		dist   = val.dist,
+							  	  		adress = val.adress,
+							  	  		name   = val.name,
+							  	  		pid    = val.pid;
+
+							  	  		console.log(lat, lng, dist, adress, name, pid);
+
+							  	  	console.log(lat);
+							  	  });
 							  	 
 
 							  	  
