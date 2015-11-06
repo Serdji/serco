@@ -1151,7 +1151,15 @@ intervalblockHeight ();
 							  	  brandLength      = brand.length,
 							  	  shops            = data.shops,
 							  	  prt              = data.prt;
-								  arryMarkers      = [];
+								  arryMarkers      = [],
+								  markerClast      = [];
+
+
+
+
+						/*-----------------Выгрузка маркеров на карту-------------------*/ 
+
+
 
 							  	  $.each( shops, function( index, val ) {
 							  	  	
@@ -1162,41 +1170,57 @@ intervalblockHeight ();
 								  	  		name      = val.name,
 								  	  		pid       = val.pid;
 
-								  	  		arryMarkers.push( [ name, markerLat, markerLng ] );
+								  	  		arryMarkers.push( [ name, markerLat, markerLng, adress ] );
 
 								 });
 
 								console.log( arryMarkers );
 
-								// // Область показа маркеров
-								// var markersBounds = new google.maps.LatLngBounds();
-								 
-								
 
-								//     var markerPosition = new google.maps.LatLng( arryLat, arryLng );
+
+							  // Область показа маркеров
+								var markersBounds = new google.maps.LatLngBounds();
 								 
-								//     // Добавляем координаты маркера в область
-								//     markersBounds.extend(markerPosition);
-								//     // Создаём маркер
-								//     var marker = new google.maps.Marker({
-								//         position  : markerPosition,
-								//         map       : map,   
-								//         title     : arryName,
-								//         animation : google.maps.Animation.DROP
-								//     });
+								for ( var i = 0; i < arryMarkers.length; i++ ) {
+
+								    var markerPosition = new google.maps.LatLng( arryMarkers[i][1], arryMarkers[i][2] );
+
+
+
+								    // Добавляем координаты маркера в область
+								    markersBounds.extend(markerPosition);
+								    // Создаём маркер
+								    var marker = new google.maps.Marker({
+								        position  : markerPosition,
+								        map       : map,   
+								        title     : arryMarkers[i][0],
+								        animation : google.maps.Animation.DROP
+								    });
 								    
-								// var markerClast = [];
+								    var contentString = '<div id="content">' + arryMarkers[i][3] + '</div>';
+								    var infowindow = new google.maps.InfoWindow({
+								    	content : contentString
+								    });
+									google.maps.event.addListener( marker, 'click', function() {
+									   infowindow.open( map, marker ); 
+									});
 
-								//     markerClast.push( marker );
-								//     console.log(markerClast);
+								    markerClast.push( marker );
+								};
 
-  
-								// var markerCluster = new MarkerClusterer( map, markerClast, {
-								// 	maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
-								// 	gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
-								// 	styles   : null // дополнительные стили - стиля нет
-								// });
 
+								var markerCluster = new MarkerClusterer( map, markerClast, {
+									maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
+									gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
+									styles   : null // дополнительные стили - стиля нет
+								});
+
+								// Центрируем и масштабируем карту
+								map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
+
+
+
+						/*--------------------------------------------------------------*/ 
 
 
 
