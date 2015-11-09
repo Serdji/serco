@@ -342,103 +342,97 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+function accordions () {
+									
+									$( '.myBtnVse' ).addClass( 'myBtnActive' );
 
-/*----------------------------Акардионы----------------------------*/	
+									$( document ).on( 'click', '.myBtnVse', function() {
+										$( '.item' ).removeAttr( 'style' );
+										$( this ).addClass( 'myBtnActive' );
+										$( '.myBtn' ).removeClass( 'myBtnActive' );
+									});
 
-
-	
-
-	$( '.myBtnVse' ).addClass( 'myBtnActive' );
-
-	$( '.myBtnVse' ).on('click', function() {
-		$( '.item' ).removeAttr( 'style' );
-		$( this ).addClass( 'myBtnActive' );
-		$( '.myBtn' ).removeClass( 'myBtnActive' );
-	});
-
-	$( '.myBtn' ).on( 'click', function() {
-		var _this = $( this );
-		_this.addClass( 'myBtnActive' );
+									$( document ).on( 'click', '.myBtn', function() {
+										var _this = $( this );
+										_this.addClass( 'myBtnActive' );
 
 
-		_this
-		  .parent()
-		  .siblings()
-		  .children( 'button' )
-		  .removeClass( 'myBtnActive' );
-		$( '.item' ).css('display', 'none');		 
-		
-			 
-			 
-	});
+										_this
+										  .parent()
+										  .siblings()
+										  .children( 'button' )
+										  .removeClass( 'myBtnActive' );
+										$( '.item' ).css('display', 'none');		 
+										
+											 
+											 
+									});
 
 
-	$( '.myBtnInfo' ).on('click', function() {
-		$( this ).addClass( 'myBtnActive' );
-	});
-	$( '.closes, .fade' ).on('click', function() {
-		$( '.myBtnInfo' ).removeClass('myBtnActive');
-	});
+									$( document ).on( 'click', '.myBtnInfo', function() {
+										$( this ).addClass( 'myBtnActive' );
+									});
+									$( document ).on( 'click', '.closes, .fade', function() {
+										$( '.myBtnInfo' ).removeClass('myBtnActive');
+									});
 
 
 
 
 
-	$( '.accordionStart' ).on( 'click', function() {
-		var _this = $( this ),
-		    speedUp = 1000;
-			_this.next( '.accordion' )
-					 .slideToggle( speedUp, 'easeInOutCubic' );
+									$( document ).on( 'click', '.accordionStart', function() {
+										var _this = $( this ),
+										    speedUp = 1000;
+											_this.next( '.accordion' )
+													 .slideToggle( speedUp, 'easeInOutCubic' );
 
-			_this
-			  .parent()
-			  .siblings()
-			  .children( '.accordion' )
-			  .slideUp( speedUp, 'easeInOutCubic' );
-		
-
-
-			if ( ! _this.hasClass( 'accordionAktiv' ) ) {
-				_this.addClass( 'accordionAktiv' );
-				_this
-				   .find( '.removSadow' )
-				   .addClass('removeSadowClick');
-
-			}else{
-				_this.removeClass('accordionAktiv');
-				_this
-				  .find( '.removSadow' )
-				  .removeClass( 'removeSadowClick' );
-			};
-
-			_this
-			  .parent()
-			  .siblings()
-			  .children( '.accordionStart' )
-			  .removeClass( 'accordionAktiv' );
-					 
-			_this
-			  .parent()
-			  .siblings()
-
-			  .find('.removSadow')
-			  .removeClass( 'removeSadowClick' );
+											_this
+											  .parent()
+											  .siblings()
+											  .children( '.accordion' )
+											  .slideUp( speedUp, 'easeInOutCubic' );
+										
 
 
-		
+											if ( ! _this.hasClass( 'accordionAktiv' ) ) {
+												_this.addClass( 'accordionAktiv' );
+												_this
+												   .find( '.removSadow' )
+												   .addClass('removeSadowClick');
 
-	});
+											}else{
+												_this.removeClass('accordionAktiv');
+												_this
+												  .find( '.removSadow' )
+												  .removeClass( 'removeSadowClick' );
+											};
+
+											_this
+											  .parent()
+											  .siblings()
+											  .children( '.accordionStart' )
+											  .removeClass( 'accordionAktiv' );
+													 
+											_this
+											  .parent()
+											  .siblings()
+
+											  .find('.removSadow')
+											  .removeClass( 'removeSadowClick' );
+
+
+										
+
+									});
 
 
 
-	$( '.Point' )
-		.prev()
-		.addClass( 'pageNamberVerticalBorder' );
+									$( '.Point' )
+										.prev()
+										.addClass( 'pageNamberVerticalBorder' );
+								};
+								accordions ();
 
-
-	
-
-/*-----------------------------------------------------------------*/
 
 
 
@@ -1100,7 +1094,7 @@ intervalblockHeight ();
 
 
 
-						/*-----------------Выгрузка маркеров на карту-------------------*/ 
+						/*-----------------Выгрузка маркеров на карту----------------------*/ 
 
 
 
@@ -1113,7 +1107,7 @@ intervalblockHeight ();
 								  	  		name      = val.name,
 								  	  		pid       = val.pid;
 
-								  	  		arryMarkers.push( [ name, markerLat, markerLng, adress ] );
+								  	  	arryMarkers.push( [ name, markerLat, markerLng, adress ] );
 
 								 });
 								
@@ -1161,9 +1155,10 @@ intervalblockHeight ();
 
 
 
-						/*--------------------------------------------------------------*/ 
+						/*-----------------------------------------------------------------*/ 
 
 
+						/*----------------------------Акардионы----------------------------*/	
 
 
 							  	  $.each( prt, function( index, val ) {
@@ -1178,13 +1173,30 @@ intervalblockHeight ();
 							  	  	arryAccord.push( [ name, adress, pid ] );
 
 							  	  		
+							  	
 							  	  });
-							  	  console.log( arryAccord );
-							  	 
-						  	  	 for (var i = 0; i < arryAccord.length; i++) {
-						  	  	 	console.log( arryAccord[i] );
+							  	  	
+							  	  	var $divName        = $( 'div.name' ),
+							  	  		$accordionStart = $( 'div.accordionStart' );
 
-						  	  	 	$( 'div.filterLeft' )
+									for ( var i = 0; i < arryAccord.length; i++ ) {
+
+									$divName
+										.eq( i )
+										.find( 'b' )
+										.text( arryAccord[i][0] );
+
+									$divName
+										.eq( i )
+										.find( '.text-shadow' )
+										.text( arryAccord[i][1] );
+
+									$accordionStart
+										.eq( i )
+										.attr( 'id', arryAccord[i][2] );
+
+
+						  	  	 	/*$( 'div.filterLeft' )
 						  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
 			  	  	 								 '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart" id="' + arryAccord[i][2] + '">'+
 									                     '<div class="filterLeftPad">'+
@@ -1198,7 +1210,7 @@ intervalblockHeight ();
 								                    		'</button>'+	
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal">'+
 								                    			'О компани'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
@@ -1219,13 +1231,8 @@ intervalblockHeight ();
 								                    		'</div>'+	
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal">'+
 								                    			'Контакты'+
-								                    		'</button>'+	
-								                    	'</div>'+
-								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
-								                    			'Полный каталог товаров'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
 								                    			'<div class="modal-dialog modal-lg">'+
@@ -1245,13 +1252,8 @@ intervalblockHeight ();
 								                    		'</div>'+	
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal">'+
 								                    			'Для покупателей'+
-								                    		'</button>'+	
-								                    	'</div>'+
-								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
-								                    			'Полный каталог товаров'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
 								                    			'<div class="modal-dialog modal-lg">'+
@@ -1271,13 +1273,8 @@ intervalblockHeight ();
 								                    		'</div>'+	
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal">'+
 								                    			'Скидки'+
-								                    		'</button>'+	
-								                    	'</div>'+
-								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
-								                    			'Полный каталог товаров'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
 								                    			'<div class="modal-dialog modal-lg">'+
@@ -1297,13 +1294,8 @@ intervalblockHeight ();
 								                    		'</div>'+	
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal">'+
 								                    			'Доставка'+
-								                    		'</button>'+	
-								                    	'</div>'+
-								                    	'<div class="filterLeftPad">'+
-								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
-								                    			'Полный каталог товаров'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
 								                    			'<div class="modal-dialog modal-lg">'+
@@ -1323,12 +1315,19 @@ intervalblockHeight ();
 								                    		'</div>'+	
 								                    	'</div>'+
 								                    '</div>'+
-		  	  	 								'</div>');
+		  	  	 								'</div>');*/
 						  	  	 };
 
 
 
 
+
+								
+
+
+	
+
+						/*-----------------------------------------------------------------*/
 
 
 

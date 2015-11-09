@@ -116,14 +116,15 @@
                   </div>
                 </div>
 
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft"> <!-- !!!!!! -->
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft">
 
 
                  <div class="hint" title="?">?</div>
 
+   <!-- ************************************************************************************************************************* -->
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
+                     <div class="filterLeftPad name">
                        <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
@@ -150,7 +151,7 @@
                                 <h4 class="modal-title" id="myModalLabel">О компани</h4>
                               </div>
                               <div class="modal-body">
-                                
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -175,7 +176,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Контакты</h4>
                               </div>
                               <div class="modal-body">
-                                
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -200,7 +201,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
                               </div>
                               <div class="modal-body">
-                                
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -226,7 +227,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Скидки</h4>
                               </div>
                               <div class="modal-body">
-                                
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -254,7 +255,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Доставка</h4>
                               </div>
                               <div class="modal-body">
-                                
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -266,502 +267,1037 @@
                     </div>  
                   </div>
                         
-
-
+  <!-- ************************************************************************************************************************* -->
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
 
+  <!-- ************************************************************************************************************************* -->
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
-
+              
+  <!-- ************************************************************************************************************************* -->
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
+
+
+  <!-- ************************************************************************************************************************* -->
+
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
+
+
+  <!-- ************************************************************************************************************************* -->
+
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
+
+  <!-- ************************************************************************************************************************* -->
+
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
 
+  <!-- ************************************************************************************************************************* -->
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
-                     <div class="filterLeftPad">
-                       <p><b>ООО .............</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
+                     <div class="filterLeftPad name">
+                       <p><b>ООО "Мир плитки СерКо"</b></p><p class="text-shadow removSadow"> Московская область, г. Красногорск, ул. Успенская дом № 32 Помешение XVIII - XIX</p>
                      </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
+                         <button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">
                                 Полный каталог товаров
                          </button>
                       </div>
-                                     
                       
-
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#company">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#company">
                                 О компании
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">О компани</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#contacts">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#contacts">
                                 Контакты
                          </button>
                          
 
- 
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="contacts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Контакты</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#buyers">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#buyers">
                                 Для покупателей
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="buyers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
 
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled"data-toggle="modal" data-target="#discounts">
+                         <button class="btn btn-primary btn-sm myBtnInfo"data-toggle="modal" data-target="#discounts">
                                 Скидки
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="discounts" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Скидки</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     
 
-                    
-                    
+                      
 
                       <div class="filterLeftPad">
-                         <button class="myBtnInactive" disabled="disabled" data-toggle="modal" data-target="#delivery">
+                         <button class="btn btn-primary btn-sm myBtnInfo" data-toggle="modal" data-target="#delivery">
                                 Доставка
                          </button>
                          
 
-
+                        <!-- Modal -->
+                        <div class="modal fade bs-example-modal-lg" id="delivery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" id="myModalLabel">Доставка</h4>
+                              </div>
+                              <div class="modal-body">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>  
                     </div>  
                   </div>
-                        
-                          
 
-                        
-  
-
-
+  <!-- ************************************************************************************************************************* -->
 
 
                 </div>
