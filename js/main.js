@@ -438,6 +438,21 @@ $( 'a[href="/"]' ).on('click', function() {
 			.prev()
 			.addClass( 'pageNamberVerticalBorder' );
 
+		$( 'div.accordionStart' ).on('click', function() {
+			if ( $( this ).hasClass( 'accordionAktiv' ) ) {
+				$( this )
+					.parent()
+					.siblings()
+					.find( '.accordionStart' )
+					.removeAttr( 'id' );
+
+				filterObj();
+			} else {
+				filterObj();
+			}
+				
+		});	
+
 
 	
 	};
@@ -949,10 +964,16 @@ intervalblockHeight ();
 
 
 
+				
+
+
+
+
+
 					/*---------------Функция место определения координат------------*/
 				
 
-				function nav () {
+				function navJson () {
 					
 					function latitude () {
 							if( jsonstr != '{' )
@@ -1063,7 +1084,7 @@ intervalblockHeight ();
 			
 			var jsonstr       = '{';
 			var jsonstr_debug = '';
-				nav ();
+				navJson ();
 				eachJson ( '.pageClass' );
 				eachJson ( '.colorBorder' );
 				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
@@ -1079,7 +1100,7 @@ intervalblockHeight ();
 
 				 
 				$.ajax({
-					url: "/hendler.php?mod=json_catalog"+(($.isEmptyObject(jsonstr)==true)?'&is_null=1':''),
+					url: "/hendler.php?mod=json_catalog" + ( ( $.isEmptyObject( jsonstr ) == true ) ? '&is_null=1' : '' ),
 					type: "POST",
 					data: jsonstr,
 					dataType: "json",
@@ -1108,7 +1129,7 @@ intervalblockHeight ();
 
 
 
-						/*-----------------Выгрузка маркеров на карту----------------------*/ 
+						/*--------------------Выгрузка маркеров на карту-------------------*/ 
 
 
 
@@ -1205,9 +1226,20 @@ intervalblockHeight ();
 										.find( '.text-shadow' )
 										.text( arryAccord[i][1] );
 
-									$accordionStart
-										.eq( i )
-										.attr( 'id', arryAccord[i][2] );
+
+									if ( $accordionStart.hasClass( 'accordionAktiv' ) ) {
+											$( this )
+												.parent()
+												.siblings()
+												.find( $accordionStart )
+												.removeAttr( 'id' );
+												
+										} else {
+											$accordionStart
+												.eq( i )
+												.attr( 'id', arryAccord[i][2] );
+
+										};	
 
 									$( '#company' + i +'' )
 										.find( '.modal-body' )
@@ -1233,13 +1265,6 @@ intervalblockHeight ();
 						  	  	 };
 
 
-
-
-
-								
-
-
-	
 
 						/*-----------------------------------------------------------------*/
 
@@ -1714,7 +1739,7 @@ intervalblockHeight ();
 
 
 
-        history.replaceState(1, "Title1"  , "/catalog/page1/");
+        history.replaceState( 1, "Title1"  , "/catalog/page1/" );
  		filterObj();
 		blockHeight();	
 
