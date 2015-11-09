@@ -1199,12 +1199,126 @@ intervalblockHeight ();
 								                    	'</div>'+
 								                    	'<div class="filterLeftPad">'+
 								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'О компани'+
+								                    		'</button>'+
+								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+								                    			'<div class="modal-dialog modal-lg">'+
+								                    				'<div class="modal-content">'+
+								                    					'<div class="modal-header">'+
+								                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+								                    						'<h4 class="modal-title" id="myModalLabel">О компани</h4>'+
+								                    					'</div>'+
+								                    					'<div class="modal-body">'+
+								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    					'</div>'+
+								                    					'<div class="modal-footer">'+
+								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+								                    					'</div>'+
+								                    				'</div>'+
+								                    			'</div>'+
+								                    		'</div>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Контакты'+
+								                    		'</button>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
 								                    			'Полный каталог товаров'+
 								                    		'</button>'+
 								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
 								                    			'<div class="modal-dialog modal-lg">'+
 								                    				'<div class="modal-content">'+
-								                    				'</div>'
+								                    					'<div class="modal-header">'+
+								                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+								                    						'<h4 class="modal-title" id="myModalLabel">Контакты</h4>'+
+								                    					'</div>'+
+								                    					'<div class="modal-body">'+
+								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    					'</div>'+
+								                    					'<div class="modal-footer">'+
+								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+								                    					'</div>'+
+								                    				'</div>'+
+								                    			'</div>'+
+								                    		'</div>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Для покупателей'+
+								                    		'</button>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Полный каталог товаров'+
+								                    		'</button>'+
+								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+								                    			'<div class="modal-dialog modal-lg">'+
+								                    				'<div class="modal-content">'+
+								                    					'<div class="modal-header">'+
+								                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+								                    						'<h4 class="modal-title" id="myModalLabel">Для покупателей</h4>'+
+								                    					'</div>'+
+								                    					'<div class="modal-body">'+
+								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    					'</div>'+
+								                    					'<div class="modal-footer">'+
+								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+								                    					'</div>'+
+								                    				'</div>'+
+								                    			'</div>'+
+								                    		'</div>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Скидки'+
+								                    		'</button>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Полный каталог товаров'+
+								                    		'</button>'+
+								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+								                    			'<div class="modal-dialog modal-lg">'+
+								                    				'<div class="modal-content">'+
+								                    					'<div class="modal-header">'+
+								                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+								                    						'<h4 class="modal-title" id="myModalLabel">Скидки</h4>'+
+								                    					'</div>'+
+								                    					'<div class="modal-body">'+
+								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    					'</div>'+
+								                    					'<div class="modal-footer">'+
+								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+								                    					'</div>'+
+								                    				'</div>'+
+								                    			'</div>'+
+								                    		'</div>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Доставка'+
+								                    		'</button>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Полный каталог товаров'+
+								                    		'</button>'+
+								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+								                    			'<div class="modal-dialog modal-lg">'+
+								                    				'<div class="modal-content">'+
+								                    					'<div class="modal-header">'+
+								                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+								                    						'<h4 class="modal-title" id="myModalLabel">Доставка</h4>'+
+								                    					'</div>'+
+								                    					'<div class="modal-body">'+
+								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    					'</div>'+
+								                    					'<div class="modal-footer">'+
+								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+								                    					'</div>'+
+								                    				'</div>'+
 								                    			'</div>'+
 								                    		'</div>'+	
 								                    	'</div>'+

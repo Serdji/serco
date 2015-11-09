@@ -116,7 +116,7 @@
                   </div>
                 </div>
 
-                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft">
+                <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft"> <!-- !!!!!! -->
 
 
                  <div class="hint" title="?">?</div>
@@ -150,7 +150,7 @@
                                 <h4 class="modal-title" id="myModalLabel">О компани</h4>
                               </div>
                               <div class="modal-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -175,7 +175,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Контакты</h4>
                               </div>
                               <div class="modal-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -200,7 +200,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Для покупателей</h4>
                               </div>
                               <div class="modal-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -226,7 +226,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Скидки</h4>
                               </div>
                               <div class="modal-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
@@ -254,7 +254,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Доставка</h4>
                               </div>
                               <div class="modal-body">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea consectetur sed accusamus eligendi explicabo, maiores, quas ipsa magni praesentium sunt voluptates nulla quos. Qui, quam explicabo perferendis fugiat repudiandae, repellendus?
+                                
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>
