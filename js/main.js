@@ -1094,7 +1094,8 @@ intervalblockHeight ();
 							  	  shops            = data.shops,
 							  	  prt              = data.prt;
 								  arryMarkers      = [],
-								  markerClast      = [];
+								  markerClast      = [],
+								  arryAccord       = [];
 
 
 
@@ -1140,7 +1141,6 @@ intervalblockHeight ();
 									    var infowindow    = new google.maps.InfoWindow({
 									    	content : contentString
 									    });
-									    console.log(contentString);
 										google.maps.event.addListener( marker, 'click', function() {
 										   infowindow.open( map, marker );
 										});
@@ -1175,9 +1175,49 @@ intervalblockHeight ();
 							  	  		name   = val.name,
 							  	  		pid    = val.pid;
 
+							  	  	arryAccord.push( [ name, adress, pid ] );
+
 							  	  		
 							  	  });
+							  	  console.log( arryAccord );
 							  	 
+						  	  	 for (var i = 0; i < arryAccord.length; i++) {
+						  	  	 	console.log( arryAccord[i] );
+
+						  	  	 	$( 'div.filterLeft' )
+						  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
+			  	  	 								 '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart" id="' + arryAccord[i][2] + '">'+
+									                     '<div class="filterLeftPad">'+
+									                       	'<p><b>' + arryAccord[i][0] + '</b></p><p class="text-shadow removSadow">' + arryAccord[i][1] + '</p>'+
+									                     '</div>'+
+								                    '</div>'+
+								                    '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Полный каталог товаров'+
+								                    		'</button>'+	
+								                    	'</div>'+
+								                    	'<div class="filterLeftPad">'+
+								                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+								                    			'Полный каталог товаров'+
+								                    		'</button>'+
+								                    		'<div class="modal fade bs-example-modal-lg" id="company" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+								                    			'<div class="modal-dialog modal-lg">'+
+								                    				'<div class="modal-content">'+
+								                    				'</div>'
+								                    			'</div>'+
+								                    		'</div>'+	
+								                    	'</div>'+
+								                    '</div>'+
+		  	  	 								'</div>');
+						  	  	 };
+
+
+
+
+
+
+
 
 							  	  
 							  	  $( '.collectionLength' ).text( all_items );
