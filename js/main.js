@@ -408,7 +408,8 @@ $( 'a[href="/"]' ).on('click', function() {
 					   .addClass('removeSadowClick');
 
 				}else{
-					_this.removeClass('accordionAktiv');
+					_this
+						.removeClass('accordionAktiv');
 					_this
 					  .find( '.removSadow' )
 					  .removeClass( 'removeSadowClick' );
@@ -423,10 +424,12 @@ $( 'a[href="/"]' ).on('click', function() {
 				_this
 				  .parent()
 				  .siblings()
-
 				  .find('.removSadow')
 				  .removeClass( 'removeSadowClick' );
 
+				
+				filterObj();
+				 
 
 			
 
@@ -438,20 +441,7 @@ $( 'a[href="/"]' ).on('click', function() {
 			.prev()
 			.addClass( 'pageNamberVerticalBorder' );
 
-		$( 'div.accordionStart' ).on('click', function() {
-			if ( $( this ).hasClass( 'accordionAktiv' ) ) {
-				$( this )
-					.parent()
-					.siblings()
-					.find( '.accordionStart' )
-					.removeAttr( 'id' );
-
-				filterObj();
-			} else {
-				filterObj();
-			}
-				
-		});	
+		
 
 
 	
@@ -963,12 +953,21 @@ intervalblockHeight ();
 
 
 
+				function prtJson () {
+
+					if( jsonstr != '{' )
+							{
+								jsonstr += ',';
+							}
+
+	            	var type     = 'pid',
+	            		id       = $( 'div.accordionAktiv' ).attr( 'id' ),
+	            		out_id   = id == undefined ? 0 : id;
+	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
+
+				};
 
 				
-
-
-
-
 
 					/*---------------Функция место определения координат------------*/
 				
@@ -1084,6 +1083,7 @@ intervalblockHeight ();
 			
 			var jsonstr       = '{';
 			var jsonstr_debug = '';
+				prtJson ();
 				navJson ();
 				eachJson ( '.pageClass' );
 				eachJson ( '.colorBorder' );
@@ -1226,20 +1226,15 @@ intervalblockHeight ();
 										.find( '.text-shadow' )
 										.text( arryAccord[i][1] );
 
+									
+									$accordionStart
+										.eq( i )
+										.attr( 'id', arryAccord[i][2] );
+										
+									
 
-									if ( $accordionStart.hasClass( 'accordionAktiv' ) ) {
-											$( this )
-												.parent()
-												.siblings()
-												.find( $accordionStart )
-												.removeAttr( 'id' );
-												
-										} else {
-											$accordionStart
-												.eq( i )
-												.attr( 'id', arryAccord[i][2] );
-
-										};	
+											
+									
 
 									$( '#company' + i +'' )
 										.find( '.modal-body' )
