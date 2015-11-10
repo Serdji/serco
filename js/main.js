@@ -1,14 +1,22 @@
 $(function(){
 
 	var	$blockHeight = $( '.blockHeight' ),
-	    topBlock     = $blockHeight.children().eq(1).outerHeight(),
-		centralBlock = $blockHeight.children().eq(2).outerHeight(),
-		bottomBlock  = $blockHeight.children().eq(3).outerHeight(),
+	    topBlock     = $blockHeight.children().eq( 1 ).outerHeight(),
+		centralBlock = $blockHeight.children().eq( 2 ).outerHeight(),
+		bottomBlock  = $blockHeight.children().eq( 3 ).outerHeight(),
 		$figure      = $( 'figure' );
 		
-		$blockHeight.children().eq(1).children().css('height', topBlock);
-		$blockHeight.children().eq(2).children().css('height', centralBlock);
-		$blockHeight.children().eq(3).children().css('height', bottomBlock);
+		$blockHeight.children().eq( 1 ).children().css( 'height', topBlock );
+		$blockHeight.children().eq( 2 ).children().css( 'height', centralBlock );
+		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );
+
+
+
+		/*----Scroll----*/
+
+		$( document ).scrollTop( 300 );
+
+		/*--------------*/
 	
 			
 
@@ -429,7 +437,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 				
 				filterObj();
-				 
+				
 
 			
 
@@ -441,7 +449,6 @@ $( 'a[href="/"]' ).on('click', function() {
 			.prev()
 			.addClass( 'pageNamberVerticalBorder' );
 
-		
 
 
 	
@@ -502,9 +509,9 @@ var count_load_img_max = 0;
 		$figure       	= $( 'figure' ),
 		arrHeightFigure = new Array();
 		
-		blockHeight1.children().css('height', topBlock);
-		blockHeight2.children().css('height', centralBlock);
-		blockHeight3.children().css('height', bottomBlock);
+		blockHeight1.children().css( 'height', topBlock );
+		blockHeight2.children().css( 'height', centralBlock );
+		blockHeight3.children().css( 'height', bottomBlock );
 		
 
 			}
@@ -520,7 +527,7 @@ blockHeight();
 		
 		var intevalblockHeight = setInterval( function (){
 			blockHeight();
-		}, 100 );
+		}, 100 ); 
 
 		setTimeout( function (){
 			clearInterval( intevalblockHeight );
@@ -607,12 +614,12 @@ intervalblockHeight ();
 
 		function imgWidthHeight (){
 
-			if ( $( '.level1Img' ).attr('style') ) {
-					$( '.level1Img' ).removeAttr('style');
+			if ( $( '.level1Img' ).attr( 'style' ) ) {
+					$( '.level1Img' ).removeAttr( 'style' );
 
 				};
-			$.each( $( '.level1Img' ), function(index, val) {
-				var _this			   = $(val),	
+			$.each( $( '.level1Img' ), function( index, val ) {
+				var _this			   = $( val ),	
 					imgWidth           = _this.width(),
 					imgHeight          = _this.height(),
 					pictureLvel1Width  = $( '.PictureLvel1' ).width(),
@@ -623,17 +630,17 @@ intervalblockHeight ();
 				
 
 					if ( imgWidth >= imgHeight ) {
-						_this.css('height', '200');
+						_this.css( 'height', '200' );
 
-						var WidthAdjustment = Math.ceil(_this.width() / 2 - pictureLvel1Width / 2);
-						_this.css('right', WidthAdjustment);
+						var WidthAdjustment = Math.ceil( _this.width() / 2 - pictureLvel1Width / 2 );
+						_this.css( 'right', WidthAdjustment );
 
 
-					}else{
-						_this.css('width', '200');
+					} else {
+						_this.css( 'width', '200' );
 
-						var HeightAdjustment = Math.ceil(_this.height() / 2 - pictureLvel1Height / 2);
-						_this.css('bottom', HeightAdjustment);
+						var HeightAdjustment = Math.ceil( _this.height() / 2 - pictureLvel1Height / 2 );
+						_this.css( 'bottom', HeightAdjustment );
 
 					};
 
@@ -668,7 +675,7 @@ intervalblockHeight ();
 
 		var $img = $( '.Picture img' );
 
-		$.each( $img, function(index, val ) {
+		$.each( $img, function( index, val ) {
 			 
 			 var _this = $( val );
 
@@ -681,8 +688,8 @@ intervalblockHeight ();
 			 	 min             = 2,
 			 	 max             = 6,
 			 	 maxSize         = 50,
-			 	 textHeight      = Number(_this.parents('.opedDialog').find('.height').text()),
-			 	 textWidth       = Number(_this.parents('.opedDialog').find('.width').text()),
+			 	 textHeight      = Number( _this.parents( '.opedDialog' ).find( '.height' ).text() ),
+			 	 textWidth       = Number( _this.parents( '.opedDialog' ).find( '.width' ).text() ),
 			 	 increase        = textWidth > maxSize || textHeight > maxSize ? min : max,
 			 	 crutchImgHeight = textHeight == 0 ? imgHeight : 0, // костыль пока выдаються нули в размерах
 			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0, // ...
@@ -812,7 +819,7 @@ intervalblockHeight ();
 			$( '.colorFilter' ).append( '<span class="CancelFramework">[Отмена]</span>' );
 			if ( $( this ).is( '.colorBorder' ) ) { 
 
-				$( this ).removeClass('colorBorder');
+				$( this ).removeClass( 'colorBorder' );
 				$( 'div.color div' ).remove();
 				$( 'div.color strong' ).remove();
 				$( 'div.color' ).fadeOut( 500 );
@@ -848,14 +855,14 @@ intervalblockHeight ();
 		});
 
 
-		$(document).on("click", ".CancelFramework", function(){
+		$( document ).on( 'click', '.CancelFramework', function(){
 			var $divColor  = $( 'div.color' );
-			$( '.colors' ).removeClass('colorBorder');
+			$( '.colors' ).removeClass( 'colorBorder' );
 			$divColor
-				.children('div') 
+				.children( 'div' ) 
 				.remove();
 			$divColor
-				.children('strong' )
+				.children( 'strong' )
 				.remove();
 			$divColor.fadeOut(500);
 			$( '.CancelFramework' ).remove();
@@ -874,17 +881,17 @@ intervalblockHeight ();
 					/*------------------Выгруска номера странице-------------------*/
 
 			function pageList (){
-				$( '.pageA' ).on('click', function() {
-					$( this ).addClass('pageClass');
+				$( '.pageA' ).on( 'click', function() {
+					$( this ).addClass( 'pageClass' );
 					
 					filterObj();
 				});
-				$( '.inputNumber' ).on('keypress', function(e){
-					if(e.charCode == 13 || e.keyCode == 13)
+				$( '.inputNumber' ).on( 'keypress', function(e){
+					if( e.charCode == 13 || e.keyCode == 13 )
 					{
-						$( this ).addClass('pageClass');
-						var	value = $(".inputNumber").val();
-						$(".inputNumber").attr('out_id', value);
+						$( this ).addClass( 'pageClass' );
+						var	value = $( '.inputNumber' ).val();
+						$( ".inputNumber" ).attr( 'out_id', value );
 						filterObj();
 					}
 					
@@ -896,7 +903,7 @@ intervalblockHeight ();
 				$( '.breadCrumbs' )
 					.children( 'a' )
 					.eq(2)
-					.addClass('breadCrumbsA');
+					.addClass( 'breadCrumbsA' );
 
 
 	/*-----------------Функция сортировки фильтров-----------------*/
@@ -905,9 +912,9 @@ intervalblockHeight ();
 
 							  	  
 			
-			$( 'option.remov' ).attr('disabled', 'true');
-			$( 'div.colors' ).addClass('colorsNone');
-			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass('colorsNone');
+			$( 'option.remov' ).attr( 'disabled', 'true' );
+			$( 'div.colors' ).addClass( 'colorsNone' );
+			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass( 'colorsNone' );
 
 
 
@@ -940,15 +947,16 @@ intervalblockHeight ();
 			    title     : 'Вы здесь :D',
 			});
 
-		/*----Scroll----*/
-
-		$( 'html, body' ).scrollTop( 600 );
-
-		/*--------------*/
+		
 
 
 
 /*--------------------------------------------------------------------*/
+
+
+
+					/*------------------Функция отправляет ID ПРТ-------------------*/
+
 
 
 
@@ -966,6 +974,11 @@ intervalblockHeight ();
 	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
 
 				};
+
+
+					/*--------------------------------------------------------------*/
+
+
 
 				
 
@@ -1100,13 +1113,15 @@ intervalblockHeight ();
 
 				 
 				$.ajax({
-					url: "/hendler.php?mod=json_catalog" + ( ( $.isEmptyObject( jsonstr ) == true ) ? '&is_null=1' : '' ),
-					type: "POST",
-					data: jsonstr,
-					dataType: "json",
-					beforeSend: startLoad(),
-					success: function( data ) {
+					url        : "/hendler.php?mod=json_catalog" + ( ( $.isEmptyObject( jsonstr ) == true ) ? '&is_null=1' : '' ),
+					type       : "POST",
+					data       : jsonstr,
+					dataType   : "json",
+					beforeSend : startLoad(),
+					success    : function( data ) {
+
 							  stopLoad();
+
 							  var brand            = data.brand,
 							  	  categories       = data.categories,
 							  	  subcategories    = data.subcategories,
@@ -1126,7 +1141,13 @@ intervalblockHeight ();
 								  markerClast      = [],
 								  arryAccord       = [];
 
+								
+								/*----Scroll----*/
 
+							
+								// $( document ).scrollTop( 600 );
+
+								/*--------------*/
 
 
 						/*--------------------Выгрузка маркеров на карту-------------------*/ 
@@ -1422,8 +1443,8 @@ intervalblockHeight ();
 									fin_pg      = finish_page;
 							        for (var i = 1; i <= fin_pg; i++) {
 
-							        	uLpageNumbe.append('<li><a class="pageA" out_id="'+ i +'" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
-							        	uLpageNumbe.children( 'li' ).eq( 0 ).addClass('pageNumberBorderLeft');
+							        	// uLpageNumbe.append('<li><a class="pageA" out_id="'+ i +'" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
+							        	// uLpageNumbe.children( 'li' ).eq( 0 ).addClass('pageNumberBorderLeft');
 
 							        }
 
@@ -2153,7 +2174,6 @@ function inputPfgeStart (){
 		});
 		history.pushState((ths_pg-1), "Title "+ (ths_pg-1) +""  , href + "page" + (ths_pg-1) + "/"); 
 		history.replaceState(ths_pg, "Title "+ ths_pg +""  , href + "page" + ths_pg + "/");
-		
 
 };
 
@@ -2276,14 +2296,14 @@ function load( mod, vars, div )
 	})
 }
 
-window.onload=function(){ 
-	window.setTimeout(function(){ 
-		window.addEventListener("popstate", function(e) {
-		var	l = (location.pathname || '') + (location.search || '');
-		reLoaction(l,1,1);
+window.onload = function (){ 
+	window.setTimeout( function (){ 
+		window.addEventListener( "popstate", function( e ) {
+		var	l = ( location.pathname || '' ) + ( location.search || '' );
+		reLoaction( l, 1, 1 );
 		e.preventDefault();
-		},false); 
-	},1); 
+		}, false ); 
+	}, 1 ); 
 }
 
 function init()
