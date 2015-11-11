@@ -120,7 +120,7 @@ d_arr = '&url=/';
 	}
 return d_arr;
 }
-$( '.secret' ).on('click', function(event) {
+$( '.secret' ).on('click', function() {
 		$( "*" ).draggable();
 
 	});
@@ -169,7 +169,7 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
-/*------------------------Делает устой инпут--------------------------*/
+/*------------------------Делает пустой инпут--------------------------*/
 
 	function focusBlur () {
 		
@@ -1255,12 +1255,23 @@ var count_load_img_max = 0;
 
 							  	  	arryAccord.push( [ name, adress, pid ] );
 
-							  	  		
+							  	  	
 							  	
 							  	  });
 							  	  	
 							  	  	var $divName        = $( 'div.name' ),
-							  	  		$accordionStart = $( 'div.accordionStart' );
+							  	  		$accordionStart = $( 'div.accordionStart' ),
+							  	  		verticallPage   = Math.ceil( arryAccord.length / 8 );
+
+							  	  		$( 'div.pageNamberVertical ul li' ).remove();
+
+							  	  		console.log( verticallPage );
+
+							  	  		for ( var i = 1; i <= verticallPage; i++ ) {
+
+							  	  			$( 'div.pageNamberVertical ul' ).append('<li><a href="#">' + i + '</a></li>');
+							  	  		};
+
 
 
 							  	  	

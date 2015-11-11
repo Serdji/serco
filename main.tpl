@@ -121,7 +121,7 @@
 
                  <div class="hint" title="?">?</div>
 
-   <!-- ************************************************************************************************************************* -->
+  <!-- ************************************************************************************************************************* -->
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
@@ -707,7 +707,6 @@
                     </div>  
                   </div>
 
-
   <!-- ************************************************************************************************************************* -->
 
                   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
@@ -854,7 +853,6 @@
                       </div>  
                     </div>  
                   </div>
-
 
   <!-- ************************************************************************************************************************* -->
 
@@ -1303,7 +1301,7 @@
                 </div>
                 <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 pageNamberVertical border">
                   <ul>
-                    <li><a href="#">1</a></li>
+                    <!-- <li><a href="#">1</a></li>
                     <li><a href="#">2</a></li>
                     <li class="Point"><a href="#">...</a></li>
                     <li><a href="#">8</a></li>
@@ -1311,7 +1309,7 @@
                     <li><a href="#">10</a></li>
                     <li class="Point"><a href="#">...</a></li>
                     <li><a href="#">52</a></li>
-                    <li><a href="#">53</a></li>
+                    <li><a href="#">53</a></li> -->
                   </ul>
                 </div>
             </section>
