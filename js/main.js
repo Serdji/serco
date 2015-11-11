@@ -215,7 +215,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 			var $mylist      = $( 'input.custom-combobox-input' ),
 			    arry         = [],
-			    inputNamber  = 7; // с какого инпута начинать пункты по алфавиту. Отсчет с 0 до N
+			    inputNamber  = 7; // с какого инпута начинать. Отсчет с 0 до N
 
 			$.each( $mylist, function( index, val ) {
 				arry.push( val );
@@ -247,7 +247,7 @@ $( 'a[href="/"]' ).on('click', function() {
 			namber     = namberPage[1] == undefined || namberPage[1] == '' ? 1 : namberPage[1];
 
 		setTimeout( function () {
-			var e = $.Event( "keypress", { keyCode: 13 } );
+			var e = $.Event( "keypress", { keyCode : 13 } );
 			$( 'input.inputNumber' )
 				.val( namber )
 				.focus()
@@ -1261,7 +1261,7 @@ var count_load_img_max = 0;
 							  	  	
 							  	  	var $divName        = $( 'div.name' ),
 							  	  		$accordionStart = $( 'div.accordionStart' );
-							  	  		
+
 
 							  	  	
 							  	/*----------------Убираем длоки в акардионе которых нет----------------*/
@@ -1273,7 +1273,6 @@ var count_load_img_max = 0;
 
 									  	  	$( '.accordionRemove' )
 									  	  		.eq( arryAccord.length - 1 )
-									  	  		.css('display', 'block')
 									  	  		.prevAll()
 									  	  		.css('display', 'block')
 									  	  		.end()
@@ -1492,8 +1491,8 @@ var count_load_img_max = 0;
 									fin_pg      = finish_page;
 							        for (var i = 1; i <= fin_pg; i++) {
 
-							        	// uLpageNumbe.append('<li><a class="pageA" out_id="'+ i +'" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
-							        	// uLpageNumbe.children( 'li' ).eq( 0 ).addClass('pageNumberBorderLeft');
+							        	uLpageNumbe.append('<li><a class="pageA" out_id="'+ i +'" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
+							        	uLpageNumbe.children( 'li' ).eq( 0 ).addClass('pageNumberBorderLeft');
 
 							        }
 
@@ -2355,15 +2354,15 @@ window.onload = function (){
 	}, 1 ); 
 }
 
-function init()
-{
+function init(){
+
 old_loc = (location.pathname || '') + (location.search || '');
 
- 	$("a:not([href^='#']):not([target='_blank']):not([href$='/rss/']):not([href^='mailto\:']):not([href^='#'])").on('click', function(e){
+ 	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] )" ).on('click', function(e){
  		return false;
  	});
 	
-	$("a:not([href^='#']):not([target='_blank']):not([href$='/rss/']):not([href^='mailto\:']):not([href^='#']):not(.pageA):not(.inputNumber)").on('click', function(event){
+	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber )" ).on('click', function(event){
 	var href = $(this).attr('href');
 	reLoaction(href,1);
 
