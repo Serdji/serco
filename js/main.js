@@ -242,10 +242,14 @@ $( 'a[href="/"]' ).on('click', function() {
 /*------------Эмитация нажатия Enter в input номера страниц-----------*/
 
 	function inputPageEnter () {
-		
+
+		var namberPage = urls[4].split( 'e' ),
+			namber     = namberPage[1] == undefined || namberPage[1] == '' ? 1 : namberPage[1];
+
 		setTimeout( function () {
 			var e = $.Event( "keypress", { keyCode: 13 } );
 			$( 'input.inputNumber' )
+				.val( namber )
 				.focus()
 				.trigger( e );
 		}, 100);
