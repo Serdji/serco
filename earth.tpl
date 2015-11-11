@@ -246,6 +246,7 @@
 					    </div>
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<p class="right text-footer"><b>Прототип Альфа (демонстрационная версия)</b></p>
 						<p class="right text-footer"><b>Сделанно в России</b></p>
 						<p class="right text-footer"><b>Made in Russia</b></p>
 					</div>
