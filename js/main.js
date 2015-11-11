@@ -169,6 +169,28 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
+/*------------------------Делает устой инпут--------------------------*/
+
+	function focusBlur () {
+		
+		$( document ).on( 'focus', 'input.custom-combobox-input', function () {
+			var _this       = $( this ),
+				defaultView = _this.val();
+
+			_this.val( '' );
+
+			_this.blur( function () {
+				if ( _this.val() == '' ) {
+					_this.val( defaultView );
+				};
+			});
+
+		});
+	};
+	focusBlur ();
+
+
+
 /*--------Функция сортировки пунктов внутри инпута по алфавиту--------*/
 
 
@@ -1628,7 +1650,7 @@ intervalblockHeight ();
            	   $inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
 
 
-           	  
+           	 
            	
 
             var speedOut  = 500,
