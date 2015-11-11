@@ -1261,6 +1261,28 @@ var count_load_img_max = 0;
 							  	  	
 							  	  	var $divName        = $( 'div.name' ),
 							  	  		$accordionStart = $( 'div.accordionStart' );
+							  	  		
+
+							  	  	
+							  	/*----------------Убираем длоки в акардионе которых нет----------------*/
+
+									  	  	$( '.accordionRemove' )
+									  	  		.eq( arryAccord.length -1 )
+									  	  		.nextAll()
+									  	  		.css('display', 'none');
+
+									  	  	$( '.accordionRemove' )
+									  	  		.eq( arryAccord.length - 1 )
+									  	  		.css('display', 'block')
+									  	  		.prevAll()
+									  	  		.css('display', 'block')
+									  	  		.end()
+									  	  		.css('display', 'block');
+
+
+								/*---------------------------------------------------------------------*/
+
+
 
 									for ( var i = 0; i < arryAccord.length; i++ ) {
 

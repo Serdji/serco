@@ -122,7 +122,7 @@
                  <div class="hint" title="?">?</div>
 
    <!-- ************************************************************************************************************************* -->
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -268,7 +268,7 @@
                   </div>
                         
   <!-- ************************************************************************************************************************* -->
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -415,7 +415,7 @@
 
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -562,7 +562,7 @@
               
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -710,7 +710,7 @@
 
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -858,7 +858,7 @@
 
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -1005,7 +1005,7 @@
 
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow"> </p>
@@ -1152,7 +1152,7 @@
 
   <!-- ************************************************************************************************************************* -->
 
-                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">
                      <div class="filterLeftPad name">
                        <p><b> </b></p><p class="text-shadow removSadow">  </p>
