@@ -1,6 +1,6 @@
 $(function(){
 
-	var	$blockHeight = $( '.blockHeight' ),
+	/*var	$blockHeight = $( '.blockHeight' ),
 	    topBlock     = $blockHeight.children().eq( 1 ).outerHeight(),
 		centralBlock = $blockHeight.children().eq( 2 ).outerHeight(),
 		bottomBlock  = $blockHeight.children().eq( 3 ).outerHeight(),
@@ -8,7 +8,7 @@ $(function(){
 		
 		$blockHeight.children().eq( 1 ).children().css( 'height', topBlock );
 		$blockHeight.children().eq( 2 ).children().css( 'height', centralBlock );
-		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );
+		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );*/
 
 
 
@@ -493,6 +493,7 @@ var $mapHeight = $( window ).height();
 $( '#map' ).css('height', $mapHeight - 33);
 
 /*-----------------------------------------------------------------*/
+
 			
 /*----------------------Выровнить все блоки------------------------*/
 
@@ -543,7 +544,7 @@ var count_load_img_max = 0;
 
 	
 
-blockHeight();
+// blockHeight();
 
 	function intervalblockHeight () {
 		
@@ -555,7 +556,7 @@ blockHeight();
 			clearInterval( intevalblockHeight );
 		}, 1500 );
 	};
-intervalblockHeight ();
+// intervalblockHeight ();
 
 
 
@@ -1371,7 +1372,7 @@ intervalblockHeight ();
 
 								 		
 								 		
-								 			intervalblockHeight();
+								 			// intervalblockHeight();
 								 			intervalImgColl ();
 								 		
 
@@ -1779,7 +1780,7 @@ intervalblockHeight ();
 
         history.replaceState( 1, "Title1"  , "/catalog/page1/" );
  		filterObj();
-		blockHeight();	
+		// blockHeight();	
 
 
             this._trigger( "select", event, {
@@ -2200,7 +2201,7 @@ function inputPfgeStart (){
 };
 
 inputPfgeStart ();
-blockHeight();
+// blockHeight();
 		
 }else{
 
@@ -2231,7 +2232,7 @@ blockHeight();
 			
 
 		init();
-		blockHeight();
+		// blockHeight();
 		intervalImgColl ();
 		pageNumberBackground ();
 
