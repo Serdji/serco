@@ -425,8 +425,10 @@ $( 'a[href="/"]' ).on('click', function() {
 		$( document ).on( 'click', '.accordionStart', function() {
 			var _this = $( this ),
 			    speedUp = 1000;
-				_this.next( '.accordion' )
-						 .slideToggle( speedUp, 'easeInOutCubic' );
+
+				_this
+					.next( '.accordion' )
+					.slideToggle( speedUp, 'easeInOutCubic' );
 
 				_this
 				  .parent()
@@ -438,6 +440,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 				if ( ! _this.hasClass( 'accordionAktiv' ) ) {
 					_this.addClass( 'accordionAktiv' );
+
 					_this
 					   .find( '.removSadow' )
 					   .addClass('removeSadowClick');
@@ -445,6 +448,7 @@ $( 'a[href="/"]' ).on('click', function() {
 				}else{
 					_this
 						.removeClass('accordionAktiv');
+
 					_this
 					  .find( '.removSadow' )
 					  .removeClass( 'removeSadowClick' );
@@ -1242,7 +1246,7 @@ var count_load_img_max = 0;
 						/*-----------------------------------------------------------------*/ 
 
 
-						/*----------------------------Акардионы----------------------------*/	
+			/*------------------------------------Акардионы------------------------------------*/	
 
 
 							  	  $.each( prt, function( index, val ) {
@@ -1278,7 +1282,7 @@ var count_load_img_max = 0;
 							  	  	
 							  	/*----------------Убираем длоки в акардионе которых нет----------------*/
 
-									  	  	$( '.accordionRemove' )
+									  	  	/*$( '.accordionRemove' )
 									  	  		.eq( arryAccord.length -1 )
 									  	  		.nextAll()
 									  	  		.css('display', 'none');
@@ -1288,12 +1292,13 @@ var count_load_img_max = 0;
 									  	  		.prevAll()
 									  	  		.css('display', 'block')
 									  	  		.end()
-									  	  		.css('display', 'block');
+									  	  		.css('display', 'block');*/
 
 
 								/*---------------------------------------------------------------------*/
 
 
+									$( '.accordionRemove' ).remove();
 
 									for ( var i = 0; i < arryAccord.length; i++ ) {
 
@@ -1337,6 +1342,8 @@ var count_load_img_max = 0;
 										.find( '.modal-body' )
 										.text( i );*/
 
+
+
 									$( 'div.filterLeft' )
 						  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">'+
 			  	  	 								'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart" id="' + arryAccord[i][2] + '">'+
@@ -1362,7 +1369,7 @@ var count_load_img_max = 0;
 								                    						'<h4 class="modal-title" id="myModalLabel">О компани</h4>'+
 								                    					'</div>'+
 								                    					'<div class="modal-body">'+
-								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    						'' + i + ''+
 								                    					'</div>'+
 								                    					'<div class="modal-footer">'+
 								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
@@ -1383,7 +1390,7 @@ var count_load_img_max = 0;
 								                    						'<h4 class="modal-title" id="myModalLabel">Контакты</h4>'+
 								                    					'</div>'+
 								                    					'<div class="modal-body">'+
-								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    						'' + i + ''+
 								                    					'</div>'+
 								                    					'<div class="modal-footer">'+
 								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
@@ -1404,7 +1411,7 @@ var count_load_img_max = 0;
 								                    						'<h4 class="modal-title" id="myModalLabel">Для покупателей</h4>'+
 								                    					'</div>'+
 								                    					'<div class="modal-body">'+
-								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    						'' + i + ''+
 								                    					'</div>'+
 								                    					'<div class="modal-footer">'+
 								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
@@ -1425,7 +1432,7 @@ var count_load_img_max = 0;
 								                    						'<h4 class="modal-title" id="myModalLabel">Скидки</h4>'+
 								                    					'</div>'+
 								                    					'<div class="modal-body">'+
-								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    						'' + i + ''+
 								                    					'</div>'+
 								                    					'<div class="modal-footer">'+
 								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
@@ -1446,7 +1453,7 @@ var count_load_img_max = 0;
 								                    						'<h4 class="modal-title" id="myModalLabel">Доставка</h4>'+
 								                    					'</div>'+
 								                    					'<div class="modal-body">'+
-								                    						'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'+
+								                    						'' + i + ''+
 								                    					'</div>'+
 								                    					'<div class="modal-footer">'+
 								                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
@@ -1463,15 +1470,29 @@ var count_load_img_max = 0;
 
 						  	  	 };
 
-								$.each( $( '.myBtnInfo' ), function( index, val ) {
-									$( val ).attr( 'data-target', '#modals' + index + '' );
-									console.log( $( val ).attr('data-target') );
-									console.log( $( val ).next() );
+
+						/*----------------------Открытие модальных окон--------------------*/
+
+
+								$.each( $( '.myBtnInfo' ), function( i, val ) {
+									$( val ).attr( 'data-target', '#modals' + i + '' );
+									$( val ).next().attr( 'id', 'modals' + i + '' );
+
+									$( '.myBtnInfo[data-target=#modals' + i + ']' ).on('click', function() {
+										$( '#modals' + i + '' ).modal( 'show' );
+
+									});
+
 								});
 
 
-
 						/*-----------------------------------------------------------------*/
+
+
+
+
+
+			/*---------------------------------------------------------------------------------*/	
 
 
 
