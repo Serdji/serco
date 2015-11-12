@@ -468,7 +468,6 @@ $( 'a[href="/"]' ).on('click', function() {
 
 				
 					
-					
 					filterObj();
 
 			
@@ -2486,7 +2485,7 @@ window.onload = function (){
 
 function init(){
 
-old_loc = (location.pathname || '') + (location.search || '');
+var old_loc = (location.pathname || '') + (location.search || '');
 
  	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] )" ).on('click', function(e){
  		return false;

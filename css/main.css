@@ -118,18 +118,35 @@ li{
 	height: 300px;
 	width: 300px;
 	text-align:center;
-	padding:0;
+	padding:0;	
+}
 
-	
+div.collSlide div{
+	display:inline-table;
+	float:left;
+}
+
+div.collSlide div.miniImgs{
+	width:300px;
+	margin:1px;
+	text-align:center;
+}
+
+div.collSlide div.miniImgs img{
+	max-width:150px;
+	margin:10px;
+	border:2px solid rgb(103, 103, 103);
+	cursor:pointer;
 }
 
 .Picture img{
 	max-height: 250px;
 	max-width: 250px;
 	cursor: pointer;
-	-webkit-filter: drop-shadow(5px 5px 7px rgba(0,0,0,0.5));
+/*	-webkit-filter: drop-shadow(5px 5px 7px rgba(0,0,0,0.5));
     filter: url(shadow.svg#drop-shadow);
 	border-image:url(gold-picture-frame.png) 81 83 82 84;
+*/
 }
 
 .Description > figure figcaption{
@@ -676,6 +693,7 @@ a:-webkit-any-link{
 
 .openImg{
 	cursor: pointer;
+	max-width:565px;
 }
 
 .opacityArrImg0{
