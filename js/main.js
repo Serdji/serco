@@ -468,8 +468,8 @@ $( 'a[href="/"]' ).on('click', function() {
 
 				
 					
+					
 					filterObj();
-				
 
 			
 
@@ -1003,8 +1003,14 @@ var count_load_img_max = 0;
 
 	            	var type     = 'pid',
 	            		id       = $( 'div.accordionAktiv' ).attr( 'id' ),
-	            		out_id   = id == undefined ? 0 : id;
-	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"';
+	            		out_id   = id == undefined ? 0 : id,
+	            		page     = $( 'input.inputNumber' ).attr( 'type' ),
+	            		namber   = $( 'input.inputNumber' ).attr( 'out_id' );
+	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"'+','+'"'+page+'"'+':'+'"'+namber+'"';
+
+
+
+
 
 				};
 
@@ -1428,7 +1434,7 @@ var count_load_img_max = 0;
 									
 
 									$( '.accordionRemove' )
-										.eq( arryAccord.length - 1)
+										.eq( arryAccord.length - 1 )
 										.nextAll()
 										.remove();
 
