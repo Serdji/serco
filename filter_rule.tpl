@@ -1,9 +1,11 @@
-
-
-
-
-
-    
+<!-- IF collection -->
+<div class="coll_Imgs">
+  <img src="/wimg/{coll_img}">
+<!-- BEGIN all_collection_sub_images -->
+  <img src="/wimg/{aimg}">
+<!-- END all_collection_sub_images -->
+</div>
+<!-- ELSE collection -->
     <div class="blockFilterRight">
           <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TradingGroup filters" id="filtr_color">
@@ -135,20 +137,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border brandKoleektsiya filters" id="filtr_color">
-        <div class="hint" title="Выбери коллекцию, можно ввести в ручную">?</div>
-          <div class="ui-widget">
-          <label class="control-label result">Название коллекции: </label>
-            <select class="combobox" type="collection">
-              <option class="0 collectionR" type="collection" disabled="disabled">Коллекций нет</option>
-<!-- BEGIN filter_collections -->
-              <option class="collection remov" id="collection_{collection_id1s}" inner_id="{collection_id}" out_id="{collection_id1s}" disabled="disabled">{collection}</option>
-<!-- END filter_collections -->
-            </select>
-          </div>
-        </div>
-      </div>
+      
     </div>
 
 
@@ -167,3 +156,4 @@
         </div>
       </div>
     </div>
+<!-- END collection -->

@@ -16,7 +16,7 @@
     <link href="{folder}css/jquery-ui.min.css" rel="stylesheet">
     <link href="{folder}css/main.css" rel="stylesheet">
     <link href="{folder}css/classic.css" rel="stylesheet">
-    <link href="{folder}css.css" rel="stylesheet">
+    <link href="{folder}css/submain.css" rel="stylesheet">
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>

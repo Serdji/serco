@@ -1344,24 +1344,7 @@
     
 
 <!-- IF collection --> 
-  <div class="slider collSlide">
-    <div class="LminImg miniImgs">
-<!-- BEGIN left_collection_sub_images -->
-	  <img src="/wimg/{limg}">
-<!-- END left_collection_sub_images -->
-    </div>
-    <div class="bigImg">
-      <br><br>
-      <img src="/wimg/{coll_img}" class="closeImg">
-      <img src="/wimg/{coll_img}" class="openImg">
-      <br><br>
-    </div>
-    <div class="RminImg miniImgs">
-<!-- BEGIN right_collection_sub_images -->
-	  <img src="/wimg/{rimg}">
-<!-- END right_collection_sub_images -->
-    </div>
-  </div>
+
   <div class="blockHeight">
   <div class="row">
 <!-- BEGIN items -->

@@ -335,7 +335,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
-/*-----------------------Удаление правого фильтра--------------------*/
+/*-----------------------Удаление правого фильтра--------------------
 
 	
  function ShutdownFilter () {
@@ -609,7 +609,7 @@ var count_load_img_max = 0;
 
 	// imgs();
 
-	$( '.openImg' ).on( 'click', function() {
+	/*$( '.openImg' ).on( 'click', function() {
 		$( '.closeImg' )
 			.css({
 				  'position'  : 'absolute',
@@ -625,7 +625,7 @@ var count_load_img_max = 0;
 	$( '.closeImg' ).on( 'click', function() {
 		$( this ).removeAttr( 'style' );
 		$( '#preLoader' ).remove();
-	});
+	});*/
 
 
 
@@ -1270,42 +1270,29 @@ var count_load_img_max = 0;
 							  	
 							  	  });
 							  	  	
+
+
+
+							  	  	
+							  	
+
 							  	  	var $divName        = $( 'div.name' ),
 							  	  		$accordionStart = $( 'div.accordionStart' ),
 							  	  		verticallPage   = Math.ceil( arryAccord.length / 8 );
 
 							  	  		$( 'div.pageNamberVertical ul li' ).remove();
 
-							  	  		console.log( verticallPage );
-
 							  	  		for ( var i = 1; i <= verticallPage; i++ ) {
 
 							  	  			$( 'div.pageNamberVertical ul' ).append('<li><a href="#">' + i + '</a></li>');
 							  	  		};
 
-
-
-							  	  	
-							  	/*----------------Убираем длоки в акардионе которых нет----------------*/
-
-									  	  	/*$( '.accordionRemove' )
-									  	  		.eq( arryAccord.length -1 )
-									  	  		.nextAll()
-									  	  		.css('display', 'none');
-
-									  	  	$( '.accordionRemove' )
-									  	  		.eq( arryAccord.length - 1 )
-									  	  		.prevAll()
-									  	  		.css('display', 'block')
-									  	  		.end()
-									  	  		.css('display', 'block');*/
-
-
-								/*---------------------------------------------------------------------*/
-
+							  	  		console.log(arryAccord.length);
 								
 
 									for ( var i = 0; i < arryAccord.length; i++ ) {
+
+										
 
 										
 										$( 'div.filterLeft' )
@@ -1430,12 +1417,12 @@ var count_load_img_max = 0;
 			  	  	 								'</div>');
 
 									};
-									
 
 									$( '.accordionRemove' )
 										.eq( arryAccord.length - 1 )
 										.nextAll()
 										.remove();
+
 
 
 						/*----------------------Открытие модальных окон--------------------*/
@@ -1772,7 +1759,6 @@ var count_load_img_max = 0;
            	   $ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
            	   $ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
            	   $ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
-           	   $ulId10     = $( 'ul.ui-autocomplete' ).eq( 9 ),
            	   $ulId1Li    = $ulId1.children( 'li' ).eq( 0 ),
            	   $ulId2Li    = $ulId2.children( 'li' ).eq( 0 ),
            	   $ulId3Li    = $ulId3.children( 'li' ).eq( 0 ),
@@ -1782,7 +1768,6 @@ var count_load_img_max = 0;
            	   $ulId7Li    = $ulId7.children( 'li' ).eq( 0 ),
            	   $ulId8Li    = $ulId8.children( 'li' ).eq( 0 ),
            	   $ulId9Li    = $ulId9.children( 'li' ).eq( 0 ),
-           	   $ulId10Li   = $ulId10.children( 'li' ).eq( 0 ),
            	   $btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
            	   $btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
            	   $btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
@@ -1792,7 +1777,6 @@ var count_load_img_max = 0;
            	   $btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
            	   $btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
            	   $btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
-           	   $btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
            	   $inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
            	   $inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
            	   $inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
@@ -1801,8 +1785,7 @@ var count_load_img_max = 0;
            	   $inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
            	   $inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
            	   $inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
-           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
-           	   $inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 );
+           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 );
 
 
            	 
@@ -1890,33 +1873,20 @@ var count_load_img_max = 0;
 				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', $ulId8Li );
             	
             }else if($( option ).hasClass('0 countryR')){
-            	var delayOne = 10,
-            		delayTwo = 20;
+            	var delayOne = 10;
             	shutFil ( $ulId9Li, $ulId9, $btnInput9, $inputFil9, delayOne );
-            	shutFil ( $ulId10Li, $ulId10, $btnInput10, $inputFil10, delayTwo );
             	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
             }; 
 
 
             if ($( option ).hasClass('brand')) {
             	$inputFil9.removeClass( 'subActive' );
-            	openFil ( $ulId10, $btnInput10, $inputFil10, 'Выбрано все', '.collectionR' );
 				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', $ulId9Li );
             	
             }else if($( option ).hasClass('0 brandR')){
-            	var delay = 10;
-            	shutFil ( $ulId10Li, $ulId10, $btnInput10, $inputFil10, delay );
             	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
             }; 
 
-
-            if ($( option ).hasClass('collection')) {
-            	$inputFil10.removeClass( 'subActive' );
-				optionIf ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR', 'collectionR', ulId10Li );
-            	
-            }else if($( option ).hasClass('0 collectionR')){
-            	optionElse ( $( 'div.collection' ), $( 'div.collection strong' ), '.collectionR' );
-            }; 
             
             
             
