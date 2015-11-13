@@ -1284,144 +1284,141 @@ var count_load_img_max = 0;
 
 							  	  		for ( var i = 1; i <= verticallPage; i++ ) {
 
-							  	  			$( 'div.pageNamberVertical ul' ).append('<li><a href="#">' + i + '</a></li>');
+							  	  			$( 'div.pageNamberVertical ul' ).append('<li><a href="#" id="' + i + '">' + i + '</a></li>');
+
 							  	  		};
 
-							  	  		console.log(arryAccord.length);
-								
+									
 
-									for ( var i = 0; i < arryAccord.length; i++ ) {
+										for ( var i = 0; i < arryAccord.length; i++ ) {
 
-										
+											$( 'div.filterLeft' )
+								  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">'+
+					  	  	 								'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart" id="' + arryAccord[i][2] + '">'+
+											                     '<div class="filterLeftPad">'+
+											                       	'<p><b>' + arryAccord[i][0] + '</b></p><p class="text-shadow removSadow">' + arryAccord[i][1] + '</p>'+
+											                     '</div>'+
+										                    '</div>'+
+										                    '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+										                    			'Полный каталог товаров'+
+										                    		'</button>'+	
+										                    	'</div>'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+										                    			'О компани'+
+										                    		'</button>'+
+										                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+										                    			'<div class="modal-dialog modal-lg">'+
+										                    				'<div class="modal-content">'+
+										                    					'<div class="modal-header">'+
+										                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+										                    						'<h4 class="modal-title" id="myModalLabel">О компани</h4>'+
+										                    					'</div>'+
+										                    					'<div class="modal-body">'+
+										                    						'' + i + ''+
+										                    					'</div>'+
+										                    					'<div class="modal-footer">'+
+										                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+										                    					'</div>'+
+										                    				'</div>'+
+										                    			'</div>'+
+										                    		'</div>'+	
+										                    	'</div>'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+										                    			'Контакты'+
+										                    		'</button>'+
+										                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+										                    			'<div class="modal-dialog modal-lg">'+
+										                    				'<div class="modal-content">'+
+										                    					'<div class="modal-header">'+
+										                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+										                    						'<h4 class="modal-title" id="myModalLabel">Контакты</h4>'+
+										                    					'</div>'+
+										                    					'<div class="modal-body">'+
+										                    						'' + i + ''+
+										                    					'</div>'+
+										                    					'<div class="modal-footer">'+
+										                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+										                    					'</div>'+
+										                    				'</div>'+
+										                    			'</div>'+
+										                    		'</div>'+	
+										                    	'</div>'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+										                    			'Для покупателей'+
+										                    		'</button>'+
+										                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+										                    			'<div class="modal-dialog modal-lg">'+
+										                    				'<div class="modal-content">'+
+										                    					'<div class="modal-header">'+
+										                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+										                    						'<h4 class="modal-title" id="myModalLabel">Для покупателей</h4>'+
+										                    					'</div>'+
+										                    					'<div class="modal-body">'+
+										                    						'' + i + ''+
+										                    					'</div>'+
+										                    					'<div class="modal-footer">'+
+										                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+										                    					'</div>'+
+										                    				'</div>'+
+										                    			'</div>'+
+										                    		'</div>'+	
+										                    	'</div>'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+										                    			'Скидки'+
+										                    		'</button>'+
+										                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+										                    			'<div class="modal-dialog modal-lg">'+
+										                    				'<div class="modal-content">'+
+										                    					'<div class="modal-header">'+
+										                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+										                    						'<h4 class="modal-title" id="myModalLabel">Скидки</h4>'+
+										                    					'</div>'+
+										                    					'<div class="modal-body">'+
+										                    						'' + i + ''+
+										                    					'</div>'+
+										                    					'<div class="modal-footer">'+
+										                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+										                    					'</div>'+
+										                    				'</div>'+
+										                    			'</div>'+
+										                    		'</div>'+	
+										                    	'</div>'+
+										                    	'<div class="filterLeftPad">'+
+										                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+										                    			'Доставка'+
+										                    		'</button>'+
+										                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+										                    			'<div class="modal-dialog modal-lg">'+
+										                    				'<div class="modal-content">'+
+										                    					'<div class="modal-header">'+
+										                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+										                    						'<h4 class="modal-title" id="myModalLabel">Доставка</h4>'+
+										                    					'</div>'+
+										                    					'<div class="modal-body">'+
+										                    						'' + i + ''+
+										                    					'</div>'+
+										                    					'<div class="modal-footer">'+
+										                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
+										                    					'</div>'+
+										                    				'</div>'+
+										                    			'</div>'+
+										                    		'</div>'+	
+										                    	'</div>'+
+										                    '</div>'+
+				  	  	 								'</div>');
 
-										
-										$( 'div.filterLeft' )
-							  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove">'+
-				  	  	 								'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart" id="' + arryAccord[i][2] + '">'+
-										                     '<div class="filterLeftPad">'+
-										                       	'<p><b>' + arryAccord[i][0] + '</b></p><p class="text-shadow removSadow">' + arryAccord[i][1] + '</p>'+
-										                     '</div>'+
-									                    '</div>'+
-									                    '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
-									                    			'Полный каталог товаров'+
-									                    		'</button>'+	
-									                    	'</div>'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
-									                    			'О компани'+
-									                    		'</button>'+
-									                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
-									                    			'<div class="modal-dialog modal-lg">'+
-									                    				'<div class="modal-content">'+
-									                    					'<div class="modal-header">'+
-									                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-									                    						'<h4 class="modal-title" id="myModalLabel">О компани</h4>'+
-									                    					'</div>'+
-									                    					'<div class="modal-body">'+
-									                    						'' + i + ''+
-									                    					'</div>'+
-									                    					'<div class="modal-footer">'+
-									                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
-									                    					'</div>'+
-									                    				'</div>'+
-									                    			'</div>'+
-									                    		'</div>'+	
-									                    	'</div>'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
-									                    			'Контакты'+
-									                    		'</button>'+
-									                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
-									                    			'<div class="modal-dialog modal-lg">'+
-									                    				'<div class="modal-content">'+
-									                    					'<div class="modal-header">'+
-									                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-									                    						'<h4 class="modal-title" id="myModalLabel">Контакты</h4>'+
-									                    					'</div>'+
-									                    					'<div class="modal-body">'+
-									                    						'' + i + ''+
-									                    					'</div>'+
-									                    					'<div class="modal-footer">'+
-									                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
-									                    					'</div>'+
-									                    				'</div>'+
-									                    			'</div>'+
-									                    		'</div>'+	
-									                    	'</div>'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
-									                    			'Для покупателей'+
-									                    		'</button>'+
-									                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
-									                    			'<div class="modal-dialog modal-lg">'+
-									                    				'<div class="modal-content">'+
-									                    					'<div class="modal-header">'+
-									                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-									                    						'<h4 class="modal-title" id="myModalLabel">Для покупателей</h4>'+
-									                    					'</div>'+
-									                    					'<div class="modal-body">'+
-									                    						'' + i + ''+
-									                    					'</div>'+
-									                    					'<div class="modal-footer">'+
-									                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
-									                    					'</div>'+
-									                    				'</div>'+
-									                    			'</div>'+
-									                    		'</div>'+	
-									                    	'</div>'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
-									                    			'Скидки'+
-									                    		'</button>'+
-									                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
-									                    			'<div class="modal-dialog modal-lg">'+
-									                    				'<div class="modal-content">'+
-									                    					'<div class="modal-header">'+
-									                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-									                    						'<h4 class="modal-title" id="myModalLabel">Скидки</h4>'+
-									                    					'</div>'+
-									                    					'<div class="modal-body">'+
-									                    						'' + i + ''+
-									                    					'</div>'+
-									                    					'<div class="modal-footer">'+
-									                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
-									                    					'</div>'+
-									                    				'</div>'+
-									                    			'</div>'+
-									                    		'</div>'+	
-									                    	'</div>'+
-									                    	'<div class="filterLeftPad">'+
-									                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
-									                    			'Доставка'+
-									                    		'</button>'+
-									                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
-									                    			'<div class="modal-dialog modal-lg">'+
-									                    				'<div class="modal-content">'+
-									                    					'<div class="modal-header">'+
-									                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
-									                    						'<h4 class="modal-title" id="myModalLabel">Доставка</h4>'+
-									                    					'</div>'+
-									                    					'<div class="modal-body">'+
-									                    						'' + i + ''+
-									                    					'</div>'+
-									                    					'<div class="modal-footer">'+
-									                    						'<button type="button" class="btn btn-default closes" data-dismiss="modal">Закрыть</button>'+
-									                    					'</div>'+
-									                    				'</div>'+
-									                    			'</div>'+
-									                    		'</div>'+	
-									                    	'</div>'+
-									                    '</div>'+
-			  	  	 								'</div>');
+										};
 
-									};
-
-									$( '.accordionRemove' )
-										.eq( arryAccord.length - 1 )
-										.nextAll()
-										.remove();
+										$( '.accordionRemove' )
+											.eq( arryAccord.length - 1 )
+											.nextAll()
+											.remove();
 
 
 
