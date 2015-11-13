@@ -335,7 +335,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
-/*-----------------------Удаление правого фильтра--------------------
+/*-----------------------Удаление правого фильтра--------------------*/
 
 	
  function ShutdownFilter () {
@@ -355,7 +355,7 @@ $( 'a[href="/"]' ).on('click', function() {
  	};
  }; 
 
- ShutdownFilter ();
+ // ShutdownFilter ();
 
 
 /*-------------------------------------------------------------------*/
@@ -718,7 +718,7 @@ var count_load_img_max = 0;
 			 var imgHeight       = _this.height(),
 			 	 imgWidth        = _this.width(),
 			 	 min             = 2,
-			 	 max             = 6,
+			 	 max             = 4,
 			 	 maxSize         = 50,
 			 	 textHeight      = Number( _this.parents( '.opedDialog' ).find( '.height' ).text() ),
 			 	 textWidth       = Number( _this.parents( '.opedDialog' ).find( '.width' ).text() ),

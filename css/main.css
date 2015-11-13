@@ -97,10 +97,10 @@ li{
 	transition:bottom 1s, box-shadow 1s;
 }
 
-.levels2{
+/* .levels2{
 	width: 295px !important;
 	height: 850px;
-}
+} */
 
 /* .row > div:hover{
 	bottom:10px;
@@ -115,8 +115,8 @@ li{
 
 .Picture{
 	margin: 0 auto;
-	height: 300px;
-	width: 300px;
+	height: 200px;
+	width: 200px;
 	text-align:center;
 	padding:0;	
 }
@@ -574,7 +574,7 @@ a:-webkit-any-link{
 }
 
 .FilterTiles{
-	height: 434px;
+	height: 532px;
 }
 
 .pictureTiles{
@@ -1028,7 +1028,7 @@ a:-webkit-any-link{
 
 .form-group strong{
 	margin-bottom: 48px;
-    margin-top: 36px;
+    margin-top: 60px;
 	display: block;
 }
 
