@@ -169,6 +169,29 @@ $( 'a[href="/"]' ).on('click', function() {
 });
 
 
+
+
+
+
+
+
+	$( document ).on('click', '.verticallPageLi', function(e) {
+		e.preventDefault();
+
+		var q = $( this )
+			.children()
+			.attr( 'id' );
+			
+		console.log(q);	
+	});
+
+
+
+
+
+
+
+
 /*------------------------Делает пустой инпут--------------------------*/
 
 	function focusBlur () {
@@ -1288,13 +1311,16 @@ var count_load_img_max = 0;
 							  	  		$accordionStart = $( 'div.accordionStart' ),
 							  	  		verticallPage   = Math.ceil( arryAccord.length / 8 );
 
+
+
 							  	  		$( 'div.pageNamberVertical ul li' ).remove();
 
 							  	  		for ( var i = 1; i <= verticallPage; i++ ) {
 
-							  	  			$( 'div.pageNamberVertical ul' ).append('<li><a href="#" id="' + i + '">' + i + '</a></li>');
+							  	  			$( 'div.pageNamberVertical ul' ).append('<li class="verticallPageLi"><a href="#" class="verticallPage" id="' + i + '">' + i + '</a></li>');
 
 							  	  		};
+
 
 								  	  	function generAcco ( arryLength ) {
 
@@ -1421,8 +1447,13 @@ var count_load_img_max = 0;
 											                    '</div>'+
 					  	  	 								'</div>');
 											};
-								  	  		
+
+											$( '.accordionRemove' )
+												.eq(7)
+												.nextAll()
+												.css('display', 'none');
 								  	  	};
+
 
 										function accorRA () {
 
@@ -2486,7 +2517,7 @@ var old_loc = (location.pathname || '') + (location.search || '');
  		return false;
  	});
 	
-	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber )" ).on('click', function(event){
+	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber ):not( .verticallPage )" ).on('click', function(){
 	var href = $(this).attr('href');
 	reLoaction(href,1);
 
