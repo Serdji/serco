@@ -170,25 +170,37 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+/*---------------Переключение номера странице в аккордионе-------------*/
 
 
+	function accoPage () {
+		
+		$( document ).on('click', '.verticallPageLi', function(e) {
+			e.preventDefault();
+			var _this            = $( this ),
+			    accoPage         = _this.children().attr( 'id' ),
+			    $accordionRemove = $( '.accordionRemove' ),
+			    indexNam         = ( accoPage - 1 ) * 7,
+				stNam 			 = indexNam == 0 ? 0 : indexNam + 1,
+				fnNam 			 = ( accoPage * 7 ) + 1;
 
-
-
-	$( document ).on('click', '.verticallPageLi', function(e) {
-		e.preventDefault();
-
-		var q = $( this )
-			.children()
-			.attr( 'id' );
 			
-		console.log(q);	
-	});
+			console.log( stNam + ' : ' +  fnNam );
+
+			$( '.accordionRemove' )
+				.fadeOut('slow')
+				.slice( stNam, fnNam )
+				.fadeIn( 'slow' );
+
+			
+		});
+	};
+
+	accoPage ();
 
 
 
-
-
+/*---------------------------------------------------------------------*/
 
 
 
@@ -1451,7 +1463,7 @@ var count_load_img_max = 0;
 											$( '.accordionRemove' )
 												.eq(7)
 												.nextAll()
-												.css('display', 'none');
+												.hide();
 								  	  	};
 
 
