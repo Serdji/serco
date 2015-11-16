@@ -170,12 +170,14 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+
+
 /*---------------Переключение номера странице в аккордионе-------------*/
 
 
 	function accoPage () {
 		
-		$( document ).on('click', '.verticallPageLi', function(e) {
+		$( document ).on( 'click', '.verticallPageLi', function(e) {
 			e.preventDefault();
 			var _this            = $( this ),
 			    accoPage         = _this.children().attr( 'id' ),
@@ -184,11 +186,15 @@ $( 'a[href="/"]' ).on('click', function() {
 				stNam 			 = indexNam == 0 ? 0 : indexNam + 1,
 				fnNam 			 = ( accoPage * 7 ) + 1;
 
-			
-			console.log( stNam + ' : ' +  fnNam );
+			_this
+				.addClass( 'pageNumberBackground' )
+				.siblings( '.verticallPageLi' )
+				.removeClass( 'pageNumberBackground' );
+
+			// console.log( stNam + ' : ' +  fnNam );
 
 			$( '.accordionRemove' )
-				.fadeOut('slow')
+				.fadeOut( 'slow' )
 				.slice( stNam, fnNam )
 				.fadeIn( 'slow' );
 
@@ -1332,6 +1338,10 @@ var count_load_img_max = 0;
 							  	  			$( 'div.pageNamberVertical ul' ).append('<li class="verticallPageLi"><a href="#" class="verticallPage" id="' + i + '">' + i + '</a></li>');
 
 							  	  		};
+
+							  	  		$( '.verticallPageLi' )
+							  	  			.first()
+							  	  			.addClass( 'pageNumberBackground' );
 
 
 								  	  	function generAcco ( arryLength ) {
