@@ -517,8 +517,10 @@ $( 'a[href="/"]' ).on('click', function() {
 				  .removeClass( 'removeSadowClick' );
 
 				
+
 					
 					filterObj();
+
 
 			
 
@@ -1042,7 +1044,6 @@ var count_load_img_max = 0;
 
 
 
-
 				function prtJson () {
 
 					if( jsonstr != '{' )
@@ -1051,14 +1052,17 @@ var count_load_img_max = 0;
 							}
 
 	            	var type     = 'pid',
+	            		urlPage  = window.location.pathname,
 	            		id       = $( 'div.accordionRemoveAktiv' ).attr( 'id' ),
 	            		out_id   = id == undefined ? 0 : id,
-	            		page     = $( 'input.inputNumber' ).attr( 'type' ),
-	            		namber   = $( 'input.inputNumber' ).attr( 'out_id' );
+	            		page     = $( 'input.inputNumber' ).attr( 'type' ) == undefined ?
+	            				   $( 'ul.pageNumber li > a[href="' + urlPage + '"]' ).attr( 'type' ) : 
+	            				   $( 'input.inputNumber' ).attr( 'type' ),
+	            		namber   = $( 'input.inputNumber' ).attr( 'out_id' ) == undefined ? 
+	            		           $( 'ul.pageNumber li > a[href="' + urlPage + '"]' ).attr( 'out_id' ) : 
+	            		           $( 'input.inputNumber' ).attr( 'out_id' );
+
 	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"'+','+'"'+page+'"'+':'+'"'+namber+'"';
-
-
-
 
 
 				};
@@ -1671,7 +1675,13 @@ var count_load_img_max = 0;
 
 
 								if ( finish_page >= 11 ) {
-									inputPfgeStart ();
+									var pgNam     = $( '.pageClass' ).attr( 'out_id' ),
+										arrUrlNam = location.pathname.split( '/' ),
+										arrPage   = arrUrlNam[2].split( 'e' ),
+										innputNam = pgNam == undefined ? arrPage[1] : pgNam;
+
+									console.log(innputNam);
+									inputPfgeStart ( innputNam );
 									$('ul.pageNumber').removeClass('pageNumberLavel2');
 
 								}else{
@@ -2185,10 +2195,10 @@ var count_load_img_max = 0;
 
 if ($('#leval').is('.leval1')) {
 	
-function inputPfgeStart (){
+function inputPfgeStart ( innputNam ){
 
 	
-	var ths_pg = $( '.pageClass' ).attr( 'out_id' ),
+	var ths_pg = innputNam,
 	    fin_pg = Number($('input#finish_page').val()),
 	    href   = '/catalog/';
 
@@ -2375,9 +2385,9 @@ function inputPfgeStart (){
 		funImgWidthHeight ();
 		init();
 
-		$( 'ul.pageNumber li' ).eq( 0 ).addClass('pageNumberBorderLeft');
-		$( '.pageNumberPoint' ).next().addClass('pageNumberBorderLeft');
-		$( '.pageNumberInit' ).next().addClass('pageNumberBorderLeft');
+		$( 'ul.pageNumber li' ).eq( 0 ).addClass( 'pageNumberBorderLeft' );
+		$( '.pageNumberPoint' ).next().addClass( 'pageNumberBorderLeft' );
+		$( '.pageNumberInit' ).next().addClass( 'pageNumberBorderLeft' );
 	
 	
 
@@ -2397,15 +2407,16 @@ function inputPfgeStart (){
 				$(".inputNumber").val(++value);
 
 		});
-		history.pushState((ths_pg-1), "Title "+ (ths_pg-1) +""  , href + "page" + (ths_pg-1) + "/"); 
-		history.replaceState(ths_pg, "Title "+ ths_pg +""  , href + "page" + ths_pg + "/");
+		/*history.pushState((ths_pg-1), "Title "+ (ths_pg-1) +""  , href + "page" + (ths_pg-1) + "/"); 
+		history.replaceState(ths_pg, "Title "+ ths_pg +""  , href + "page" + ths_pg + "/");*/
+		history.replaceState(1, "Title1"  , href + "page" +ths_pg+ "/");
 
 };
 
 inputPfgeStart ();
 // blockHeight();
 		
-}else{
+} else {
 
 	
 
@@ -2539,7 +2550,7 @@ var old_loc = (location.pathname || '') + (location.search || '');
  		return false;
  	});
 	
-	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber ):not( .verticallPage )" ).on('click', function(){
+	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber )" ).on('click', function(){
 	var href = $(this).attr('href');
 	reLoaction(href,1);
 
