@@ -1020,15 +1020,15 @@ var count_load_img_max = 0;
 
 
 
-			$.post( URL, obj, collbackFanction, "json" );
+			/*$.post( URL, obj, collbackFanction, "json" );
 
 			function collbackFanction ( data ) {
 
 				console.log( data );
 			
-			};
+			};*/
 
-			/*$.ajax({ 
+			$.ajax({ 
 				url        : URL,
 			    type       : 'POST',
 			    dataType   : 'json',
@@ -1038,11 +1038,33 @@ var count_load_img_max = 0;
 
 						stopLoad();
 
-						console.log( data.allItems );
+						var allItems = data.allItems,
+							items    = data.items,
+							prt      = data.prt,
+							shops    = data.shops;
+
+						$( 'div.leval1' ).html('');
+
+						$.each( items, function(i, val) {
+							console.log(val);
+							$( 'div.leval1' ).append('<div class="row">'+
+													'<!-- BEGIN items -->'+
+													'<!-- IF%3 -->'+
+													 '</div>'+
+													 '<div class="row rowHeight leval2">'+
+													 '<!-- END%3 -->'+
+													 	'<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
+													 		'<figure class="opedDialog">'+
+													 			'<div class="infoDialog">'+
+													 				'<div class="Picture"><img src="/wimg/' + val.item_img + '" data-toggle="modal" data-target="#img">'+
+													 				'</div>'+
+													 			'</div>'+
+													 		'</figure>'+
+													 	'</div>'+
+													 '</div>');
+						});
 					}
-
-
-				});*/
+			});
 
 		});
 

@@ -229,7 +229,7 @@
 <!-- BEGIN collections -->
 <!-- IF%3 -->
   </div>
-  <div class="row rowHeight">
+  <div class="row rowHeight leval1">
 <!-- END%3 -->
 <strong id="leval" class="leval1"></strong>
   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border heightCards2 collection_card levels1" id="{coll_id1s}">
