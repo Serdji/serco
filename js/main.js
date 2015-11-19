@@ -990,6 +990,74 @@ var count_load_img_max = 0;
 					.addClass( 'breadCrumbsA' );
 
 
+
+
+
+	/*--------------------------------Ajax запрос на получение коллеций-------------------------------*/
+
+
+
+	$( 'a.level1A' ).on( 'click',  function(e) {
+
+		var _this = $( this );
+		navigator.geolocation.getCurrentPosition( function( position ) { 
+
+			var	lat       = position.coords.latitude,
+			    lng       = position.coords.longitude,
+			    URL       = "/hendler.php?mod=json_collection",
+				coll_code = _this.attr( 'coll_code' ),
+				coll_id   = _this.attr( 'coll_id' ),
+				obj       = { 
+							  'coll_code' : coll_code,
+				 			  'coll_id'   : coll_id,
+				 			  'lat'       : lat,
+				 			  'lng'       : lng
+				 			};
+
+				console.log( obj );
+				
+				
+
+
+
+			$.post( URL, obj, collbackFanction, "json" );
+
+			function collbackFanction ( data ) {
+
+				console.log( data );
+			
+			};
+
+			/*$.ajax({ 
+				url        : URL,
+			    type       : 'POST',
+			    dataType   : 'json',
+			    data       : obj,
+			    beforeSend : startLoad(),
+			    success    : function( data ) {
+
+						stopLoad();
+
+						console.log( data.allItems );
+					}
+
+
+				});*/
+
+		});
+
+		e.preventDefault();
+		
+	});
+
+
+
+	/*------------------------------------------------------------------------------------------------*/
+
+
+
+
+
 	/*-----------------Функция сортировки фильтров-----------------*/
 
    	function filterObj(){
@@ -1198,11 +1266,11 @@ var count_load_img_max = 0;
 			jsonstr += '}';
 			jsonstr  = JSON.parse( jsonstr );
 
-			console.log( jsonstr );
+			// console.log( jsonstr );
 			// console.log(jsonstr_debug);
 			
 			
-
+		/*--------------------------------Ajax запрос на выгрузку каталога и всех фильтров---------------------------------*/
 				 
 				$.ajax({
 					url        : "/hendler.php?mod=json_catalog" + ( ( $.isEmptyObject( jsonstr ) == true ) ? '&is_null=1' : '' ),
@@ -1248,14 +1316,14 @@ var count_load_img_max = 0;
 
 							  	  $.each( shops, function( index, val ) {
 							  	  	
-								  	  	var markerLat = val.lat,
-								  	  		markerLng = val.lon,
-								  	  		dist      = val.dist,
-								  	  		adress    = val.adress,
-								  	  		name      = val.name,
-								  	  		pid       = val.pid;
+								  	  	var lat    = val.lat,
+								  	  		lng    = val.lon,
+								  	  		dist   = val.dist,
+								  	  		adress = val.adress,
+								  	  		name   = val.name,
+								  	  		pid    = val.pid;
 
-								  	  	arryMarkers.push( [ name, markerLat, markerLng, adress ] );
+								  	  	arryMarkers.push( [ name, lat, lng, adress ] );
 
 								 });
 								
@@ -1680,7 +1748,7 @@ var count_load_img_max = 0;
 										arrPage   = arrUrlNam[2].split( 'e' ),
 										innputNam = pgNam == undefined ? arrPage[1] : pgNam;
 
-									console.log(innputNam);
+									
 									inputPfgeStart ( innputNam );
 									$('ul.pageNumber').removeClass('pageNumberLavel2');
 
@@ -1724,24 +1792,18 @@ var count_load_img_max = 0;
 		
 	});  // Конец функции геолокации
 						   
-	
-
-		
-
-
-
-
-
-	
-
-            
-          
-
-          	
+	   	
            	
 	};
 
+		/*-----------------------------------------------------------------------------------------------------------------*/
+
 	/*-------------------------------------------------------------*/
+
+
+	
+
+
 
 
 
@@ -2550,7 +2612,7 @@ var old_loc = (location.pathname || '') + (location.search || '');
  		return false;
  	});
 	
-	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber )" ).on('click', function(){
+	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber ):not( .level1A )" ).on('click', function(){
 	var href = $(this).attr('href');
 	reLoaction(href,1);
 
