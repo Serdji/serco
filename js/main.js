@@ -1036,34 +1036,71 @@ var count_load_img_max = 0;
 			    beforeSend : startLoad(),
 			    success    : function( data ) {
 
-						stopLoad();
+					stopLoad();
 
-						var allItems = data.allItems,
-							items    = data.items,
-							prt      = data.prt,
-							shops    = data.shops;
+					var allItems = data.allItems,
+						items    = data.items,
+						prt      = data.prt,
+						shops    = data.shops,
+						htmlTeg  =''; 
 
-						$( 'div.leval1' ).html('');
+					var obj1 = $( 'div.item' );
+					obj1.removeClass('leval1').removeClass('row');
+					obj1.html('');
 
-						$.each( items, function(i, val) {
-							console.log(val);
-							$( 'div.leval1' ).append('<div class="row">'+
-													'<!-- BEGIN items -->'+
-													'<!-- IF%3 -->'+
-													 '</div>'+
-													 '<div class="row rowHeight leval2">'+
-													 '<!-- END%3 -->'+
-													 	'<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
-													 		'<figure class="opedDialog">'+
-													 			'<div class="infoDialog">'+
-													 				'<div class="Picture"><img src="/wimg/' + val.item_img + '" data-toggle="modal" data-target="#img">'+
-													 				'</div>'+
-													 			'</div>'+
-													 		'</figure>'+
-													 	'</div>'+
-													 '</div>');
-						});
-					}
+					$.each( items, function( i, val ) {
+							if(i%3==0){
+								$('div.pEll').removeClass('pEll')
+								obj1.append('<div class="row rowHeight leval2 pEll"></div>');
+							}
+						 $('div.pEll').append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
+												 		'<figure class="opedDialog">'+
+												 			'<div class="infoDialog">'+
+												 				'<div class="Picture"><img src="/wimg/' + val.item_img + '" data-toggle="modal" data-target="#img">'+
+												 				'</div>'+
+												 			'</div>'+
+												 			'<div class="clear">'+
+												 			'</div>'+
+												 			'<div class="figcaption">'+
+												 				'<figcaption class="item_name"><b>Название</b>: <span>' + val.name +'</span>.</figcaption>'+
+												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ val.lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + val.wid + ' </span>x <span>Толщина:</span><span> ' + val.thick + ' .см</span> </figcaption>'+
+												 				'<figcaption class="item_amount"><b>Количество</b>: ' + val.unit + '</figcaption>'+
+												 				'<figcaption class="item_color"><b>Цвета</b>: ' + val.color + '.</figcaption>'+
+												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + val.cover + '.</figcaption>'+
+												 				'<figcaption class="item_country"><b>Страна</b>: ' + val.country + '.</figcaption>'+
+												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + val.brand + '.</figcaption>'+
+												 				'<figcaption class="item_type"><b>Тип</b>: ' + val.type + '.</figcaption>'+
+												 				'<hr>'+
+												 			'</div>'+
+												 			'<br>'+
+												 			'<div class="priceBlock">'+
+												 				'<form role="form" class="price">'+
+												 					'<div class="form-group  has-success has-feedback">'+
+												 						'<label class="control-label" for="inputSuccess2">' + val.price + ' ₽ за м<sup>2</sup></label>'+
+												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="шт. 0.08 м2">'+
+												 					'</div>'+
+												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo">Добавить в корзину</button>'+
+												 				'</form>'+	
+												 			'</div>'+
+												 			'<!-- Modal -->'+
+												 			'<div class="modal fade bs-example-modal-lg" id="img" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
+												 				'<div class="modal-dialog modal-lg">'+
+												 					'<div class="modal-content">'+
+												 						'<div class="modal-header">'+
+												 							'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
+												 						'</div>'+
+												 						'<div class="modal-body">'+
+												 						'</div>'+
+												 						'<div class="modal-footer">'+
+												 							'<button type="button" class="btn btn-primary btn-sm myBtnActive" data-dismiss="modal">Закрыть</button>'+
+												 						'</div>'+
+												 					'</div>'+
+												 				'</div>'+
+												 			'</div>'+
+												 		'</figure>'+
+												 	'</div>');
+					});
+				}
 			});
 
 		});
