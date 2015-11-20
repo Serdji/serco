@@ -157,6 +157,10 @@ function reLoaction(new_loc,loadad,goBack,bPages)
 	}
 }
 
+
+
+
+
 									/*------------Основной код--------------*/
 	
 	function allFuncs()
@@ -167,8 +171,6 @@ $( 'a[href="/"]' ).on('click', function() {
 	$( 'div.jumbotron.cl1' ).remove();
 	window.location = '/';
 });
-
-
 
 
 
@@ -204,10 +206,10 @@ $( 'a[href="/"]' ).on('click', function() {
 
 	accoPage ();
 
+filterObj();
 
 
 /*---------------------------------------------------------------------*/
-
 
 
 /*------------------------Делает пустой инпут--------------------------*/
@@ -1018,16 +1020,6 @@ var count_load_img_max = 0;
 				
 				
 
-
-
-			/*$.post( URL, obj, collbackFanction, "json" );
-
-			function collbackFanction ( data ) {
-
-				console.log( data );
-			
-			};*/
-
 			$.ajax({ 
 				url        : URL,
 			    type       : 'POST',
@@ -1042,18 +1034,18 @@ var count_load_img_max = 0;
 						items    = data.items,
 						prt      = data.prt,
 						shops    = data.shops,
-						htmlTeg  =''; 
+						htmlTeg  ='', 
+						obj1     = $( 'div.item' );
 
-					var obj1 = $( 'div.item' );
-					obj1.removeClass('leval1').removeClass('row');
+					obj1.removeClass( 'leval1 row' );
 					obj1.html('');
 
 					$.each( items, function( i, val ) {
-							if(i%3==0){
-								$('div.pEll').removeClass('pEll')
+							if( i%3 == 0 ){
+								$( 'div.pEll' ).removeClass( 'pEll' );
 								obj1.append('<div class="row rowHeight leval2 pEll"></div>');
 							}
-						 $('div.pEll').append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
+						 $( 'div.pEll' ).append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
 												 		'<figure class="opedDialog">'+
 												 			'<div class="infoDialog">'+
 												 				'<div class="Picture"><img src="/wimg/' + val.item_img + '" data-toggle="modal" data-target="#img">'+
@@ -1800,15 +1792,20 @@ var count_load_img_max = 0;
 
 								$( '#finish_page' ).val( finish_page );
 
+								var 	pgNam     = $( '.pageClass' ).attr( 'out_id' ),
+										innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
 
-								if ( finish_page >= 11 ) {
+
+								inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
+
+								/*if ( finish_page >= 11 ) {
 									var pgNam     = $( '.pageClass' ).attr( 'out_id' ),
 										arrUrlNam = location.pathname.split( '/' ),
 										arrPage   = arrUrlNam[2].split( 'e' ),
 										innputNam = pgNam == undefined ? arrPage[1] : pgNam;
 
 									
-									inputPfgeStart ( innputNam );
+									inputPfgeStartNew ( innputNam, all_items );
 									$('ul.pageNumber').removeClass('pageNumberLavel2');
 
 								}else{
@@ -1839,7 +1836,7 @@ var count_load_img_max = 0;
 																        
 							        init();
 									
-								};
+								};*/
 								pageList ();
 
 								
@@ -2314,263 +2311,51 @@ var count_load_img_max = 0;
 		/*----------------Изменение input страниц-------------------*/
 
 
-if ($('#leval').is('.leval1')) {
-	
-function inputPfgeStart ( innputNam ){
+function inputPfgeClickWin(p)
+{
+var href = '';
+	for(i=0;typeof urls[i] !== 'undefined';i++){if(urls[i].substr(0,4)!='page'){if(href!=''){href+='/'} href += urls[i];}}
+reLoaction(href+'page'+pg+'/',1);
+return false;
+}
 
-	
-	var ths_pg = innputNam,
-	    fin_pg = Number($('input#finish_page').val()),
-	    href   = '/catalog/';
-
-    function pageNumberInit ( namber_pg, page_href ){
-    	return $( '<li class="pageNumberInit">'
-    				+'<div class="arrowLeft">'
-    					+'<a class="pageA" out_id="'+(namber_pg-1)+'" type="page" href="'+page_href+'page'+(namber_pg)+'/">&lsaquo;</a>'
-    				+'</div>'
-    				+'<input out_id="'+(namber_pg)+'" type="page" class="inputNumber from-to" type="text" value='+(namber_pg)+'>'
-    				+'<div class="arrowRight">'
-    					+'<a class="pageA" out_id="'+(namber_pg+1)+'" type="page" href="'+href+'page'+(namber_pg+1)+'/">&rsaquo;</a>'
-    				+'</div>'
-    			  +'</li>' );
-   };
-
-    function pageNumberOut_id ( namber_pg, page_href ){
-    	return $( '<li>'
-    				+'<a class="pageA" out_id="'+namber_pg+'" type="page" href="'+page_href+'page'+namber_pg+'/">'+namber_pg+'</a>'
-    			  +'</li>' );
-    };
-
-    function pageNumberPoint (){
-    	return $( '<li class="pageNumberPoint">...</li>' );
-    };
-
-    function pageNumberZoomIn (namber_pg, zoomInOn, page_href){
-    	return $( '<li>'
-    				+'<a class="pageA" out_id="'+(namber_pg+zoomInOn)+'" type="page" href="'+page_href+'page'+(namber_pg+zoomInOn)+'/">'+(namber_pg+zoomInOn)+'</a>'
-    			  +'</li>' );
-     };
-
-    function pageNumberZoomOn (namber_pg, zoomInOn, page_href){
-    	return $( '<li>'
-    				+'<a class="pageA" out_id="'+(namber_pg-zoomInOn)+'" type="page" href="'+page_href+'page'+(namber_pg-zoomInOn)+'/">'+(namber_pg-zoomInOn)+'</a>'
-    			  +'</li>' );
-    };
-
-    function pageNumberStart (){
-    	return $( '<li class="pageNumberInit"><div class="arrowLeft">'
-    				+'<a class="pageA" out_id="'+(ths_pg)+'" type="page" href="'+href+'page'+(ths_pg)+'/">&lsaquo;</a>'
-    				+'</div>'
-    				+'<input out_id="'+(ths_pg)+'" type="page" class="inputNumber from-to" type="text" value='+(ths_pg)+'>'
-    			  +'<div class="arrowRight">'
-    			   +'<a class="pageA" out_id="'+(ths_pg+1)+'" type="page" href="'+href+'page'+(ths_pg+1)+'/">&rsaquo;</a>'
-    			  +'</div>'
-    			  +'</li>' );
-    };
-
-    function pageNumberFinish (){
-    	return $( '<li>'
-    				+'<a class="pageA" out_id="'+(fin_pg)+'" type="page" href="'+href+'page'+(fin_pg)+'/">'+(fin_pg)+'</a>'
-    			  +'</li>' );
-    };
-
-    function pageNumberInputFinish (){
-    	return $( '<li class="pageNumberInit">'
-    				+'<div class="arrowLeft">'
-    					+'<a class="pageA" out_id="'+(ths_pg-1)+'" type="page" href="'+href+'page'+(ths_pg-1)+'/">&lsaquo;</a>'
-    				+'</div><input out_id="'+(ths_pg)+'" type="page" class="inputNumber from-to" type="text" value='+(ths_pg)+'>'
-    				+'<div class="arrowRight">'
-    					+'<a class="pageA" out_id="'+(ths_pg)+'" type="page" href="'+href+'page'+(ths_pg)+'/">&rsaquo;</a>'
-    				+'</div>'
-    			  +'</li>' );
-    };
-
-	$( 'ul.pageNumber' ).html('');
-
-		if((ths_pg == 1) || (ths_pg == undefined))
-		{
-		var ths_pg = 1;
-		$( 'ul.pageNumber' )
-			.append(pageNumberStart ())
-			.append(pageNumberZoomIn (ths_pg, 1, href))
-			.append(pageNumberZoomIn (ths_pg, 2, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomIn (ths_pg, 5, href))
-			.append(pageNumberZoomIn (ths_pg, 6, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		$( 'ul.pageNumber  li').eq( 1 ).addClass('pageNumberBorderLeft');
-		$( 'div.arrowLeft' ).remove();
-		}
-		else if(ths_pg == 2)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberZoomIn (ths_pg, 1, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomIn (ths_pg, 4, href))
-			.append(pageNumberZoomIn (ths_pg, 5, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg == 3)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberZoomOn (ths_pg, 2, href))
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberZoomIn (ths_pg, 1, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomIn (ths_pg, 4, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg == 4)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberOut_id ( 1, href ))
-			.append(pageNumberOut_id ( 2, href ))
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberZoomIn (ths_pg, 1, href))
-			.append(pageNumberZoomIn (ths_pg, 2, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg >= 5 && ths_pg <= fin_pg-3)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberOut_id ( 1, href ))
-			.append(pageNumberOut_id ( 2, href ))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberZoomIn (ths_pg, 1, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg == fin_pg-2)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberOut_id ( 1, href ))
-			.append(pageNumberOut_id ( 2, href ))
-			.append(pageNumberOut_id ( 3, href ))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 2, href))
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberZoomOn (fin_pg, 1, href))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg == fin_pg-1)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberOut_id ( 1, href ))
-			.append(pageNumberOut_id ( 2, href ))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 6, href))
-			.append(pageNumberZoomOn (ths_pg, 5, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInit ( ths_pg, href ))
-			.append(pageNumberFinish ());
-		}
-		else if(ths_pg == fin_pg)
-		{
-			var ths_pg = Number(ths_pg);
-		$( 'ul.pageNumber' )
-			.append(pageNumberOut_id ( 1, href ))
-			.append(pageNumberOut_id ( 2, href ))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 7, href))
-			.append(pageNumberZoomOn (ths_pg, 6, href))
-			.append(pageNumberPoint ())
-			.append(pageNumberZoomOn (ths_pg, 2, href))
-			.append(pageNumberZoomOn (ths_pg, 1, href))
-			.append(pageNumberInputFinish ())
-			$( 'div.arrowRight' ).remove();
-		}
-
-		funImgWidthHeight ();
-		init();
-
-		$( 'ul.pageNumber li' ).eq( 0 ).addClass( 'pageNumberBorderLeft' );
-		$( '.pageNumberPoint' ).next().addClass( 'pageNumberBorderLeft' );
-		$( '.pageNumberInit' ).next().addClass( 'pageNumberBorderLeft' );
-	
-	
-
-
+function inputPfgeStartNew( innputNam, allItems ){
+	var ths_pg   = Number(innputNam),
+	    href     = '',
+		allPages = Math.ceil(Number(allItems)/9),
+		isWrite  = 1;
 		
-		var	value = $(".inputNumber").val();
-
-		$(".arrowLeft").on('click', function(){
-			
-			if(value > 1 )
-				$(".inputNumber").val(--value);
-
-		});
-
-		$(".arrowRight").on('click', function(){
-			if(value < fin_pg)
-				$(".inputNumber").val(++value);
-
-		});
-		/*history.pushState((ths_pg-1), "Title "+ (ths_pg-1) +""  , href + "page" + (ths_pg-1) + "/"); 
-		history.replaceState(ths_pg, "Title "+ ths_pg +""  , href + "page" + ths_pg + "/");*/
-		history.replaceState(1, "Title1"  , href + "page" +ths_pg+ "/");
-
-};
-
-inputPfgeStart ();
-// blockHeight();
+		for(i=0;typeof urls[i] !== 'undefined';i++){if(urls[i].substr(0,4)!='page'){if(href!=''){href+='/'} href += urls[i];}}
 		
-} else {
-
-	
-
-	$('ul.pageNumber').addClass('pageNumberLavel2');
-
-	var ths_pg = Number($('input#this_page').val()),
-        fin_pg = Number($('input#finish_page').val()),
-        href   = '/catalog/'+urls[4]+'/';
-        history.replaceState(1, "Title1"  , href + "page" +ths_pg+ "/");
-        for (var i = 1; i <= fin_pg; i++) {
-
-        	$( 'ul.pageNumber' ).append('<li><a out_id="' + i + '" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
-        	$( 'ul.pageNumber li' ).eq( 0 ).addClass('pageNumberBorderLeft');
-
-       
-
-
-
-
-        	
-        }
-
-
-
-
-			
-
-		init();
-		// blockHeight();
-		intervalImgColl ();
-		pageNumberBackground ();
-
-};
+		for(i=0;i<allPages;i++)
+		{
+		pg = i+1;
+		console.log('PG - '+pg+' isWrite='+isWrite);
+			if(isWrite == 0 && (pg > (allPages-3) || pg == ths_pg || pg == ths_pg+1 || pg == ths_pg-1)){isWrite = 1;}
+			if(isWrite == 1)
+			{
+				if(allPages > 9 && pg > 3 && pg < (allPages-2) && pg != ths_pg && pg != ths_pg+1 && pg != ths_pg-1)
+				{
+				isWrite = 0;
+				$('ul.pageNumber').append('<li class="pageNumberPoint">...</li>');
+				}
+				else
+				{
+					if(pg == innputNam && allPages > 3)
+					{
+					$('ul.pageNumber').append('<li class="pageNumberInit">');
+						if(pg > 1){$('ul.pageNumber').append('<div class="arrowLeft"><a class="pageA" out_id="'+(pg-1)+'" type="page" href="'+href+'page'+(pg-1)+'/">‹</a></div>');}
+					$('ul.pageNumber').append('<input out_id="2" type="page" class="inputNumber from-to" value="'+pg+'" onkeydown="if(event.keyCode==13){inputPfgeClickWin($(this).val())}">');
+						if(pg < allPages){$('ul.pageNumber').append('<div class="arrowRight"><a class="pageA" out_id="'+(pg+1)+'" type="page" href="'+href+'page'+(pg+1)+'/">›</a></div>');}
+					$('ul.pageNumber').append('</li>');
+					}
+					else
+					{
+					$('ul.pageNumber').append('<li class="pageNumberBorderLeft"><a class="pageA" out_id="'+pg+'" type="page" href="'+href+'page'+pg+'/">'+pg+'</a></li>');
+					}
+				}
+			}
+		}
 	$( '.pageNumber' ).on('click', 'li', function() {
 		$( this )
 		  .children('a')
@@ -2578,6 +2363,8 @@ inputPfgeStart ();
 		  funImgWidthHeight ();
 
 	});
+}
+
 
 
 pageList ();
