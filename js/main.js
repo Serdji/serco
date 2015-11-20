@@ -174,6 +174,57 @@ $( 'a[href="/"]' ).on('click', function() {
 
 
 
+
+/*--------------------Открытие большой фотки на клик-------------------*/
+
+
+
+	function slidersImg () {
+
+		
+		$( document ).on('click', '.sliders', function() {
+
+			$( 'body' ).append( '<div id="preLoader"></div>' );
+	 	    $( this )
+				.clone()
+				.removeClass( 'sliders' )
+				.addClass( 'slidersImg' )
+				.appendTo( '#preLoader' );
+
+		var	widthDoc  = ( $( window ).width() / 2 ),
+			heightDoc = ( $( window ).height() / 2 ),
+			widthImg  = ( $( '.slidersImg' ).width() / 2 ),
+			heightImg = ( $( '.slidersImg' ).height() / 2 ),
+			left      = widthDoc - widthImg,
+			top       = heightDoc - heightImg;
+		
+		$( '.slidersImg' ).css({
+			top: top,
+			left: left
+		});
+
+		});
+
+		$( document ).on('click', '.slidersImg', function() {
+			$( '.slidersImg' )
+				.parent()
+				.remove();
+			
+		});
+
+		$( document ).on('click', '#preLoader', function() {
+			$( this ).remove();
+		});
+	};
+	slidersImg ();
+
+
+
+/*---------------------------------------------------------------------*/
+
+
+
+
 /*---------------Переключение номера странице в аккордионе-------------*/
 
 
@@ -1100,7 +1151,7 @@ var count_load_img_max = 0;
 						
 					$.each( photos, function( i, val ) {
 						$FL.append('<div class="coll_Imgs">'+
-								     '<img src="/wimg/' + val + '">'+
+								     '<img class="sliders" src="/wimg/' + val + '">'+
 								   '</div>');
 					});
 

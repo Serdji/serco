@@ -1153,3 +1153,9 @@ a:-webkit-any-link{
 .ulDisplay{
 	display: none !important;
 }
+
+.slidersImg{
+	position: fixed;
+	z-index: 99999;
+	cursor: pointer;
+}
