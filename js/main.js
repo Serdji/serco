@@ -208,7 +208,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 filterObj();
 
-
+history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 /*---------------------------------------------------------------------*/
 
 
@@ -963,33 +963,20 @@ var count_load_img_max = 0;
 					/*-------------------------------------------------------------*/
 
 
+				$( 'a[href="/catalog/"]' ).on('click', function() {
+					href = $( this ).attr( 'href' );
+					history.replaceState( 1, "Title1"  , href + 'page1/');
+					filterObj();
+				});
+
 
 					/*------------------Выгруска номера странице-------------------*/
 
 			function pageList (){
-				$( '.pageA' ).on( 'click', function() {
-					$( this ).addClass( 'pageClass' );
-					
-					filterObj();
-				});
-				$( '.inputNumber' ).on( 'keypress', function(e){
-					if( e.charCode == 13 || e.keyCode == 13 )
-					{
-						$( this ).addClass( 'pageClass' );
-						var	value = $( '.inputNumber' ).val();
-						$( ".inputNumber" ).attr( 'out_id', value );
-						filterObj();
-					}
-					
-				});
+			
 			};
 			
 					/*-------------------------------------------------------------*/
-
-				$( '.breadCrumbs' )
-					.children( 'a' )
-					.eq(2)
-					.addClass( 'breadCrumbsA' );
 
 
 
@@ -1001,7 +988,15 @@ var count_load_img_max = 0;
 
 	$( 'a.level1A' ).on( 'click',  function(e) {
 
+
+
 		var _this = $( this );
+			// nameColl  = _this.find( '.coll_name' ).text(),
+			// hrefColl  = _tihs.attr( 'href' );			
+
+		// $( 'a[href="/catalog/"]' ).append( '<strong>&rarr;</strong><a href="' + hrefColl + '">' + nameColl + '</a>' )
+			
+		
 		navigator.geolocation.getCurrentPosition( function( position ) { 
 
 			var	lat       = position.coords.latitude,
@@ -1015,8 +1010,13 @@ var count_load_img_max = 0;
 				 			  'lat'       : lat,
 				 			  'lng'       : lng
 				 			};
+				href      = _this.attr( 'href' );
 
-				console.log( obj );
+				history.replaceState( 1, "Title1"  , href + 'page1/');
+
+							
+				
+				console.log( href );
 				
 				
 
@@ -1096,7 +1096,7 @@ var count_load_img_max = 0;
 			});
 
 		});
-
+		funImgWidthHeight ();
 		e.preventDefault();
 		
 	});
@@ -1112,9 +1112,7 @@ var count_load_img_max = 0;
 	/*-----------------Функция сортировки фильтров-----------------*/
 
    	function filterObj(){
-
-							  	  
-			
+		urls = window.location.href.split('/');
 			$( 'option.remov' ).attr( 'disabled', 'true' );
 			$( 'div.colors' ).addClass( 'colorsNone' );
 			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass( 'colorsNone' );
@@ -1362,8 +1360,6 @@ var count_load_img_max = 0;
 
 
 						/*--------------------Выгрузка маркеров на карту-------------------*/ 
-
-
 
 							  	  $.each( shops, function( index, val ) {
 							  	  	
@@ -1787,62 +1783,10 @@ var count_load_img_max = 0;
 								$.each( color, function ( index, value ) {
 								  	$( 'div.colors[out_id="' + value + '"]' ).removeClass('colorsNone');	
 								});
-
-
-
-								$( '#finish_page' ).val( finish_page );
-
-								var 	pgNam     = $( '.pageClass' ).attr( 'out_id' ),
-										innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
-
-
-								inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
-
-								/*if ( finish_page >= 11 ) {
-									var pgNam     = $( '.pageClass' ).attr( 'out_id' ),
-										arrUrlNam = location.pathname.split( '/' ),
-										arrPage   = arrUrlNam[2].split( 'e' ),
-										innputNam = pgNam == undefined ? arrPage[1] : pgNam;
-
-									
-									inputPfgeStartNew ( innputNam, all_items );
-									$('ul.pageNumber').removeClass('pageNumberLavel2');
-
-								}else{
-									$('ul.pageNumber').addClass('pageNumberLavel2');
-									$('ul.pageNumber').html('');
-
-
-
-								var href        = '/catalog/',
-									uLpageNumbe = $('ul.pageNumber'),
-									fin_pg      = finish_page;
-							        for (var i = 1; i <= fin_pg; i++) {
-
-							        	uLpageNumbe.append('<li><a class="pageA" out_id="'+ i +'" type="page" href="' + href + 'page' + i + '/">' + i + '</a></li>');
-							        	uLpageNumbe.children( 'li' ).eq( 0 ).addClass('pageNumberBorderLeft');
-
-							        }
-
-							        pageNumberBackground ();
-
-							        $( '.pageA' ).on('click', function (){
-							        	var ths_pg = $( this ).attr('out_id');
-							        	history.pushState((ths_pg-1), "Title "+ (ths_pg-1) +""  , href + "page" + (ths_pg-1) + "/");
-							        	history.replaceState(ths_pg, "Title "+ ths_pg +""  , href + "page" + ths_pg + "/");
-							        });
-									
-										
-																        
-							        init();
-									
-								};*/
-								pageList ();
-
-								
- 	
-
-							},
+							$( '#finish_page' ).val( finish_page );
+							var pgNam     = $( '.pageClass' ).attr( 'out_id' ),innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
+							inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
+							}
 					
 				});
 		
@@ -2310,68 +2254,105 @@ var count_load_img_max = 0;
 
 		/*----------------Изменение input страниц-------------------*/
 
-
-function inputPfgeClickWin(p)
-{
-var href = '';
-	for(i=0;typeof urls[i] !== 'undefined';i++){if(urls[i].substr(0,4)!='page'){if(href!=''){href+='/'} href += urls[i];}}
-reLoaction(href+'page'+pg+'/',1);
-return false;
-}
-
-function inputPfgeStartNew( innputNam, allItems ){
-	var ths_pg   = Number(innputNam),
-	    href     = '',
-		allPages = Math.ceil(Number(allItems)/9),
+function inputPfgeStartNew( innputNam, allItems ) {
+	$('ul.pageNumber').html('');
+	var ths_pg   = Number( innputNam ),
+	    href     = '/',
+		allPages = Math.ceil( Number( allItems ) / 9 ),
 		isWrite  = 1;
+		if(String(ths_pg) == 'NaN') {ths_pg = '1'; innputNam = '1';}
+
+		for( i = 3; typeof urls[i] !== 'undefined'; i++ ) {
+
+			if( urls[i].substr( 0, 4 ) != 'page' ) {
+
+				if( href != '/' ) {
+					href += '/'
+				}; 
+
+			href += urls[i]; 
+			};
+		};
 		
-		for(i=0;typeof urls[i] !== 'undefined';i++){if(urls[i].substr(0,4)!='page'){if(href!=''){href+='/'} href += urls[i];}}
-		
-		for(i=0;i<allPages;i++)
-		{
+		for( i = 0; i < allPages; i++ ) {
+
 		pg = i+1;
-		console.log('PG - '+pg+' isWrite='+isWrite);
-			if(isWrite == 0 && (pg > (allPages-3) || pg == ths_pg || pg == ths_pg+1 || pg == ths_pg-1)){isWrite = 1;}
-			if(isWrite == 1)
+
+			if( isWrite == 0 && 
+				( pg > ( allPages - 3 ) 	|| 
+						   pg == ths_pg 	|| 
+						   pg == ths_pg + 1 || 
+						   pg == ths_pg - 1 ) ) { 
+
+				isWrite = 1; 
+			};
+
+			if( isWrite == 1 ) {
+				if( allPages > 9          && 
+					pg > 3                && 
+					pg < ( allPages - 2 ) && 
+					pg != ths_pg          && 
+					pg != ths_pg + 1      && 
+					pg != ths_pg - 1 ) {
+
+						isWrite = 0;
+
+						$('ul.pageNumber').append('<li class="pageNumberPoint">...</li>');
+
+				} else {
+
+					if( pg == innputNam && allPages > 3 ) {
+
+						$('ul.pageNumber').append('<li class="pageNumberInit">');
+
+							if( pg > 1 ) { 
+								$('ul.pageNumber').append('<div class="arrowLeft blPage">'+
+														  	'<a class="pageA" out_id="' + ( pg - 1 ) + '" type="page" href="' + href + 'page' + ( pg - 1 ) + '/">‹</a>'+
+														  '</div>');
+							};
+
+						$('ul.pageNumber').append('<input out_id="2" type="page" class="inputNumber from-to" value="' + pg + '">');
+
+							if( pg < allPages ) {
+								$('ul.pageNumber').append('<div class="arrowRight blPage">'+
+														  	'<a class="pageA" out_id="' + ( pg + 1 ) + '" type="page" href="' + href + 'page' + ( pg + 1 ) + '/">›</a>'+
+														  '</div>');
+							};
+
+						$('ul.pageNumber').append('</li>');
+
+					} else {
+					$('ul.pageNumber').append('<li class="pageNumberBorderLeft"><a class="pageA" out_id="' + pg + '" type="page" href="' + href + 'page' + pg + '/">' + pg + '</a></li>');
+					};
+				};
+			};
+		};
+		
+		$('ul.pageNumber li').click(function(e) {
+			$( this ).children('a').addClass( 'pageClass' );
+			console.log($( this ).children('a').attr('href'));
+			history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
+			filterObj();
+		return false;
+        });
+		$('ul.pageNumber div a').click(function(e) {
+			$( this ).addClass( 'pageClass' );
+			console.log($( this ).attr('href'));
+			history.replaceState( 1, "Title1"  , $( this ).attr('href') );
+			filterObj();
+		return false;
+        });
+		$( '.inputNumber' ).on( 'keypress', function(e){
+			if( e.charCode == 13 || e.keyCode == 13 )
 			{
-				if(allPages > 9 && pg > 3 && pg < (allPages-2) && pg != ths_pg && pg != ths_pg+1 && pg != ths_pg-1)
-				{
-				isWrite = 0;
-				$('ul.pageNumber').append('<li class="pageNumberPoint">...</li>');
-				}
-				else
-				{
-					if(pg == innputNam && allPages > 3)
-					{
-					$('ul.pageNumber').append('<li class="pageNumberInit">');
-						if(pg > 1){$('ul.pageNumber').append('<div class="arrowLeft"><a class="pageA" out_id="'+(pg-1)+'" type="page" href="'+href+'page'+(pg-1)+'/">‹</a></div>');}
-					$('ul.pageNumber').append('<input out_id="2" type="page" class="inputNumber from-to" value="'+pg+'" onkeydown="if(event.keyCode==13){inputPfgeClickWin($(this).val())}">');
-						if(pg < allPages){$('ul.pageNumber').append('<div class="arrowRight"><a class="pageA" out_id="'+(pg+1)+'" type="page" href="'+href+'page'+(pg+1)+'/">›</a></div>');}
-					$('ul.pageNumber').append('</li>');
-					}
-					else
-					{
-					$('ul.pageNumber').append('<li class="pageNumberBorderLeft"><a class="pageA" out_id="'+pg+'" type="page" href="'+href+'page'+pg+'/">'+pg+'</a></li>');
-					}
-				}
-			}
+			$( this ).addClass( 'pageClass' );
+			var	value = $( '.inputNumber' ).val();
+			$( ".inputNumber" ).attr( 'out_id', value );
+			history.replaceState( 1, "Title1"  , href+'page'+value+'/' );
+			filterObj();
 		}
-	$( '.pageNumber' ).on('click', 'li', function() {
-		$( this )
-		  .children('a')
-		  .trigger('click');
-		  funImgWidthHeight ();
-
 	});
-}
-
-
-
-pageList ();
-
-
-
-
+};
 		/*----------------------------------------------------------*/
 
 
@@ -2387,8 +2368,8 @@ pageList ();
 	            var key = e.charCode || e.keyCode || 0;
 	            // Разрешаем backspace, tab, delete, стрелки, обычные цифры и цифры на дополнительной клавиатуре
 	            return (
-	                key == 8 || 
-	                key == 9 ||
+	                key == 8  || 
+	                key == 9  ||
 	                key == 13 ||
 	                key == 46 ||
 	                (key >= 37 && key <= 40) ||
@@ -2454,17 +2435,14 @@ function init(){
 
 var old_loc = (location.pathname || '') + (location.search || '');
 
- 	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] )" ).on('click', function(e){
+ 	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href='/catalog/' ] ):not( [ href^='#'] )" ).on('click', function(e){
  		return false;
  	});
 	
-	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber ):not( .level1A )" ).on('click', function(){
+	$( "a:not( [ href^='#' ] ):not( [ target='_blank' ] ):not( [ href$='/rss/' ] ):not( [ href^='mailto\:' ] ):not( [ href='/catalog/' ] ):not( [ href^='#'] ):not( .pageA ):not( .inputNumber ):not( .level1A )" ).on('click', function(){
 	var href = $(this).attr('href');
 	reLoaction(href,1);
 
-
-
-	
 	});
 	
 }
