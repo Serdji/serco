@@ -966,7 +966,7 @@ var count_load_img_max = 0;
 				$( 'a[href="/catalog/"]' ).on('click', function() {
 					href = $( this ).attr( 'href' );
 					history.replaceState( 1, "Title1"  , href + 'page1/');
-					filterObj();
+					// filterObj();
 				});
 
 
@@ -990,11 +990,10 @@ var count_load_img_max = 0;
 
 
 
-		var _this = $( this );
-			// nameColl  = _this.find( '.coll_name' ).text(),
-			// hrefColl  = _tihs.attr( 'href' );			
+		var _this    = $( this ),
+			nameColl = _this.find( '.coll_name' ).text();			
 
-		// $( 'a[href="/catalog/"]' ).append( '<strong>&rarr;</strong><a href="' + hrefColl + '">' + nameColl + '</a>' )
+		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
 			
 		
 		navigator.geolocation.getCurrentPosition( function( position ) { 
@@ -1035,15 +1034,15 @@ var count_load_img_max = 0;
 						prt      = data.prt,
 						shops    = data.shops,
 						htmlTeg  ='', 
-						obj1     = $( 'div.item' );
+						$obj1    = $( 'div.item' );
 
-					obj1.removeClass( 'leval1 row' );
-					obj1.html('');
+					$obj1.removeClass( 'leval1 row' );
+					$obj1.html('');
 
 					$.each( items, function( i, val ) {
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
-								obj1.append('<div class="row rowHeight leval2 pEll"></div>');
+								$obj1.append('<div class="row rowHeight leval2 pEll"></div>');
 							}
 						 $( 'div.pEll' ).append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
 												 		'<figure class="opedDialog">'+
@@ -1092,11 +1091,12 @@ var count_load_img_max = 0;
 												 		'</figure>'+
 												 	'</div>');
 					});
+					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
+					intervalImgColl ();
 				}
 			});
 
 		});
-		funImgWidthHeight ();
 		e.preventDefault();
 		
 	});
@@ -1783,8 +1783,11 @@ var count_load_img_max = 0;
 								$.each( color, function ( index, value ) {
 								  	$( 'div.colors[out_id="' + value + '"]' ).removeClass('colorsNone');	
 								});
+
 							$( '#finish_page' ).val( finish_page );
-							var pgNam     = $( '.pageClass' ).attr( 'out_id' ),innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
+
+							var pgNam  = $( '.pageClass' ).attr( 'out_id' ),innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
+
 							inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
 							}
 					
@@ -2303,20 +2306,23 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 					if( pg == innputNam && allPages > 3 ) {
 
-						$('ul.pageNumber').append('<li class="pageNumberInit">');
+						var	input      = '<li class="pageNumberInit"><input out_id="2" type="page" class="inputNumber from-to" value="' + pg + '"></li>',
+						    arrowLeft  = '<div class="arrowLeft blPage">'+
+								  	 	'<a class="pageA" out_id="' + ( pg - 1 ) + '" type="page" href="' + href + 'page' + ( pg - 1 ) + '/">‹</a>'+
+								     '</div>',
+							arrowRight = '<div class="arrowRight blPage">'+
+										 	'<a class="pageA" out_id="' + ( pg + 1 ) + '" type="page" href="' + href + 'page' + ( pg + 1 ) + '/">›</a>'+
+										 '</div>';
+
+
+						$('ul.pageNumber').append( input );
 
 							if( pg > 1 ) { 
-								$('ul.pageNumber').append('<div class="arrowLeft blPage">'+
-														  	'<a class="pageA" out_id="' + ( pg - 1 ) + '" type="page" href="' + href + 'page' + ( pg - 1 ) + '/">‹</a>'+
-														  '</div>');
+								$( '.pageNumberInit' ).prepend( arrowLeft );
 							};
 
-						$('ul.pageNumber').append('<input out_id="2" type="page" class="inputNumber from-to" value="' + pg + '">');
-
 							if( pg < allPages ) {
-								$('ul.pageNumber').append('<div class="arrowRight blPage">'+
-														  	'<a class="pageA" out_id="' + ( pg + 1 ) + '" type="page" href="' + href + 'page' + ( pg + 1 ) + '/">›</a>'+
-														  '</div>');
+								$( '.pageNumberInit' ).append( arrowRight );
 							};
 
 						$('ul.pageNumber').append('</li>');
@@ -2329,12 +2335,17 @@ function inputPfgeStartNew( innputNam, allItems ) {
 		};
 		
 		$('ul.pageNumber li').click(function(e) {
-			$( this ).children('a').addClass( 'pageClass' );
+
+			$( this )
+				.children('a')
+				.addClass( 'pageClass' );
+
 			console.log($( this ).children('a').attr('href'));
 			history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
 			filterObj();
 		return false;
         });
+
 		$('ul.pageNumber div a').click(function(e) {
 			$( this ).addClass( 'pageClass' );
 			console.log($( this ).attr('href'));
@@ -2342,6 +2353,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 			filterObj();
 		return false;
         });
+
 		$( '.inputNumber' ).on( 'keypress', function(e){
 			if( e.charCode == 13 || e.keyCode == 13 )
 			{
