@@ -1015,7 +1015,7 @@ var count_load_img_max = 0;
 
 							
 				
-				console.log( href );
+				
 				
 				
 
@@ -1033,16 +1033,18 @@ var count_load_img_max = 0;
 						items    = data.items,
 						prt      = data.prt,
 						shops    = data.shops,
+						photos   = data.photos,
 						htmlTeg  ='', 
-						$obj1    = $( 'div.item' );
+						$item    = $( 'div.item' ),
+						$FL      = $( '.filtrsLevel2' );
 
-					$obj1.removeClass( 'leval1 row' );
-					$obj1.html('');
+					$item.removeClass( 'leval1 row' );
+					$item.html('');
 
 					$.each( items, function( i, val ) {
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
-								$obj1.append('<div class="row rowHeight leval2 pEll"></div>');
+								$item.append('<div class="row rowHeight leval2 pEll"></div>');
 							}
 						 $( 'div.pEll' ).append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
 												 		'<figure class="opedDialog">'+
@@ -1091,6 +1093,18 @@ var count_load_img_max = 0;
 												 		'</figure>'+
 												 	'</div>');
 					});
+
+					$FL.html('');
+
+					console.log(photos);
+						
+					$.each( photos, function( i, val ) {
+						$FL.append('<div class="coll_Imgs">'+
+								     '<img src="/wimg/' + val + '">'+
+								   '</div>');
+					});
+
+
 					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
 					intervalImgColl ();
 				}
@@ -2208,9 +2222,11 @@ var count_load_img_max = 0;
 
 		});*/
 
-		$( '.Picture' ).on('click', function() {
+		$( document ).on('click', '.Picture', function() {
 			var _this      = $( this ),
 				figcaption = _this.parent().siblings( '.figcaption' );
+
+				console.log('test');
 
 				
 
@@ -2258,6 +2274,7 @@ var count_load_img_max = 0;
 		/*----------------Изменение input страниц-------------------*/
 
 function inputPfgeStartNew( innputNam, allItems ) {
+	funImgWidthHeight ();
 	$('ul.pageNumber').html('');
 	var ths_pg   = Number( innputNam ),
 	    href     = '/',
