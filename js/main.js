@@ -393,7 +393,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 		var	urlPage = window.location.pathname;
 		
 
-		$( 'ul.pageNumber li > a[href="' + urlPage + '"]' )
+		$( 'ul.pageNumberLavel2 li > a[href="' + urlPage + '"]' )
 			.parent()
 			.addClass('pageNumberBackground');
 		
@@ -1042,28 +1042,16 @@ var count_load_img_max = 0;
 	/*--------------------------------Ajax запрос на получение коллеций-------------------------------*/
 
 
-function ajaxColl ( namPage ) {
-	
-	$( 'a.level1A' ).on( 'click',  function(e) {
+
+function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 
 
-
-		var _this    = $( this ),
-			nameColl = _this.find( '.coll_name' ).text();	
-
-		$( '.pageNumber' ).addClass( 'pageNumberLavel2' );		
-
-		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
-			
-		
 		navigator.geolocation.getCurrentPosition( function( position ) { 
 
 			var	lat       = position.coords.latitude,
 			    lng       = position.coords.longitude,
 			    page      = namPage == undefined ? 1 : namPage,
 			    URL       = "/hendler.php?mod=json_collection",
-				coll_code = _this.attr( 'coll_code' ),
-				coll_id   = _this.attr( 'coll_id' ),
 				obj       = { 
 							  'coll_code' : coll_code,
 				 			  'coll_id'   : coll_id,
@@ -1071,11 +1059,11 @@ function ajaxColl ( namPage ) {
 				 			  'lng'       : lng,
 				 			  'page'      : page
 				 			};
-				href      = _this.attr( 'href' );
+				
 
 				console.log( page );
 
-				history.replaceState( 1, "Title1"  , href + 'page1/');
+				history.replaceState( 1, "Title1"  , coll_href + 'page' + page +'/');
 
 							
 				
@@ -1174,14 +1162,51 @@ function ajaxColl ( namPage ) {
 			});
 
 		});
-		e.preventDefault();
 		
-	});
 };
 
-ajaxColl ();
+
 
 	/*------------------------------------------------------------------------------------------------*/
+
+
+
+	/*----------------------------------Вход в коллекцию------------------------------*/
+
+
+
+	$( 'a.level1A' ).on( 'click',  function(e) {
+
+
+
+		var _this     = $( this ),
+			nameColl  = _this.find( '.coll_name' ).text(),
+			coll_code = _this.attr( 'coll_code' ),
+			coll_id   = _this.attr( 'coll_id' ),
+			coll_href = _this.attr( 'href' );
+
+		$( '.pageNumber' )
+			.addClass( 'pageNumberLavel2' )
+			.attr({
+				coll_id   : coll_id,
+				coll_code : coll_code,
+				coll_href : coll_href
+			});		
+
+		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
+			
+		e.preventDefault();
+
+	ajaxColl ( 1, coll_code, coll_id, coll_href );
+	intervalImgColl ();	
+		
+	});	
+
+
+
+	/*--------------------------------------------------------------------------------*/
+
+
 
 
 
@@ -2441,26 +2466,33 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 				if ( $( '.pageNumber' ).is( '.pageNumberLavel2' ) ) {
 
-					var namPage = _this.find( '.pageA' ).text();
-					console.log( namPage );
+					var namPage   = _this.find( '.pageA' ).text(),
+						$PNL      = $( '.pageNumberLavel2' ),
+						coll_code = $PNL.attr( 'coll_code' ),
+						coll_id   = $PNL.attr( 'coll_id' ),
+						coll_href = $PNL.attr( 'coll_href' );
+					console.log(urls);	
+					filterObj();
+					ajaxColl ( namPage, coll_code, coll_id, coll_href );
+
 					
 				} else {
 					
-					/*$( this )
+					$( this )
 						.children('a')
-						.addClass( 'pageClass' );*/
+						.addClass( 'pageClass' );
 
 					
 					history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
 					filterObj();
 
-					/*$('ul.pageNumber div a').click(function(e) {
+					$('ul.pageNumber div a').click(function(e) {
 						$( this ).addClass( 'pageClass' );
 						console.log($( this ).attr('href'));
 						history.replaceState( 1, "Title1"  , $( this ).attr('href') );
 						filterObj();
 					return false;
-			        });*/
+			        });
 				}
 
 			};
