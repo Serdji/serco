@@ -184,12 +184,14 @@ $( 'a[href="/"]' ).on('click', function() {
 		
 		$( document ).on('click', '.sliders', function() {
 
-			$( 'body' ).append( '<div id="preLoader"></div>' );
+			$( 'body' ).append( '<div id="preLoader" class="PLI"></div>' );
 	 	    $( this )
 				.clone()
 				.removeClass( 'sliders' )
 				.addClass( 'slidersImg' )
 				.appendTo( '#preLoader' );
+
+			$( 'html, body' ).css( 'overflow', 'hidden' );
 
 		var	widthDoc  = ( $( window ).width() / 2 ),
 			heightDoc = ( $( window ).height() / 2 ),
@@ -209,11 +211,14 @@ $( 'a[href="/"]' ).on('click', function() {
 			$( '.slidersImg' )
 				.parent()
 				.remove();
+
+		$( 'html, body' ).css( 'overflow', 'auto' );		
 			
 		});
 
-		$( document ).on('click', '#preLoader', function() {
+		$( document ).on('click', '.PLI', function() {
 			$( this ).remove();
+			$( 'html, body' ).css( 'overflow', 'auto' );
 		});
 	};
 	slidersImg ();
@@ -2329,13 +2334,19 @@ var count_load_img_max = 0;
 		/*----------------Изменение input страниц-------------------*/
 
 function inputPfgeStartNew( innputNam, allItems ) {
+
 	funImgWidthHeight ();
-	$('ul.pageNumber').html('');
+
+	$( 'ul.pageNumber' ).html('');
 	var ths_pg   = Number( innputNam ),
 	    href     = '/',
 		allPages = Math.ceil( Number( allItems ) / 9 ),
 		isWrite  = 1;
-		if(String(ths_pg) == 'NaN') {ths_pg = '1'; innputNam = '1';}
+
+		if( String( ths_pg ) == 'NaN' ) {
+			ths_pg = '1'; 
+			innputNam = '1';
+		};
 
 		for( i = 3; typeof urls[i] !== 'undefined'; i++ ) {
 
@@ -2406,39 +2417,51 @@ function inputPfgeStartNew( innputNam, allItems ) {
 			};
 		};
 		
-		$('ul.pageNumber li').click(function(e) {
+		$('ul.pageNumber li').click( function(e) {
+			if( $( this ).is( '.pageNumberInit' ) ) {
 
-			$( this )
-				.children('a')
-				.addClass( 'pageClass' );
+				return true
+			} else {
 
-			console.log($( this ).children('a').attr('href'));
-			history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
-			filterObj();
+				$( this )
+					.children('a')
+					.addClass( 'pageClass' );
+
+				console.log($( this ).children('a').attr('href'));
+				history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
+				filterObj();
+
+				$('ul.pageNumber div a').click(function(e) {
+					$( this ).addClass( 'pageClass' );
+					console.log($( this ).attr('href'));
+					history.replaceState( 1, "Title1"  , $( this ).attr('href') );
+					filterObj();
+				return false;
+		        });
+			};
 		return false;
         });
 
-		$('ul.pageNumber div a').click(function(e) {
-			$( this ).addClass( 'pageClass' );
-			console.log($( this ).attr('href'));
-			history.replaceState( 1, "Title1"  , $( this ).attr('href') );
-			filterObj();
-		return false;
-        });
 
 		$( '.inputNumber' ).on( 'keypress', function(e){
-			if( e.charCode == 13 || e.keyCode == 13 )
-			{
-			$( this ).addClass( 'pageClass' );
-			var	value = $( '.inputNumber' ).val();
-			$( ".inputNumber" ).attr( 'out_id', value );
-			history.replaceState( 1, "Title1"  , href+'page'+value+'/' );
 
+			if( e.charCode == 13 || e.keyCode == 13 ) {
 
+				$( this ).addClass( 'pageClass' );
 
-			filterObj();
-		}
-	});
+				var	value = $( '.inputNumber' ).val();
+
+				$( ".inputNumber" ).attr( 'out_id', value );
+
+				history.replaceState( 1, "Title1"  , href+'page'+value+'/' );
+
+				filterObj();
+			};
+		});
+
+		var q = $( '.pageA' ).last().text();
+		console.log(q);
+
 };
 		/*----------------------------------------------------------*/
 
