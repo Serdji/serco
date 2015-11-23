@@ -391,6 +391,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 	function pageNumberBackground () {
 
 		var	urlPage = window.location.pathname;
+		console.log(urlPage);
 
 		$( 'ul.pageNumber li > a[href="' + urlPage + '"]' )
 			.parent()
@@ -1047,7 +1048,9 @@ var count_load_img_max = 0;
 
 
 		var _this    = $( this ),
-			nameColl = _this.find( '.coll_name' ).text();			
+			nameColl = _this.find( '.coll_name' ).text();	
+
+		$( '.pageNumber' ).addClass( 'pageNumberLavel2' );		
 
 		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
 			
@@ -1151,10 +1154,9 @@ var count_load_img_max = 0;
 					});
 
 					$FL.html('');
-
-					console.log(photos);
 						
 					$.each( photos, function( i, val ) {
+
 						$FL.append('<div class="coll_Imgs">'+
 								     '<img class="sliders" src="/wimg/' + val + '">'+
 								   '</div>');
@@ -2337,18 +2339,24 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 	funImgWidthHeight ();
 
+	
+
 	$( 'ul.pageNumber' ).html('');
+
 	var ths_pg   = Number( innputNam ),
-	    href     = '/',
+		urlLvl2  = location.pathname.split( '/' ),
+	    href     = $( '.pageNumber' ).hasClass( 'pageNumberLavel2' ) ? '/' +  urlLvl2[1] + '/' + urlLvl2[2] + '/' : '/',
 		allPages = Math.ceil( Number( allItems ) / 9 ),
 		isWrite  = 1;
+
+		
 
 		if( String( ths_pg ) == 'NaN' ) {
 			ths_pg = '1'; 
 			innputNam = '1';
 		};
 
-		for( i = 3; typeof urls[i] !== 'undefined'; i++ ) {
+		/*for( i = 3; typeof urls[i] !== 'undefined'; i++ ) {
 
 			if( urls[i].substr( 0, 4 ) != 'page' ) {
 
@@ -2358,7 +2366,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 			href += urls[i]; 
 			};
-		};
+		};*/
 		
 		for( i = 0; i < allPages; i++ ) {
 
@@ -2463,6 +2471,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 				};
 			};
 		});
+	pageNumberBackground ();
 };
 		/*----------------------------------------------------------*/
 
