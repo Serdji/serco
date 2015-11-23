@@ -2427,7 +2427,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 					.children('a')
 					.addClass( 'pageClass' );
 
-				console.log($( this ).children('a').attr('href'));
+				
 				history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
 				filterObj();
 
@@ -2445,23 +2445,24 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 		$( '.inputNumber' ).on( 'keypress', function(e){
 
+			var	value    = $( this ).val(),
+				fin_page = $( '.pageA:last' ).text();
+
 			if( e.charCode == 13 || e.keyCode == 13 ) {
 
-				$( this ).addClass( 'pageClass' );
+				if (  +value <= +fin_page ) {
 
-				var	value = $( '.inputNumber' ).val();
+					$( this ).addClass( 'pageClass' );
 
-				$( ".inputNumber" ).attr( 'out_id', value );
 
-				history.replaceState( 1, "Title1"  , href+'page'+value+'/' );
+					$( ".inputNumber" ).attr( 'out_id', value );
 
-				filterObj();
+					history.replaceState( 1, "Title1"  , href+ 'page' +value+ '/' );
+
+					filterObj();
+				};
 			};
 		});
-
-		var q = $( '.pageA' ).last().text();
-		console.log(q);
-
 };
 		/*----------------------------------------------------------*/
 
