@@ -348,7 +348,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 				.trigger( e );
 		}, 100);
 	};
-	inputPageEnter ();
+	// inputPageEnter ();
 
 
 /*--------------------------------------------------------------------*/
@@ -1752,6 +1752,10 @@ var count_load_img_max = 0;
 								  			.find('a.level1A')
 								  			.attr( 'href', '/catalog/' + coll_id1s + '/' );
 
+								  		$(obj)
+								  			.find('.level1A')
+								  			.attr( 'coll_code', coll_id1s );
+
 								 		$(obj)
 								 			.find( 'img.level1Img' )
 								 			.attr( 'src', '/wimg/' + coll_img );
@@ -2429,6 +2433,9 @@ function inputPfgeStartNew( innputNam, allItems ) {
 			var	value = $( '.inputNumber' ).val();
 			$( ".inputNumber" ).attr( 'out_id', value );
 			history.replaceState( 1, "Title1"  , href+'page'+value+'/' );
+
+
+
 			filterObj();
 		}
 	});
