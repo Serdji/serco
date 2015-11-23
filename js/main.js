@@ -391,7 +391,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 	function pageNumberBackground () {
 
 		var	urlPage = window.location.pathname;
-		console.log(urlPage);
+		
 
 		$( 'ul.pageNumber li > a[href="' + urlPage + '"]' )
 			.parent()
@@ -1042,7 +1042,8 @@ var count_load_img_max = 0;
 	/*--------------------------------Ajax запрос на получение коллеций-------------------------------*/
 
 
-
+function ajaxColl ( namPage ) {
+	
 	$( 'a.level1A' ).on( 'click',  function(e) {
 
 
@@ -1059,6 +1060,7 @@ var count_load_img_max = 0;
 
 			var	lat       = position.coords.latitude,
 			    lng       = position.coords.longitude,
+			    page      = namPage == undefined ? 1 : namPage,
 			    URL       = "/hendler.php?mod=json_collection",
 				coll_code = _this.attr( 'coll_code' ),
 				coll_id   = _this.attr( 'coll_id' ),
@@ -1066,9 +1068,12 @@ var count_load_img_max = 0;
 							  'coll_code' : coll_code,
 				 			  'coll_id'   : coll_id,
 				 			  'lat'       : lat,
-				 			  'lng'       : lng
+				 			  'lng'       : lng,
+				 			  'page'      : page
 				 			};
 				href      = _this.attr( 'href' );
+
+				console.log( page );
 
 				history.replaceState( 1, "Title1"  , href + 'page1/');
 
@@ -1172,8 +1177,9 @@ var count_load_img_max = 0;
 		e.preventDefault();
 		
 	});
+};
 
-
+ajaxColl ();
 
 	/*------------------------------------------------------------------------------------------------*/
 
@@ -2345,7 +2351,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 	var ths_pg   = Number( innputNam ),
 		urlLvl2  = location.pathname.split( '/' ),
-	    href     = $( '.pageNumber' ).hasClass( 'pageNumberLavel2' ) ? '/' +  urlLvl2[1] + '/' + urlLvl2[2] + '/' : '/',
+	    href     = $( '.pageNumber' ).hasClass( 'pageNumberLavel2' ) ? '/' +  urlLvl2[1] + '/' + urlLvl2[2] + '/' : '/catalog/',
 		allPages = Math.ceil( Number( allItems ) / 9 ),
 		isWrite  = 1;
 
@@ -2425,27 +2431,38 @@ function inputPfgeStartNew( innputNam, allItems ) {
 			};
 		};
 		
-		$('ul.pageNumber li').click( function(e) {
-			if( $( this ).is( '.pageNumberInit' ) ) {
+		$( 'ul.pageNumber li' ).click( function(e) {
+
+			var _this = $( this );
+			if( _this.is( '.pageNumberInit' ) ) {
 
 				return true
 			} else {
 
-				$( this )
-					.children('a')
-					.addClass( 'pageClass' );
+				if ( $( '.pageNumber' ).is( '.pageNumberLavel2' ) ) {
 
-				
-				history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
-				filterObj();
+					var namPage = _this.find( '.pageA' ).text();
+					console.log( namPage );
+					
+				} else {
+					
+					/*$( this )
+						.children('a')
+						.addClass( 'pageClass' );*/
 
-				$('ul.pageNumber div a').click(function(e) {
-					$( this ).addClass( 'pageClass' );
-					console.log($( this ).attr('href'));
-					history.replaceState( 1, "Title1"  , $( this ).attr('href') );
+					
+					history.replaceState( 1, "Title1"  , $( this ).children('a').attr('href') );
 					filterObj();
-				return false;
-		        });
+
+					/*$('ul.pageNumber div a').click(function(e) {
+						$( this ).addClass( 'pageClass' );
+						console.log($( this ).attr('href'));
+						history.replaceState( 1, "Title1"  , $( this ).attr('href') );
+						filterObj();
+					return false;
+			        });*/
+				}
+
 			};
 		return false;
         });
