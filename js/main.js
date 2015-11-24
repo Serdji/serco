@@ -1104,7 +1104,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 						prt      = data.prt,
 						htmlTeg  ='', 
 						$item    = $( 'div.item' ),
-						$FL      = $( '.filtrsLevel2' );
+						$FL      = $( '.filtrsLevel2' ),
+						arrPrt   = [];
 
 					$item.removeClass( 'leval1 row' );
 					$item.html('');
@@ -1139,7 +1140,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								price   = prices.price;
 
 
-							console.log( prices.price );
+						
 
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
@@ -1210,10 +1211,24 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					$.each( prt, function( i, val ) {
 
+						arrPrt.push( val );
+
 						 var id = val.pid;
 
 						 $( '#'+ id +'' ).fadeIn( 1000 );
 					});
+
+					
+
+					verticallPage   = Math.ceil( arrPrt.length / 8 );
+
+					$( 'div.pageNamberVertical ul li' ).remove();
+
+		  	  		for ( var i = 1; i <= verticallPage; i++ ) {
+
+		  	  			$( 'div.pageNamberVertical ul' ).append('<li class="verticallPageLi"><a href="#" class="verticallPage" id="' + i + '">' + i + '</a></li>');
+
+		  	  		};
 
 
 
