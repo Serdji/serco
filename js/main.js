@@ -1061,7 +1061,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 				 			};
 				
 
-				console.log( page );
+				
 
 				history.replaceState( 1, "Title1"  , coll_href + 'page' + page +'/');
 
@@ -1086,6 +1086,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 						prt      = data.prt,
 						shops    = data.shops,
 						photos   = data.photos,
+						prt      = data.prt,
 						htmlTeg  ='', 
 						$item    = $( 'div.item' ),
 						$FL      = $( '.filtrsLevel2' );
@@ -1094,6 +1095,37 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 					$item.html('');
 
 					$.each( items, function( i, val ) {
+
+						var item_img        = val.item_img,
+							name            = val.name,
+							lng             = val.lng,
+							lng2            = val.lng2,
+							wid             = val.wid,
+							thick           = val.thick,
+							unit            = val.unit,
+							color           = val.color,
+							cover           = val.cover,
+							country         = val.country,
+							brand           = val.brand,
+							type            = val.type,
+							brand_id        = val.brand_id,
+							collection      = val.collection,
+							collection_id1s = val.collection_id1s,
+							collection_img  = val.collection_img,
+							id              = val.id,
+							id1s            = val.id1s,
+							thick           = val.thick,
+							weig            = val.weig;
+
+							var prices 	= val.prices[0],
+								count  	= prices.count,
+								fors   	= prices.for,
+								part_id = prices.part_id,
+								price   = prices.price;
+
+
+							console.log( prices.price );
+
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
 								$item.append('<div class="row rowHeight leval2 pEll"></div>');
@@ -1101,27 +1133,27 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 						 $( 'div.pEll' ).append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
 												 		'<figure class="opedDialog">'+
 												 			'<div class="infoDialog">'+
-												 				'<div class="Picture"><img src="/wimg/' + val.item_img + '" data-toggle="modal" data-target="#img">'+
+												 				'<div class="Picture"><img src="/wimg/' + item_img + '" data-toggle="modal" data-target="#img">'+
 												 				'</div>'+
 												 			'</div>'+
 												 			'<div class="clear">'+
 												 			'</div>'+
 												 			'<div class="figcaption">'+
-												 				'<figcaption class="item_name"><b>Название</b>: <span>' + val.name +'</span>.</figcaption>'+
-												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ val.lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + val.wid + ' </span>x <span>Толщина:</span><span> ' + val.thick + ' .см</span> </figcaption>'+
-												 				'<figcaption class="item_amount"><b>Количество</b>: ' + val.unit + '</figcaption>'+
-												 				'<figcaption class="item_color"><b>Цвета</b>: ' + val.color + '.</figcaption>'+
-												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + val.cover + '.</figcaption>'+
-												 				'<figcaption class="item_country"><b>Страна</b>: ' + val.country + '.</figcaption>'+
-												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + val.brand + '.</figcaption>'+
-												 				'<figcaption class="item_type"><b>Тип</b>: ' + val.type + '.</figcaption>'+
+												 				'<figcaption class="item_name"><b>Название</b>: <span>' + name +'</span>.</figcaption>'+
+												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + wid + ' </span>x <span>Толщина:</span><span> ' + thick + ' .см</span> </figcaption>'+
+												 				'<figcaption class="item_amount"><b>Количество</b>:'+ count + ' '+ fors +'</figcaption>'+
+												 				'<figcaption class="item_color"><b>Цвета</b>: ' + color + '.</figcaption>'+
+												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + cover + '.</figcaption>'+
+												 				'<figcaption class="item_country"><b>Страна</b>: ' + country + '.</figcaption>'+
+												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + brand + '.</figcaption>'+
+												 				'<figcaption class="item_type"><b>Тип</b>: ' + type + '.</figcaption>'+
 												 				'<hr>'+
 												 			'</div>'+
 												 			'<br>'+
 												 			'<div class="priceBlock">'+
 												 				'<form role="form" class="price">'+
-												 					'<div class="form-group  has-success has-feedback">'+
-												 						'<label class="control-label" for="inputSuccess2">' + val.price + ' ₽ за м<sup>2</sup></label>'+
+												 					'<div class="form-group price has-success has-feedback">'+
+												 						'<label class="control-label price" for="inputSuccess2">'+ price +' ₽ за м<sup>2</sup></label>'+
 												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="шт. 0.08 м2">'+
 												 					'</div>'+
 												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo">Добавить в корзину</button>'+
@@ -1144,6 +1176,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 												 			'</div>'+
 												 		'</figure>'+
 												 	'</div>');
+
 					});
 
 					$FL.html('');
@@ -2472,7 +2505,6 @@ function inputPfgeStartNew( innputNam, allItems ) {
 						coll_id   = $PNL.attr( 'coll_id' ),
 						coll_href = $PNL.attr( 'coll_href' );
 					console.log(urls);	
-					filterObj();
 					ajaxColl ( namPage, coll_code, coll_id, coll_href );
 
 					
