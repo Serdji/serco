@@ -523,7 +523,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 
 		$( document ).on( 'click', '.accordionStart', function() {
-			var _this = $( this ),
+			var _this   = $( this ),
 			    speedUp = 1000;
 
 				_this
@@ -572,13 +572,26 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 				_this
 				  .parent()
 				  .siblings()
-				  .find('.removSadow')
+				  .find( '.removSadow' )
 				  .removeClass( 'removeSadowClick' );
 
-				
+				if ( _this.parent().hasClass( 'accordionRemoveLvel2' ) ) {
 
+					var namPage   = location.pathname.split( '/' )[3].split( 'e' )[1],
+					    coll_code = _this.parents( '.filterLeft' ).attr( 'coll_code' ),
+					    coll_id   = _this.parents( '.filterLeft' ).attr( 'coll_id' ),
+					    coll_href = _this.parents( '.filterLeft' ).attr( 'coll_href' ),
+					    idPid     = _this.parent( '.accordionRemoveAktiv' ).attr( 'id' );
+
+					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
+					intervalImgColl ();
+
+				} else {
 					
 					filterObj();
+				};
+
+					
 
 
 			
@@ -1043,22 +1056,24 @@ var count_load_img_max = 0;
 
 
 
-function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
+function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 		navigator.geolocation.getCurrentPosition( function( position ) { 
 
-			var	lat       = position.coords.latitude,
-			    lng       = position.coords.longitude,
-			    page      = namPage == undefined ? 1 : namPage,
-			    URL       = "/hendler.php?mod=json_collection",
-				obj       = { 
-							  'coll_code' : coll_code,
-				 			  'coll_id'   : coll_id,
-				 			  'lat'       : lat,
-				 			  'lng'       : lng,
-				 			  'page'      : page
-				 			};
+			var	lat  = position.coords.latitude,
+			    lng  = position.coords.longitude,
+			    page = namPage == undefined ? 1 : namPage,
+			    pid  = idPid == undefined ? 0 : idPid,
+			    URL  = "/hendler.php?mod=json_collection",
+				obj  = { 
+						  'coll_code' : coll_code,
+				 		  'coll_id'   : coll_id,
+				 		  'lat'       : lat,
+				 		  'lng'       : lng,
+				 		  'page'      : page,
+				 		  'pid'		  : pid
+				 	   };
 				
 
 				
@@ -1188,6 +1203,19 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 								   '</div>');
 					});
 
+					$( '.accordionRemove' )
+						.fadeOut( 1000 )
+						.removeClass( 'accordionRemove' )
+						.addClass( 'accordionRemoveLvel2' );
+
+					$.each( prt, function( i, val ) {
+
+						 var id = val.pid;
+
+						 $( '#'+ id +'' ).fadeIn( 1000 );
+					});
+
+
 
 					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
 					intervalImgColl ();
@@ -1224,7 +1252,13 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href ) {
 				coll_id   : coll_id,
 				coll_code : coll_code,
 				coll_href : coll_href
-			});		
+			});
+
+		$( '.filterLeft' ).attr({
+								coll_id   : coll_id,
+								coll_code : coll_code,
+								coll_href : coll_href
+							});			
 
 		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
 			
