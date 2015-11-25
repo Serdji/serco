@@ -1,6 +1,6 @@
 $(function(){
 
-	/*var	$blockHeight = $( '.blockHeight' ),
+	var	$blockHeight = $( '.blockHeight' ),
 	    topBlock     = $blockHeight.children().eq( 1 ).outerHeight(),
 		centralBlock = $blockHeight.children().eq( 2 ).outerHeight(),
 		bottomBlock  = $blockHeight.children().eq( 3 ).outerHeight(),
@@ -8,7 +8,7 @@ $(function(){
 		
 		$blockHeight.children().eq( 1 ).children().css( 'height', topBlock );
 		$blockHeight.children().eq( 2 ).children().css( 'height', centralBlock );
-		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );*/
+		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );
 
 
 
@@ -578,9 +578,9 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 				if ( _this.parent().hasClass( 'accordionRemoveLvel2' ) ) {
 
 					var namPage   = location.pathname.split( '/' )[3].split( 'e' )[1],
-					    coll_code = _this.parents( '.filterLeft' ).attr( 'coll_code' ),
-					    coll_id   = _this.parents( '.filterLeft' ).attr( 'coll_id' ),
-					    coll_href = _this.parents( '.filterLeft' ).attr( 'coll_href' ),
+					    coll_code = _this.closest( '.filterLeft' ).attr( 'coll_code' ),
+					    coll_id   = _this.closest( '.filterLeft' ).attr( 'coll_id' ),
+					    coll_href = _this.closest( '.filterLeft' ).attr( 'coll_href' ),
 					    idPid     = _this.parent( '.accordionRemoveAktiv' ).attr( 'id' );
 
 					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
@@ -844,8 +844,8 @@ var count_load_img_max = 0;
 			 	 min             = 2,
 			 	 max             = 4,
 			 	 maxSize         = 50,
-			 	 textHeight      = Number( _this.parents( '.opedDialog' ).find( '.height' ).text() ),
-			 	 textWidth       = Number( _this.parents( '.opedDialog' ).find( '.width' ).text() ),
+			 	 textHeight      = Number( _this.closest( '.opedDialog' ).find( '.height' ).text() ),
+			 	 textWidth       = Number( _this.closest( '.opedDialog' ).find( '.width' ).text() ),
 			 	 increase        = textWidth > maxSize || textHeight > maxSize ? min : max,
 			 	 crutchImgHeight = textHeight == 0 ? imgHeight : 0, // костыль пока выдаються нули в размерах
 			 	 crutchImgWidth  = textHeight == 0 ? imgWidth : 0, // ...
@@ -1156,12 +1156,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'</div>'+
 												 			'<div class="figcaption">'+
 												 				'<figcaption class="item_name"><b>Название</b>: <span>' + name +'</span>.</figcaption>'+
-												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + wid + ' </span>x <span>Толщина:</span><span> ' + thick + ' .см</span> </figcaption>'+
-												 				'<figcaption class="item_amount"><b>Количество</b>:'+ count + ' '+ fors +'</figcaption>'+
+												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + brand + '.</figcaption>'+
+												 				'<figcaption class="item_country"><b>Страна</b>: ' + country + '.</figcaption>'+
+												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + wid + ' </span>x <span>Толщина:</span><span class="thickness"> ' + thick + ' .см</span> </figcaption>'+
 												 				'<figcaption class="item_color"><b>Цвета</b>: ' + color + '.</figcaption>'+
 												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + cover + '.</figcaption>'+
-												 				'<figcaption class="item_country"><b>Страна</b>: ' + country + '.</figcaption>'+
-												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + brand + '.</figcaption>'+
 												 				'<figcaption class="item_type"><b>Тип</b>: ' + type + '.</figcaption>'+
 												 				'<hr>'+
 												 			'</div>'+
@@ -1192,9 +1191,29 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'</div>'+
 												 		'</figure>'+
 												 	'</div>');
+					
+
+					
+
+					if ( color == null ) {
+
+						$( '.item_color' ).hide();
+					};
+
 
 					});
 
+					$.each(	$( '.item_size .height' ), function(i, val) {
+
+						var namber = $( val ).text();
+
+						if ( namber == 0 ) {
+
+							$( val ).parent().hide();
+						};
+					});
+
+					
 					$FL.html('');
 						
 					$.each( photos, function( i, val ) {
@@ -1244,7 +1263,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 	/*------------------------------------------------------------------------------------------------*/
-
 
 
 	/*----------------------------------Вход в коллекцию------------------------------*/
@@ -1301,7 +1319,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			$( 'option.remov' ).attr( 'disabled', 'true' );
 			$( 'div.colors' ).addClass( 'colorsNone' );
 			$( 'div#filtr_color > div[type="resultsFilterColor"]' ).removeClass( 'colorsNone' );
-
 
 
 
@@ -2361,47 +2378,13 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	
 
 
-		/*$(".opedDialog").on('click', function(){ 
-			var item_name = $(this)
-								.children('div.infoDialog')
-								.children('figcaption.item_name')
-								.children('span').html();
-			var infoDialog = ($(this).not('.infoDialog').html());
-			$('body').css({'overflow':'hidden','margin-right':'18px'});
-			$("#dialog").dialog({
-				title: item_name,
-			    resizable: false,
-			    height:865,
-			    width:1700,
-			    modal: true,
-			    zIndex: 1500,
-			    show: { effect: "blind", duration: 800 },
-			    buttons: {
-				OK: function() {
-						if(window.location.href.indexOf('#') + 1) {
-						var bLoc  = window.location.href.split('#');
-							bnLoc = bLoc[0].split('/');
-							bLoc  = bLoc[0].split(bnLoc[2]);
-						reLoaction(bLoc[1],1);
-						}
-					$('body').css({'overflow':'auto','margin-right':'0'});		
-		          	$(this)
-		          		.dialog("close")
-		          		.dialog("destroy")
-		          		.draggable({ disabled: true });
-		        	}
-		      }
 
-		    });
-		    $("#dialog").html(infoDialog);   
-
-		});*/
 
 		$( document ).on('click', '.Picture', function() {
 			var _this      = $( this ),
 				figcaption = _this.parent().siblings( '.figcaption' );
 
-				console.log('test');
+				
 
 				
 
@@ -2553,7 +2536,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 						coll_code = $PNL.attr( 'coll_code' ),
 						coll_id   = $PNL.attr( 'coll_id' ),
 						coll_href = $PNL.attr( 'coll_href' );
-					console.log(urls);	
+					
 					ajaxColl ( namPage, coll_code, coll_id, coll_href );
 
 					
