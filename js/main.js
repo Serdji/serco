@@ -1693,7 +1693,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 											                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 											                    						'<h4 class="modal-title" id="myModalLabel">О компани</h4>'+
 											                    					'</div>'+
-											                    					'<div class="modal-body">'+
+											                    					'<div class="modal-body' + i + '">'+
 											                    						'' + i + ''+
 											                    					'</div>'+
 											                    					'<div class="modal-footer">'+
@@ -1714,7 +1714,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 											                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 											                    						'<h4 class="modal-title" id="myModalLabel">Контакты</h4>'+
 											                    					'</div>'+
-											                    					'<div class="modal-body">'+
+											                    					'<div class="modal-body' + i + '">'+
 											                    						'' + i + ''+
 											                    					'</div>'+
 											                    					'<div class="modal-footer">'+
@@ -1735,7 +1735,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 											                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 											                    						'<h4 class="modal-title" id="myModalLabel">Для покупателей</h4>'+
 											                    					'</div>'+
-											                    					'<div class="modal-body">'+
+											                    					'<div class="modal-body' + i + '">'+
 											                    						'' + i + ''+
 											                    					'</div>'+
 											                    					'<div class="modal-footer">'+
@@ -1756,7 +1756,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 											                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 											                    						'<h4 class="modal-title" id="myModalLabel">Скидки</h4>'+
 											                    					'</div>'+
-											                    					'<div class="modal-body">'+
+											                    					'<div class="modal-body' + i + '">'+
 											                    						'' + i + ''+
 											                    					'</div>'+
 											                    					'<div class="modal-footer">'+
@@ -1777,7 +1777,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 											                    						'<button type="button" class="close closes" data-dismiss="modal" aria-hidden="true">&times;</button>'+
 											                    						'<h4 class="modal-title" id="myModalLabel">Доставка</h4>'+
 											                    					'</div>'+
-											                    					'<div class="modal-body">'+
+											                    					'<div class="modal-body' + i + '">'+
 											                    						'' + i + ''+
 											                    					'</div>'+
 											                    					'<div class="modal-footer">'+
