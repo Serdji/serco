@@ -1383,6 +1383,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"'+','+'"'+page+'"'+':'+'"'+namber+'"';
 
+	            		console.log( page, namber );
+
 
 				};
 
@@ -2493,7 +2495,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 					if( pg == innputNam && allPages > 3 ) {
 
-						var	input      = '<li class="pageNumberInit"><input out_id="2" type="page" class="inputNumber from-to" value="' + pg + '"></li>',
+						var	input      = '<li class="pageNumberInit"><input out_id="'+ pg +'" type="page" class="inputNumber from-to" value="' + pg + '"></li>',
 						    arrowLeft  = '<div class="arrowLeft blPage">'+
 								  	 	'<a class="pageA" out_id="' + ( pg - 1 ) + '" type="page" href="' + href + 'page' + ( pg - 1 ) + '/">‹</a>'+
 								     '</div>',
