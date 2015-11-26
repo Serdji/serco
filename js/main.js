@@ -242,7 +242,7 @@ $( 'a[href="/"]' ).on('click', function() {
 			    $accordionRemove = $( '.accordionRemove' ),
 			    indexNam         = ( accoPage - 1 ) * 7,
 				stNam 			 = indexNam == 0 ? 0 : indexNam + 1,
-				fnNam 			 = ( accoPage * 7 ) + 1;
+				fnNam 			 = ( accoPage * 8 );
 
 			_this
 				.addClass( 'pageNumberBackground' )
@@ -1033,20 +1033,10 @@ var count_load_img_max = 0;
 					/*-------------------------------------------------------------*/
 
 
-				$( 'a[href="/catalog/"]' ).on('click', function() {
-					href = $( this ).attr( 'href' );
-					history.replaceState( 1, "Title1"  , href + 'page1/');
-					// filterObj();
-				});
+		
 
+	
 
-					/*------------------Выгруска номера странице-------------------*/
-
-			function pageList (){
-			
-			};
-			
-					/*-------------------------------------------------------------*/
 
 
 
@@ -1249,7 +1239,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 		  	  		};
 
-
+		  	  		$( 'a[href="/catalog/"]' ).attr('href', '/catalog/' + urls[4] + '/');
 
 					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
 					intervalImgColl ();
@@ -1263,6 +1253,13 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 	/*------------------------------------------------------------------------------------------------*/
+
+	$( document ).on( 'click', 'a[href^="/catalog/page"]', function(e) {
+
+		var href = $( this ).attr('href');
+		history.replaceState( 1, "Title1"  , href );
+	});
+
 
 
 	/*----------------------------------Вход в коллекцию------------------------------*/
@@ -1382,8 +1379,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	            		           $( 'input.inputNumber' ).attr( 'out_id' );
 
 	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"'+','+'"'+page+'"'+':'+'"'+namber+'"';
-
-	            		console.log( page, namber );
 
 
 				};
@@ -1549,18 +1544,23 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	  collectionLength = collection.length,
 							  	  brandLength      = brand.length,
 							  	  shops            = data.shops,
-							  	  prt              = data.prt;
+							  	  prt              = data.prt,
+							  	  mem_vars         = data.mem_vars,
 								  arryMarkers      = [],
 								  markerClast      = [],
 								  arryAccord       = [];
 
-								
+								console.log( mem_vars );
 								/*----Scroll----*/
 
 							
 								// $( document ).scrollTop( 600 );
 
 								/*--------------*/
+
+
+
+						
 
 
 						/*--------------------Выгрузка маркеров на карту-------------------*/ 
@@ -1971,7 +1971,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  	$( 'option'+nameClass+'[out_id="' + value + '"]' ).removeAttr('disabled');
 								});
 
-							};
+							 };
 
 							
 
@@ -1997,6 +1997,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							var pgNam  = $( '.pageClass' ).attr( 'out_id' ),innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
 
 							inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
+
+							history.replaceState( 1, 'Title1'  , '/catalog/page' + mem_vars.page + '/' );
 							}
 					
 				});
@@ -2278,8 +2280,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
       },
  
       _createShowAllButton: function() {
-        var input = this.input,
-          wasOpen = false;
+        var input 	= this.input,
+          	wasOpen = false;
  
         $( "<div>" )
           .append('<div class="ui-state-default ui-corner-all active" style="height:100%; width: 32px; border-radius: 0px 4px 4px 0px;">'
