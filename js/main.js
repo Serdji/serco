@@ -1158,8 +1158,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'<div class="priceBlock">'+
 												 				'<form role="form" class="price">'+
 												 					'<div class="form-group price has-success has-feedback">'+
-												 						'<label class="control-label price" for="inputSuccess2">'+ price +' ₽ за м<sup>2</sup></label>'+
-												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="шт. 0.08 м2">'+
+												 						'<label class="control-label price" for="inputSuccess2">'+ price +' ₽ за ' + fors + '</label>'+
+												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
 												 					'</div>'+
 												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo">Добавить в корзину</button>'+
 												 				'</form>'+	
@@ -1332,7 +1332,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 		var	lat        = position.coords.latitude,
 		    lng        = position.coords.longitude,
-		    myPos 	   = new google.maps.LatLng(  lat, lng  ),
+		    myPos 	   = new google.maps.LatLng(  lat, lng ),
 		    mapOptions = { 
 				zoom        : 14,
 			 	center      : myPos,
@@ -1548,7 +1548,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	  mem_vars         = data.mem_vars,
 								  arryMarkers      = [],
 								  markerClast      = [],
-								  arryAccord       = [];
+								  arryAccord       = [],
+								  arryPrt          = [];
 
 								console.log( mem_vars );
 								/*----Scroll----*/
@@ -1560,86 +1561,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-						
 
 
-						/*--------------------Выгрузка маркеров на карту-------------------*/ 
-
-							  	  $.each( shops, function( index, val ) {
-							  	  	
-								  	  	var lat    = val.lat,
-								  	  		lng    = val.lon,
-								  	  		dist   = val.dist,
-								  	  		adress = val.adress,
-								  	  		name   = val.name,
-								  	  		pid    = val.pid;
-
-								  	  	arryMarkers.push( [ name, lat, lng, adress ] );
-
-								 });
-								
-									
-							    // Область показа маркеров
-								var markersBounds = new google.maps.LatLngBounds();
-								 
-								$.each( arryMarkers, function( i, val ) {
-
-										if( i <= 7 ) {
-
-									    	// Область показа маркеров
-										    var markerPosition = new google.maps.LatLng( val[1], val[2] );
-
-										    // Добавляем координаты маркера в область
-										    markersBounds.extend( markerPosition );
-
-											
-
-
-
-									    } else {
-
-										    // Создаём маркер
-										    var marker = new google.maps.Marker({
-										        position  : { lat: +val[1], lng: +val[2] },
-										        map       : map,   
-										        title     : val[0],
-										        animation : google.maps.Animation.DROP
-										    });
-
-										    var contentString = '<div id="content">'  + val[3] + '</div>';
-										    var infowindow    = new google.maps.InfoWindow({
-										    	content : contentString
-										    });
-
-											google.maps.event.addListener( marker, 'click', function() {
-											   infowindow.open( map, marker );
-											});
-
-										markerClast.push( marker );
-										};
-
-								});
-
-
-								var markerCluster = new MarkerClusterer( map, markerClast, {
-									maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
-									gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
-									styles   : null // дополнительные стили - стиля нет
-								});
-
-								// Центрируем и масштабируем карту
-								// map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
-
-								map.setCenter( myPos );
-
-								
-
-
-
-						/*-----------------------------------------------------------------*/ 
-
-
-			/*------------------------------------Акардионы------------------------------------*/	
+			/*---------------------------------Акардионы ПРТ-----------------------------------*/	
 
 
 							  	  $.each( prt, function( index, val ) {
@@ -1652,6 +1576,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	  		pid    = val.pid;
 
 							  	  	arryAccord.push( [ name, adress, pid ] );
+							  	  	arryPrt.push( [ name, lat, lng, adress ] );
 
 							  	  	
 							  	
@@ -1835,7 +1760,21 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 										};
 
 
-										
+										// Область показа маркеров
+										var markersBounds = new google.maps.LatLngBounds();
+
+										$.each( arryPrt, function( i, val ) {
+
+											if( i <= 7 ) {
+
+									    	// Область показа маркеров
+										    var markerPosition = new google.maps.LatLng( val[1], val[2] );
+
+										    // Добавляем координаты маркера в область
+										    markersBounds.extend( markerPosition );
+									
+											};
+										});
 										
 
 
@@ -1861,7 +1800,76 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-			/*---------------------------------------------------------------------------------*/	
+			/*---------------------------------------------------------------------------------*/							
+
+
+
+
+
+						/*--------------------Выгрузка маркеров на карту-------------------*/ 
+
+							  	  $.each( shops, function( index, val ) {
+							  	  	
+								  	  	var lat    = val.lat,
+								  	  		lng    = val.lon,
+								  	  		dist   = val.dist,
+								  	  		adress = val.adress,
+								  	  		name   = val.name,
+								  	  		pid    = val.pid;
+
+								  	  	arryMarkers.push( [ name, lat, lng, adress, dist ] );
+
+								 });
+								
+									
+							    
+
+								 
+								$.each( arryMarkers, function( i, val ) {
+
+								    // Создаём маркер
+								    var marker = new google.maps.Marker({
+								        position  : { lat: +val[1], lng: +val[2] },
+								        map       : map,   
+								        title     : val[0] +' : ' + val[4],
+								        animation : google.maps.Animation.DROP
+								    });
+
+								    var contentString = '<div id="content">'  + val[3] + '</div>';
+								    var infowindow    = new google.maps.InfoWindow({
+								    	content : contentString
+								    });
+
+									google.maps.event.addListener( marker, 'click', function() {
+									   infowindow.open( map, marker );
+									});
+
+									markerClast.push( marker );
+
+								});
+								
+								markersBounds.extend( myPos );
+
+								var markerCluster = new MarkerClusterer( map, markerClast, {
+									maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
+									gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
+									styles   : null // дополнительные стили - стиля нет
+								});
+
+								// Центрируем и масштабируем карту
+								map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
+								
+
+								
+
+								
+
+
+
+						/*-----------------------------------------------------------------*/ 
+
+
+
 
 
 
