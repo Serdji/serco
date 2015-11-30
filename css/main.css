@@ -1165,6 +1165,7 @@ a:-webkit-any-link{
 
 @media screen and ( max-width: 1600px){
 
+
 	.search, .conDir{
 		width: 726px;
 	}	
@@ -1213,7 +1214,7 @@ a:-webkit-any-link{
 	}
 
 	.btnBasket{
-		font-size: 10px;
+		font-size: 13px;
 	}
 
 	.blockFilterLeft{
@@ -1305,6 +1306,26 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1400px){
+	.removSadow{
+		font-size: 13px;
+	}
+
+	.coll_сountry, .coll_country, .coll_brand, .coll_id, .coll_name {
+		font-size: 12px;
+	}
+
+	.result{
+		font-size: 14px;
+	}
+
+	.Description form > div label {
+    	font-size: 16px;
+	}
+
+	.Description > figure figcaption{
+		font-size: 12px;
+	}
+
 	.infoDialog{
 		min-height: 130px;
 	}
