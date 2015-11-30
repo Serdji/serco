@@ -1,3 +1,5 @@
+
+
 body{
 	position: relative;
 	height: 100%;
@@ -1159,4 +1161,98 @@ a:-webkit-any-link{
 	position: fixed;
 	z-index: 99999;
 	cursor: pointer;
+}
+
+@media screen and ( max-width: 1600px){
+
+	.search, .conDir{
+		width: 726px;
+	}	
+	
+	.centerBlock{
+		width: 733px;
+		margin-left: 5px;
+	}
+	
+	.pageNumber{
+		width: 1416px;
+		margin-left: 74px;
+		display: inline-block;
+	}
+
+	.pageNumber li{
+		padding: 15px 36px 15px 36px;
+	}
+
+	.PictureLvel1{
+		height: 120px;
+    	width: 100%;
+	}
+
+	.Picture{
+		height: 100px;
+    	width: 100px;
+    	margin-top: 30px;
+	}
+
+	.heightCards2{
+		height: 860px;
+	}
+
+	.priceBlock{
+		height: 193px;
+	}
+
+	.btnBasket{
+		font-size: 10px;
+	}
+
+	.blockFilterLeft{
+		margin-left: 90px;
+		width: 353px;
+	}
+
+	.breadCrumbs{
+		margin-left: 74px;
+	}
+
+	.container{
+		width: 100%;
+	}
+
+	.blockFilterRight{
+		width: 325px;
+	}
+
+	.filtr_bay_region input{
+		width: 278px;
+	}
+
+	.filtr_bay_region .custom-combobox-toggle {
+    	left: 270px !important;
+	}
+
+	.filtr_bay_region{
+		width: 339px !important;
+	}
+
+	.leftFilterBlock{
+		width: 349px;
+	}
+
+	.TheSelectionOfStores{
+		width: 338px !important;
+	}
+
+	.blockFilterRight input{
+		width: 252px;
+	}
+
+	.custom-combobox-toggle{
+		left: 243px;
+	}
+}
+
+@media screen and ( max-width: 1500px){
+	
 }

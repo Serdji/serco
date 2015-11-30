@@ -1161,7 +1161,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 						'<label class="control-label price" for="inputSuccess2">'+ price +' ₽ за ' + fors + '</label>'+
 												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
 												 					'</div>'+
-												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo">Добавить в корзину</button>'+
+												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
 												 				'</form>'+	
 												 			'</div>'+
 												 			'<!-- Modal -->'+
@@ -1295,8 +1295,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 		e.preventDefault();
 
 	ajaxColl ( 1, coll_code, coll_id, coll_href );
-	intervalImgColl ();	
-		
+	intervalImgColl ();
 	});	
 
 
@@ -1525,7 +1524,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					type       : "POST",
 					data       : jsonstr,
 					dataType   : "json",
-					beforeSend : startLoad(),
+					// beforeSend : startLoad(),
 					success    : function( data ) {
 
 							  stopLoad();
