@@ -512,7 +512,7 @@ a:-webkit-any-link{
 }
 
 .infoDialog{
-	min-height: 300px;
+	min-height: 250px;
 }
 
 .ui-dialog-titlebar-close{
@@ -1185,18 +1185,27 @@ a:-webkit-any-link{
 	}
 
 	.PictureLvel1{
-		height: 120px;
+		height: 200px;
     	width: 100%;
 	}
 
+	.infoDialog{
+		min-height: 200px;
+	}
+
 	.Picture{
-		height: 100px;
-    	width: 100px;
+		height: 150px;
+    	width: 150px;
     	margin-top: 30px;
 	}
 
+	.Picture img {
+	    max-height: 150px;
+	    max-width: 150px;
+	}    
+
 	.heightCards2{
-		height: 860px;
+		height: 630px;
 	}
 
 	.priceBlock{
@@ -1254,8 +1263,32 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1500px){
+/*	.infoDialog{
+		min-height: 200px;
+	}*/
+
+	.heightCards2{
+		height: 700px;
+	}
+
+	.Picture{
+		height: 150px;
+    	width: 150px;
+    	margin-top: 30px;
+	}
+
+	.Picture img {
+	    max-height: 150px;
+	    max-width: 150px;
+	}  
+
+	.PictureLvel1{
+		height: 170px;
+    	width: 100%;
+	}
+
 	.search, .conDir{
-		width: 620px;
+		width: 617px;
 	}
 	
 	.centerBlock{
@@ -1272,8 +1305,32 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1400px){
+	.infoDialog{
+		min-height: 130px;
+	}
+
+	.heightCards2{
+		height: 688px;
+	}
+
+	.Picture{
+		height: 100px;
+    	width: 100px;
+    	margin-top: 30px;
+	}
+
+	.Picture img {
+	    max-height: 100px;
+	    max-width: 100px;
+	}    
+
+	.PictureLvel1{
+		height: 140px;
+    	width: 100%;
+	}
+
 	.search, .conDir{
-		width: 520px;
+		width: 517px;
 	}
 
 	.centerBlock{
@@ -1290,8 +1347,21 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1300px){
+	.infoDialog{
+		min-height: 130px;
+	}
+
+	.heightCards2{
+		height: 800px;
+	}
+
+	.PictureLvel1{
+		height: 110px;
+    	width: 100%;
+	}
+
 	.search, .conDir{
-		width: 420px;
+		width: 417px;
 	}
 
 	.centerBlock{

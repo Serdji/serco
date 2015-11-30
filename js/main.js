@@ -1524,7 +1524,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					type       : "POST",
 					data       : jsonstr,
 					dataType   : "json",
-					// beforeSend : startLoad(),
+					beforeSend : startLoad(),
 					success    : function( data ) {
 
 							  stopLoad();
