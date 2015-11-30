@@ -1254,5 +1254,55 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1500px){
+	.search, .conDir{
+		width: 620px;
+	}
 	
+	.centerBlock{
+		width: 627px;
+		margin-left: 5px;
+	}
+	
+	.pageNumber{
+		width: 1311px;
+		margin-left: 74px;
+		display: inline-block;
+	}
+
+}
+
+@media screen and ( max-width: 1400px){
+	.search, .conDir{
+		width: 520px;
+	}
+
+	.centerBlock{
+		width: 527px;
+		margin-left: 5px;
+	}
+	
+	.pageNumber{
+		width: 1211px;
+		margin-left: 74px;
+		display: inline-block;
+	}
+
+}
+
+@media screen and ( max-width: 1300px){
+	.search, .conDir{
+		width: 420px;
+	}
+
+	.centerBlock{
+		width: 427px;
+		margin-left: 5px;
+	}
+	
+	.pageNumber{
+		width: 1111px;
+		margin-left: 74px;
+		display: inline-block;
+	}
+
 }
