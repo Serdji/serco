@@ -2181,25 +2181,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
        
 
-        function optionIf ( divClass, divClassStrong, classR, classBtnR, ulIdLi ){
-            	var text = $( option ).text();
-            	$( option ).removeAttr( 'disabled' );
-				divClass.append('<strong>' + text + '</strong>').fadeIn( speedIn );
-				divClass.append('<button type="button" class="btn btn-success btnClose 0 '+classBtnR+'" style="position: absolute; left: 78%;">Отмена</button>').fadeIn( speedIn );
-            	$( classR ).on('click', function() {
-            		divClassStrong.remove();
-            		divClass.fadeOut( speedOut );
-            		divClass.children( classR ).remove();
-            		ulIdLi.trigger( 'click' );
-            		$( document ).scrollTop( scrollPos );
-				});
-		};
 
-        function optionElse ( divClass, divClassStrong, classR ){
-        	    divClassStrong.remove();
-            	divClass.fadeOut( speedOut );
-            	divClass.children( classR ).remove();
-        };
 
         function openFil ( ulId, btnInput, inputFil, text, classRemAttrDis ) {
         	ulId.removeClass( 'ulDisplay' );
@@ -2218,57 +2200,20 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
             	}, delay );
         }
 
-        	if ($( option ).hasClass( 'category' )) {
-        		openFil ( $ulId4, $btnInput4, $inputFil4, 'Подгруппы есть', '.subcategoryR' );
-				optionIf ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR', 'categoryR', $ulId3Li );
 
-            }else if($( option ).hasClass('0 categoryR')){
-            	var delay = 10;
-            	shutFil ( $ulId4Li, $ulId4, $btnInput4, $inputFil4, delay );
-            	optionElse ( $( 'div.category' ), $( 'div.category strong' ), '.categoryR' );
-			}; 
-
-            if ($( option ).hasClass('subcategory')) {
-            	$inputFil4.removeClass( 'subActive' );
-				optionIf ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR', 'subcategoryR', $ulId4Li );
-
-            }else if($( option ).hasClass('0 subcategoryR')){
-            	optionElse ( $( 'div.subcategory' ), $( 'div.subcategory strong' ), '.subcategoryR' );
-            }; 
-
-            if ($( option ).hasClass('type')) {
-				optionIf ( $( 'div.type' ), $( 'div.type strong' ), '.typeR', 'typeR', $ulId5Li );
-
-            }else if($( option ).hasClass('0 typeR')){
-            	optionElse ( $( 'div.type' ), $( 'div.type strong' ), '.typeR' );
-            }; 
-
-
-            if ($( option ).hasClass('surface')) {
-            	optionIf ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR', 'surfaceR', $ulId7Li );
-            	
-            }else if($( option ).hasClass('0 surfaceR')){
-            	optionElse ( $( 'div.surface' ), $( 'div.surface strong' ), '.surfaceR' );
-            }; 
 
 
             if ($( option ).hasClass('country')) {
             	openFil ( $ulId9, $btnInput9, $inputFil9, 'Выбрано все', '.brandR' );
-				optionIf ( $( 'div.country' ), $( 'div.country strong' ), '.countryR', 'countryR', $ulId8Li );
             	
             }else if($( option ).hasClass('0 countryR')){
             	var delayOne = 10;
             	shutFil ( $ulId9Li, $ulId9, $btnInput9, $inputFil9, delayOne );
-            	optionElse ( $( 'div.country' ), $( 'div.country strong' ), '.countryR' );
             }; 
 
 
             if ($( option ).hasClass('brand')) {
             	$inputFil9.removeClass( 'subActive' );
-				optionIf ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR', 'brandR', $ulId9Li );
-            	
-            }else if($( option ).hasClass('0 brandR')){
-            	optionElse ( $( 'div.brand' ), $( 'div.brand strong' ), '.brandR' );
             }; 
 
             
