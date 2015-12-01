@@ -76,6 +76,9 @@ li{
 	/*margin-top:600px;*/
 }
 
+.container{
+	margin: auto;
+}
 
 .border{
 	position:relative;
@@ -1164,6 +1167,10 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1600px){
+	.container{
+		margin: auto;
+		width: 1500px;
+	}
 
 
 	.search, .conDir{
@@ -1177,7 +1184,7 @@ a:-webkit-any-link{
 	
 	.pageNumber{
 		width: 1416px;
-		margin-left: 74px;
+		margin-left: 24px;
 		display: inline-block;
 	}
 
@@ -1206,7 +1213,7 @@ a:-webkit-any-link{
 	}    
 
 	.heightCards2{
-		height: 630px;
+		height: 673px;
 	}
 
 	.priceBlock{
@@ -1218,17 +1225,14 @@ a:-webkit-any-link{
 	}
 
 	.blockFilterLeft{
-		margin-left: 90px;
+		/*margin-left: 90px;*/
 		width: 353px;
 	}
 
 	.breadCrumbs{
-		margin-left: 74px;
+		margin-left: 24px;
 	}
 
-	.container{
-		width: 100%;
-	}
 
 	.blockFilterRight{
 		width: 325px;
@@ -1264,6 +1268,11 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1500px){
+	.container{
+		margin: auto;
+		width: 1400px;
+	}
+
 /*	.infoDialog{
 		min-height: 200px;
 	}*/
@@ -1299,13 +1308,18 @@ a:-webkit-any-link{
 	
 	.pageNumber{
 		width: 1311px;
-		margin-left: 74px;
+		/*margin-left: 74px;*/
 		display: inline-block;
 	}
 
 }
 
 @media screen and ( max-width: 1400px){
+	.container{
+		margin: auto;
+		width: 1300px;
+	}
+
 	.removSadow{
 		font-size: 13px;
 	}
@@ -1361,13 +1375,38 @@ a:-webkit-any-link{
 	
 	.pageNumber{
 		width: 1211px;
-		margin-left: 74px;
+		/*margin-left: 74px;*/
 		display: inline-block;
+	}
+
+	.levels1 {
+    	height: 445px !important;
+	}
+
+	.accordionStart {
+    	height: 121px;
+	}
+
+	.filterLeft, .pageNamberVertical {
+    	min-height: 1047px;
 	}
 
 }
 
 @media screen and ( max-width: 1300px){
+	.container{
+		margin: auto;
+		width: 1200px;
+	}
+
+	.Description form > div label {
+   		font-size: 12px;
+	}
+
+	.btnBasket {
+    	font-size: 9px;
+	}
+
 	.infoDialog{
 		min-height: 130px;
 	}
@@ -1392,8 +1431,13 @@ a:-webkit-any-link{
 	
 	.pageNumber{
 		width: 1111px;
-		margin-left: 74px;
+		/*margin-left: 74px;*/
 		display: inline-block;
+	}
+
+	.input-lg{
+		height: 26px;
+		font-size: 10px;
 	}
 
 }
