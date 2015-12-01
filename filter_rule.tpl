@@ -12,16 +12,16 @@
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
               <label class="control-label result">Товарная группа, Подгруппа: </label>
-                <select class="combobox" type="category">
+                <select id="categoryS" class="combobox" type="category">
                   <option class="0 categoryR" out_id="0" type="category">Все товарные группы</option>
 <!-- BEGIN filter_categories -->
-                  <option class="category remov" id="category_{category_id1s}" inner_id="{category_id}" out_id="{category_id1s}">{category}</option>
+                  <option class="category remov" id="{category_id1s}" inner_id="{category_id}" out_id="{category_id1s}">{category}</option>
 <!-- END filter_categories -->
                 </select>
-                <select class="combobox" type="subcategory">
+                <select id="subcategoryS" class="combobox" type="subcategory">
                 <option class="0 subcategoryR" out_id="0" type="subcategory" disabled="disabled">Подгрупп нет</option>
 <!-- BEGIN filter_subcategories -->               
-                  <option class="subcategory remov" id="subcategory_{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
+                  <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
                 </select>
                 
@@ -35,10 +35,10 @@
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
               <label class="control-label result">Товар: </label>
-                <select class="combobox" type="type">
+                <select id="typeS" class="combobox" type="type">
                   <option class="0 typeR" out_id="0" type="type">Виды товаров</option>
 <!-- BEGIN filter_types -->
-                  <option class="type remov" id="type_{type_id1s}" inner_id="{type_id}" out_id="{type_id1s}">{type}</option>
+                  <option class="type remov" id="{type_id1s}" inner_id="{type_id}" out_id="{type_id1s}">{type}</option>
 <!-- END filter_types -->
                 </select>
                 <select class="combobox" type="type">
@@ -72,10 +72,10 @@
         <div class="hint" title="Выбери поверхность, можно ввести в ручную">?</div>
           <div class="ui-widget">
           <label class="control-label result">Поверхность: </label>
-            <select class="combobox" type="surface">
+            <select id="surfaceS" class="combobox" type="surface">
               <option class="0 surfaceR" type="surface">Выбрано всё</option>
 <!-- BEGIN filter_surfaces -->
-              <option class="surface remov" id="surface_{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
+              <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
 <!-- END filter_surfaces -->            
             </select>
           </div>
@@ -114,10 +114,10 @@
         <div class="hint" title="Выбери страну, можно ввести в ручную">?</div>
           <div class="ui-widget">
           <label class="control-label result">Страна-производитель: </label>
-            <select class="combobox" type="country">
+            <select id="countryS" class="combobox" type="country">
               <option class="0 countryR" type="country">Выбрано всё</option>
 <!-- BEGIN filter_countrys -->
-              <option class="country remov" id="country_{country_id1s}" inner_id="{country_id}" out_id="{country_id1s}">{country}</option>
+              <option class="country remov" id="{country_id1s}" inner_id="{country_id}" out_id="{country_id1s}">{country}</option>
 <!-- END filter_countrys -->
             </select>
           </div>
@@ -128,10 +128,10 @@
         <div class="hint" title="Выбери бренд, можно ввести в ручную">?</div>
           <div class="ui-widget">
           <label class="control-label result">Бренд: </label>
-            <select class="combobox" type="brand">
+            <select id="brandS" class="combobox" type="brand">
               <option class="0 brandR" type="brand" disabled="disabled">Брендов нет</option>
 <!-- BEGIN filter_brands -->          
-              <option class="brand remov" id="brand_{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}"  disabled="disabled">{brand}</option>
+              <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}"  disabled="disabled">{brand}</option>
 <!-- END filter_brands -->
             </select>
           </div>

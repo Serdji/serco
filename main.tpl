@@ -230,7 +230,6 @@
         
         
     </div>         
-</div>    
   <input type="hidden" id="this_page" value="{this_page}">
   <input type="hidden" id="finish_page" value="{finish_page}">
 
@@ -243,6 +242,7 @@
     </section>
  <div class="secret"></div>   
  <div id="result"></div>
+</div>    
 
 <!-- ELSE pg_catalog -->
         <div class="page-header content">

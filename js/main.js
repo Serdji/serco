@@ -1532,13 +1532,57 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryAccord       = [],
 								  arryPrt          = [];
 
-								console.log( mem_vars );
+
+								
 								/*----Scroll----*/
 
 							
 								// $( document ).scrollTop( 600 );
 
 								/*--------------*/
+
+
+
+
+	/*-----------------------------Память и подсветка input----------------------------*/	
+
+
+
+
+		function memOption ( memVars, selectId ) {
+			
+       		var optionText = $( 'option#' + memVars + '' ).text();
+
+        	if ( memVars != undefined ) { 
+        		
+        		 console.log( optionText );
+
+        		$( selectId )
+        			.next()
+        			.children( 'input' )
+        			.val( optionText )
+        			.removeClass( 'focus' )
+        			.addClass( 'inputColor' );
+
+        		$( selectId )	
+        			.children( '.0' )
+        			.removeAttr( 'disabled' );
+        	};
+		};
+        
+        if( typeof mem_vars !== 'undefined' ) {
+
+	        memOption ( mem_vars.category, '#categoryS' );	
+	        memOption ( mem_vars.subcategory, '#subcategoryS' );	
+	        memOption ( mem_vars.type, '#typeS' );	
+	        memOption ( mem_vars.surface, '#surfaceS' );	
+	        memOption ( mem_vars.country, '#countryS' );	
+	        memOption ( mem_vars.brand, '#brandS' );
+    	};
+
+
+        	
+    /*---------------------------------------------------------------------------------*/   
 
 
 
@@ -2001,7 +2045,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 							inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
 
-							history.replaceState( 1, 'Title1'  , '/catalog/page' + mem_vars.page + '/' );
+							if( typeof mem_vars !== 'undefined' ) {
+								history.replaceState( 1, 'Title1'  , '/catalog/page' + mem_vars.page + '/' );
+							};	
+
 							}
 					
 				});
@@ -2180,7 +2227,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
             		btnInput.removeClass( 'subActive' );
             		inputFil.removeClass( 'subActive' );
             	}, delay );
-        }
+        };
 
 
 
