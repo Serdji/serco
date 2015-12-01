@@ -1407,6 +1407,10 @@ a:-webkit-any-link{
     	font-size: 9px;
 	}
 
+	.conDir {
+    	font-size: 10px;
+    }	
+
 	.infoDialog{
 		min-height: 130px;
 	}

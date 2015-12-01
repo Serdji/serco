@@ -621,3 +621,46 @@ ul > li:focus{
 .valid{
 	color: green;
 }
+
+@media screen and (max-width: 1500px){
+	.container{
+		width: 1400px !important;
+	}
+
+	.russia{
+		width: 273px;
+    	height: 207px;
+    	bottom: 152px;
+    	left: 24px;
+	}
+}
+
+@media screen and (max-width: 1400px){
+	.container{
+		width: 1300px !important;
+	}
+
+	.russia{
+		width: 256px;
+    	height: 186px;
+    	bottom: 142px;
+    	left: 22px;
+	}
+
+	#map{
+		height: 385px;
+	}
+
+}
+@media screen and (max-width: 1300px){
+	.container{
+		width: 1200px !important;
+	}
+
+	.russia{
+		width: 237px;
+    	height: 175px;
+    	bottom: 132px;
+    	left: 22px;
+	}
+}
