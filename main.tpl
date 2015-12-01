@@ -14,51 +14,6 @@
 </div>
 <div></div>
 
-<div id="mainloads" class="content">
-  <div class="row">
-
-    <div class="resultsFilter">
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border category resultsFilterNone">
-        <p><b>Товарная группа:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border subcategory resultsFilterNone">
-        <p><b>Товарная подгруппа:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border type resultsFilterNone">
-        <p><b>Товар:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border color resultsFilterNone">
-        <p><b>Цвета:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border sizes resultsFilterNone">
-        <p><b>Размер плитки:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border surface resultsFilterNone">
-        <p><b>Поверхность:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border country resultsFilterNone">
-        <p><b>Страна-производитель:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border brand resultsFilterNone">
-        <p><b>Бренд:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border collection resultsFilterNone">
-        <p><b>Название коллекции:</b></p>
-      </div>
-      <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 border prices resultsFilterNone">
-        <p><b>Цена:</b></p>
-    </div>
-
-  </div>
-</div>
-
-
-
-
-
-
-
-        
 
 <div class="row">
             <section class="col-xs-3 col-sm-3 col-md-3 col-lg-3 blockFilterLeft">
