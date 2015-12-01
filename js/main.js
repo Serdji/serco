@@ -987,24 +987,6 @@ var count_load_img_max = 0;
 				$( '.colors' ).removeClass( 'colorBorder' );
 				$( this ).addClass( 'colorBorder' );
 
-				var color_id  = $( this ).attr( 'id' ),
-					colorText = $( this ).attr( 'data-original-title' ),
-					$divColor = $( 'div.color' );
-
-
-				$divColor.append( '<strong>' + colorText + '</strong>' );
-				$divColor
-					.append('<div id="filtr_color">'
-								+'<div id=' + color_id + ' type="resultsFilterColor" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">'
-									+'<img src="/temp/colors.png" alt="">'
-								+'</div>'
-							+'</div>'
-							+'<button type="button" class="btn btn-success btnClose CancelFramework" style="position: absolute; left: 78%; top: 34%;">Отмена</button>')
-					.fadeIn( 2000 );
-				
-
-
-
 				filterObj();
 
 			};
