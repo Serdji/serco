@@ -1107,9 +1107,13 @@ a:-webkit-any-link{
 .TradingGroup span:nth-of-type(2) .active,
 .leftFilterBlock span:nth-of-type(2) .focus,
 .leftFilterBlock span:nth-of-type(2) .active,
-.brandKoleektsiya input, .brandKoleektsiya .active,
-.brandKoleektsiya .focus{
+.brandKoleektsiya{
 	background: #f7e78c;
+}
+
+.leftFilterBlock span:nth-of-type(1) .focus,
+.leftFilterBlock span:nth-of-type(1) .active{
+	background: #39B273;
 }
 
 .leftFilterBlock{

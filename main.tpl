@@ -27,7 +27,7 @@
                           <div class="ui-widget">
                           <label class="control-label result">Магазин в регионе: </label>
                             <select class="combobox" type="type" >
-                              <option class="0 default" out_id="0" type="bay_country">Все страны</option>
+                              <option class="0 default" out_id="0" type="bay_country">Россия</option>
                             </select>
                             <select class="combobox" type="type">
                               <option class="0 default" out_id="0" type="bay_region" disabled="disabled">Регионы отсутствуют</option>

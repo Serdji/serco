@@ -276,7 +276,12 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 			var _this       = $( this ),
 				defaultView = _this.val();
 
-			_this.val( '' );
+			_this
+				.val( '' );
+
+
+
+
 
 			_this.blur( function () {
 				if ( _this.val() == '' ) {
@@ -1566,7 +1571,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
         		$( selectId )	
         			.children( '.0' )
-        			.removeAttr( 'disabled' );
+        			.removeAttr( 'disabled' );	
         	};
 		};
         
@@ -2208,7 +2213,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
             	speedIn   = 2000,
             	scrollPos = 600;
 
-       
+
 
 
 
@@ -2232,16 +2237,31 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-            if ($( option ).hasClass('country')) {
+            if ($( option ).hasClass( 'category' )) {
+            	openFil ( $ulId4, $btnInput4, $inputFil4, 'Выбрано все', '.subcategoryR' );
+            	
+            }else if($( option ).hasClass( '0 categoryR' )){
+            	var delayOne = 10;
+            	shutFil ( $ulId4Li, $ulId4, $btnInput4, $inputFil4, delayOne );
+            }; 
+
+
+            if ($( option ).hasClass( 'subcategory' )) {
+            	$inputFil4.removeClass( 'subActive' );
+            }; 
+
+
+
+            if ($( option ).hasClass( 'country' )) {
             	openFil ( $ulId9, $btnInput9, $inputFil9, 'Выбрано все', '.brandR' );
             	
-            }else if($( option ).hasClass('0 countryR')){
+            }else if($( option ).hasClass( '0 countryR' )){
             	var delayOne = 10;
             	shutFil ( $ulId9Li, $ulId9, $btnInput9, $inputFil9, delayOne );
             }; 
 
 
-            if ($( option ).hasClass('brand')) {
+            if ($( option ).hasClass( 'brand' )) {
             	$inputFil9.removeClass( 'subActive' );
             }; 
 
