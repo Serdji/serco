@@ -115,7 +115,7 @@
           <div class="ui-widget">
           <label class="control-label result">Страна-производитель: </label>
             <select id="countryS" class="combobox" type="country">
-              <option class="0 countryR" type="country">Выбрано всё</option>
+              <option class="0 countryR" type="country">Все страны</option>
 <!-- BEGIN filter_countrys -->
               <option class="country remov" id="{country_id1s}" inner_id="{country_id}" out_id="{country_id1s}">{country}</option>
 <!-- END filter_countrys -->

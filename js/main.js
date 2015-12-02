@@ -265,7 +265,11 @@ $( 'a[href="/"]' ).on('click', function() {
 filterObj();
 
 history.replaceState( 1, "Title1"  , "/catalog/page1/" );
+
+
 /*---------------------------------------------------------------------*/
+
+
 
 
 /*------------------------Делает пустой инпут--------------------------*/
@@ -275,6 +279,8 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 		$( document ).on( 'focus', 'input.custom-combobox-input', function () {
 			var _this       = $( this ),
 				defaultView = _this.val();
+
+
 
 			_this
 				.val( '' );
@@ -292,6 +298,11 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 		});
 	};
 	focusBlur ();
+
+
+/*---------------------------------------------------------------------*/
+
+
 
 
 
@@ -318,14 +329,14 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 		setTimeout( function () {
 
 			var $mylist      = $( 'input.custom-combobox-input' ),
-			    arry         = [],
+			    arryInput    = [],
 			    inputNamber  = 7; // с какого инпута начинать. Отсчет с 0 до N
 
 			$.each( $mylist, function( index, val ) {
-				arry.push( val );
+				arryInput.push( val );
 			});
 
-			for ( var i = inputNamber; i <= arry.length; i++ ) {
+			for ( var i = inputNamber; i <= arryInput.length; i++ ) {
 				sortLi ( i );
 			};
 
@@ -1023,7 +1034,6 @@ var count_load_img_max = 0;
 		
 
 	
-
 
 
 
@@ -2100,6 +2110,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
+
+
+
 (function( $ ) {
 
 
@@ -2215,6 +2228,15 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
+        function clickInput ( inputFil, ulIdLi) {
+   			inputFil.on('click', function() {
+			if ( $( this ).hasClass('inputColor') ) {
+          		ulIdLi.trigger( 'click' );
+			};
+          });
+        };
+
+         
 
 
         function openFil ( ulId, btnInput, inputFil, text, classRemAttrDis ) {
@@ -2235,6 +2257,16 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         };
 
 
+
+        	clickInput ( $inputFil1, $ulId1Li );
+        	clickInput ( $inputFil2, $ulId2Li );
+        	clickInput ( $inputFil3, $ulId3Li );
+        	clickInput ( $inputFil4, $ulId4Li );
+        	clickInput ( $inputFil5, $ulId5Li );
+        	clickInput ( $inputFil6, $ulId6Li );
+        	clickInput ( $inputFil7, $ulId7Li );
+        	clickInput ( $inputFil8, $ulId8Li );
+        	clickInput ( $inputFil8, $ulId8Li );
 
 
             if ($( option ).hasClass( 'category' )) {
