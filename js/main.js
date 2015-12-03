@@ -1350,6 +1350,21 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
+
+    			function setJson () {
+
+					if( jsonstr != '{' )
+							{
+								jsonstr += ',';
+							}
+					var	urlPage  = window.location.pathname,
+					    setmem  = $( 'input.inputNumber' ).attr( 'setmem' ) == undefined ?
+							      $( 'ul.pageNumber li > a[href="' + urlPage + '"]' ).attr( 'setmem' ) : 
+	            				  $( 'input.inputNumber' ).attr( 'setmem' ),
+    					setmem1 = 1;
+					jsonstr += '"'+setmem+'"'+':'+'"'+setmem1+'"';		
+				};			
+
 					/*------------------Функция отправляет ID ПРТ-------------------*/
 
 
@@ -1499,6 +1514,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			
 			var jsonstr       = '{';
 			var jsonstr_debug = '';
+				setJson ();
 				prtJson ();
 				navJson ();
 				eachJson ( '.pageClass' );
@@ -2549,7 +2565,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 
 					if( pg == innputNam && allPages > 3 ) {
 
-						var	input      = '<li class="pageNumberInit"><input out_id="'+ pg +'" type="page" class="inputNumber from-to" value="' + pg + '"></li>',
+						var	input      = '<li class="pageNumberInit"><input out_id="'+ pg +'" type="page" setmem="setmem" class="inputNumber from-to" value="' + pg + '"></li>',
 						    arrowLeft  = '<div class="arrowLeft blPage">'+
 								  	 	'<a class="pageA" out_id="' + ( pg - 1 ) + '" type="page" href="' + href + 'page' + ( pg - 1 ) + '/">‹</a>'+
 								     '</div>',
@@ -2571,7 +2587,7 @@ function inputPfgeStartNew( innputNam, allItems ) {
 						$('ul.pageNumber').append('</li>');
 
 					} else {
-					$('ul.pageNumber').append('<li class="pageNumberBorderLeft"><a class="pageA" out_id="' + pg + '" type="page" href="' + href + 'page' + pg + '/">' + pg + '</a></li>');
+					$('ul.pageNumber').append('<li class="pageNumberBorderLeft"><a class="pageA" setmem="setmem" out_id="' + pg + '" type="page" href="' + href + 'page' + pg + '/">' + pg + '</a></li>');
 					};
 				};
 			};
