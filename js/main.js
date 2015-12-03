@@ -280,14 +280,8 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 			var _this       = $( this ),
 				defaultView = _this.val();
 
-
-
 			_this
 				.val( '' );
-
-
-
-
 
 			_this.blur( function () {
 				if ( _this.val() == '' ) {
@@ -1119,12 +1113,17 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							id1s            = val.id1s,
 							thick           = val.thick,
 							weig            = val.weig;
+							prices 	        = val.prices[0];
 
-							var prices 	= val.prices[0],
-								count  	= prices.count,
-								fors   	= prices.for,
-								part_id = prices.part_id,
-								price   = prices.price;
+							if ( prices !== undefined ) {
+								
+								var	count  	= prices.count,
+									fors   	= prices.for,
+									part_id = prices.part_id,
+									price   = prices.price;
+							};
+							
+
 
 
 						
