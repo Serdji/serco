@@ -1349,7 +1349,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 /*--------------------------------------------------------------------*/
 
 
-
+					/*------------------Функция отправляет setmem-------------------*/
 
     			function setJson () {
 
@@ -1363,7 +1363,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	            				  $( 'input.inputNumber' ).attr( 'setmem' ),
     					setmem1 = 1;
 					jsonstr += '"'+setmem+'"'+':'+'"'+setmem1+'"';		
-				};			
+				};
+
+					/*--------------------------------------------------------------*/	
+
 
 					/*------------------Функция отправляет ID ПРТ-------------------*/
 
@@ -1594,6 +1597,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         			.val( optionText )
         			.removeClass( 'focus' )
         			.addClass( 'inputColor' );
+
+        		$( selectId )
+        			.children( 'option#'+ memVars )
+        			.attr( 'selected','selected' );
 
         		$( selectId )	
         			.children( '.0' )

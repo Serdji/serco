@@ -1124,6 +1124,7 @@ a:-webkit-any-link{
 .leftFilterBlock span:nth-of-type(1) .active{
 	background: #39B273;
 	color:#CFC;
+	cursor:pointer;
 }
 
 .leftFilterBlock{
