@@ -1116,7 +1116,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							prices 	        = val.prices[0];
 
 							if ( prices !== undefined ) {
-								
+
 								var	count  	= prices.count,
 									fors   	= prices.for,
 									part_id = prices.part_id,
@@ -1131,7 +1131,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
 								$item.append('<div class="row rowHeight leval2 pEll"></div>');
-							}
+							};
+
 						 $( 'div.pEll' ).append('<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 border  Description cardProduct heightCards2 levels2">'+
 												 		'<figure class="opedDialog">'+
 												 			'<div class="infoDialog">'+
@@ -1297,7 +1298,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 	/*--------------------------------------------------------------------------------*/
-
 
 
 
@@ -1558,6 +1558,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
+
+
 	/*-----------------------------Память и подсветка input----------------------------*/	
 
 
@@ -1569,7 +1571,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
         	if ( memVars != undefined ) { 
         		
-        		 console.log( optionText );
 
         		$( selectId )
         			.next()
@@ -2112,6 +2113,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
+
+
 (function( $ ) {
 
 
@@ -2155,6 +2158,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
     /*-----------------------Инпут фильтры и открытие блоков фильтрации---------------------*/
 
             var option =  ui.item.option;
+
+            console.log( option );
 
             if ( $( option ).hasClass( '0' ) ) {
             	this.input.removeClass( 'inputColor' );
@@ -2218,7 +2223,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 );
 
 
-           	 
+
            	
 
             var speedOut  = 500,
@@ -2227,13 +2232,14 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-        function clickInput ( inputFil, ulIdLi) {
-   			inputFil.on('click', function() {
-			if ( $( this ).hasClass('inputColor') ) {
-          		ulIdLi.trigger( 'click' );
-			};
-          });
-        };
+        	function clickInput ( inputFil, ulIdLi) {
+					inputFil.on('click', function() {
+				if ( $( this ).hasClass('inputColor') ) {
+		      		ulIdLi.trigger( 'click' );
+				};
+		      });
+		    };
+
 
          
 
