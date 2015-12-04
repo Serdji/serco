@@ -62,6 +62,7 @@
               <img src="/temp/colors.png" alt="">
             </div>
 <!-- END filter_colors -->
+            <div class="info"></div>
             </div>
           </div>
        

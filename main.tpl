@@ -96,6 +96,7 @@
 
     <form id="serchForm" action="/catalog/" method="post">
       <input name="search" class="search" placeholder="Поиск">
+      <input name="s" class="searchs" placeholder="Поиск">
     </form>
       
      

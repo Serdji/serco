@@ -1019,7 +1019,7 @@ var count_load_img_max = 0;
 
 			$divColor.fadeOut(500);
 
-			$( '.colorBtn, .colorText, br' ).remove();
+			$( '.info' ).html('');
 
 			filterObj();
 		});
@@ -1573,15 +1573,34 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryPrt          = [];
 
 
+
+
+
+
+
+	/*-----------------------------Автоклик по всем кнопкам----------------------------*/	
+
+
 								
-								/*----Scroll----*/
-
-							
-								// $( document ).scrollTop( 600 );
-
-								/*--------------*/
+		function btnClick () {
+			
+					var scrol =  $( document ).scrollTop();
 
 
+					$.each( $( 'div.ui-state-default' ), function( i, val ) {
+
+						$( 'div.ui-state-default:eq(' + i + ')' ).trigger( 'click' );
+					});
+
+					$( '.searchs' ).focus();
+
+					$( document ).scrollTop( scrol );
+		};
+
+		btnClick ();
+
+
+	/*---------------------------------------------------------------------------------*/	
 
 
 
@@ -1626,11 +1645,14 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 	        if ( mem_vars.color != undefined ) {
 
-	        	console.log(mem_vars.color);
+	        	var	$color    = $( 'div#color_' + mem_vars.color + '' ),
+		        	colorText = $color.attr( 'data-original-title' );
 
-		        var	colorText = $( 'div#color_' + mem_vars.color + '' ).attr( 'data-original-title' );
+		        $( '.info' ).html('');	
+
+		        $color.addClass( 'colorBorder' );
 				
-				$( '.colorFilter' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
+				$( '.info' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
 											'<br><button type="button" class="btn btn-primary btn-sm myBtnActive colorBtn" data-dismiss="modal">Отмена</button>' );
 
 	        }; 
@@ -2150,7 +2172,22 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 						/*---------------Выпадающий input---------------------*/
 
 
+		
+		
+		$.each( $( 'option.0' ), function( i, val ) {
+				
+  		   $( document ).on('click', '.custom-combobox-input:eq(' + i + ')', function() {
 
+  		   		if ( $( this ).hasClass( 'inputColor' ) ){
+
+  		   			$( 'ul.ui-autocomplete:eq(' + i + ')' )
+  		   				.children()
+  		   				.eq( 0 )
+  		   				.trigger( 'click' );
+  		   				
+  		   		};
+  		   });
+		});
 
 
 
@@ -2200,7 +2237,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
             var option =  ui.item.option;
 
-            console.log( option );
 
             if ( $( option ).hasClass( '0' ) ) {
             	this.input.removeClass( 'inputColor' );
@@ -2273,13 +2309,13 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-        	function clickInput ( inputFil, ulIdLi) {
+			function clickInput ( inputFil, ulIdLi) {
 					inputFil.on('click', function() {
 				if ( $( this ).hasClass('inputColor') ) {
 		      		ulIdLi.trigger( 'click' );
 				};
 		      });
-		    };
+		    };        	
 
 
          
@@ -2528,6 +2564,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 		/*----------------Изменение input страниц-------------------*/
 
+
+
 function inputPfgeStartNew( innputNam, allItems ) {
 
 	funImgWidthHeight ();
@@ -2683,7 +2721,16 @@ function inputPfgeStartNew( innputNam, allItems ) {
 		});
 	pageNumberBackground ();
 };
+
+
+
+
+
+
 		/*----------------------------------------------------------*/
+
+
+
 
 
 			  	/*----------------Фильтр на ввод цифр JQuery-------------------*/

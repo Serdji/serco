@@ -1021,9 +1021,14 @@ a:-webkit-any-link{
   	margin-left: -16px;
 }
 
-.search:focus{
+/*.search:focus{
 	border: 2px solid #39b273;
 	box-shadow: 0px 0px 0px 1px rgba(57,178,115,1);
+}*/
+
+.searchs{
+	position: absolute;
+	opacity: 0;
 }
 
 .conDir{
@@ -1193,6 +1198,10 @@ a:-webkit-any-link{
 
 .colorBtn{
 	margin: 64px 0 0 222px;
+}
+
+.pageNumberBorderLeft:hover, .verticallPageLi:not(.pageNumberBackground):hover{
+	background: #94ef94;
 }
 
 @media screen and ( max-width: 1600px){
