@@ -1605,7 +1605,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-	/*-----------------------------Память и подсветка input----------------------------*/	
+	/*-------------------------амять фильтров и подсветка input------------------------*/	
 
 
 
@@ -1655,7 +1655,27 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				$( '.info' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
 											'<br><button type="button" class="btn btn-primary btn-sm myBtnActive colorBtn" data-dismiss="modal">Отмена</button>' );
 
-	        }; 
+	        };
+
+	        if ( mem_vars.pid != undefined ){
+
+	        setTimeout(	function () {
+	        	
+	        	$( 'div#' + mem_vars.pid + '' )
+	        		.find( '.removSadow' )
+					.addClass( 'removeSadowClick' );
+
+				$( 'div#' + mem_vars.pid + '' )
+	        		.find( '.accordionStart' )
+					.addClass( 'accordionAktiv' );
+
+				$( 'div#' + mem_vars.pid + '' )
+	        		.find( '.accordion' )
+					.slideDown( 1000, 'easeInOutCubic' );
+
+	        }, 1000)
+	        };
+
     	};
 
 
