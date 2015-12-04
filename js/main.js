@@ -981,11 +981,8 @@ var count_load_img_max = 0;
 
 		$( '.colors' ).on( 'click', function (){
 			
-			var _this     = $( this ),
-				colorText = _this.attr( 'data-original-title' );
-			
-			$( '.colorFilter' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
-										'<br><button type="button" class="btn btn-primary btn-sm myBtnActive colorBtn" data-dismiss="modal">Отмена</button>' );
+			var _this     = $( this );
+				
 
 			if ( _this.hasClass( '.colorBorder' ) ) { 
 
@@ -1626,6 +1623,17 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	        memOption ( mem_vars.surface, '#surfaceS' );	
 	        memOption ( mem_vars.country, '#countryS' );	
 	        memOption ( mem_vars.brand, '#brandS' );
+
+	        if ( mem_vars.color != undefined ) {
+
+	        	console.log(mem_vars.color);
+
+		        var	colorText = $( 'div#color_' + mem_vars.color + '' ).attr( 'data-original-title' );
+				
+				$( '.colorFilter' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
+											'<br><button type="button" class="btn btn-primary btn-sm myBtnActive colorBtn" data-dismiss="modal">Отмена</button>' );
+
+	        }; 
     	};
 
 
