@@ -1071,8 +1071,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							
 				
 				
-				
-				
 
 			$.ajax({ 
 				url        : URL,
@@ -1082,21 +1080,138 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			    beforeSend : startLoad(),
 			    success    : function( data ) {
 
+
+
+
+			
 					stopLoad();
 
-					var allItems = data.allItems,
-						items    = data.items,
-						prt      = data.prt,
-						shops    = data.shops,
-						photos   = data.photos,
-						prt      = data.prt,
-						htmlTeg  ='', 
-						$item    = $( 'div.item' ),
-						$FL      = $( '.filtrsLevel2' ),
-						arrPrt   = [];
+					var allItems 	= data.allItems,
+						items    	= data.items,
+						prt      	= data.prt,
+						shops    	= data.shops,
+						photos   	= data.photos,
+						prt      	= data.prt,
+						htmlTeg  	='', 
+						$item    	= $( 'div.item' ),
+						$FL      	= $( '.filtrsLevel2' ),
+						arryPrt   	= [],
+						arryMarkers = [],
+						markerClast = [],
+						arryPid     = [];
+
+
 
 					$item.removeClass( 'leval1 row' );
 					$item.html('');
+
+
+
+/*----------------------------------Прорисовка карты в коллекции---------------------------------*/
+
+			navigator.geolocation.getCurrentPosition( function( position ) { // Начало функции геолокации
+
+					var	lat        = position.coords.latitude,
+					    lng        = position.coords.longitude,
+					    myPos 	   = new google.maps.LatLng(  lat, lng ),
+					    mapOptions = { 
+							zoom        : 14,
+						 	center      : myPos,
+						 	// mapTypeId   : google.maps.MapTypeId.TERRAIN,
+						 	scrollwheel : false,
+						},
+					    map        = new google.maps.Map( document.getElementById( 'map' ), mapOptions );
+					    myMarker   = new google.maps.Marker({
+						    position  : myPos,
+						    map       : map,
+						    animation : google.maps.Animation.BOUNCE,
+						    title     : 'Вы здесь :D',
+						});					
+
+					$.each( prt, function( i, val ) {
+						 
+						var adress = val.adress,
+						 	dist   = val.dist,
+						 	lat    = val.lat,
+						 	lng    = val.lon,
+						 	name   = val.name,
+						 	pid    = val.pid;
+
+						arryPrt.push( [ name, lat, lng, adress ] );
+
+					});
+
+					// Область показа маркеров
+					var markersBounds = new google.maps.LatLngBounds();
+
+					$.each( arryPrt, function( i, val ) {
+
+						if( i <= 7 ) {
+
+				    	// Область показа маркеров
+					    var markerPosition = new google.maps.LatLng( val[1], val[2] );
+
+					    // Добавляем координаты маркера в область
+					    markersBounds.extend( markerPosition );
+				
+						};
+					});
+						 	
+
+
+
+					$.each( shops, function( i, val ) {
+						 
+						var adress = val.adress,
+						 	dist   = val.dist,
+						 	lat    = val.lat,
+						 	lng    = val.lon,
+						 	name   = val.name,
+						 	pid    = val.pid;
+
+						arryMarkers.push( [ name, lat, lng, adress, dist ] ); 	
+					});
+
+
+					$.each( arryMarkers, function( i, val ) {
+
+				    // Создаём маркер
+				    var marker = new google.maps.Marker({
+				        position  : { lat: +val[1], lng: +val[2] },
+				        map       : map,   
+				        title     : val[0] +' : ' + val[4],
+				        animation : google.maps.Animation.DROP
+				    });
+
+				    var contentString = '<div id="content">'  + val[3] + '</div>';
+				    var infowindow    = new google.maps.InfoWindow({
+				    	content : contentString
+				    });
+
+					google.maps.event.addListener( marker, 'click', function() {
+					   infowindow.open( map, marker );
+					});
+
+					markerClast.push( marker );
+
+				});
+				
+				markersBounds.extend( myPos );
+
+				var markerCluster = new MarkerClusterer( map, markerClast, {
+					maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
+					gridSize : 70,  // размер ячеек сетки, чем меньше значение, тем меньше сетка группировки
+					styles   : null // дополнительные стили - стиля нет
+				});
+
+				// Центрируем и масштабируем карту
+				map.setCenter( markersBounds.getCenter(), map.fitBounds( markersBounds ) );
+
+			});	// Конец функции геолокации
+
+/*-----------------------------------------------------------------------------------------------*/
+
+
 
 					$.each( items, function( i, val ) {
 
@@ -1184,12 +1299,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 				'</div>'+
 												 			'</div>'+
 												 		'</figure>'+
-												 	'</div>');
-					
+												'</div>');
 
-					$.each( prt, function( i, val ) {
-						 console.log( val );
-					});
+
 
 					if ( color == null ) {
 
@@ -1226,7 +1338,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					$.each( prt, function( i, val ) {
 
-						arrPrt.push( val );
+						arryPid.push( val );
 
 						 var id = val.pid;
 
@@ -1235,7 +1347,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					
 
-					verticallPage   = Math.ceil( arrPrt.length / 8 );
+					verticallPage   = Math.ceil( arryPid.length / 8 );
 
 					$( 'div.pageNamberVertical ul li' ).remove();
 
