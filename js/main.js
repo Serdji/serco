@@ -981,11 +981,15 @@ var count_load_img_max = 0;
 
 		$( '.colors' ).on( 'click', function (){
 			
+			var _this     = $( this ),
+				colorText = _this.attr( 'data-original-title' );
 			
-			$( '.colorFilter' ).append( '<span class="CancelFramework">[Отмена]</span>' );
-			if ( $( this ).is( '.colorBorder' ) ) { 
+			$( '.colorFilter' ).append( '<span class="colorText"><b>' + colorText + '</b></span>'+
+										'<br><button type="button" class="btn btn-primary btn-sm myBtnActive colorBtn" data-dismiss="modal">Отмена</button>' );
 
-				$( this ).removeClass( 'colorBorder' );
+			if ( _this.hasClass( '.colorBorder' ) ) { 
+
+				_this.removeClass( 'colorBorder' );
 				$( 'div.color div' ).remove();
 				$( 'div.color strong' ).remove();
 				$( 'div.color' ).fadeOut( 500 );
@@ -995,7 +999,7 @@ var count_load_img_max = 0;
 			}else{
 
 				$( '.colors' ).removeClass( 'colorBorder' );
-				$( this ).addClass( 'colorBorder' );
+				_this.addClass( 'colorBorder' );
 
 				filterObj();
 
@@ -1003,17 +1007,23 @@ var count_load_img_max = 0;
 		});
 
 
-		$( document ).on( 'click', '.CancelFramework', function(){
+		$( document ).on( 'click', '.colorBtn', function(){
 			var $divColor  = $( 'div.color' );
+
 			$( '.colors' ).removeClass( 'colorBorder' );
+
 			$divColor
 				.children( 'div' ) 
 				.remove();
+
 			$divColor
 				.children( 'strong' )
 				.remove();
+
 			$divColor.fadeOut(500);
-			$( '.CancelFramework' ).remove();
+
+			$( '.colorBtn, .colorText, br' ).remove();
+
 			filterObj();
 		});
 

@@ -1185,6 +1185,16 @@ a:-webkit-any-link{
 	cursor: pointer;
 }
 
+.colorText{
+	font-size: 17px;
+    color: #3C763D;
+    margin-left: 10px;
+}
+
+.colorBtn{
+	margin: 64px 0 0 222px;
+}
+
 @media screen and ( max-width: 1600px){
 	.container{
 		margin: auto;
