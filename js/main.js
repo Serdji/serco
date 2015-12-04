@@ -1187,7 +1187,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 	'</div>');
 					
 
-					
+					$.each( prt, function( i, val ) {
+						 console.log( val );
+					});
 
 					if ( color == null ) {
 
