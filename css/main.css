@@ -1121,6 +1121,16 @@ a:-webkit-any-link{
 .TradingGroup span:nth-of-type(2) .active,
 .leftFilterBlock span:nth-of-type(2) .focus,
 .leftFilterBlock span:nth-of-type(2) .active,
+.brandKoleektsiya,
+.TradingGroup span:nth-of-type(4) .focus,
+.TradingGroup span:nth-of-type(4) .active,
+.leftFilterBlock span:nth-of-type(4) .focus,
+.leftFilterBlock span:nth-of-type(4) .active,
+.brandKoleektsiya,
+.TradingGroup span:nth-of-type(7) .focus,
+.TradingGroup span:nth-of-type(7) .active,
+.leftFilterBlock span:nth-of-type(7) .focus,
+.leftFilterBlock span:nth-of-type(7) .active,
 .brandKoleektsiya{
 	background: #f7e78c;
 }
