@@ -536,7 +536,7 @@ a:-webkit-any-link{
 }
 .custom-combobox-toggle {
     position: absolute;
-    left: 267px;
+    left: 244px;
     top: 0;
     bottom: 0;
     margin-left: 15px;
@@ -1059,12 +1059,13 @@ a:-webkit-any-link{
 	margin-bottom: 4px !important;
 }
 
-.filtr_bay_region input{
-	width: 326px;
+.filtr_bay_region .focus{
+	width: 302px;
+	height: 50px;
 }
 
 .filtr_bay_region .custom-combobox-toggle{
-	left: 316px !important;
+	left: 290px !important;
 }
 
 .inputRadio{
@@ -1106,8 +1107,9 @@ a:-webkit-any-link{
 
 }
 
-.blockFilterRight input{
-	width: 278px;
+.blockFilterRight .focus{
+	width: 255px;
+	height: 50px;
 }
 
 .TradingGroup .custom-combobox, 

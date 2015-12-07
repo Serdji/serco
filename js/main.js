@@ -2537,8 +2537,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
           	wasOpen = false;
  
         $( "<div>" )
-          .append('<div class="ui-state-default ui-corner-all active" style="height:100%; width: 32px; border-radius: 0px 4px 4px 0px;">'
-          			+'<span class="ui-icon ui-icon-triangle-1-s" style="position:relative;top:7px; left: 7px;"></span>'
+          .append('<div class="ui-state-default ui-corner-all active" style="height:100%; width: 48px; border-radius: 0px 4px 4px 0px;">'
+          			+'<span class="ui-icon ui-icon-triangle-1-s" style="position:relative;top:15px; left: 15px;"></span>'
           		  +'</div>')
           .appendTo( this.wrapper )
           .removeClass( "ui-corner-all" )
