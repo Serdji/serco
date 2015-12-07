@@ -544,7 +544,7 @@ a:-webkit-any-link{
 }
 .custom-combobox-input {
     margin: 0;
-    padding: 5px 10px;
+    padding: 14px 25px;
 }
 
 .hint{
@@ -1217,6 +1217,10 @@ a:-webkit-any-link{
 }
 
 @media screen and ( max-width: 1600px){
+	.colorBtn {
+   		margin: 64px 0 0 190px;
+	}
+
 	.container{
 		margin: auto;
 		width: 1500px;
@@ -1288,12 +1292,16 @@ a:-webkit-any-link{
 		width: 325px;
 	}
 
-	.filtr_bay_region input{
-		width: 278px;
+	.custom-combobox-input {
+	    padding: 14px 11px;
+	}
+
+	.filtr_bay_region .focus{
+		width: 257px;
 	}
 
 	.filtr_bay_region .custom-combobox-toggle {
-    	left: 270px !important;
+    	left: 246px !important;
 	}
 
 	.filtr_bay_region{
@@ -1308,12 +1316,12 @@ a:-webkit-any-link{
 		width: 338px !important;
 	}
 
-	.blockFilterRight input{
-		width: 252px;
+	.blockFilterRight .focus{
+		width: 226px;
 	}
 
 	.custom-combobox-toggle{
-		left: 243px;
+		left: 214px;
 	}
 }
 
