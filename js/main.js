@@ -1515,31 +1515,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								   '</div>');
 					});
 
-					// $( '.accordionRemove' )
-					// 	.fadeOut( 1000 )
-					// 	.removeClass( 'accordionRemove' )
-					// 	.addClass( 'accordionRemoveLvel2' );
-
-					// $.each( prt, function( i, val ) {
-
-					// 	arryPid.push( val );
-
-					// 	 var id = val.pid;
-
-					// 	 $( '#'+ id +'' ).fadeIn( 1000 );
-					// });
-
-					
-
-					// verticallPage   = Math.ceil( arryPid.length / 8 );
-
-					// $( 'div.pageNamberVertical ul li' ).remove();
-
-		  	//   		for ( var i = 1; i <= verticallPage; i++ ) {
-
-		  	//   			$( 'div.pageNamberVertical ul' ).append('<li class="verticallPageLi"><a href="#" class="verticallPage" id="' + i + '">' + i + '</a></li>');
-
-		  	//   		};
+				
 
 		  	  		$( 'a[href="/catalog/"]' ).attr('href', '/catalog/' + urls[4] + '/');
 
@@ -2009,7 +1985,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	
 
 								ajaxAcco ( arryAccord );
-								
+
 
 										// Область показа маркеров
 										var markersBounds = new google.maps.LatLngBounds();
