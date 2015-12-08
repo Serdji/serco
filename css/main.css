@@ -1126,8 +1126,8 @@ a:-webkit-any-link{
 .brandKoleektsiya{
 	background: #f7e78c;
 }
-.inputGreen input,
-.inputGreen input,
+.inputGreen input:nth-of-type(1),
+.inputGreen .active,
 .leftFilterBlock span:nth-of-type(1) .focus,
 .leftFilterBlock span:nth-of-type(1) .active{
 	background: #39B273;

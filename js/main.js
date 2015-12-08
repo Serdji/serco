@@ -1210,7 +1210,7 @@ var count_load_img_max = 0;
 
 
 		
-
+$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
 	
 
 
@@ -2214,7 +2214,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  // console.log('-----------------------------------------------------');
 
 
-							  
+
 
 
 							 function eachOut_id ( objClass, nameClass ){
@@ -2389,54 +2389,118 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-           var $ulId1      = $( 'ul.ui-autocomplete' ).eq( 0 ),
-           	   $ulId2      = $( 'ul.ui-autocomplete' ).eq( 1 ),
-           	   $ulId3      = $( 'ul.ui-autocomplete' ).eq( 2 ),
-           	   $ulId4      = $( 'ul.ui-autocomplete' ).eq( 3 ),
-           	   $ulId5      = $( 'ul.ui-autocomplete' ).eq( 4 ),
-           	   $ulId6      = $( 'ul.ui-autocomplete' ).eq( 5 ),
-           	   $ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
-           	   $ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
-           	   $ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
-           	   $ulId10     = $( 'ul.ui-autocomplete' ).eq( 9 ),
-           	   $ulId11     = $( 'ul.ui-autocomplete' ).eq( 10 ),
-           	   $ulId1Li    = $ulId1.children( 'li' ).eq( 0 ),
-           	   $ulId2Li    = $ulId2.children( 'li' ).eq( 0 ),
-           	   $ulId3Li    = $ulId3.children( 'li' ).eq( 0 ),
-           	   $ulId4Li    = $ulId4.children( 'li' ).eq( 0 ),
-           	   $ulId5Li    = $ulId5.children( 'li' ).eq( 0 ),
-           	   $ulId6Li    = $ulId6.children( 'li' ).eq( 0 ),
-           	   $ulId7Li    = $ulId7.children( 'li' ).eq( 0 ),
-           	   $ulId8Li    = $ulId8.children( 'li' ).eq( 0 ),
-           	   $ulId9Li    = $ulId9.children( 'li' ).eq( 0 ),
-           	   $ulId10Li   = $ulId10.children( 'li' ).eq( 0 ),
-           	   $ulId11Li   = $ulId11.children( 'li' ).eq( 0 ),
-           	   $btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
-           	   $btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
-           	   $btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
-           	   $btnInput4  = $( 'div.ui-state-default' ).eq( 3 ),
-           	   $btnInput5  = $( 'div.ui-state-default' ).eq( 4 ),
-           	   $btnInput6  = $( 'div.ui-state-default' ).eq( 5 ),
-           	   $btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
-           	   $btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
-           	   $btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
-           	   $btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
-           	   $btnInput11 = $( 'div.ui-state-default' ).eq( 10 ),
-           	   $inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
-           	   $inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
-           	   $inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
-           	   $inputFil4  = $( 'input.custom-combobox-input' ).eq( 3 ),
-           	   $inputFil5  = $( 'input.custom-combobox-input' ).eq( 4 ),
-           	   $inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
-           	   $inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
-           	   $inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
-           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
-           	   $inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 ),
-           	   $inputFil11 = $( 'input.custom-combobox-input' ).eq( 10 );
+           var $ulId1      	   = $( 'ul.ui-autocomplete' ).eq( 0 ),
+           	   $ulId2      	   = $( 'ul.ui-autocomplete' ).eq( 1 ),
+           	   $ulId3      	   = $( 'ul.ui-autocomplete' ).eq( 2 ),
+           	   $ulId4      	   = $( 'ul.ui-autocomplete' ).eq( 3 ),
+           	   $ulId5      	   = $( 'ul.ui-autocomplete' ).eq( 4 ),
+           	   $ulId6      	   = $( 'ul.ui-autocomplete' ).eq( 5 ),
+           	   $ulId7      	   = $( 'ul.ui-autocomplete' ).eq( 6 ),
+           	   $ulId8      	   = $( 'ul.ui-autocomplete' ).eq( 7 ),
+           	   $ulId9      	   = $( 'ul.ui-autocomplete' ).eq( 8 ),
+           	   $ulId10     	   = $( 'ul.ui-autocomplete' ).eq( 9 ),
+           	   $ulId11     	   = $( 'ul.ui-autocomplete' ).eq( 10 ),
+           	   $ulId1Li    	   = $ulId1.children( 'li' ).eq( 0 ),
+           	   $ulId2Li    	   = $ulId2.children( 'li' ).eq( 0 ),
+           	   $ulId3Li    	   = $ulId3.children( 'li' ).eq( 0 ),
+           	   $ulId4Li    	   = $ulId4.children( 'li' ).eq( 0 ),
+           	   $ulId5Li    	   = $ulId5.children( 'li' ).eq( 0 ),
+           	   $ulId6Li    	   = $ulId6.children( 'li' ).eq( 0 ),
+           	   $ulId7Li    	   = $ulId7.children( 'li' ).eq( 0 ),
+           	   $ulId8Li    	   = $ulId8.children( 'li' ).eq( 0 ),
+           	   $ulId9Li    	   = $ulId9.children( 'li' ).eq( 0 ),
+           	   $ulId10Li   	   = $ulId10.children( 'li' ).eq( 0 ),
+           	   $ulId11Li   	   = $ulId11.children( 'li' ).eq( 0 ),
+           	   $btnInput1  	   = $( 'div.ui-state-default' ).eq( 0 ),
+           	   $btnInput2  	   = $( 'div.ui-state-default' ).eq( 1 ),
+           	   $btnInput3  	   = $( 'div.ui-state-default' ).eq( 2 ),
+           	   $btnInput4  	   = $( 'div.ui-state-default' ).eq( 3 ),
+           	   $btnInput5  	   = $( 'div.ui-state-default' ).eq( 4 ),
+           	   $btnInput6  	   = $( 'div.ui-state-default' ).eq( 5 ),
+           	   $btnInput7  	   = $( 'div.ui-state-default' ).eq( 6 ),
+           	   $btnInput8  	   = $( 'div.ui-state-default' ).eq( 7 ),
+           	   $btnInput9  	   = $( 'div.ui-state-default' ).eq( 8 ),
+           	   $btnInput10 	   = $( 'div.ui-state-default' ).eq( 9 ),
+           	   $btnInput11 	   = $( 'div.ui-state-default' ).eq( 10 ),
+           	   $inputFil1  	   = $( 'input.custom-combobox-input' ).eq( 0 ),
+           	   $inputFil2  	   = $( 'input.custom-combobox-input' ).eq( 1 ),
+           	   $inputFil3  	   = $( 'input.custom-combobox-input' ).eq( 2 ),
+           	   $inputFil4  	   = $( 'input.custom-combobox-input' ).eq( 3 ),
+           	   $inputFil5  	   = $( 'input.custom-combobox-input' ).eq( 4 ),
+           	   $inputFil6  	   = $( 'input.custom-combobox-input' ).eq( 5 ),
+           	   $inputFil7  	   = $( 'input.custom-combobox-input' ).eq( 6 ),
+           	   $inputFil8  	   = $( 'input.custom-combobox-input' ).eq( 7 ),
+           	   $inputFil9  	   = $( 'input.custom-combobox-input' ).eq( 8 ),
+           	   $inputFil10 	   = $( 'input.custom-combobox-input' ).eq( 9 ),
+           	   $inputFil11 	   = $( 'input.custom-combobox-input' ).eq( 10 ),
+           	   arrySubcategory = [],
+           	   arryBrand       = [];
+
+
+           	   function ulDisNone () {
+
+           	   		$ulId1.css('display', 'none');
+           	   		$ulId2.css('display', 'none');
+           	   		$ulId3.css('display', 'none');
+           	   		$ulId4.css('display', 'none');
+           	   		$ulId5.css('display', 'none');
+           	   		$ulId6.css('display', 'none');
+           	   		$ulId7.css('display', 'none');
+           	   		$ulId8.css('display', 'none');
+           	   		$ulId9.css('display', 'none');
+           	   		$ulId10.css('display', 'none');
+           	   		$ulId11.css('display', 'none');
+           	   };
 
 
 
+           	function optionDis ( hasClass, hasClassR, subClass, idDisNone, hasSubClassR, hasSubClass, arrySubClass ) {
+           	   	
+	        	if ( $( option ).hasClass( hasClass ) ) {
+	        		
+	        		$.each( $( subClass ), function( i, val ) {
+	        			arrySubClass.push( val ); 
+	        		});
+
+	        		if ( arrySubClass != undefined ) {
+
+	        			$( idDisNone ).fadeIn( 500 );
+	        		} else {
+
+	        			$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeIn( 500 );
+	        		}
+
+	        	} else if( $( option ).hasClass( hasSubClassR ) ){
+
+	        		$( idDisNone ).fadeOut( 500 );
+	        		ulDisNone ();
+	        	} else if( $( option ).hasClass( hasClassR ) ){
+
+	        		$( idDisNone ).fadeOut( 500 );
+	        		ulDisNone ();
+	        	};
+
+	        	if ( $( option ).hasClass( hasSubClass ) ){
+
+	        		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeIn( 500 );
+	        		ulDisNone ();
+	        	};
+
+           	};
            	
+           	optionDis ( 'category', 'categoryR', '.subcategory', '#subcategoryDisNon', 'subcategoryR', 'subcategory', arrySubcategory );
+           	optionDis ( 'country', 'countryR', '.brand', '#brandDisNone', 'brandR', 'brand', arryBrand );
+           	
+
+           	if ( $( option ).hasClass( '0 categoryR' ) ||
+           		 $( option ).hasClass( '0 typeR' )     ||
+           		 $( option ).hasClass( '0 countryR' ) ){
+
+           			console.log('test');
+           		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeOut( 500 );
+           	};
+
+
 
             var speedOut  = 500,
             	speedIn   = 2000,
@@ -2445,8 +2509,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 			function clickInput ( inputFil, ulIdLi) {
-					inputFil.on('click', function() {
-				if ( $( this ).hasClass('inputColor') ) {
+					inputFil.on( 'click', function() {
+				if ( $( this ).hasClass( 'inputColor' ) ) {
 		      		ulIdLi.trigger( 'click' );
 				};
 		      });
@@ -2484,6 +2548,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         	clickInput ( $inputFil7, $ulId7Li );
         	clickInput ( $inputFil8, $ulId8Li );
         	clickInput ( $inputFil8, $ulId8Li );
+
+
+
 
 
             /*if ($( option ).hasClass( 'category' )) {

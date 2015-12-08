@@ -107,9 +107,9 @@
                   
                   <div id="brandDisNone">
                     <select id="brandS" class="combobox" type="brand">
-                      <option class="0 brandR" type="brand">Все бренды</option>
+                      <option class="0 brandR" type="brand" disabled="disabled">Все бренды</option>
 <!-- BEGIN filter_brands -->          
-                      <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}">{brand}</option>
+                      <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}" disabled="disabled">{brand}</option>
 <!-- END filter_brands -->
                     </select>
                   </div>
