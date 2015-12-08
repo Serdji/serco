@@ -18,13 +18,14 @@
                   <option class="category remov" id="{category_id1s}" inner_id="{category_id}" out_id="{category_id1s}">{category}</option>
 <!-- END filter_categories -->
                 </select>
-
                 <select id="subcategoryS" class="combobox" type="subcategory">
                 <option class="0 subcategoryR" out_id="0" type="subcategory" disabled="disabled">Подгрупп нет</option>
 <!-- BEGIN filter_subcategories -->               
                   <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
                 </select>
+                
+                <hr>
 
                 <select id="typeS" class="combobox" type="type">
                   <option class="0 typeR" out_id="0" type="type">Все виды товаров</option>

@@ -372,9 +372,7 @@ a:-webkit-any-link{
 	opacity: 0;
 }
 
-.colorFilter{
-	height: 176px;
-}
+
 
 #color_3432030f-8062-11e0-b0fa-00221586ff02 img, 
 #color_3432030e-8062-11e0-b0fa-00221586ff02 img, 
@@ -542,10 +540,8 @@ a:-webkit-any-link{
     margin-left: 15px;
     padding: 0;
 }
-.custom-combobox-input {
-    margin: 0;
-    padding: 14px 25px;
-}
+
+
 
 .hint{
 	position: absolute;
@@ -1107,10 +1103,16 @@ a:-webkit-any-link{
 
 }
 
-.blockFilterRight .focus{
-	width: 255px;
+
+
+.custom-combobox-input {
+    margin: 0;
+    padding: 14px 8px;
+    width: 255px;
 	height: 50px;
+	font-size: 17px !important;
 }
+
 
 .TradingGroup .custom-combobox, 
 .TradingGroup .custom-combobox-toggle,
@@ -1209,7 +1211,7 @@ a:-webkit-any-link{
 }
 
 .colorBtn{
-	margin: 64px 0 0 222px;
+	margin: 4px 0 0 222px;
 }
 
 .pageNumberBorderLeft:hover, .verticallPageLi:not(.pageNumberBackground):hover{
@@ -1294,6 +1296,7 @@ a:-webkit-any-link{
 
 	.custom-combobox-input {
 	    padding: 14px 11px;
+	    width: 226px;
 	}
 
 	.filtr_bay_region .focus{
@@ -1316,9 +1319,6 @@ a:-webkit-any-link{
 		width: 338px !important;
 	}
 
-	.blockFilterRight .focus{
-		width: 226px;
-	}
 
 	.custom-combobox-toggle{
 		left: 214px;
