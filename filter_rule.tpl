@@ -13,18 +13,11 @@
               <div class="ui-widget">
              
                 <select id="branchS" class="combobox" type="branch">
-                  <option class="0 branchR" out_id="0" type="branch">Отрасль</option>
-                  <option class="0 branchR" out_id="0" type="branch">Строительные материалы</option>   
+                  <option class="0 branchR" out_id="0" type="branch">Отрасль: Строительные материалы</option>   
                 </select>
 
                 <select id="sectorS" class="combobox" type="sector">
-                  <option class="0 sectorR" out_id="0" type="sector">Сектор</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Керамическая плитка</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Керамический гранит</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Искусственный и Природный камень</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Клеевые смеси</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Затирки</option>           
-                  <option class="0 sectorR" out_id="0" type="sector">Сопутствующие материалы</option>          
+                  <option class="0 sectorR" out_id="0" type="sector">Сектор: Керамическая плитка, Керамический гранит, Мозаика, Искусственный и Природный камень, Клеевые смеси, Затирки, Сопутствующие материалы</option>         
                 </select>
 
                 <hr>
@@ -74,7 +67,6 @@
                 
                   <form role="form">
                     <div class="form-group  has-success">
-                    <label class="control-label result" for="inputSuccess3">Размер:</label>
                 
         
                       <strong>Длина:</strong>
