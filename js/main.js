@@ -2395,6 +2395,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId7      = $( 'ul.ui-autocomplete' ).eq( 6 ),
            	   $ulId8      = $( 'ul.ui-autocomplete' ).eq( 7 ),
            	   $ulId9      = $( 'ul.ui-autocomplete' ).eq( 8 ),
+           	   $ulId11     = $( 'ul.ui-autocomplete' ).eq( 9 ),
+           	   $ulId12     = $( 'ul.ui-autocomplete' ).eq( 10 ),
            	   $ulId1Li    = $ulId1.children( 'li' ).eq( 0 ),
            	   $ulId2Li    = $ulId2.children( 'li' ).eq( 0 ),
            	   $ulId3Li    = $ulId3.children( 'li' ).eq( 0 ),
@@ -2404,6 +2406,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId7Li    = $ulId7.children( 'li' ).eq( 0 ),
            	   $ulId8Li    = $ulId8.children( 'li' ).eq( 0 ),
            	   $ulId9Li    = $ulId9.children( 'li' ).eq( 0 ),
+           	   $ulId10Li   = $ulId10.children( 'li' ).eq( 0 ),
+           	   $ulId11Li   = $ulId11.children( 'li' ).eq( 0 ),
            	   $btnInput1  = $( 'div.ui-state-default' ).eq( 0 ),
            	   $btnInput2  = $( 'div.ui-state-default' ).eq( 1 ),
            	   $btnInput3  = $( 'div.ui-state-default' ).eq( 2 ),
@@ -2413,6 +2417,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $btnInput7  = $( 'div.ui-state-default' ).eq( 6 ),
            	   $btnInput8  = $( 'div.ui-state-default' ).eq( 7 ),
            	   $btnInput9  = $( 'div.ui-state-default' ).eq( 8 ),
+           	   $btnInput10 = $( 'div.ui-state-default' ).eq( 9 ),
+           	   $btnInput11 = $( 'div.ui-state-default' ).eq( 10 ),
            	   $inputFil1  = $( 'input.custom-combobox-input' ).eq( 0 ),
            	   $inputFil2  = $( 'input.custom-combobox-input' ).eq( 1 ),
            	   $inputFil3  = $( 'input.custom-combobox-input' ).eq( 2 ),
@@ -2421,7 +2427,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $inputFil6  = $( 'input.custom-combobox-input' ).eq( 5 ),
            	   $inputFil7  = $( 'input.custom-combobox-input' ).eq( 6 ),
            	   $inputFil8  = $( 'input.custom-combobox-input' ).eq( 7 ),
-           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 );
+           	   $inputFil9  = $( 'input.custom-combobox-input' ).eq( 8 ),
+           	   $inputFil10 = $( 'input.custom-combobox-input' ).eq( 9 ),
+           	   $inputFil11 = $( 'input.custom-combobox-input' ).eq( 10 );
 
 
 
@@ -2475,7 +2483,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         	clickInput ( $inputFil8, $ulId8Li );
 
 
-            if ($( option ).hasClass( 'category' )) {
+            /*if ($( option ).hasClass( 'category' )) {
             	openFil ( $ulId4, $btnInput4, $inputFil4, 'Выбрано все', '.subcategoryR' );
             	
             }else if($( option ).hasClass( '0 categoryR' )){
@@ -2501,7 +2509,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
             if ($( option ).hasClass( 'brand' )) {
             	$inputFil9.removeClass( 'subActive' );
-            }; 
+            }; */
 
             
             

@@ -12,6 +12,23 @@
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
              
+                <select id="branchS" class="combobox" type="branch">
+                  <option class="0 branchR" out_id="0" type="branch">Отрасль</option>
+                  <option class="0 branchR" out_id="0" type="branch">Строительные материалы</option>   
+                </select>
+
+                <select id="sectorS" class="combobox" type="sector">
+                  <option class="0 sectorR" out_id="0" type="sector">Сектор</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Керамическая плитка</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Керамический гранит</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Искусственный и Природный камень</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Клеевые смеси</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Затирки</option>           
+                  <option class="0 sectorR" out_id="0" type="sector">Сопутствующие материалы</option>          
+                </select>
+
+                <hr>
+
                 <select id="categoryS" class="combobox" type="category">
                   <option class="0 categoryR" out_id="0" type="category">Все товарные группы</option>
 <!-- BEGIN filter_categories -->
@@ -24,7 +41,7 @@
                   <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
                 </select>
-                
+
                 <hr>
 
                 <select id="typeS" class="combobox" type="type">
@@ -48,7 +65,7 @@
                 </div>
 
                 <select id="surfaceS" class="combobox" type="surface">
-                  <option class="0 surfaceR" type="surface">Выбраны все поверхности</option>
+                  <option class="0 surfaceR" type="surface">Все виды поверхностей</option>
 <!-- BEGIN filter_surfaces -->
                   <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
 <!-- END filter_surfaces -->            
@@ -75,7 +92,7 @@
                   </form>
 
                   <select id="countryS" class="combobox" type="country">
-                    <option class="0 countryR" type="country">Все страна-производитель</option>
+                    <option class="0 countryR" type="country">Все страны</option>
 <!-- BEGIN filter_countrys -->
                     <option class="country remov" id="{country_id1s}" inner_id="{country_id}" out_id="{country_id1s}">{country}</option>
 <!-- END filter_countrys -->
