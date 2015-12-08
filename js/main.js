@@ -2492,13 +2492,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	optionDis ( 'country', 'countryR', '.brand', '#brandDisNone', 'brandR', 'brand', arryBrand );
            	
 
-           	if ( $( option ).hasClass( '0 categoryR' ) ||
-           		 $( option ).hasClass( '0 typeR' )     ||
-           		 $( option ).hasClass( '0 countryR' ) ){
-
-           			console.log('test');
-           		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeOut( 500 );
-           	};
+           
 
 
 

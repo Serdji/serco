@@ -1127,11 +1127,9 @@ a:-webkit-any-link{
 	background: #f7e78c;
 }
 .inputGreen input:nth-of-type(1),
-.inputGreen .active,
-.leftFilterBlock span:nth-of-type(1) .focus,
-.leftFilterBlock span:nth-of-type(1) .active{
+.leftFilterBlock input:nth-of-type(1){
 	background: #39B273;
-	color:#CFC;
+	/*color:#CFC;*/
 	cursor:pointer;
 }
 
