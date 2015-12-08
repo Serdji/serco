@@ -25,7 +25,6 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border filtr_bay_region filters" id="filtr_bay_region">
                         <div class="hint" title="Выберите регион покупателя">?</div>
                           <div class="ui-widget">
-                          <label class="control-label result">Магазин в регионе: </label>
                             <select class="combobox" type="type" >
                               <option class="0 default" out_id="0" type="bay_country">Россия</option>
                             </select>
@@ -47,7 +46,7 @@
                         <div class="hint" title="?">?</div>
                         <form role="form">
                           <div class="has-success">
-                          <label class="control-label result">Отобрать магазины по:</label>
+                          <br>
                     
                             <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
                               Образцы товаров выставленных на витрине

@@ -11,8 +11,11 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Призентация</a></li>
-            <li id="btn1"><a href="/catalog/">Каталог</a></li>
+            <li id="btn1" class="{catalog_class}"><a href="/catalog/">Каталог</a></li>
+            <li id="btn1" class="{info_class}"><a href="/info/">Информация о системе ОПЭК</a></li>
+            <li id="btn1" class="{registration_class}"><a href="/registration/">Регистрация</a></li> 
+<!--
+
             <li id="btn2"><a href="/conditions/">Условия использования</a></li>
             <li class="dropdown">
               <a href="/drop_menu/" class="dropdown-toggle" data-toggle="dropdown">Выпадающее меню <b class="caret"></b></a>
@@ -26,6 +29,7 @@
                 <li><a href="/drop_menu/item4/#link2">Пункт 4.2</a></li>
               </ul>
             </li>
+-->
           </ul>
         </div>
       </div>

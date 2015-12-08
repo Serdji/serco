@@ -11,14 +11,17 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TradingGroup filters" id="filtr_color">
             <div class="hint" title="Выбери товарною группу, можно ввести в ручную">?</div>
               <div class="ui-widget">
-             
+
+              <div class="inputGreen">
+                
                 <select id="branchS" class="combobox" type="branch">
-                  <option class="0 branchR" out_id="0" type="branch">Отрасль: Строительные материалы</option>   
+                  <option class="0 branchR" out_id="0" type="branch">Строительные материалы</option>   
                 </select>
 
                 <select id="sectorS" class="combobox" type="sector">
-                  <option class="0 sectorR" out_id="0" type="sector">Сектор: Керамическая плитка, Керамический гранит, Мозаика, Искусственный и Природный камень, Клеевые смеси, Затирки, Сопутствующие материалы</option>         
+                  <option class="0 sectorR" out_id="0" type="sector">Керамическая плитка, Керамический гранит, Мозаика, Искусственный и Природный камень, Клеевые смеси, Затирки, Сопутствующие материалы</option>         
                 </select>
+              </div>
 
                 <hr>
 
@@ -28,12 +31,15 @@
                   <option class="category remov" id="{category_id1s}" inner_id="{category_id}" out_id="{category_id1s}">{category}</option>
 <!-- END filter_categories -->
                 </select>
-                <select id="subcategoryS" class="combobox" type="subcategory">
-                <option class="0 subcategoryR" out_id="0" type="subcategory" disabled="disabled">Подгрупп нет</option>
+
+                <div id="subcategoryDisNon">
+                  <select id="subcategoryS" class="combobox" type="subcategory">
+                  <option class="0 subcategoryR" out_id="0" type="subcategory" disabled="disabled">Все подгрупп</option>
 <!-- BEGIN filter_subcategories -->               
-                  <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
+                    <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
-                </select>
+                  </select>
+                </div>
 
                 <hr>
 
@@ -43,28 +49,34 @@
                   <option class="type remov" id="{type_id1s}" inner_id="{type_id}" out_id="{type_id1s}">{type}</option>
 <!-- END filter_types -->
                 </select>
-
-                <select class="combobox" type="type">
-                  <option class="0 typeR" out_id="0" type="type" disabled="disabled">Дополнительные св-ва товаров</option>
-                </select>
-
-                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters colorFilter" id="filtr_color">
-<!-- BEGIN filter_colors -->
-                      <div id="color_{color_id1s}" type='color' title="{color}" inner_id="{color_id}" out_id="{color_id1s}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">
-                        <img src="/temp/colors.png" alt="">
-                      </div>
-<!-- END filter_colors -->
-                  <div class="info"></div>
+                
+                <div id="typeDisNone">
+                  <select class="combobox" type="type">
+                    <option class="0 typeR" out_id="0" type="type" disabled="disabled">Дополнительные св-ва товаров</option>
+                  </select>
                 </div>
 
-                <select id="surfaceS" class="combobox" type="surface">
-                  <option class="0 surfaceR" type="surface">Все виды поверхностей</option>
-<!-- BEGIN filter_surfaces -->
-                  <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
-<!-- END filter_surfaces -->            
-                </select>
+                <div id="colorsDisNone">
+                  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border  filters colorFilter" id="filtr_color">
+<!-- BEGIN filter_colors -->
+                        <div id="color_{color_id1s}" type='color' title="{color}" inner_id="{color_id}" out_id="{color_id1s}" class="col-lg-2 col-md-2 col-sm-2 col-xs-2 colors">
+                          <img src="/temp/colors.png" alt="">
+                        </div>
+<!-- END filter_colors -->
+                    <div class="info"></div>
+                  </div>
+                </div>
 
-                
+                <div id="surfaceDisNone">
+                  <select id="surfaceS" class="combobox" type="surface">
+                    <option class="0 surfaceR" type="surface">Все виды поверхностей</option>
+<!-- BEGIN filter_surfaces -->
+                    <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
+<!-- END filter_surfaces -->            
+                  </select>
+                </div>
+
+                <div id="sliderLWTDisNone">
                   <form role="form">
                     <div class="form-group  has-success">
                 
@@ -82,6 +94,9 @@
                         <div id="slider-thickness"></div>
                     </div>
                   </form>
+                </div>
+
+                <hr>
 
                   <select id="countryS" class="combobox" type="country">
                     <option class="0 countryR" type="country">Все страны</option>
@@ -89,23 +104,26 @@
                     <option class="country remov" id="{country_id1s}" inner_id="{country_id}" out_id="{country_id1s}">{country}</option>
 <!-- END filter_countrys -->
                   </select>
-                 
-                  <select id="brandS" class="combobox" type="brand">
-                    <option class="0 brandR" type="brand">Все бренды</option>
+                  
+                  <div id="brandDisNone">
+                    <select id="brandS" class="combobox" type="brand">
+                      <option class="0 brandR" type="brand">Все бренды</option>
 <!-- BEGIN filter_brands -->          
-                    <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}">{brand}</option>
+                      <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}">{brand}</option>
 <!-- END filter_brands -->
-                  </select>
-
-                  <form role="form">
-                    <div class="form-group  has-success">
-                    <label class="control-label result" for="inputSuccess2">Фильтр по цене:</label>
-                    </div>
-                    <br>
-                    <br>
-                    <div id="slider-range"></div>
-                  </form>
-
+                    </select>
+                  </div>
+                  
+                  <div id="sliderRDisNone">
+                    <form role="form">
+                      <div class="form-group  has-success">
+                      <label class="control-label result" for="inputSuccess2">Фильтр по цене:</label>
+                      </div>
+                      <br>
+                      <br>
+                      <div id="slider-range"></div>
+                    </form>
+                  </div>
                 </div>
               </div>
             </div>

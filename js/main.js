@@ -2214,6 +2214,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  // console.log('-----------------------------------------------------');
 
 
+							  
+
+
 							 function eachOut_id ( objClass, nameClass ){
 
 								$.each( objClass, function ( index, value ) {
