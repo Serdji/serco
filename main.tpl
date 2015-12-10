@@ -97,27 +97,10 @@
       <input name="search" class="search" placeholder="Поиск">
       <input name="s" class="searchs" placeholder="Поиск">
     </form>
-      
-     
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 conDir">
-          <p>Содержание каталога: <b class="brandLength">?</b> производителей, <b class="collectionLength">?</b> коллекций</p>
-        </div>
-      
-
-        
-  
-
-<!-- BEGIN colors -->
-
-	
-<!-- END colors -->
-
-
-
-    
+<!-- INCLUDE catalog.topline.tpl -->
+   
 
 <!-- IF collection --> 
-
   <div class="blockHeight">
   <div class="row">
 <!-- BEGIN items -->

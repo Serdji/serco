@@ -51,8 +51,9 @@
                 </select>
                 
                 <div id="typeDisNone">
-                  <select class="combobox" type="type">
-                    <option class="0 typeR" out_id="0" type="type" disabled="disabled">Дополнительные св-ва товаров</option>
+                  <select class="combobox" type="additionalTepy">
+                    <option class="0 additionalTepyR" out_id="0" type="additionalTepy" disabled="disabled">Дополнительные св-ва товаров</option>
+                    <option class="additionalTepy remov" out_id="0" type="additionalTepy" disabled="disabled">...</option>
                   </select>
                 </div>
 
