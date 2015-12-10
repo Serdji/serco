@@ -115,7 +115,7 @@
                     </select>
                   </div>
                   
-                  <div id="sliderRDisNone">
+                  <!-- <div id="sliderRDisNone">
                     <form role="form">
                       <div class="form-group  has-success">
                       <label class="control-label result" for="inputSuccess2">Фильтр по цене:</label>
@@ -124,7 +124,7 @@
                       <br>
                       <div id="slider-range"></div>
                     </form>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </div>

@@ -621,6 +621,8 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 	accordions ();
 
 
+
+
 				function ajaxAcco ( arry ) {
 		
 	
@@ -1913,7 +1915,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-	/*-------------------------амять фильтров и подсветка input------------------------*/	
+	/*-------------------------память фильтров и подсветка input------------------------*/	
 
 
 
@@ -1934,16 +1936,32 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
         		$( selectId )
         			.children( 'option#'+ memVars )
-        			.attr( 'selected','selected' );
+        			.attr( 'selected', 'selected' );
 
         		$( selectId )	
         			.children( '.0' )
         			.removeAttr( 'disabled' );	
         	};
 		};
+
+		function memOptionIn ( idIn ) {
+
+			var $inputIn = $( idIn ).find( '.custom-combobox-input' );
+			
+			setTimeout( function  () {
+				
+				if ( $inputIn.hasClass( 'inputColor' ) ) {
+					$( idIn ).fadeIn();
+				}
+			}, 100);
+		};
+
         
         if( typeof mem_vars !== 'undefined' ) {
 
+			memOptionIn ( '#subcategoryDisNon' );
+			memOptionIn ( '#surfaceDisNone' );
+			memOptionIn ( '#brandDisNone' );
 	        memOption ( mem_vars.category, '#categoryS' );	
 	        memOption ( mem_vars.subcategory, '#subcategoryS' );	
 	        memOption ( mem_vars.type, '#typeS' );	
@@ -2174,6 +2192,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	  
 							  	  	
 							  	  	 var coll_id1s    = val.coll_id1s,
+							  	  	 	 coll_id      = val.coll_id,
 							  	  	 	 coll_name    = val.coll_name,
 							  	  	 	 coll_brand   = val.coll_brand,
 							  	  	 	 coll_country = val.coll_country,
@@ -2183,6 +2202,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 									  	 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							  			 // console.log('coll_id1s: ' + coll_id1s);
+							  			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
+							  			 // console.log('coll_id1s: ' + coll_id);
 							  			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
 							 			 // console.log('coll_name: ' + coll_name);
 							 			 // console.log('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~');
@@ -2204,6 +2225,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  		$(obj)
 								  			.find('.level1A')
 								  			.attr( 'coll_code', coll_id1s );
+
+								  		$(obj)
+								  			.find('.level1A')
+								  			.attr( 'coll_id', coll_id );
 
 								 		$(obj)
 								 			.find( 'img.level1Img' )
