@@ -1425,10 +1425,15 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 							if ( prices !== undefined ) {
 
-								var	count  	= prices.count,
-									fors   	= prices.for,
-									part_id = prices.part_id,
-									price   = prices.price;
+								var	count  		  = prices.count,
+									fors   		  = prices.for,
+									part_id 	  = prices.part_id,
+									price   	  = prices.price,
+									running_meter = prices.running_meter,
+									square_meter  = prices.square_meter,
+									weight        = prices.weight,
+									pieces        = count == 1 ? ' ' : ' 1 уп. | ',
+									weightPieces  = weight == 0 ? ' ' : '| ' + weight + ' кг.'
 							};
 							
 
@@ -1457,6 +1462,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 				'<figcaption class="item_color"><b>Цвета</b>: ' + color + '.</figcaption>'+
 												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + cover + '.</figcaption>'+
 												 				'<figcaption class="item_type"><b>Тип</b>: ' + type + '.</figcaption>'+
+												 				'<figcaption class="item_pre-packing"><b>Фасовка</b>: ' + pieces + '' + count + ' шт. | ' + square_meter + '  м2 ' + weightPieces + '</figcaption>'+
 												 				'<hr>'+
 												 			'</div>'+
 												 			'<br>'+
@@ -1952,6 +1958,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				
 				if ( $inputIn.hasClass( 'inputColor' ) ) {
 					$( idIn ).fadeIn();
+					$( '#colorsDisNone, #colorsDisNone, #surfaceDisNone, #sliderLWTDisNone' ).fadeIn();
 				}
 			}, 100);
 		};
@@ -1960,7 +1967,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         if( typeof mem_vars !== 'undefined' ) {
 
 			memOptionIn ( '#subcategoryDisNon' );
-			memOptionIn ( '#surfaceDisNone' );
 			memOptionIn ( '#brandDisNone' );
 	        memOption ( mem_vars.category, '#categoryS' );	
 	        memOption ( mem_vars.subcategory, '#subcategoryS' );	
