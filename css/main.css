@@ -1118,6 +1118,10 @@ a:-webkit-any-link{
 	text-decoration: none;
 }
 
+.figDisNone{
+	display: none;
+}
+
 .custom-combobox-input {
     margin: 0;
     padding: 14px 8px;

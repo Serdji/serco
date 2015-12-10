@@ -1426,7 +1426,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							id1s            = val.id1s,
 							thick           = val.thick,
 							weig            = val.weig;
-							prices 	        = val.prices[0];
+							prices 	        = val.prices[0],
+							properties      = val.properties,
+							arryProperties  =[];
 
 							if ( prices !== undefined ) {
 
@@ -1444,7 +1446,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-						
+						$.each( properties, function( i, val ) {
+							 arryProperties.push( ' ' + val );
+						});
+
+						var properties = arryProperties;
 
 							if( i%3 == 0 ){
 								$( 'div.pEll' ).removeClass( 'pEll' );
@@ -1468,6 +1474,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + cover + '.</figcaption>'+
 												 				'<figcaption class="item_type"><b>Тип</b>: ' + type + '.</figcaption>'+
 												 				'<figcaption class="item_pre-packing"><b>Фасовка</b>: ' + pieces + '' + count + ' шт. | ' + square_meter + '  м2 ' + weightPieces + '</figcaption>'+
+												 				'<figcaption class="properties figDisNone"><b>Свойства</b>:<span> '  + properties + '</span></figcaption>'+
 												 				'<hr>'+
 												 			'</div>'+
 												 			'<br>'+
@@ -1499,6 +1506,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												'</div>');
 
 
+					
 
 					if ( color == null ) {
 
@@ -1506,6 +1514,16 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					};
 
 
+					});
+
+					$.each(	$( '.properties span' ), function(i, val) {
+
+						var text = $( val ).text();
+
+						if ( text == ' ' ) {
+
+							$( val ).parent().hide();
+						};
 					});
 
 					$.each(	$( '.item_size .height' ), function(i, val) {
@@ -1534,6 +1552,65 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
 					intervalImgColl ();
+
+
+
+
+						/*---------------------Диалоговое окно------------------------*/
+	
+
+
+
+
+		$( document ).on('click', '.Picture', function() {
+			var _this      = $( this ),
+				figcaption = _this.parent().siblings( '.figcaption' );
+
+				
+
+			
+
+			_this
+				.clone()
+				.children( 'img' )
+				.addClass( 'imgModal' )
+				.removeAttr('style')
+				.prependTo( '.modal-body' )
+				.siblings( '.imgModal' )
+				.remove();
+
+
+
+			$( figcaption )
+				.clone()
+				.addClass( 'imgFigcaption' )
+				.appendTo( '.modal-body' )
+				.find( '.properties' )
+				.removeClass( 'figDisNone' )
+				.parent()
+				.siblings( '.imgFigcaption' )
+				.remove();
+
+			$( figcaption )
+				.children()
+				.eq(0)
+				.children('span')
+				.clone()
+				.addClass( 'imgHeader' )
+				.appendTo( '.modal-header' )
+				.siblings( '.imgHeader' )
+				.remove();
+
+			
+
+			
+
+		});
+
+						/*----------------------------------------------------------*/
+
+
+
 				}
 			});
 
@@ -2792,51 +2869,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-						/*---------------------Диалоговое окно------------------------*/
-	
 
-
-
-
-		$( document ).on('click', '.Picture', function() {
-			var _this      = $( this ),
-				figcaption = _this.parent().siblings( '.figcaption' );
-
-				
-
-				
-
-			_this
-				.clone()
-				.children( 'img' )
-				.addClass( 'imgModal' )
-				.removeAttr('style')
-				.prependTo( '.modal-body' )
-				.siblings( '.imgModal' )
-				.remove();
-
-
-
-			$( figcaption )
-				.clone()
-				.addClass( 'imgFigcaption' )
-				.appendTo( '.modal-body' )
-				.siblings( '.imgFigcaption' )
-				.remove();
-
-			$( figcaption )
-				.children()
-				.eq(0)
-				.children('span')
-				.clone()
-				.addClass( 'imgHeader' )
-				.appendTo( '.modal-header' )
-				.siblings( '.imgHeader' )
-				.remove();
-
-		});
-
-						/*----------------------------------------------------------*/
 
 
 
