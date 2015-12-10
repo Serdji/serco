@@ -184,7 +184,10 @@ $( 'a[href="/"]' ).on('click', function() {
 		
 		$( document ).on('click', '.sliders', function() {
 
-			$( 'body' ).append( '<div id="preLoader" class="PLI"></div>' );
+			$( 'body' ).append( '<div id="preLoader" class="PLI">'+
+									'<a id="thisImgClose">X</a>'+
+								'</div>' );
+			
 	 	    $( this )
 				.clone()
 				.removeClass( 'sliders' )
@@ -200,6 +203,8 @@ $( 'a[href="/"]' ).on('click', function() {
 			left      = widthDoc - widthImg,
 			top       = heightDoc - heightImg;
 		
+		$('#preLoader a').css( 'margin', '-' + ( heightImg + 11 ) + 'px 0 0 ' + ( widthImg - 10 ) + 'px' );
+
 		$( '.slidersImg' ).css({
 			top: top,
 			left: left
@@ -1365,7 +1370,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				    var marker = new google.maps.Marker({
 				        position  : { lat: +val[1], lng: +val[2] },
 				        map       : map,   
-				        title     : val[0] +' : ' + val[4],
+				        title     : val[0],
 				        animation : google.maps.Animation.DROP
 				    });
 
@@ -2143,7 +2148,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								    var marker = new google.maps.Marker({
 								        position  : { lat: +val[1], lng: +val[2] },
 								        map       : map,   
-								        title     : val[0] +' : ' + val[4],
+								        title     : val[0],
 								        animation : google.maps.Animation.DROP
 								    });
 

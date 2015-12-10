@@ -1103,7 +1103,20 @@ a:-webkit-any-link{
 
 }
 
-
+#thisImgClose{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	z-index: 999999;
+	border: 1px solid #000;
+	padding: 0 5px;
+	border-radius: 10px;
+	background-color:#fff;
+	color: #000;
+	cursor: pointer; 
+	font-weight: bold;
+	text-decoration: none;
+}
 
 .custom-combobox-input {
     margin: 0;
