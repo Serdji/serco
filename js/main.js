@@ -296,7 +296,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 		});
 	};
-	focusBlur ();
+	// focusBlur ();
 
 
 /*---------------------------------------------------------------------*/
@@ -1216,12 +1216,15 @@ var count_load_img_max = 0;
 					/*-------------------------------------------------------------*/
 
 
+
+if ( $( '.cardProduct' ).hasClass( 'levels2' ) ) {
+	
+};
 		
 
 	
 $( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
 	
-
 
 
 	/*--------------------------------Ajax запрос на получение коллеций-------------------------------*/
@@ -1955,8 +1958,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	/*-------------------------------Исчезновение фильтров-----------------------------*/
 
 
-		 	setTimeout( function () {
-		  	
+		 	function filNone () {
+		 		
 				$.each( $( 'ul.ui-autocomplete' ), function( i, val ) {
 				  	$( val ).css('display', 'none');
 				});
@@ -1965,8 +1968,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 			  		
 					$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
-				}
-		  	}, 100);
+				};
+		 	};
+		  	
+		  	
 
 
 	/*---------------------------------------------------------------------------------*/
@@ -1996,11 +2001,18 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 		};
 
 		btnClick ();
+		
+
+		
+		
 
 
 	/*---------------------------------------------------------------------------------*/	
 
-
+	setTimeout( function  () {
+		btnClick ();
+		filNone ()
+	}, 100);
 
 
 	/*-------------------------память фильтров и подсветка input------------------------*/	
@@ -2477,11 +2489,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 		
 		$.each( $( 'option.0' ), function( i, val ) {
 				
-  		   $( document ).on('click', '.custom-combobox-input:eq(' + i + ')', function() {
+  		   $( document ).on('click', '.custom-combobox-input:eq( ' + i + ' )', function() {
 
   		   		if ( $( this ).hasClass( 'inputColor' ) ){
 
-  		   			$( 'ul.ui-autocomplete:eq(' + i + ')' )
+  		   			$( 'ul.ui-autocomplete:eq( ' + i + ' )' )
   		   				.children()
   		   				.eq( 0 )
   		   				.trigger( 'click' );
@@ -2672,11 +2684,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
          
 
 
-        function openFil ( ulId, btnInput, inputFil, text, classRemAttrDis ) {
+        function openFil ( ulId, btnInput, inputFil, classRemAttrDis ) {
         	/*ulId.removeClass( 'ulDisplay' );
 			btnInput.addClass( 'subActive' );
 			inputFil.addClass( 'subActive' );*/
-			inputFil.val( text );
+			// inputFil.val( text );
 			$( classRemAttrDis ).removeAttr( 'disabled' );
         };
 
@@ -2708,13 +2720,13 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-            if ($( option ).hasClass( 'category' )) {
+            /*if ($( option ).hasClass( 'category' )) {
             	openFil ( $ulId4, $btnInput4, $inputFil4, 'Выбрано все', '.subcategoryR' );
             	
             }else if($( option ).hasClass( '0 categoryR' )){
             	var delayOne = 10;
             	shutFil ( $ulId4Li, $ulId4, $btnInput4, $inputFil4, delayOne );
-            }; 
+            }; */
 
 
         
@@ -2724,7 +2736,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
             if ($( option ).hasClass( 'category' )) {
-            	openFil ( $ulId6, $btnInput6, $inputFil6, 'Выбрано все', '.subcategoryR' );
+            	openFil ( $ulId6, $btnInput6, $inputFil6, '.subcategoryR' );
             	
             }else if($( option ).hasClass( '0 categoryR' )){
             	var delayOne = 10;
@@ -2733,7 +2745,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
             if ($( option ).hasClass( 'country' )) {
-            	openFil ( $ulId11, $btnInput11, $inputFil11, 'Выбрано все', '.brandR' );
+            	openFil ( $ulId11, $btnInput11, $inputFil11, '.brandR' );
             	
             }else if($( option ).hasClass( '0 countryR' )){
             	var delayOne = 10;
