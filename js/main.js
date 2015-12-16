@@ -267,9 +267,17 @@ $( 'a[href="/"]' ).on('click', function() {
 
 	accoPage ();
 
-filterObj();
+	if ( $( '.heightCards2' ).is( '.levels1' ) ) {
+		
+		filterObj();
+		
+		history.replaceState( 1, "Title1"  , "/catalog/page1/" );
+	} else {
+		
+		// ajaxColl();
+	}
 
-history.replaceState( 1, "Title1"  , "/catalog/page1/" );
+
 
 
 /*---------------------------------------------------------------------*/
@@ -2102,7 +2110,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 	        };
 
-	    /*var  arryAccoRem = [];
+	    var  arryAccoRem = [];
 
 	    setTimeout( function () {
 	    	
@@ -2126,7 +2134,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					.slideDown( 1000, 'easeInOutCubic' );
 	    	};
 
-	    }, 100)*/
+	    }, 100)
 
 
 	        /*if ( mem_vars.pid != undefined ){
@@ -2503,23 +2511,25 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 						/*---------------Выпадающий input---------------------*/
 
-
 		
+			
+			$.each( $( 'select' ), function( i, val ) {
+					
+	  		   $( document ).on('click', '.custom-combobox-input:eq( ' + i + ' )', function() {
+
+	  		   		if ( $( this ).hasClass( 'inputColor' ) ){
+
+	  		   			$( 'ul.ui-autocomplete:eq( ' + i + ' )' )
+	  		   				.children()
+	  		   				.eq( 0 )
+	  		   				.trigger( 'click' );
+	  		   				
+	  		   		};
+	  		   });
+			});
+			
+			 
 		
-		$.each( $( 'option.0' ), function( i, val ) {
-				
-  		   $( document ).on('click', '.custom-combobox-input:eq( ' + i + ' )', function() {
-
-  		   		if ( $( this ).hasClass( 'inputColor' ) ){
-
-  		   			$( 'ul.ui-autocomplete:eq( ' + i + ' )' )
-  		   				.children()
-  		   				.eq( 0 )
-  		   				.trigger( 'click' );
-  		   				
-  		   		};
-  		   });
-		});
 
 
 
@@ -2605,6 +2615,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId9      	      = $( 'ul.ui-autocomplete' ).eq( 8 ),
            	   $ulId10     	      = $( 'ul.ui-autocomplete' ).eq( 9 ),
            	   $ulId11     	      = $( 'ul.ui-autocomplete' ).eq( 10 ),
+           	   $ulId12     	      = $( 'ul.ui-autocomplete' ).eq( 11 ),
            	   $ulId1Li    	      = $ulId1.children( 'li' ).eq( 0 ),
            	   $ulId2Li    	      = $ulId2.children( 'li' ).eq( 0 ),
            	   $ulId3Li    	      = $ulId3.children( 'li' ).eq( 0 ),
@@ -2616,6 +2627,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId9Li    	      = $ulId9.children( 'li' ).eq( 0 ),
            	   $ulId10Li   	      = $ulId10.children( 'li' ).eq( 0 ),
            	   $ulId11Li   	      = $ulId11.children( 'li' ).eq( 0 ),
+           	   $ulId12Li   	      = $ulId12.children( 'li' ).eq( 0 ),
            	   $btnInput1  	      = $( 'div.ui-state-default' ).eq( 0 ),
            	   $btnInput2  	      = $( 'div.ui-state-default' ).eq( 1 ),
            	   $btnInput3  	      = $( 'div.ui-state-default' ).eq( 2 ),
@@ -2627,6 +2639,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $btnInput9  	      = $( 'div.ui-state-default' ).eq( 8 ),
            	   $btnInput10 	      = $( 'div.ui-state-default' ).eq( 9 ),
            	   $btnInput11 	      = $( 'div.ui-state-default' ).eq( 10 ),
+           	   $btnInput12 	      = $( 'div.ui-state-default' ).eq( 11 ),
            	   $inputFil1  	      = $( 'input.custom-combobox-input' ).eq( 0 ),
            	   $inputFil2  	      = $( 'input.custom-combobox-input' ).eq( 1 ),
            	   $inputFil3  	      = $( 'input.custom-combobox-input' ).eq( 2 ),
@@ -2638,6 +2651,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $inputFil9  	      = $( 'input.custom-combobox-input' ).eq( 8 ),
            	   $inputFil10 	      = $( 'input.custom-combobox-input' ).eq( 9 ),
            	   $inputFil11 	      = $( 'input.custom-combobox-input' ).eq( 10 ),
+           	   $inputFil12 	      = $( 'input.custom-combobox-input' ).eq( 11 ),
            	   arrySubcategory    = [],
            	   arryBrand          = [],
            	   arryAdditionalTepy = [],
@@ -2691,7 +2705,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-			function clickInput ( inputFil, ulIdLi) {
+			function clickInput ( inputFil, ulIdLi ) {
 					inputFil.on( 'click', function() {
 				if ( $( this ).hasClass( 'inputColor' ) ) {
 		      		ulIdLi.trigger( 'click' );
@@ -2730,7 +2744,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         	clickInput ( $inputFil6, $ulId6Li );
         	clickInput ( $inputFil7, $ulId7Li );
         	clickInput ( $inputFil8, $ulId8Li );
-        	clickInput ( $inputFil8, $ulId8Li );
+        	clickInput ( $inputFil9, $ulId9Li );
+        	clickInput ( $inputFil10, $ulId10Li );
+        	clickInput ( $inputFil11, $ulId11Li );
+        	clickInput ( $inputFil12, $ulId12Li );
 
 
            	optionDis ( 'category', 'categoryR', '.subcategory', '#subcategoryDisNon', 'subcategoryR', 'subcategory', arrySubcategory );
@@ -2755,20 +2772,20 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
             if ($( option ).hasClass( 'category' )) {
-            	openFil ( $ulId6, $btnInput6, $inputFil6, '.subcategoryR' );
+            	openFil ( $ulId7, $btnInput7, $inputFil7, '.subcategoryR' );
             	
             }else if($( option ).hasClass( '0 categoryR' )){
             	var delayOne = 10;
-            	shutFil ( $ulId6Li, $ulId6, $btnInput6, $inputFil6, delayOne );
+            	shutFil ( $ulId7Li, $ulId7, $btnInput7, $inputFil7, delayOne );
             };
 
 
             if ($( option ).hasClass( 'country' )) {
-            	openFil ( $ulId11, $btnInput11, $inputFil11, '.brandR' );
+            	openFil ( $ulId12, $btnInput12, $inputFil12, '.brandR' );
             	
             }else if($( option ).hasClass( '0 countryR' )){
             	var delayOne = 10;
-            	shutFil ( $ulId11Li, $ulId11, $btnInput11, $inputFil11, delayOne );
+            	shutFil ( $ulId12Li, $ulId12, $btnInput12, $inputFil12, delayOne );
             }; 
 
 
@@ -2776,19 +2793,26 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
             
             
             
+        history.replaceState( 1, "Title1"  , "/catalog/page1/" );
+
+
+
+ 		if ( $( option ).attr( 'class') ) {
+ 			
+ 			filterObj();
+ 		} else {
+
+ 			newAccord();
+ 		};
+
+
+
 
     /*--------------------------------------------------------------------------------------*/
 
 
 
 
-
-
-
-
-
-        history.replaceState( 1, "Title1"  , "/catalog/page1/" );
- 		filterObj();
 		// blockHeight();	
 
 
