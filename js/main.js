@@ -537,7 +537,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 
 
-		$( document ).on( 'click', '.accoStart', function() {
+		$( document ).on( 'click', '.accordionStart', function() {
 			var _this   = $( this ),
 			    speedUp = 1000;
 
@@ -601,8 +601,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
 					intervalImgColl ();
 
-				} else {
-					
+				} else if(_this.is('.accoStart')) {
 					filterObj();
 				};
 
@@ -2103,9 +2102,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 	        };
 
-	    var  arryAccoRem = [];
+	    /*var  arryAccoRem = [];
 
-	    setTimeout(function () {
+	    setTimeout( function () {
 	    	
 		    $.each( $( '.accordionRemove' ), function( i, val ) {
 		    	 arryAccoRem.push( val );
@@ -2127,7 +2126,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					.slideDown( 1000, 'easeInOutCubic' );
 	    	};
 
-	    }, 100)
+	    }, 100)*/
 
 
 	        /*if ( mem_vars.pid != undefined ){
