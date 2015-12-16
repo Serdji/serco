@@ -270,11 +270,11 @@ $( 'a[href="/"]' ).on('click', function() {
 	if ( $( '.heightCards2' ).is( '.levels1' ) ) {
 		
 		filterObj();
-		
+
 		history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 	} else {
 		
-		// ajaxColl();
+		// ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid )
 	}
 
 
