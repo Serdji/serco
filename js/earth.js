@@ -1,25 +1,13 @@
 $(function() {
-
-		
-
-
 			/*-------------------------Добавление карты-------------------------*/
 	function initialize_google() {
 		navigator.geolocation.getCurrentPosition(function(position)
 		{
-			var latitude = position.coords.latitude;
-			var longitude = position.coords.longitude;
-			var haightAshbury = new google.maps.LatLng(latitude,longitude);
-			var mapOptions = {zoom:13,center: haightAshbury,mapTypeId:google.maps.MapTypeId.TERRAIN,scrollwheel:false}
-			map = new google.maps.Map(document.getElementById('map'), mapOptions);
-		// var lat = [];
-		// lat = $('input#lat').val().split('|');
-		// 	for(i=0;typeof lat[i] !== 'undefined';i++){lat[i]=Number(lat[i])/1000;}
-		// var lng = [];
-		// lng = $('input#lng').val().split('|');
-		// 	for(i=0;typeof lng[i] !== 'undefined';i++){lng[i]=Number(lng[i])/1000;}
-		// micon = $('input#micon').val().split('|');	
-		// markers = [];
+		var latitude = position.coords.latitude;
+		var longitude = position.coords.longitude;
+		var haightAshbury = new google.maps.LatLng(latitude,longitude);
+		var mapOptions = {zoom:13,center: haightAshbury,mapTypeId:google.maps.MapTypeId.TERRAIN,scrollwheel:false}
+		new google.maps.Map(document.getElementById('map'), mapOptions);	
 		});
 	};
 			/*------------------------------------------------------------------*/
@@ -59,10 +47,20 @@ $(function() {
       }
     });
     $( '.search' ).autocomplete( 'widget' ).addClass( 'search-item' );
+/*
+						<div class="serko-shadow">
+							<div class="se"></div>
+							<div class="erko"></div>
+							<strong class="ser"><b>Сер</b></strong><strong class="ko"><b>Ко</b></strong><strong class="r"><b>&reg;</b></strong>
+						</div>
+
+
+
     $( '.serko-shadow, .russia' ).on( 'click', function(){
     	// $( '.search' ).autocomplete( 'search' );
     	window.location = '/catalog/';
     });
+*/
 			/*-----------------------------------------------------------------*/
 
 
@@ -74,8 +72,10 @@ $(function() {
 				$( '.otrasl' ).append(' ' + pl );
 				$( '.search' ).attr( 'placeholder', text );
 				$( '.sektor' ).append( ' ' + text ).addClass( 'text-shadow' );
-				$( '.content' ).prepend( '<div class="jumbotron cl2" id="map"></div>' );
-				initialize_google();		
+				$( '.content' ).prepend( '<div class="jumbotron cl2" id="map"></div>').after(function() {
+                initialize_google();
+                });
+				
 	});
 			/*-----------------------------------------------------------------*/
 
