@@ -537,7 +537,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 
 
-		$( document ).on( 'click', '.accordionStart', function() {
+		$( document ).on( 'click', '.accoStart', function() {
 			var _this   = $( this ),
 			    speedUp = 1000;
 
@@ -581,7 +581,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 				_this
 				  .parent()
 				  .siblings()
-				  .children( '.accordionStart' )
+				  .children( '.accoStart' )
 				  .removeClass( 'accordionAktiv' );
 						 
 				_this
@@ -632,7 +632,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 		
 	
 					var $divName        = $( 'div.name' ),
-				  		$accordionStart = $( 'div.accordionStart' ),
+				  		$accordionStart = $( 'div.accoStart' ),
 				  		verticallPage   = Math.ceil( arry.length / 8 );
 
 				  	  	
@@ -657,7 +657,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 								$( 'div.filterLeft' )
 					  	  	 		.append('<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordionRemove" id="' + arry[i][2] + '">'+
-		  	  	 								'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart">'+
+		  	  	 								'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordionStart accoStart">'+
 								                     '<div class="filterLeftPad">'+
 								                       	'<p><b>' + arry[i][0] + '</b></p><p class="text-shadow removSadow">' + arry[i][1] + '</p>'+
 								                     '</div>'+
@@ -786,7 +786,7 @@ history.replaceState( 1, "Title1"  , "/catalog/page1/" );
 
 						function accorRA () {
 
-							if ( $( '.accordionStart' ).hasClass( 'accordionAktiv' ) ) {
+							if ( $( '.accoStart' ).hasClass( 'accordionAktiv' ) ) {
 
 								setTimeout( function  () {
 									$( '.accordionRemove' ).remove();
@@ -1474,8 +1474,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 				'<figcaption class="item_country"><b>Страна</b>: ' + country + '.</figcaption>'+
 												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + wid + ' </span>x <span>Толщина:</span><span class="thickness"> ' + thick + ' .см</span> </figcaption>'+
 												 				'<figcaption class="item_color"><b>Цвета</b>: ' + color + '.</figcaption>'+
-												 				'<figcaption class="item_cover"><b>Покрытие</b>: ' + cover + '.</figcaption>'+
-												 				'<figcaption class="item_type"><b>Тип</b>: ' + type + '.</figcaption>'+
+												 				'<figcaption class="item_cover"><b>Поверхность</b>: ' + cover + '.</figcaption>'+
+												 				'<figcaption class="item_type"><b>Вид товара</b>: ' + type + '.</figcaption>'+
 												 				'<figcaption class="item_pre-packing"><b>Фасовка</b>: ' + pieces + '' + count + ' шт. | ' + square_meter + '  м2 ' + weightPieces + '</figcaption>'+
 												 				'<figcaption class="properties figDisNone"><b>Свойства</b>:<span> '  + properties + '</span></figcaption>'+
 												 				'<hr>'+
@@ -1484,7 +1484,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'<div class="priceBlock">'+
 												 				'<form role="form" class="price">'+
 												 					'<div class="form-group price has-success has-feedback">'+
-												 						'<label class="control-label price" for="inputSuccess2">'+ price +' ₽ за ' + fors + '</label>'+
+												 						'<label class="control-label prices" for="inputSuccess2">'+ price +' ₽ за ' + fors + '</label>'+
 												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
 												 					'</div>'+
 												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
@@ -1517,6 +1517,26 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					};
 
 
+					});
+
+
+					$.each( $( '.prices' ), function( i, val ) {
+						 var text = $( val ).text();
+
+						 if ( text == 'undefined ₽ за undefined' ) {
+						 	
+						 	$( val )
+						 		.hide()
+						 		.next()
+						 		.val( ' ' );
+
+						 	$( val )
+						 		.closest( '.priceBlock' )
+						 		.siblings( '.figcaption' )
+						 		.children( '.item_pre-packing' )
+						 		.hide();	
+
+						 }
 					});
 
 					$.each(	$( '.properties span' ), function(i, val) {
@@ -1882,7 +1902,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 			function optinJson () {
 				 
-				$( 'select.combobox option:selected:not(.0)' ).each( function( index, el ) {
+				$( 'select.comboboxFil option:selected:not(.0)' ).each( function( index, el ) {
 					if( jsonstr != '{' )
 						{
 							jsonstr += ',';
@@ -2099,7 +2119,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					.addClass( 'removeSadowClick' );
 
 				$( 'div#' + mem_vars.pid + '' )
-	        		.find( '.accordionStart' )
+	        		.find( '.accoStart' )
 					.addClass( 'accordionAktiv' );
 
 				$( 'div#' + mem_vars.pid + '' )

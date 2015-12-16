@@ -25,10 +25,10 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border filtr_bay_region filters" id="filtr_bay_region">
                         <div class="hint" title="Выберите регион покупателя">?</div>
                           <div class="ui-widget">
-                            <select class="combobox" type="type" >
+                            <select class="combobox comboboxFil" type="type" >
                               <option class="0 default" out_id="0" type="bay_country">Россия</option>
                             </select>
-                            <select class="combobox" type="type">
+                            <select class="combobox comboboxFil" type="type">
                               <option class="0 default" out_id="0" type="bay_region" disabled="disabled">Регионы отсутствуют</option>
                             </select>
                           </div>
@@ -38,37 +38,8 @@
                   </div>
                 </div>
 
-
-                <div class="leftFilterBlock">
-                  <div class="TheSelectionOfStores">
-                    <div class="row">
-                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border TheSelectionOfStores filters">
-                        <div class="hint" title="?">?</div>
-                        <form role="form">
-                          <div class="has-success">
-                          <br>
-                    
-                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Образцы товаров выставленных на витрине
-                            </button>
-                    
-                    
-                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Товары по акции
-                            </button>
-
-                            <button class="myBtnInactive" disabled="disabled" data-toggle="modal">
-                              Распродажа
-                            </button>
-                            
-                    
-                    
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<!-- INCLUDE leftAcco.tpl -->
+                
 
                 <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 border filterLeft">
 
@@ -119,10 +90,10 @@
                 <figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> {item_lng} </span><span>x</span> <span>Ширана:</span> <span class="width">{item_wid} </span>x <span>Толщина:</span><span> {item_thick} .см</span> </figcaption>
                 <figcaption class="item_amount"><b>Количество</b>: {item_unit}</figcaption>
                 <figcaption class="item_color"><b>Цвета</b>: {item_color}.</figcaption>
-                <figcaption class="item_cover"><b>Покрытие</b>: {item_cover}.</figcaption>
+                <figcaption class="item_cover"><b>Поверхность</b>: {item_cover}.</figcaption>
                 <figcaption class="item_country"><b>Страна</b>: {item_country}.</figcaption>
                 <figcaption class="item_brand"><b>Бренд</b>: {item_brand}.</figcaption>
-                <figcaption class="item_type"><b>Тип</b>: {item_type}.</figcaption>
+                <figcaption class="item_type"><b>Вид товара</b>: {item_type}.</figcaption>
                 <hr>
             </div>
           <br>
