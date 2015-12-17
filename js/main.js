@@ -267,16 +267,22 @@ $( 'a[href="/"]' ).on('click', function() {
 
 	accoPage ();
 
-	if ( $( '.heightCards2' ).is( '.levels1' ) ) {
+	function ajaxOC () {
 		
-		filterObj();
-
-		history.replaceState( 1, "Title1"  , "/catalog/page1/" );
-	} else {
 		
-		// ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid )
-	}
 
+		if ( $( '.heightCards2' ).is( '.levels1' ) ) {
+			
+			filterObj();	
+			history.replaceState( 1, "Title1"  , "/catalog/page1/" );
+		} else {
+
+			// ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
+		}
+	};
+
+	ajaxOC ();
+	
 
 
 
@@ -293,18 +299,25 @@ $( 'a[href="/"]' ).on('click', function() {
 			var _this       = $( this ),
 				defaultView = _this.val();
 
-			_this
-				.val( '' );
+			_this.val( '' );
 
-			_this.blur( function () {
+			$( _this ).on( 'blur',  function() {
+				
 				if ( _this.val() == '' ) {
 					_this.val( defaultView );
 				};
+				
 			});
+
+
 
 		});
 	};
-	// focusBlur ();
+	
+	focusBlur ();
+	
+		
+	
 
 
 /*---------------------------------------------------------------------*/
@@ -1480,10 +1493,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 				'<figcaption class="item_brand"><b>Бренд</b>: ' + brand + '.</figcaption>'+
 												 				'<figcaption class="item_country"><b>Страна</b>: ' + country + '.</figcaption>'+
 												 				'<figcaption class="item_size"><b>Размеры</b>: <span>Длина:</span><span class="height"> '+ lng + ' </span><span>x</span> <span>Ширана:</span> <span class="width"> ' + wid + ' </span>x <span>Толщина:</span><span class="thickness"> ' + thick + ' .см</span> </figcaption>'+
+												 				'<figcaption class="item_pre-packing"><b>Фасовка</b>: ' + pieces + '' + count + ' шт. | ' + square_meter + '  м2 ' + weightPieces + '</figcaption>'+
 												 				'<figcaption class="item_color"><b>Цвета</b>: ' + color + '.</figcaption>'+
 												 				'<figcaption class="item_cover"><b>Поверхность</b>: ' + cover + '.</figcaption>'+
 												 				'<figcaption class="item_type"><b>Вид товара</b>: ' + type + '.</figcaption>'+
-												 				'<figcaption class="item_pre-packing"><b>Фасовка</b>: ' + pieces + '' + count + ' шт. | ' + square_meter + '  м2 ' + weightPieces + '</figcaption>'+
 												 				'<figcaption class="properties figDisNone"><b>Свойства</b>:<span> '  + properties + '</span></figcaption>'+
 												 				'<hr>'+
 												 			'</div>'+
@@ -2014,23 +2027,23 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								
 		function btnClick () {
 			
-					var scrol =  $( document ).scrollTop();
+			var scrol =  $( document ).scrollTop();
 
 
-					$.each( $( 'div.ui-state-default' ), function( i, val ) {
+			$.each( $( 'div.ui-state-default' ), function( i, val ) {
 
-						$( 'div.ui-state-default:eq(' + i + ')' ).trigger( 'click' );
-					});
+				$( 'div.ui-state-default:eq(' + i + ')' ).trigger( 'click' );
+			});
 
-					$( '.searchs' ).focus();
+			$( '.searchs' ).focus();
 
-					$( document ).scrollTop( scrol );
+			$( document ).scrollTop( scrol );
+			console.log('test');
 		};
 
-		btnClick ();
+		
 		
 
-		
 		
 
 
@@ -2039,7 +2052,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	setTimeout( function  () {
 		btnClick ();
 		filNone ()
-	}, 100);
+	}, 2000);
 
 
 	/*-------------------------память фильтров и подсветка input------------------------*/	
@@ -2512,22 +2525,26 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 						/*---------------Выпадающий input---------------------*/
 
 		
-			
-			$.each( $( 'select' ), function( i, val ) {
-					
-	  		   $( document ).on('click', '.custom-combobox-input:eq( ' + i + ' )', function() {
+			function autoClikcInput () {
+				
+				$.each( $( 'select' ), function( i, val ) {
+						
+		  		   $( document ).on('click', '.custom-combobox-input:eq( ' + i + ' )', function() {
 
-	  		   		if ( $( this ).hasClass( 'inputColor' ) ){
+		  		   		if ( $( this ).hasClass( 'inputColor' ) ){
 
-	  		   			$( 'ul.ui-autocomplete:eq( ' + i + ' )' )
-	  		   				.children()
-	  		   				.eq( 0 )
-	  		   				.trigger( 'click' );
-	  		   				
-	  		   		};
-	  		   });
-			});
-			
+		  		   			$( 'ul.ui-autocomplete:eq( ' + i + ' )' )
+		  		   				.children()
+		  		   				.eq( 0 )
+		  		   				.trigger( 'click' );
+		  		   				
+		  		   		};
+		  		   });
+				});
+			};
+
+
+			autoClikcInput () ;
 			 
 		
 
@@ -2733,6 +2750,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
             		inputFil.removeClass( 'subActive' );*/
             	}, delay );
         };
+
 
 
 
