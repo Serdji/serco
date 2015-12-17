@@ -245,9 +245,9 @@ $( 'a[href="/"]' ).on('click', function() {
 			var _this            = $( this ),
 			    accoPage         = _this.children().attr( 'id' ),
 			    $accordionRemove = $( '.accordionRemove' ),
-			    indexNam         = ( accoPage - 1 ) * 7,
+			    indexNam         = ( accoPage - 1 ) * 9,
 				stNam 			 = indexNam == 0 ? 0 : indexNam + 1,
-				fnNam 			 = ( accoPage * 8 );
+				fnNam 			 = ( accoPage * 10 );
 
 			_this
 				.addClass( 'pageNumberBackground' )
@@ -640,7 +640,7 @@ $( 'a[href="/"]' ).on('click', function() {
 	
 					var $divName        = $( 'div.name' ),
 				  		$accordionStart = $( 'div.accoStart' ),
-				  		verticallPage   = Math.ceil( arry.length / 8 );
+				  		verticallPage   = Math.ceil( arry.length / 10 );
 
 				  	  	
 
@@ -785,7 +785,7 @@ $( 'a[href="/"]' ).on('click', function() {
 							};
 
 							$( '.accordionRemove' )
-								.eq(7)
+								.eq(9)
 								.nextAll()
 								.hide();
 				  	  	};
@@ -1347,7 +1347,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					$.each( arryPrt, function( i, val ) {
 
-						if( i <= 7 ) {
+						if( i <= 9 ) {
 
 				    	// Область показа маркеров
 					    var markerPosition = new google.maps.LatLng( val[1], val[2] );
@@ -2198,7 +2198,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 										$.each( arryPrt, function( i, val ) {
 
-											if( i <= 7 ) {
+											if( i <= 9 ) {
 
 									    	// Область показа маркеров
 										    var markerPosition = new google.maps.LatLng( val[1], val[2] );
