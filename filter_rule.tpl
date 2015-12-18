@@ -34,7 +34,7 @@
 
                 <div id="subcategoryDisNon">
                   <select id="subcategoryS" class="combobox comboboxFil" type="subcategory">
-                  <option class="0 subcategoryR" out_id="0" type="subcategory" disabled="disabled">Все подгруппы</option>
+                  <option class="0 subcategoryR" out_id="0" type="subcategory">Все подгруппы</option>
 <!-- BEGIN filter_subcategories -->               
                     <option class="subcategory remov" id="{subcategory_id1s}" inner_id="{subcategory_id}" out_id="{subcategory_id1s}" disabled="disabled">{subcategory}</option>
 <!-- END filter_subcategories -->                 
@@ -108,9 +108,9 @@
                   
                   <div id="brandDisNone">
                     <select id="brandS" class="combobox comboboxFil" type="brand">
-                      <option class="0 brandR" type="brand" disabled="disabled">Все бренды</option>
+                      <option class="0 brandR" type="brand">Все бренды</option>
 <!-- BEGIN filter_brands -->          
-                      <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}" disabled="disabled">{brand}</option>
+                      <option class="brand remov" id="{brand_id1s}" inner_id="{brand_id}" out_id="{brand_id1s}">{brand}</option>
 <!-- END filter_brands -->
                     </select>
                   </div>

@@ -853,7 +853,7 @@ a:-webkit-any-link{
 }
 
 .levels1{
-	height: 468px !important;
+	height: 474px !important;
 }
 
 .PictureLvel1{
@@ -883,7 +883,7 @@ a:-webkit-any-link{
 }
 
 .filterLeft, .pageNamberVertical{
-  	min-height: 1316px;
+  	min-height: 1314px;
   	
 }
 
@@ -1234,6 +1234,14 @@ a:-webkit-any-link{
 
 
 @media screen and ( max-width: 1600px){
+	#psevdoinput{
+		width: 258px !important;
+	}
+
+	#prtType > .accordionStart .custom-combobox-toggle{
+	    left: 247px !important; 
+	}
+
 	.colorBtn {
    		margin: 64px 0 0 190px;
 	}
@@ -1453,7 +1461,7 @@ a:-webkit-any-link{
 	}
 
 	.levels1 {
-    	height: 445px !important;
+    	height: 468px !important;
 	}
 
 	.accordionStart {
@@ -1461,7 +1469,7 @@ a:-webkit-any-link{
 	}
 
 	.filterLeft, .pageNamberVertical {
-    	min-height: 1047px;
+    	min-height: 1295px;
 	}
 
 }

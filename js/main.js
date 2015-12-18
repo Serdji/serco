@@ -314,7 +314,7 @@ $( 'a[href="/"]' ).on('click', function() {
 		});
 	};
 	
-	focusBlur ();
+	// focusBlur ();
 	
 		
 	
@@ -2009,6 +2009,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			  		
 					$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
 				};
+
+				$( '.inputColor' )
+					.parent()
+					.next()
+					.fadeIn();
 		 	};
 		  	
 		  	
@@ -2052,7 +2057,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	setTimeout( function  () {
 		btnClick ();
 		filNone ()
-	}, 2000);
+	}, 200);
 
 
 	/*-------------------------память фильтров и подсветка input------------------------*/	
@@ -2754,7 +2759,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
-        	clickInput ( $inputFil1, $ulId1Li );
+        	/*clickInput ( $inputFil1, $ulId1Li );
         	clickInput ( $inputFil2, $ulId2Li );
         	clickInput ( $inputFil3, $ulId3Li );
         	clickInput ( $inputFil4, $ulId4Li );
@@ -2765,7 +2770,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         	clickInput ( $inputFil9, $ulId9Li );
         	clickInput ( $inputFil10, $ulId10Li );
         	clickInput ( $inputFil11, $ulId11Li );
-        	clickInput ( $inputFil12, $ulId12Li );
+        	clickInput ( $inputFil12, $ulId12Li );*/
 
 
            	optionDis ( 'category', 'categoryR', '.subcategory', '#subcategoryDisNon', 'subcategoryR', 'subcategory', arrySubcategory );
@@ -2815,7 +2820,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 
- 		if ( $( option ).attr( 'class') ) {
+ 		if ( $( option ).attr( 'class' ) ) {
  			
  			filterObj();
  		} else {
