@@ -2716,9 +2716,14 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	};
            	
            	
+           	function subCatOut ( subClass ) {
+           		
+	           	if ( $( option ).hasClass( subClass ) ) {
 
+	           		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeOut( fadeInFil );
+	           	}
+           	};
            
-
 
 
             var speedOut  = 500,
@@ -2776,6 +2781,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	optionDis ( 'category', 'categoryR', '.subcategory', '#subcategoryDisNon', 'subcategoryR', 'subcategory', arrySubcategory );
            	// optionDis ( 'type', 'tepyR', '.additionalTepy', '#typeDisNone', 'additionalTepyR', 'additionalTepy', arryAdditionalTepy );
            	optionDis ( 'country', 'countryR', '.brand', '#brandDisNone', 'brandR', 'brand', arryBrand );
+
+
+           	subCatOut ( 'subcategoryR' );
+           	subCatOut ( 'brandR' );
+           	
 
 
 
