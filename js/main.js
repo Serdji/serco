@@ -2043,7 +2043,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			$( '.searchs' ).focus();
 
 			$( document ).scrollTop( scrol );
-			console.log('test');
 		};
 
 		
@@ -2091,7 +2090,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 		function memOptionIn ( idIn ) {
 
-			var $inputIn = $( idIn ).find( '.custom-combobox-input' );
+			var $inputIn  = $( idIn ).find( '.custom-combobox-input' );
 			
 			setTimeout( function  () {
 				
@@ -2105,8 +2104,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
         
         if( typeof mem_vars !== 'undefined' ) {
 
+        	var $inputTypeS = $( '#typeS' ).next();
+
 			memOptionIn ( '#subcategoryDisNon' );
 			memOptionIn ( '#brandDisNone' );
+			memOptionIn ( $inputTypeS );
 	        memOption ( mem_vars.category, '#categoryS' );	
 	        memOption ( mem_vars.subcategory, '#subcategoryS' );	
 	        memOption ( mem_vars.type, '#typeS' );	

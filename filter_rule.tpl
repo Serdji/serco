@@ -42,7 +42,8 @@
                 </div>
 
                 <hr>
-
+                
+                
                 <select id="typeS" class="combobox comboboxFil" type="type">
                   <option class="0 typeR" out_id="0" type="type">Все виды товаров</option>
 <!-- BEGIN filter_types -->
