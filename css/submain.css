@@ -27,3 +27,113 @@ div.coll_Imgs img{
 	cursor: pointer;
 	margin: 10px;
 }
+
+div#toplinecatalog{
+	margin:0;
+}
+
+a.orderCatalog{
+	cursor:pointer;
+	color:#39B273;
+	text-decoration:none;
+}
+
+a.orderCatalog.thisOrder{
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+a.orderCatalog.disable{
+	color:#ddbe0b !important;
+}
+
+.inputGreen input:nth-of-type(1), .leftFilterBlock input:nth-of-type(1){
+	color: #CFC !important;
+}
+
+
+
+#preLoader{
+	z-index:999 !important;
+}
+
+div.bigImg a#thisImgClose{
+	z-index:999 !important;
+}
+
+#prtType{
+	position:relative;
+	margin: 10px 0;
+}
+
+#prtType > .accordionStart{
+	height:auto !important;
+	padding:0 5px !important;
+}
+
+#prtType > .accordionStart .custom-combobox-input{
+	width: 1px;
+	margin-left:5px;
+}
+
+#psevdoinput:hover{
+	background: #94ef94 !important;
+}
+
+#psevdoinput{
+    margin: 0;
+    padding: 14px 8px;
+    width: 297px;
+    height: 50px;
+    font-size: 17px;
+	background: #e6e6e6 url("images/ui-bg_glass_75_e6e6e6_1x400.png") 50% 50% repeat-x;
+	color: #555;
+	border: 1px solid #d3d3d3;
+	border-bottom-left-radius: 4px;
+	border-top-left-radius: 4px;
+	position:absolute;
+	top:0px;
+	left:10px;
+	z-index: 50;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+}
+
+#psevdoinput.click{
+	background: #39B273 !important;
+	color: #CFC !important;
+}
+
+.isOrgIdDis{
+	display:none;
+}
+
+#prtType > .accordionStart .custom-combobox-toggle{
+	left: 290px;
+}
+
+#prtType > .accordionStart .custom-combobox-toggle.ui-corner-right, #prtType > .accordionStart .custom-combobox{
+	height:50px;
+}
+
+#prtType > .accordionStart:not(.accordionAktiv):hover, #prtType > .accordionAktiv{
+	background:none !important;
+}
+
+#prtType, #prtType .filterLeftPad{
+	padding:0 !important;
+}
+
+#prtType .accordion{
+	padding:0 16px 0 5px;
+}
+
+#filtr_bay_region span.custom-combobox input{
+	margin-left:5px;
+    width: 297px;
+}
+
+.isOrgId{
+	padding-left: 5px;
+}

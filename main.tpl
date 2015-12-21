@@ -25,11 +25,10 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 border filtr_bay_region filters" id="filtr_bay_region">
                         <div class="hint" title="Выберите регион покупателя">?</div>
                           <div class="ui-widget">
-                            <select class="combobox comboboxFil" type="type" >
+                            <select class="combobox comboboxFil" type="region" >
                               <option class="0 default" out_id="0" type="bay_country">Россия</option>
                             </select>
-                            <select class="combobox comboboxFil" type="type">
-                              <option class="0 regionR" out_id="0" type="bay_region">Регионы отсутствуют</option>
+                            <select class="combobox comboboxFil" type="region">
 <!-- BEGIN filter_categories -->
                               <option class="region remov" id="{region_id1s}" inner_id="{region_id}" out_id="{region_id1s}">{region}</option>
 <!-- END filter_categories -->                              
