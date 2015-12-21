@@ -2456,7 +2456,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 							 };
 
-							// $( 'option' ).removeAttr( 'disabled' );
+							$( 'option.region' ).removeAttr( 'disabled' );
 
 
 

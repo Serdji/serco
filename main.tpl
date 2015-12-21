@@ -29,7 +29,10 @@
                               <option class="0 default" out_id="0" type="bay_country">Россия</option>
                             </select>
                             <select class="combobox comboboxFil" type="type">
-                              <option class="0 default" out_id="0" type="bay_region" disabled="disabled">Регионы отсутствуют</option>
+                              <option class="0 regionR" out_id="0" type="bay_region">Регионы отсутствуют</option>
+<!-- BEGIN filter_categories -->
+                              <option class="region remov" id="{region_id1s}" inner_id="{region_id}" out_id="{region_id1s}">{region}</option>
+<!-- END filter_categories -->                              
                             </select>
                           </div>
                         </div>
