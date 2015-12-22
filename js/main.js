@@ -1237,9 +1237,7 @@ var count_load_img_max = 0;
 
 
 
-if ( $( '.cardProduct' ).hasClass( 'levels2' ) ) {
-	
-};
+
 		
 
 	
@@ -1312,9 +1310,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					$item.removeClass( 'leval1 row' );
 					$item.html('');
-
-
-	
 
 /*----------------------------------Прорисовка карты в коллекции---------------------------------*/
 
@@ -1990,9 +1985,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryAccord       = [],
 								  arryPrt          = [];
 
-
-
-
+							history.pushState( data, null ); // переход по стрелки назад в каталоп
 
 
 	/*-------------------------------Исчезновение фильтров-----------------------------*/

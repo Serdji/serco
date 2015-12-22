@@ -28,7 +28,7 @@
 				</section>
 			</div>
 		</div>
-		
+		<br>
 		<div class="container">
 			<div class="row">
 				<section>
@@ -66,9 +66,8 @@
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
 					</div>
 					<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+						<p class="right text-footer"><b>АО "Кунаширская компания ОПЭК СерКо"</b></p>
 						<p class="right text-footer"><b>Прототип Альфа (демонстрационная версия)</b></p>
-						<p class="right text-footer"><b>Сделано в России</b></p>
-						<p class="right text-footer"><b>Made in Russia</b></p>
 					</div>
 				</section>
 			</div>
