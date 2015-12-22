@@ -578,17 +578,19 @@ $( 'a[href="/"]' ).on('click', function() {
 					_this
 						.addClass( 'accordionAktiv' )
 						.parent()
-						.addClass( 'accordionRemoveAktiv' );
+						.addClass( 'accordionRemoveAktiv' )
+						.siblings( '.accordionRemove' )
+						.removeClass( 'accordionRemoveAktiv' );
 
 					_this
 					   .find( '.removSadow' )
-					   .addClass('removeSadowClick');
+					   .addClass( 'removeSadowClick' );
 
 				}else{
 					
 					setTimeout( function () {
-						_this.removeClass('accordionAktiv');
-					}, speedUp);
+						_this.removeClass( 'accordionAktiv' );
+					}, speedUp );
 
 					_this
 						.parent()
@@ -622,8 +624,10 @@ $( 'a[href="/"]' ).on('click', function() {
 					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
 					intervalImgColl ();
 
-				} else if(_this.is('.accoStart')) {
+				} else if ( _this.is( '.accoStart' ) ) {
+					
 					filterObj();
+					
 				};
 
 					
@@ -1806,7 +1810,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	            				   $( 'input.inputNumber' ).attr( 'type' ),
 	            		namber   = $( 'input.inputNumber' ).attr( 'out_id' ) == undefined ? 
 	            		           $( 'ul.pageNumber li > a[href="' + urlPage + '"]' ).attr( 'out_id' ) : 
-	            		           $( 'input.inputNumber' ).attr( 'out_id' );
+	            		           $( 'input.inputNumber' ).attr( 'out_id' );          
 
 	            		jsonstr += '"'+type+'"'+':'+'"'+out_id+'"'+','+'"'+page+'"'+':'+'"'+namber+'"';
 
