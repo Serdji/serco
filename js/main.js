@@ -613,7 +613,9 @@ $( 'a[href="/"]' ).on('click', function() {
 				  .find( '.removSadow' )
 				  .removeClass( 'removeSadowClick' );
 
-				if ( _this.parent().hasClass( 'accordionRemoveLvel2' ) ) {
+				 
+
+				if ( _this.closest( '.filterLeft' ).hasClass( 'filterLeftLevel2' ) ) {
 
 					var namPage   = location.pathname.split( '/' )[3].split( 'e' )[1],
 					    coll_code = _this.closest( '.filterLeft' ).attr( 'coll_code' ),
@@ -624,7 +626,7 @@ $( 'a[href="/"]' ).on('click', function() {
 					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
 					intervalImgColl ();
 
-				} else if ( _this.is( '.accoStart' ) ) {
+				} else {
 					
 					filterObj();
 					
@@ -1694,13 +1696,18 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				coll_href : coll_href
 			});
 
-		$( '.filterLeft' ).attr({
-								coll_id   : coll_id,
-								coll_code : coll_code,
-								coll_href : coll_href
-							});			
+		$( '.filterLeft' )
+					.attr({
+							coll_id   : coll_id,
+							coll_code : coll_code,
+							coll_href : coll_href
+						})
+					.addClass( 'filterLeftLevel2' );			
 
 		$( '.breadCrumbs' ).append( '<strong>&rarr;</strong><a href="{bc_name}">' + nameColl + '</a>' );
+
+		
+		// $( '.accordionRemove' ).addClass( 'accordionRemoveLvel2' );
 			
 		e.preventDefault();
 
@@ -1720,6 +1727,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	/*-----------------Функция сортировки фильтров-----------------*/
 
    	function filterObj(){
+
+
 		urls = window.location.href.split('/');
 			$( 'option.remov' ).parent( 'select' ).each( function( i, val ){
 
@@ -1989,6 +1998,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryAccord       = [],
 								  arryPrt          = [];
 
+							
 							history.pushState( data, null ); // переход по стрелки назад в каталоп
 
 
@@ -2482,6 +2492,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 							if( typeof mem_vars !== 'undefined' ) {
 								history.replaceState( 1, 'Title1'  , '/catalog/page' + mem_vars.page + '/' );
+
 							};	
 
 							}

@@ -9,7 +9,7 @@
                   <option value="1" selected="selected">Предприятия Розничной Торговли</option>
                   <option value="2">Архитекторы, Дизайнеры</option>
                   <option value="3">Строители, Отделочники</option>
-                  <option value="4">Оргонизации по обработке Камня и Керамики, Керам-принт</option>
+                  <option value="4">Предприятия по обработке Камня и Керамики, Керам-принт</option>
                 </select>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 accordion" style="">
