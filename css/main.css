@@ -1124,7 +1124,7 @@ a:-webkit-any-link{
 
 .custom-combobox-input {
     margin: 0;
-    padding: 14px 8px;
+    padding: 0 0 0 8px;
     width: 255px;
 	height: 50px;
 	font-size: 17px !important;

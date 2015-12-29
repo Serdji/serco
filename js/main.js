@@ -194,6 +194,8 @@ $( 'a[href="/"]' ).on('click', function() {
 				.addClass( 'slidersImg' )
 				.appendTo( '#preLoader' );
 
+			$( '#preLoader' ).siblings( '.PLI' ).remove();	
+
 			$( 'html, body' ).css( 'overflow', 'hidden' );
 
 		var	widthDoc  = ( $( window ).width() / 2 ),
@@ -627,7 +629,7 @@ $( 'a[href="/"]' ).on('click', function() {
 					intervalImgColl ();
 
 				} else {
-					
+
 					filterObj();
 					
 				};
@@ -1130,12 +1132,12 @@ var count_load_img_max = 0;
 						defaultValuesMax = max*0.8;
 
 					$( className ).editRangeSlider( { 
-						bounds:{ min: min, 
-								 max: max 
-								},
-						defaultValues:{ min: min, 
-									    max: max
-									   }, step: 1 } );
+						bounds        : { min : min, 
+								          max : max 
+								         },
+						defaultValues : { min : min, 
+									      max : max
+									     }, step : 1 } );
 
 
 
@@ -1452,7 +1454,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							weig            = val.weig;
 							prices 	        = val.prices[0],
 							properties      = val.properties,
-							arryProperties  =[];
+							arryProperties  = [];
 
 							if ( prices !== undefined ) {
 
@@ -1998,7 +2000,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryAccord       = [],
 								  arryPrt          = [];
 
-							
 							history.pushState( data, null ); // переход по стрелки назад в каталоп
 
 
@@ -2486,7 +2487,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 							$( '#finish_page' ).val( finish_page );
 
-							var pgNam  = $( '.pageClass' ).attr( 'out_id' ),innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
+							var pgNam  = $( '.pageClass' ).attr( 'out_id' ),
+								innputNam = pgNam == undefined ? urls[(urls.length-2)].substr(4) : pgNam;
 
 							inputPfgeStartNew ( urls[(urls.length-2)].substr(4), all_items );
 
