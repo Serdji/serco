@@ -251,14 +251,12 @@ $( 'a[href="/"]' ).on('click', function() {
 				stNam 			 = indexNam == 0 ? 0 : ( accoPage * 10 ) - 10,
 				fnNam 			 = ( accoPage * 10 );
 
-				console.log( stNam + ':' + fnNam );
 
 			_this
 				.addClass( 'pageNumberBackground' )
 				.siblings( '.verticallPageLi' )
 				.removeClass( 'pageNumberBackground' );
 
-			// console.log( stNam + ' : ' +  fnNam );
 
 			$( '.accordionRemove' )
 				.fadeOut( 'slow' )
@@ -816,7 +814,7 @@ $( 'a[href="/"]' ).on('click', function() {
 								.nextAll()
 								.hide();
 
-							$( 'div#41' )
+							$( 'div#89' )
 								.find( '.myBtnInactive' )
 								.removeClass( 'myBtnInactive' ) // Серко все зеленое
 								.addClass( 'myBtnInfo' );	
