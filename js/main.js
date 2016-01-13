@@ -301,25 +301,15 @@ $( 'a[href="/"]' ).on('click', function() {
 			var _this       = $( this ),
 				defaultView = _this.val();
 
-			$( _this ).on( 'keypress',  function() {
-
-				_this.addClass( 'defaultView' );
-			});	
-
 			if ( !_this.hasClass( 'inputColor' ) ) {
-
 				_this.val( '' );
 			};
 
-
 			$( _this ).on( 'blur',  function() {
-				
 				if ( _this.val() == '' && !_this.hasClass( 'inputColor' ) ) {
 					_this.val( defaultView );
 				};
-				
 			});
-
 		});
 	};
 	
