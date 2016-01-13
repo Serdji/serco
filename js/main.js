@@ -547,9 +547,16 @@ $( 'a[href="/"]' ).on('click', function() {
 
 		$( document ).on('click', '.myBtnInfo', function() {
 			$( this ).addClass( 'myBtnActive' );
+			$( '.myBtnVse' ).removeClass( 'myBtnActive' );
 		});
+
+		$( document ).on('click', '.myBtnVse', function() {
+			$( this ).addClass( 'myBtnActive' );
+		});
+
 		$( document ).on('click', '.closes, .fade', function() {
-			$( '.myBtnInfo' ).removeClass('myBtnActive');
+			$( '.myBtnInfo' ).removeClass( 'myBtnActive' );
+			$( '.myBtnVse' ).addClass( 'myBtnActive' );
 		});
 
 		
@@ -689,12 +696,12 @@ $( 'a[href="/"]' ).on('click', function() {
 							                    '</div>'+
 							                    '<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 filterLeftCon accordion">'+
 							                    	'<div class="filterLeftPad">'+
-							                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnVse myBtnActive" data-toggle="modal">'+
 							                    			'Полный каталог товаров'+
 							                    		'</button>'+	
 							                    	'</div>'+
 							                    	'<div class="filterLeftPad">'+
-							                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnInactive">'+
 							                    			'О компани'+
 							                    		'</button>'+
 							                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
@@ -736,7 +743,7 @@ $( 'a[href="/"]' ).on('click', function() {
 							                    		'</div>'+	
 							                    	'</div>'+
 							                    	'<div class="filterLeftPad">'+
-							                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnInactive">'+
 							                    			'Для покупателей'+
 							                    		'</button>'+
 							                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
@@ -757,7 +764,7 @@ $( 'a[href="/"]' ).on('click', function() {
 							                    		'</div>'+	
 							                    	'</div>'+
 							                    	'<div class="filterLeftPad">'+
-							                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnInactive">'+
 							                    			'Скидки'+
 							                    		'</button>'+
 							                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
@@ -778,7 +785,7 @@ $( 'a[href="/"]' ).on('click', function() {
 							                    		'</div>'+	
 							                    	'</div>'+
 							                    	'<div class="filterLeftPad">'+
-							                    		'<button class="btn btn-primary btn-sm myBtnInfo">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnInactive">'+
 							                    			'Доставка'+
 							                    		'</button>'+
 							                    		'<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">'+
@@ -806,6 +813,11 @@ $( 'a[href="/"]' ).on('click', function() {
 								.eq(9)
 								.nextAll()
 								.hide();
+
+							$( 'div#41' )
+								.find( '.myBtnInactive' )
+								.removeClass( 'myBtnInactive' )
+								.addClass( 'myBtnInfo' );	
 				  	  	};
 
 
