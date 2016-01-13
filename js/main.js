@@ -301,6 +301,11 @@ $( 'a[href="/"]' ).on('click', function() {
 			var _this       = $( this ),
 				defaultView = _this.val();
 
+			$( _this ).on( 'keypress',  function() {
+
+				_this.addClass( 'defaultView' );
+			});	
+
 			if ( !_this.hasClass( 'inputColor' ) ) {
 
 				_this.val( '' );
@@ -314,8 +319,6 @@ $( 'a[href="/"]' ).on('click', function() {
 				};
 				
 			});
-
-
 
 		});
 	};
@@ -2596,7 +2599,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
           .appendTo( this.wrapper )
           .val( value )
           .attr( "title", ""  )
-          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left focus defaultView" )
+          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left focus" )
           .autocomplete({
             delay: 0,
             minLength: 0,
@@ -2940,8 +2943,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
  
         // Remove invalid value
         this.input
-          .val( "" )
-          .attr( "title", value + " didn't match any item" )
+          .attr( "title", 'По запросу ' + value + ' ничего не найдено' )
           .tooltip( "open" );
         this.element.val( "" );
         this._delay(function() {
