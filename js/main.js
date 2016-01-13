@@ -248,8 +248,10 @@ $( 'a[href="/"]' ).on('click', function() {
 			    accoPage         = _this.children().attr( 'id' ),
 			    $accordionRemove = $( '.accordionRemove' ),
 			    indexNam         = ( accoPage - 1 ) * 9,
-				stNam 			 = indexNam == 0 ? 0 : indexNam + 1,
+				stNam 			 = indexNam == 0 ? 0 : ( accoPage * 10 ) - 10,
 				fnNam 			 = ( accoPage * 10 );
+
+				console.log( stNam + ':' + fnNam );
 
 			_this
 				.addClass( 'pageNumberBackground' )
@@ -816,7 +818,7 @@ $( 'a[href="/"]' ).on('click', function() {
 
 							$( 'div#41' )
 								.find( '.myBtnInactive' )
-								.removeClass( 'myBtnInactive' )
+								.removeClass( 'myBtnInactive' ) // Серко все зеленое
 								.addClass( 'myBtnInfo' );	
 				  	  	};
 
