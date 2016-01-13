@@ -301,11 +301,15 @@ $( 'a[href="/"]' ).on('click', function() {
 			var _this       = $( this ),
 				defaultView = _this.val();
 
-			_this.val( '' );
+			if ( !_this.hasClass( 'inputColor' ) ) {
+
+				_this.val( '' );
+			};
+
 
 			$( _this ).on( 'blur',  function() {
 				
-				if ( _this.val() == '' ) {
+				if ( _this.val() == '' && !_this.hasClass( 'inputColor' ) ) {
 					_this.val( defaultView );
 				};
 				
@@ -316,7 +320,7 @@ $( 'a[href="/"]' ).on('click', function() {
 		});
 	};
 	
-	// focusBlur ();
+	focusBlur ();
 	
 		
 	
@@ -2592,7 +2596,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
           .appendTo( this.wrapper )
           .val( value )
           .attr( "title", ""  )
-          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left focus" )
+          .addClass( "custom-combobox-input ui-widget ui-widget-content ui-state-default ui-corner-left focus defaultView" )
           .autocomplete({
             delay: 0,
             minLength: 0,
