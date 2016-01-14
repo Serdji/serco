@@ -244,26 +244,26 @@ $( 'a[href="/"]' ).on('click', function() {
 		
 		$( document ).on( 'click', '.verticallPageLi', function(e) {
 			e.preventDefault();
-			var _this            = $( this ),
-			    accoPage         = _this.children().attr( 'id' ),
-			    $accordionRemove = $( '.accordionRemove' ),
-			    indexNam         = ( accoPage - 1 ) * 9,
-				stNam 			 = indexNam == 0 ? 0 : ( accoPage * 10 ) - 10,
-				fnNam 			 = ( accoPage * 10 );
+			var _this = $( this );
 
+			if ( !_this.hasClass( 'pageNumberBackground' ) ) {
 
-			_this
-				.addClass( 'pageNumberBackground' )
-				.siblings( '.verticallPageLi' )
-				.removeClass( 'pageNumberBackground' );
+				var accoPage         = _this.children().attr( 'id' ),
+				    $accordionRemove = $( '.accordionRemove' ),
+				    indexNam         = ( accoPage - 1 ) * 9,
+					stNam 			 = indexNam == 0 ? 0 : ( accoPage * 10 ) - 10,
+					fnNam 			 = ( accoPage * 10 );
 
+				_this
+					.addClass( 'pageNumberBackground' )
+					.siblings( '.verticallPageLi' )
+					.removeClass( 'pageNumberBackground' );
 
-			$( '.accordionRemove' )
-				.fadeOut( 'slow' )
-				.slice( stNam, fnNam )
-				.fadeIn( 'slow' );
-
-			
+				$( '.accordionRemove' )
+					.fadeOut( 'slow' )
+					.slice( stNam, fnNam )
+					.fadeIn( 'slow' );
+			};			
 		});
 	};
 
@@ -1558,7 +1558,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 						 if ( text == 'undefined ₽ за undefined' ) {
 						 	
 						 	$( val )
-						 		.hide()
+						 		.html( '<br>' )
 						 		.next()
 						 		.val( ' ' );
 
