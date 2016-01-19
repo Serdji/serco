@@ -49,8 +49,6 @@ $(function(){
 
 
 
-
-
 /*----------------Асинхронная загрузка страниц-----------------------*/
 
 
@@ -2221,13 +2219,29 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	  	
 							  	
 							  	  });
-							  	  	
+
+							  	  
+
+							  	 var arryfilterLeft = [];
+
+							  	 setTimeout( function () {
+							  	 	
+								 	 var filterLeftChil = $( '.filterLeft' ).children();
+
+								  	 $.each( filterLeftChil, function( i, val ) {
+								  	 	
+								 		 arryfilterLeft.push( i );
+								  	 });
+
+								  	if ( arryAccord.length > 1 || arryfilterLeft.length <= 1) {
+								  		
+										ajaxAcco ( arryAccord );
+								  	};
+							  	 }, 100 ); 	
 
 
 
-							  	
 
-								ajaxAcco ( arryAccord );
 
 
 										// Область показа маркеров
