@@ -628,7 +628,7 @@ $( 'a[href="/"]' ).on('click', function() {
 					    idPid     = _this.parent( '.accordionRemoveAktiv' ).attr( 'id' );
 
 					ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid );
-					intervalImgColl ();
+					// intervalImgColl ();
 
 				} else {
 
@@ -1108,10 +1108,10 @@ var count_load_img_max = 0;
 
 	}
 
-	imgColl ();
+	// imgColl ();
 
 
-		function intervalImgColl () {
+		function  intervalImgColl () {
 		
 		var intervalImgColl = setInterval( function (){
 			imgColl ();
@@ -1122,7 +1122,7 @@ var count_load_img_max = 0;
 		}, 1500 );
 	};
 
-	intervalImgColl ();
+	// intervalImgColl ();
 
 
 /*-----------------------------------------------------------------*/
@@ -1644,7 +1644,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 		  	  		$( 'a[href="/catalog/"]' ).attr('href', '/catalog/' + urls[4] + '/');
 
 					inputPfgeStartNew( urls[(urls.length-2)].substr(4), allItems )
-					intervalImgColl ();
+					// intervalImgColl ();
 
 
 
@@ -1761,7 +1761,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 		e.preventDefault();
 
 	ajaxColl ( 1, coll_code, coll_id, coll_href );
-	intervalImgColl ();
+	// intervalImgColl ();
 	});	
 
 
@@ -2483,7 +2483,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								 		
 								 		
 								 			// intervalblockHeight();
-								 			intervalImgColl ();
+								 			// intervalImgColl ();
 								 		
 
 

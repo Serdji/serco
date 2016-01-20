@@ -119,6 +119,11 @@ li{
 }
 
 .Picture{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
 	margin: 0 auto;
 	height: 200px;
 	width: 200px;
@@ -149,6 +154,7 @@ div.collSlide div.miniImgs img{
 	max-height: 200px;
 	max-width: 200px;
 	cursor: pointer;
+	margin: auto;
 /*	-webkit-filter: drop-shadow(5px 5px 7px rgba(0,0,0,0.5));
     filter: url(shadow.svg#drop-shadow);
 	border-image:url(gold-picture-frame.png) 81 83 82 84;
