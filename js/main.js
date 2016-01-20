@@ -1298,6 +1298,15 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			    dataType   : 'json',
 			    data       : obj,
 			    beforeSend : startLoad(),
+			    error      : function ( date ) {
+
+					var status = date.status;
+
+					if ( status == 500 ) {
+
+						window.location.replace( 'http://www.serko.local/500.php' );
+					};
+				},
 			    success    : function( data ) {
 
 
@@ -2007,6 +2016,17 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					data       : jsonstr,
 					dataType   : "json",
 					beforeSend : startLoad(),
+					error      : function ( date ) {
+
+								console.log( date.status );
+
+								var status = date.status;
+
+								if ( status == 500 ) {
+
+									window.location.replace( 'http://www.serko.local/500.php' );
+								};
+					},
 					success    : function( data ) {
 
 							  stopLoad();
