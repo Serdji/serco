@@ -1304,7 +1304,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					if ( status == 500 ) {
 
-						window.location.replace( 'http://www.serko.local/500.php' );
+						window.location.replace( 'http://www.серко.рф/500.php' );
 					};
 				},
 			    success    : function( data ) {
@@ -1530,9 +1530,14 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 					'<div class="form-group price has-success has-feedback">'+
 												 						'<label class="control-label prices twoPrice" for="inputSuccess2">Цена за <b> м2: ' + twoPrice + ' </b> ₽</label>'+
 												 						'<label class="control-label prices" for="inputSuccess2"><b>'+ price +'</b> ₽ за ' + fors + '</label>'+
-												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
+												 						'<div></div>'+
+												 						'<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputPrice">'+
+												 							'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
+												 						'</div>'+
+												 						'<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 buttomPrice">'+
+												 							'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
+												 						'</div>'+
 												 					'</div>'+
-												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
 												 				'</form>'+	
 												 			'</div>'+
 												 			'<!-- Modal -->'+
@@ -1586,7 +1591,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							 	
 							 	$( val )
 							 		.html( '<br>' )
-							 		.next()
+							 		.siblings()
+							 		.children( 'input' )
 							 		.val( ' ' );
 
 							 	$( val )
@@ -2024,7 +2030,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 								if ( status == 500 ) {
 
-									window.location.replace( 'http://www.serko.local/500.php' );
+									window.location.replace( 'http://www.серко.рф/500.php' );
 								};
 					},
 					success    : function( data ) {
