@@ -1234,6 +1234,14 @@ a:-webkit-any-link{
 	/*display: none;*/
 }
 
+.prices{
+	font-size: 17px !important;
+    font-weight: 100 !important;
+}
+
+.prices b{
+	font-size: 20px !important;
+}
 
 @media screen and ( max-width: 1600px){
 	#psevdoinput{

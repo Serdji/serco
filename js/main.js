@@ -1473,7 +1473,12 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 									square_meter  = prices.square_meter,
 									weight        = prices.weight,
 									pieces        = count == 1 ? ' ' : ' 1 уп. | ',
-									weightPieces  = weight == 0 ? ' ' : '| ' + weight + ' кг.'
+									weightPieces  = weight == 0 ? ' ' : '| ' + weight + ' кг.',
+									twoPrice      = +price / +count,
+									twoPrice      = Math.ceil( ( twoPrice ) * 100 ) / 100;
+
+									
+									
 							};
 							
 
@@ -1514,7 +1519,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'<div class="priceBlock">'+
 												 				'<form role="form" class="price">'+
 												 					'<div class="form-group price has-success has-feedback">'+
-												 						'<label class="control-label prices" for="inputSuccess2">'+ price +' ₽ за ' + fors + '</label>'+
+												 						'<label class="control-label prices twoPrice" for="inputSuccess2">Цена за <b> м2: ' + twoPrice + ' </b> ₽</label>'+
+												 						'<label class="control-label prices" for="inputSuccess2"><b>'+ price +'</b> ₽ за ' + fors + '</label>'+
 												 						'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
 												 					'</div>'+
 												 					'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
@@ -1541,33 +1547,52 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 					
 
-					if ( color == null ) {
+						if ( color == null ) {
 
-						$( '.item_color' ).hide();
-					};
-
-
+							$( '.item_color' ).hide();
+						};
 					});
-
 
 					$.each( $( '.prices' ), function( i, val ) {
-						 var text = $( val ).text();
 
-						 if ( text == 'undefined ₽ за undefined' ) {
-						 	
-						 	$( val )
-						 		.html( '<br>' )
-						 		.next()
-						 		.val( ' ' );
+						var priceText      = $( val ).text(),
+							priceNamber    = parseInt( priceText ),
+							twoPriceArr    = $( val ).prev().text().split( ':' ),
+							twoPriceNamber = parseInt( twoPriceArr[1] );
 
-						 	$( val )
-						 		.closest( '.priceBlock' )
-						 		.siblings( '.figcaption' )
-						 		.children( '.item_pre-packing' )
-						 		.hide();	
-
-						 }
+						if ( priceNamber == twoPriceNamber ) {
+							$( val )
+								.prev()
+								.hide();
+						};	
 					});
+
+
+					function hidePrices ( className, textUnd ) {
+						
+						$.each( $( className ), function( i, val ) {
+							 var text = $( val ).html();
+
+							 if ( text == textUnd ) {
+							 	
+							 	$( val )
+							 		.html( '<br>' )
+							 		.next()
+							 		.val( ' ' );
+
+							 	$( val )
+							 		.closest( '.priceBlock' )
+							 		.siblings( '.figcaption' )
+							 		.children( '.item_pre-packing' )
+							 		.hide();	
+
+							 }
+						});
+					};
+
+					hidePrices ( '.prices', '<b>undefined</b> ₽ за undefined' );
+					hidePrices ( '.twoPrice', 'Цена за <b> м2: undefined </b> ₽' );
+
 
 					$.each(	$( '.properties span' ), function(i, val) {
 
@@ -2220,7 +2245,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 							  	
 							  	  });
 
-							  	  
+
 
 							  	 var arryfilterLeft = [];
 
