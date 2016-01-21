@@ -1527,7 +1527,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 			'<br>'+
 												 			'<div class="priceBlock">'+
 												 				'<form role="form" class="price">'+
-												 					'<div class="form-group price has-success has-feedback">'+
+												 					'<div class="form-group price has-success has-feedback purchase">'+
 												 						'<label class="control-label prices twoPrice" for="inputSuccess2">Цена за <b> м2: ' + twoPrice + ' </b> ₽</label>'+
 												 						'<label class="control-label prices" for="inputSuccess2"><b>'+ price +'</b> ₽ за ' + fors + '</label>'+
 												 						'<div></div>'+
@@ -1535,7 +1535,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 												 							'<input type="text" class="form-control input-lg" id="exampleInputEmail1" placeholder="' + count + ' ' + fors + '">'+
 												 						'</div>'+
 												 						'<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 buttomPrice">'+
-												 							'<button type="button" class="btn btn-primary btn-sm myBtnInfo btnBasket">Добавить в корзину</button>'+
+												 							'<button type="button" title="Добавить в корзину" class="btn btn-primary btn-sm myBtnInfo btnBasket glyphicon glyphicon-shopping-cart"></button>'+
 												 						'</div>'+
 												 					'</div>'+
 												 				'</form>'+	
@@ -1560,7 +1560,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 					
-
+				    	$( '.myBtnInfo' ).tooltip({
+				     		track: true
+				   		});
+				  	
 						if ( color == null ) {
 
 							$( '.item_color' ).hide();
@@ -2598,13 +2601,10 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
 	$(function() {
-    	$(".hint, .colors").tooltip({
+    	$(".hint, .colors, .myBtnInfo").tooltip({
      		track: true
    		});
   	});
-
-
-
 
 
 						/*----------------------------------------*/

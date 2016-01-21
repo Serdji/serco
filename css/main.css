@@ -1254,15 +1254,23 @@ a:-webkit-any-link{
 }
 
 .buttomPrice button{
-	font-size: 11px;
+	font-size: 20px;
 	margin: 0;
+	margin-left: -1px;
 	border-radius: 0 10px 10px 0;
+	border: 1px solid #3C763D !important;;
 }
 
 .inputPrice input{
 	font-size: 16px;
 	height: 50px;
+	margin-top: 1px;
 	border-radius: 10px 0 0 10px;
+}
+
+.purchase{
+	position: absolute;
+	bottom: 0;
 }
 
 @media screen and ( max-width: 1600px){
