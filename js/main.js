@@ -699,6 +699,16 @@ $( 'a[href="/"]' ).on('click', function() {
 							                    		'</button>'+	
 							                    	'</div>'+
 							                    	'<div class="filterLeftPad">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+							                    			'Каталог товаров выставленных на витрине'+
+							                    		'</button>'+	
+							                    	'</div>'+
+							                    	'<div class="filterLeftPad">'+
+							                    		'<button class="btn btn-primary btn-sm myBtnVse" data-toggle="modal">'+
+							                    			'Каталог товаров по Акции'+
+							                    		'</button>'+	
+							                    	'</div>'+
+							                    	'<div class="filterLeftPad">'+
 							                    		'<button class="btn btn-primary btn-sm myBtnInactive">'+
 							                    			'О компани'+
 							                    		'</button>'+
