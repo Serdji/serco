@@ -78,11 +78,12 @@
 		
 		
 		
-			<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&sensor=true"></script>
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAXrtpz-8fkwhsdrUupL2t8AkjnNujluH4&libraries=places"></script>
 			<script type="text/javascript" src="/tpl/default/js/jquery-1.11.3.min.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/jquery-2.1.4.min.js"></script>
 			<script type="text/javascript" src="/tpl/default/js/jquery.validate.min.js"></script> 
-			<script type="text/javascript" src="/tpl/default/js/jquery-ui.min.js"></script> 
+			<script type="text/javascript" src="/tpl/default/js/jquery-ui.min.js"></script>
+			<script type="text/javascript" src="/tpl/default/js/markerclusterer.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/bootstrap.min.js"></script> 
 			<script type="text/javascript" src="/tpl/default/js/earth.js"></script>
 		</footer>
