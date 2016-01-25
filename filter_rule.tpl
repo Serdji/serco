@@ -51,10 +51,19 @@
 <!-- END filter_types -->
                 </select>
                 
-                <div id="typeDisNone">
-                  <select class="combobox comboboxFil" type="additionalTepy">
-                    <option class="0 additionalTepyR" out_id="0" type="additionalTepy" disabled="disabled">Дополнительные св-ва товаров</option>
-                    <option class="additionalTepy remov" out_id="0" type="additionalTepy" disabled="disabled">...</option>
+                <div id="matterDisNone">
+                  <select class="combobox comboboxFil" type="matter">
+                    <option class="0 matterR" out_id="0" type="matter" disabled="disabled">Материал</option>
+                    <option class="matter remov" out_id="0" type="matter" disabled="disabled">...</option>
+                  </select>
+                </div>
+
+                <div id="surfaceDisNone">
+                  <select id="surfaceS" class="combobox comboboxFil" type="surface">
+                    <option class="0 surfaceR" type="surface">Все виды поверхностей</option>
+<!-- BEGIN filter_surfaces -->
+                    <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
+<!-- END filter_surfaces -->            
                   </select>
                 </div>
 
@@ -69,14 +78,21 @@
                   </div>
                 </div>
 
-                <div id="surfaceDisNone">
-                  <select id="surfaceS" class="combobox comboboxFil" type="surface">
-                    <option class="0 surfaceR" type="surface">Все виды поверхностей</option>
-<!-- BEGIN filter_surfaces -->
-                    <option class="surface remov" id="{surface_id1s}" inner_id="{surface_id}" out_id="{surface_id1s}">{surface}</option>
-<!-- END filter_surfaces -->            
+
+                <div id="addPropertiesDisNone">
+                  <select id="addPropertiesS" class="combobox comboboxFil" type="addProperties">
+                    <option class="0 addPropertiesR" type="addProperties" disabled="disabled">Доп. Свойства</option>
+                    <option class="addProperties remov" out_id="0" type="addProperties" disabled="disabled">...</option>
                   </select>
                 </div>
+
+                <div id="theFormDisNone">
+                  <select id="theFormS" class="combobox comboboxFil" type="theForm">
+                    <option class="0 theFormR" type="theFormD" disabled="disabled">Форма</option>
+                    <option class="theForm remov" out_id="0" type="theForm" disabled="disabled">...</option>
+                  </select>
+                </div>
+
 
                 <div id="sliderLWTDisNone">
                   <form role="form">

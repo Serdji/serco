@@ -1266,7 +1266,7 @@ var count_load_img_max = 0;
 		
 
 	
-$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
+$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #subcategoryDisNon, #matterDisNone, #brandDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeOut();
 	
 
 
@@ -2086,7 +2086,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			  	if ( ! $( 'input.custom-combobox-input' ).hasClass( 'inputColor' ) ) {
 
 			  		
-					$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #subcategoryDisNon, #typeDisNone, #brandDisNone' ).fadeOut();
+					$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #subcategoryDisNon, #matterDisNone, #brandDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeOut();
 				};
 
 				$( '.inputColor' )
@@ -2175,7 +2175,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				
 				if ( $inputIn.hasClass( 'inputColor' ) ) {
 					$( idIn ).fadeIn();
-					$( '#colorsDisNone, #colorsDisNone, #surfaceDisNone, #sliderLWTDisNone' ).fadeIn();
+					$( '#colorsDisNone, #colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeIn();
 				}
 			}, 100);
 		};
@@ -2734,6 +2734,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId10     	      = $( 'ul.ui-autocomplete' ).eq( 9 ),
            	   $ulId11     	      = $( 'ul.ui-autocomplete' ).eq( 10 ),
            	   $ulId12     	      = $( 'ul.ui-autocomplete' ).eq( 11 ),
+           	   $ulId13     	      = $( 'ul.ui-autocomplete' ).eq( 12 ),
+           	   $ulId14     	      = $( 'ul.ui-autocomplete' ).eq( 13 ),
            	   $ulId1Li    	      = $ulId1.children( 'li' ).eq( 0 ),
            	   $ulId2Li    	      = $ulId2.children( 'li' ).eq( 0 ),
            	   $ulId3Li    	      = $ulId3.children( 'li' ).eq( 0 ),
@@ -2746,6 +2748,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $ulId10Li   	      = $ulId10.children( 'li' ).eq( 0 ),
            	   $ulId11Li   	      = $ulId11.children( 'li' ).eq( 0 ),
            	   $ulId12Li   	      = $ulId12.children( 'li' ).eq( 0 ),
+           	   $ulId13Li   	      = $ulId13.children( 'li' ).eq( 0 ),
+           	   $ulId14Li   	      = $ulId14.children( 'li' ).eq( 0 ),
            	   $btnInput1  	      = $( 'div.ui-state-default' ).eq( 0 ),
            	   $btnInput2  	      = $( 'div.ui-state-default' ).eq( 1 ),
            	   $btnInput3  	      = $( 'div.ui-state-default' ).eq( 2 ),
@@ -2758,6 +2762,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $btnInput10 	      = $( 'div.ui-state-default' ).eq( 9 ),
            	   $btnInput11 	      = $( 'div.ui-state-default' ).eq( 10 ),
            	   $btnInput12 	      = $( 'div.ui-state-default' ).eq( 11 ),
+           	   $btnInput13 	      = $( 'div.ui-state-default' ).eq( 12 ),
+           	   $btnInput14 	      = $( 'div.ui-state-default' ).eq( 12 ),
            	   $inputFil1  	      = $( 'input.custom-combobox-input' ).eq( 0 ),
            	   $inputFil2  	      = $( 'input.custom-combobox-input' ).eq( 1 ),
            	   $inputFil3  	      = $( 'input.custom-combobox-input' ).eq( 2 ),
@@ -2770,15 +2776,19 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   $inputFil10 	      = $( 'input.custom-combobox-input' ).eq( 9 ),
            	   $inputFil11 	      = $( 'input.custom-combobox-input' ).eq( 10 ),
            	   $inputFil12 	      = $( 'input.custom-combobox-input' ).eq( 11 ),
+           	   $inputFil13 	      = $( 'input.custom-combobox-input' ).eq( 12 ),
+           	   $inputFil14 	      = $( 'input.custom-combobox-input' ).eq( 13 ),
            	   arrySubcategory    = [],
            	   arryBrand          = [],
            	   arryAdditionalTepy = [],
+           	   arryAddProperties  = [],
+           	   arryTheForm        = [],
            	   fadeInFil          = 500;
 
 
-           	   
-
-
+           	   $.each( $( '.addProperties' ), function(index, val) {
+           	   	 console.log(val);
+           	   });
 
            	function optionDis ( hasClass, hasClassR, subClass, idDisNone, hasSubClassR, hasSubClass, arrySubClass ) {
            	   	
@@ -2793,7 +2803,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	        			$( idDisNone ).fadeIn( fadeInFil );
 	        		} else {
 
-	        			$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeIn( fadeInFil );
+	        			$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeIn( fadeInFil );
 	        		}
 
 	        	} else if( $( option ).hasClass( hasSubClassR ) ){
@@ -2806,7 +2816,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 	        	if ( $( option ).hasClass( hasSubClass ) ){
 
-	        		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeIn( fadeInFil );
+	        		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeIn( fadeInFil );
 	        	};
 
            	};
@@ -2816,7 +2826,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            		
 	           	if ( $( option ).hasClass( subClass ) ) {
 
-	           		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone' ).fadeOut( fadeInFil );
+	           		$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeOut( fadeInFil );
 	           	}
            	};
            
@@ -2875,8 +2885,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
            	optionDis ( 'category', 'categoryR', '.subcategory', '#subcategoryDisNon', 'subcategoryR', 'subcategory', arrySubcategory );
-           	// optionDis ( 'type', 'tepyR', '.additionalTepy', '#typeDisNone', 'additionalTepyR', 'additionalTepy', arryAdditionalTepy );
            	optionDis ( 'country', 'countryR', '.brand', '#brandDisNone', 'brandR', 'brand', arryBrand );
+         
 
 
            	subCatOut ( 'subcategoryR' );
@@ -2910,11 +2920,11 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 
             if ($( option ).hasClass( 'country' )) {
-            	openFil ( $ulId12, $btnInput12, $inputFil12, '.brandR' );
+            	openFil ( $ulId14, $btnInput14, $inputFil14, '.brandR' );
             	
             }else if($( option ).hasClass( '0 countryR' )){
             	var delayOne = 10;
-            	shutFil ( $ulId12Li, $ulId12, $btnInput12, $inputFil12, delayOne );
+            	shutFil ( $ulId14Li, $ulId14, $btnInput14, $inputFil14, delayOne );
             }; 
 
 
