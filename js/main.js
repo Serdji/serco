@@ -2012,6 +2012,20 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				});
 			};
 
+
+			function optinRegionID () {
+				 
+				$( 'select.comboboxFil[type="region"] option:selected:not(.0)' ).each( function( index, el ) {
+					if( jsonstr != '{' )
+						{
+							jsonstr += ',';
+						}
+					var region_id      = $( el ).attr( 'inner_id' );
+					    jsonstr       += '"region_id"'+':'+'"'+region_id+'"';
+					    jsonstr_debug += '&debug_region_id='+region_id;
+				});
+			};
+
 					/*--------------------------------------------------------------*/
 
 			
@@ -2024,6 +2038,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				eachJson ( '.colorBorder' );
 				sliderJson ( '#slider-range', 'min_prices', 'max_prices');
 				optinJson ();
+				optinRegionID ();
 
 			jsonstr += '}';
 			jsonstr  = JSON.parse( jsonstr );
@@ -2080,6 +2095,9 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								  arryPrt          = [];
 
 							history.pushState( data, null ); // переход по стрелки назад в каталоп
+
+
+							
 
 
 	/*-------------------------------Исчезновение фильтров-----------------------------*/
@@ -2183,7 +2201,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 				
 				if ( $inputIn.hasClass( 'inputColor' ) ) {
 					$( idIn ).fadeIn();
-					$( '#colorsDisNone, #colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeIn();
+					$( '#colorsDisNone, #colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #addPropertiesDisNone, #theFormDisNone, #sizeFormDisNone' ).fadeIn();
 				}
 			}, 100);
 		};
@@ -2573,7 +2591,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								eachOut_id ( collection, '.collection' );
 								eachOut_id ( brand, '.brand' );
 
-
+								$( 'option#f955bc0e-ac42-11e4-a41c-c86000ccad94' ).attr( 'selected', 'selected' ); // Центральный федеральный округ
 
 
 								$.each( color, function ( index, value ) {
@@ -2815,7 +2833,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	        			$( idDisNone ).fadeIn( fadeInFil );
 	        		} else {
 
-	        			$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #addPropertiesDisNone, #theFormDisNone' ).fadeIn( fadeInFil );
+	        			$( '#colorsDisNone, #surfaceDisNone, #sliderLWTDisNone, #sliderRDisNone, #matterDisNone, #addPropertiesDisNone, #theFormDisNone, #sizeFormDisNone' ).fadeIn( fadeInFil );
 	        		}
 
 	        	} else if( $( option ).hasClass( hasSubClassR ) ){
