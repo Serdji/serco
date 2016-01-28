@@ -93,6 +93,13 @@
                   </select>
                 </div>
 
+                <div id="sizeFormDisNone">
+                  <select id="sizeFormS" class="combobox comboboxFil" type="sizeForm">
+                    <option class="0 sizeFormR" type="theFormD" disabled="disabled">Размер формы</option>
+                    <option class="sizeForm remov" out_id="0" type="sizeForm" disabled="disabled">...</option>
+                  </select>
+                </div>
+
 
                 <div id="sliderLWTDisNone">
                   <form role="form">
