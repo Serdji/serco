@@ -11,6 +11,9 @@ $(function(){
 		$blockHeight.children().eq( 3 ).children().css( 'height', bottomBlock );
 
 
+ 			$( 'option#f955bc0e-ac42-11e4-a41c-c86000ccad94' ).attr( 'selected', 'selected' ); // Центральный федеральный округ
+
+			
 
 		/*----Scroll----*/
 
@@ -2221,6 +2224,8 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	        memOption ( mem_vars.country, '#countryS' );	
 	        memOption ( mem_vars.brand, '#brandS' );
 
+	       
+
 	        if ( mem_vars.color != undefined ) {
 
 	        	var	$color    = $( 'div#color_' + mem_vars.color + '' ),
@@ -2591,7 +2596,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 								eachOut_id ( collection, '.collection' );
 								eachOut_id ( brand, '.brand' );
 
-								$( 'option#f955bc0e-ac42-11e4-a41c-c86000ccad94' ).attr( 'selected', 'selected' ); // Центральный федеральный округ
 
 
 								$.each( color, function ( index, value ) {
