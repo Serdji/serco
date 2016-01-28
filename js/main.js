@@ -1319,7 +1319,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			    dataType   : 'json',
 			    data       : obj,
 			    beforeSend : startLoad(),
-			    /*error      : function ( date ) {
+			    error      : function ( date ) {
 
 					var status = date.status;
 
@@ -1327,7 +1327,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 						window.location.replace( 'http://www.серко.рф/500.php' );
 					};
-				},*/
+				},
 			    success    : function( data ) {
 
 
@@ -2061,7 +2061,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					data       : jsonstr,
 					dataType   : "json",
 					beforeSend : startLoad(),
-					/*error      : function ( date ) {
+					error      : function ( date ) {
 
 								console.log( date.status );
 
@@ -2071,7 +2071,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 									window.location.replace( 'http://www.серко.рф/500.php' );
 								};
-					},*/
+					},
 					success    : function( data ) {
 
 							  stopLoad();
@@ -2403,7 +2403,6 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 									
 							    
 
-								 
 								$.each( arryMarkers, function( i, val ) {
 
 								    // Создаём маркер
@@ -2427,7 +2426,12 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 
 								});
 								
-								markersBounds.extend( myPos );
+								if ( $( 'select.comboboxFil[type="region"] option:selected' ).attr('inner_id') == 33 ) {
+
+									markersBounds.extend( myPos );
+								};
+
+
 
 								var markerCluster = new MarkerClusterer( map, markerClast, {
 									maxZoom  : 13,  // максимальный зум при котором мы еще группируем маркеры, дальше – уже нет
@@ -2820,9 +2824,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
            	   fadeInFil          = 500;
 
 
-           	   $.each( $( '.addProperties' ), function(index, val) {
-           	   	 console.log(val);
-           	   });
+           	   
 
            	function optionDis ( hasClass, hasClassR, subClass, idDisNone, hasSubClassR, hasSubClass, arrySubClass ) {
            	   	
