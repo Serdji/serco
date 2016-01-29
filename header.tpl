@@ -12,7 +12,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li id="btn1" class="{catalog_class}"><a href="/catalog/">Каталог</a></li>
-            <li id="btn1"><a class="info" href="/info/">Информация о системе ОПЭК</a></li>
+            <li id="btn1"><a class="informPage" href="/info/">Информация о системе ОПЭК</a></li>
             <!-- <li id="btn1" class="{registration_class}"><a href="/registration/">Регистрация</a></li>  -->
 <!--
 

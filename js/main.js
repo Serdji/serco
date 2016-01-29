@@ -165,10 +165,10 @@ function reLoaction(new_loc,loadad,goBack,bPages)
 									/*------------Основной код--------------*/
 
 
-	$( '.info' ).on( 'click', function(e) {
+	$( '.informPage' ).on( 'click', function(e) {
 		
 		e.preventDefault();
-		document.location.replace( 'http://info.serko.local/' );
+		document.location.replace( 'http://инфо.серко.рф/' );
 	});
 
 	
@@ -1221,7 +1221,7 @@ var count_load_img_max = 0;
 
 		$( '.colors' ).on( 'click', function (){
 			
-			var _this     = $( this );
+			var _this  = $( this );
 				
 
 			if ( _this.hasClass( '.colorBorder' ) ) { 
@@ -2229,7 +2229,7 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 	        if ( mem_vars.color != undefined ) {
 
 	        	var	$color    = $( 'div#color_' + mem_vars.color + '' ),
-		        	colorText = $color.attr( 'data-original-title' );
+		        	colorText = $color.attr( 'title' );
 
 		        $( '.info' ).html('');	
 

@@ -53,7 +53,7 @@
                 
                 <div id="matterDisNone">
                   <select class="combobox comboboxFil" type="matter">
-                    <option class="0 matterR" out_id="0" type="matter" disabled="disabled">Материал</option>
+                    <option class="0 matterR" out_id="0" type="matter" disabled="disabled">Все материал</option>
                     <option class="matter remov" out_id="0" type="matter" disabled="disabled">...</option>
                   </select>
                 </div>
@@ -81,21 +81,21 @@
 
                 <div id="addPropertiesDisNone">
                   <select id="addPropertiesS" class="combobox comboboxFil" type="addProperties">
-                    <option class="0 addPropertiesR" type="addProperties" disabled="disabled">Доп. Свойства</option>
+                    <option class="0 addPropertiesR" type="addProperties" disabled="disabled">Все доп. Свойства</option>
                     <option class="addProperties remov" out_id="0" type="addProperties" disabled="disabled">...</option>
                   </select>
                 </div>
 
                 <div id="theFormDisNone">
                   <select id="theFormS" class="combobox comboboxFil" type="theForm">
-                    <option class="0 theFormR" type="theFormD" disabled="disabled">Форма</option>
+                    <option class="0 theFormR" type="theFormD" disabled="disabled">Все виды форм</option>
                     <option class="theForm remov" out_id="0" type="theForm" disabled="disabled">...</option>
                   </select>
                 </div>
 
                 <div id="sizeFormDisNone">
                   <select id="sizeFormS" class="combobox comboboxFil" type="sizeForm">
-                    <option class="0 sizeFormR" type="theFormD" disabled="disabled">Размер формы</option>
+                    <option class="0 sizeFormR" type="theFormD" disabled="disabled">Все размер форм</option>
                     <option class="sizeForm remov" out_id="0" type="sizeForm" disabled="disabled">...</option>
                   </select>
                 </div>
