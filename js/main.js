@@ -1321,12 +1321,16 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 			    beforeSend : startLoad(),
 			    error      : function ( date ) {
 
-					var status = date.status;
+							if ( window.location.hostname == 'www.xn--e1akmgd.xn--p1ai' ) {
+								
+								var status = date.status;
 
-					if ( status == 500 ) {
+								if ( status == 500 ) {
 
-						window.location.replace( 'http://www.серко.рф/500.php' );
-					};
+									window.location.replace( 'http://www.серко.рф/500.php' );
+								};
+							};
+
 				},
 			    success    : function( data ) {
 
@@ -2063,14 +2067,16 @@ function ajaxColl ( namPage, coll_code, coll_id, coll_href, idPid ) {
 					beforeSend : startLoad(),
 					error      : function ( date ) {
 
-								console.log( date.status );
+								if ( window.location.hostname == 'www.xn--e1akmgd.xn--p1ai' ) {
+									
+									var status = date.status;
 
-								var status = date.status;
+									if ( status == 500 ) {
 
-								if ( status == 500 ) {
-
-									window.location.replace( 'http://www.серко.рф/500.php' );
+										window.location.replace( 'http://www.серко.рф/500.php' );
+									};
 								};
+
 					},
 					success    : function( data ) {
 

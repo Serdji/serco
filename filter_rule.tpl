@@ -53,7 +53,7 @@
                 
                 <div id="matterDisNone">
                   <select class="combobox comboboxFil" type="matter">
-                    <option class="0 matterR" out_id="0" type="matter" disabled="disabled">Все материал</option>
+                    <option class="0 matterR" out_id="0" type="matter" disabled="disabled">Все материалы</option>
                     <option class="matter remov" out_id="0" type="matter" disabled="disabled">...</option>
                   </select>
                 </div>
@@ -81,7 +81,7 @@
 
                 <div id="addPropertiesDisNone">
                   <select id="addPropertiesS" class="combobox comboboxFil" type="addProperties">
-                    <option class="0 addPropertiesR" type="addProperties" disabled="disabled">Все доп. Свойства</option>
+                    <option class="0 addPropertiesR" type="addProperties" disabled="disabled">Все доп. свойства</option>
                     <option class="addProperties remov" out_id="0" type="addProperties" disabled="disabled">...</option>
                   </select>
                 </div>
@@ -95,7 +95,7 @@
 
                 <div id="sizeFormDisNone">
                   <select id="sizeFormS" class="combobox comboboxFil" type="sizeForm">
-                    <option class="0 sizeFormR" type="theFormD" disabled="disabled">Все размер форм</option>
+                    <option class="0 sizeFormR" type="theFormD" disabled="disabled">Все размеры форм</option>
                     <option class="sizeForm remov" out_id="0" type="sizeForm" disabled="disabled">...</option>
                   </select>
                 </div>
@@ -106,17 +106,23 @@
                     <div class="form-group  has-success">
                 
         
-                      <strong>Длина:</strong>
+                      <div class="slideBord">
+                        <strong>Длина:</strong>
+                                      
+                          <div id="slider-length"></div>
+                      </div>
               
-                        <div id="slider-length"></div>
+                      <div class="slideBord">
+                        <strong>Ширина:</strong>
+                                      
+                          <div id="slider-width"></div>
+                      </div>
               
-                      <strong>Ширина:</strong>
-              
-                        <div id="slider-width"></div>
-              
-                      <strong>Толщина:</strong>
-              
-                        <div id="slider-thickness"></div>
+                      <div class="slideBord">
+                        <strong>Толщина:</strong>
+                                      
+                          <div id="slider-thickness"></div>
+                      </div>
                     </div>
                   </form>
                 </div>

@@ -72,6 +72,11 @@ li{
 	left: 50%;
 }
 
+#filtr_color.colorFilter{
+	border: 1px solid #D9D9D9;
+    width: 97% !important;
+}
+
 .content{
 	/*margin-top:600px;*/
 }
@@ -1051,7 +1056,7 @@ a:-webkit-any-link{
 
 .form-group strong{
 	margin-bottom: 48px;
-    margin-top: 60px;
+    /*margin-top: 60px;*/
 	display: block;
 }
 
@@ -1223,7 +1228,7 @@ a:-webkit-any-link{
 }
 
 .colorBtn{
-	margin: 4px 0 0 222px;
+	margin: 4px 0 0 200px;
 }
 
 .pageNumberBorderLeft:hover, .verticallPageLi:not(.pageNumberBackground):hover{
@@ -1386,6 +1391,12 @@ a:-webkit-any-link{
 	.custom-combobox-toggle{
 		left: 214px;
 	}
+}
+
+.slideBord{
+	margin: 15px 8px 0 0;
+    border: 1px solid #D9D9D9;
+    padding: 18px;
 }
 
 @media screen and ( max-width: 1500px){
